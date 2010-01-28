@@ -1,0 +1,161 @@
+<!ENTITY cckWizard.title "Средства параметризации корпоративного браузера (Firefox CCK)">
+<!ENTITY cckWizard.description "Этот инструмент создаст расширение, которое параметризирует Firefox. Полученное расширение может быть установлено пользователем, либо включено в исходный инсталяционный пакет Firefox.">
+<!ENTITY beforeYouBegin.label "Перед тем как начать">
+<!ENTITY beforeYouBegin.description "Необходимо определиться какая степень параметризации необходима, какие элементы потребуется создать и настроить:
+<html:ul>
+<html:li>Файлы с анимированным и обычным изображением логотипа компании</html:li>
+<html:li>Поисковики (SRC-файлы и соответствующие файлы иконок)</html:li>
+<html:li>Подключаемые модули (plug-ins)</html:li>
+<html:li>Расширения/Темы</html:li>
+</html:ul>">
+<!ENTITY configurePage.label "Конфигурирование расширения">
+<!ENTITY selectConfig.label "Выбор существующей конфигурации или создание новой">
+<!ENTITY selectConfig.description "Необходимо выбрать либо существующую конфигурацию, либо создать новую (кнопка &apos;Создать&apos;) и определить местоположение параметризированных файлов. Для редактирования существующей конфигурации без перезаписи оригинальной, надо выбрать её из списка и нажать кнопку &apos;Копировать&apos;.">
+<!ENTITY showConfig.label "Показать">
+<!ENTITY openConfig.label "Open">
+<!ENTITY newConfig.label "Создать">
+<!ENTITY copyConfig.label "Копировать">
+<!ENTITY deleteConfig.label "Удалить">
+<!ENTITY createConfig.title "Создание новой конфигурации">
+<!ENTITY copyConfig.title "Копирование существующей конфигурации">
+<!ENTITY configName.label "Название конфигурации">
+<!ENTITY configLocation.label "Расположение конфигурации">
+<!ENTITY saveOnExit.label "При выходе автоматически сохранить конфигурацию">
+<!ENTITY zipLocation.label "Чтобы создать XPI-файл, необходима команда ZIP. Если эта команда недоступна через &quot;тропу&quot; поиска (PATH), тогда можно установить её здесь:">
+<!ENTITY customizeExt.label "Параметризация расширения">
+<!ENTITY id.label "Идентификатор:">
+<!ENTITY id.format "Формат: имя-компании-cck@extensions.имя-домена-компании">
+<!ENTITY name.label "Название:">
+<!ENTITY version.label "Версия:">
+<!ENTITY description.label "Описание:">
+<!ENTITY creator.label "Автор:">
+<!ENTITY homepageURL.label "URL домашней страницы:">
+<!ENTITY updateURL.label "URL сайта обновлений:">
+<!ENTITY updateKey.label "Обновление публичного ключа:">
+<!ENTITY updateKey.description "Для Firefox 3 нужен публичный ключ если ваше расширение не обеспечивает безопасного обновления.">
+<!ENTITY icon.label "Иконка:">
+<!ENTITY chooseFile.label "Выбор файла...">
+<!ENTITY chooseDir.label "Выбор папки...">
+<!ENTITY filename.label "Имя файла:">
+<!ENTITY hidden.label "Не показывать данное расширение в менеджере расширений.">
+<!ENTITY locked.label "Удаление этого расширения запрещено, но его можно отключить.">
+<!ENTITY aboutconfig.label "Доступ к расширенным настройкам (about:config) запрещён">
+<!ENTITY customizePartOne.label "Параметризация браузера - часть Первая">
+<!ENTITY orgName.description "Идентификатор компании будет включён как часть строки, описывающей браузер. Информация впоследствии будет отображена в окне при вызове пункта &apos;Справка &gt; О Mozilla Firefox&apos;. Параметр обязателен.">
+<!ENTITY orgName.label "Ввод идентификатора вашей компании (до 10 символов, без пробелов):">
+<!ENTITY orgName.caption "Идентификатор компании">
+<!ENTITY homePage.caption "Стартовые страницы">
+<!ENTITY homePage.label "URL стартовой страницы:">
+<!ENTITY homePage.description "Данная страница будет показана при запуске Firefox или когда пользователь нажимает кнопку &apos;Домашняя страница&apos; (Home).">
+<!ENTITY homePageWelcome.caption "Страница приветствия">
+<!ENTITY homePageWelcome.description "При создании нового профиля в самый первый запуск Firefox&apos;а отображается страница приветствия. Можно заменить эту страницу или не отображать её вовсе.">
+<!ENTITY homePageWelcome.label "Заменить URL-адрес страницы приветствия:">
+<!ENTITY noWelcomePage.label "Не отображать страницу приветствия">
+<!ENTITY homePageOverride.caption "Страница обновления">
+<!ENTITY homePageOverride.description "Данная страница будет показана при самом первом запуске Firefox после создания профиля. Параметр необязателен.">
+<!ENTITY homePageOverride.label "URL вместо стартовой страницы:">
+<!ENTITY noOverridePage.label "Не показывать страницу обновления">
+<!ENTITY titleBar.caption "Заголовок окна браузера">
+<!ENTITY titleBar.label "Свой текст заголовка:">
+<!ENTITY titleBar.description "Вводимый текст (например, название вашей компании) появится в заголовке окна после заголовка страницы. Рекомендуется использовать формат:
+<html:i>Mozilla Firefox: Имя-Компании Edition</html:i>">
+<!ENTITY customizePartTwo.label "Параметризация браузера - часть Вторая">
+<!ENTITY animLogo.caption "Анимированный логотип">
+<!ENTITY animLogoURL.label "Переход по логотипу:">
+<!ENTITY animLogoURL.description "Необходимо ввести адреса сайта, на который ьпроизводится переход при нажатии на анимированный логотип.">
+<!ENTITY animLogoTooltip.description "Необходимо ввести текст всплывающего информера, который появляется при перемещении указателя мышки над анимированным логотипом.">
+<!ENTITY animLogoTooltip.label "Текст информера:">
+<!ENTITY animLogoAnim.description "Местоположение анимированного GIF-файла (16x16 пикселов):">
+<!ENTITY animLogoStill.description "Местоположение статичного GIF- или PNG-файла (16x16 пикселов):">
+<!ENTITY customizePartThree.label "Параметризация браузера - часть Третья">
+<!ENTITY helpMenu.caption "Меню &apos;Справка&apos;">
+<!ENTITY helpMenu.description "Позволяет добавить элемент к меню &apos;Справка&apos;, по которому будет предоставляться доступ к странице корпоративной службы поддержки.">
+<!ENTITY helpMenuText.label "Название элемента меню:">
+<!ENTITY helpMenuURL.label "URL страницы для перехода по элементу меню:">
+<!ENTITY helpMenuAccesskey.label "Быстрая клавиша для вызова этого элемента меню:">
+<!ENTITY customizePartFour.label "Параметризация браузера - часть Четвёртая">
+<!ENTITY allowedSites.caption "Разрешённые сайты">
+<!ENTITY popupAllowedSites.label "Перечисление сайтов, которым разрешено открывать всплывающие окна. Список доменов, разделённых запятой.">
+<!ENTITY installAllowedSites.label "Перечисление сайтов, с которых разрешено устанавливать программное обеспечение (XPI-файлы). Список доменов, разделённых запятой.">
+<!ENTITY customizeBrowserPlugins.label "Параметризация подключаемых модулей (plug-ins)">
+<!ENTITY browserPlugins.description "Для добавления подключаемых модулей необходимо использовать кнопки ниже.">
+<!ENTITY plugins.label "Подключаемые модули">
+<!ENTITY plugins.description "Выбор модуля и платформы, для которой он написан.">
+<!ENTITY customizeSearchEngines.label "Параметризация Поисковиков">
+<!ENTITY searchEngines.description "Для добавления поисковика необходимо использовать кнопки ниже.">
+<!ENTITY defaultSearchEngine.label "Поисковый движок по-умолчанию">
+<!ENTITY engines.label "Поисковики">
+<!ENTITY engines.description "Выбор SRC-файла и соответствующего файла с иконкой.">
+<!ENTITY engine.label "SRC-файл">
+<!ENTITY engineIcon.label "Файл картинки:">
+<!ENTITY file.label "Файл:">
+<!ENTITY folderTitle.label "Заголовок папки:">
+<!ENTITY customizeToolbarOne.label "Параметризация панели закладок - часть Первая">
+<!ENTITY addToolbarFolder.caption "Добавление папки к панели закладок">
+<!ENTITY addToolbarFolder.description "Для добавления закладок в папку панели закладок необходимо использовать кнопки ниже.">
+<!ENTITY addToolbarBookmark.caption "Добавление закладок в панель закладок">
+<!ENTITY addToolbarBookmark.description "Для добавления закладок в панель закладок необходимо использовать кнопки ниже.">
+<!ENTITY customizeToolbarTwo.label "Параметризация панели закладок - часть Вторая">
+<!ENTITY customizeBookmarksOne.label "Параметризация Закладок - часть Первая">
+<!ENTITY customizeBookmarksTwo.label "Параметризация Закладок - часть Вторая">
+<!ENTITY addBookmarkFolder.caption "Добавление папки к закладкам">
+<!ENTITY addBookmarkFolder.description "Для создания папки с закладками необходимо использовать кнопки ниже.">
+<!ENTITY addBookmark.caption "Добавление закладок">
+<!ENTITY addBookmark.description "Для добавления закладок необходимо использовать кнопки ниже.">
+<!ENTITY toolbarLocation.label "Расположение элементов панели">
+<!ENTITY toolbarLocationBegin.label "Разместить элементы панели в начале">
+<!ENTITY toolbarLocationEnd.label "Разместить элементы панели в конце">
+<!ENTITY bookmarkLocation.label "Расположение закладок">
+<!ENTITY bookmarkLocationBegin.label "Разместить закладки в начале">
+<!ENTITY bookmarkLocationEnd.label "Разместить закладки в конце">
+<!ENTITY bookmark.label "Закладка">
+<!ENTITY bookmark.description "Ввод закладки">
+<!ENTITY bookmarkTitle.label "Заголовок:">
+<!ENTITY bookmarkURL.label "URL:">
+<!ENTITY liveBookmark.label "Живые закладки">
+<!ENTITY separator.label "Разделитель">
+<!ENTITY customizePrefs.label "Параметризация предпочтений">
+<!ENTITY customizePrefs.description "Для добавления предпочтений по-умолчанию необходимо использовать кнопки ниже.">
+<!ENTITY prefs.label "Предпочтения">
+<!ENTITY prefName.label "Название:">
+<!ENTITY prefValue.label "Значение:">
+<!ENTITY prefLock.label "Заблокировать предпочтения">
+<!ENTITY newButton.label "Создать">
+<!ENTITY newButton.accesskey "С">
+<!ENTITY deleteButton.label "Удалить">
+<!ENTITY deleteButton.accesskey "У">
+<!ENTITY editButton.label "Изменить">
+<!ENTITY editButton.accesskey "И">
+<!ENTITY moveUpButton.label "Вверх">
+<!ENTITY moveUpButton.accesskey "В">
+<!ENTITY moveDownButton.label "Вниз">
+<!ENTITY moveDownButton.accesskey "н">
+<!ENTITY customizeRegistry.label "Параметризация Реестра (только для Windows)">
+<!ENTITY registry.label "Реестр">
+<!ENTITY registry.description "Для добавления записи в реестр Windows необходимо использовать кнопки ниже. Данные элементы будут добавляться/обновляться каждый раз при старте браузера.">
+<!ENTITY regDescription.label "Описание">
+<!ENTITY regRootKey.label "Корневой элемент">
+<!ENTITY regKey.label "Ключ">
+<!ENTITY regName.label "Имя">
+<!ENTITY regNameValue.label "Значение имени">
+<!ENTITY regType.label "Тип">
+<!ENTITY customizeCerts.label "Параметризация сертификатов">
+<!ENTITY customizeCerts.description "Для выбора предварительной установки сертификатов необходимо использовать кнопки ниже (только PEM-формат).">
+<!ENTITY customizeCerts.warning "<html:b>ЗАМЕЧАНИЕ: После добавления сертификатов в Firefox, его НЕЛЬЗЯ будет устанавливать вне вашей компании или учрежления и называть по прежнему Firefox. Эта возможность прежде всего предназначена для корпоративных пользователей, которые собираются развёртывать Firefox исключительно внутри своей организации. </html:b>">
+<!ENTITY certs.label "Сертификаты">
+<!ENTITY cert.label "Сертификат">
+<!ENTITY cert.trustSSL "Доверять этому Центру Сертификации для идентификации вебсайтов.">
+<!ENTITY cert.trustEmail "Доверять этому Центру Сертификации для идентификации пользователей электронной почты.">
+<!ENTITY cert.trustObjSign "Доверять этому Центру Сертификации для идентификации разработчиков программного обеспечения.">
+<!ENTITY customizeBundles.label "Параметризация Расширений и Тем">
+<!ENTITY customizeBundles.description "Для выбора расширений и тем, которые будут устанавливаться с вашим CCK-пакетом, используйте кнопки ниже.">
+<!ENTITY customizeBundles.warning "<html:b>ЗАМЕЧАНИЕ: После добавления расширений и/или тем к вашему CCK-пакету, его нельзя будет устанавливать как часть установки Firefox. Чтобы всё же произвести установку, необходимо или использовать механизм &apos;-install-global-extension&apos; </html:b>">
+<!ENTITY bundles.label "Расширения/Темы">
+<!ENTITY customizeProxy.label "Настройка прокси конфигурации">
+
+<!ENTITY autoCCKTypeRadio.label "Сохранить конфигурацию прокси-сервера в CCK-файле:">
+<!ENTITY autoCCKTypeRadio.accesskey "С">
+
+<!ENTITY showConfig.title "Конфигурация">
+<!ENTITY cckWizard.oncancel "Все изменения сохранены">
+<!ENTITY cckWizardFinish.description "Для создания CCK-пакета нажмите &quot;Завершить&quot;.">

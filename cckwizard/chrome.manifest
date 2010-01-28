@@ -1,0 +1,15 @@
+overlay chrome://browser/content/browser.xul         chrome://cckwizard/content/cckwizard-browser-overlay.xul
+content cckwizard jar:chrome/cckwizard.jar!/content/
+locale  cckwizard en-US jar:chrome/cckwizard.jar!/locale/en-US/
+locale  cckwizard cs-CZ jar:chrome/cckwizard.jar!/locale/cs-CZ/
+locale  cckwizard da-DK jar:chrome/cckwizard.jar!/locale/da-DK/
+locale  cckwizard de-DE jar:chrome/cckwizard.jar!/locale/de-DE/
+locale  cckwizard es-ES jar:chrome/cckwizard.jar!/locale/es-ES/
+locale  cckwizard fr-FR jar:chrome/cckwizard.jar!/locale/fr-FR/
+locale  cckwizard it-IT jar:chrome/cckwizard.jar!/locale/it-IT/
+locale  cckwizard ja-JP jar:chrome/cckwizard.jar!/locale/ja-JP/
+locale  cckwizard nl-NL jar:chrome/cckwizard.jar!/locale/nl-NL/
+locale  cckwizard pl-PL jar:chrome/cckwizard.jar!/locale/pl-PL/
+locale  cckwizard pt-BR jar:chrome/cckwizard.jar!/locale/pt-BR/
+locale  cckwizard ru-RU jar:chrome/cckwizard.jar!/locale/ru-RU/
+locale  cckwizard zh-CN jar:chrome/cckwizard.jar!/locale/zh-CN/

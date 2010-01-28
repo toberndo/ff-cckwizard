@@ -1,0 +1,175 @@
+<!ENTITY cckWizard.title "Zákazanický kit pro Firefox (CCK)">
+<!ENTITY cckWizard.description "Tento nástroj vám pomůže vytvářet rozšíření pro zákaznickou úpravu Firefoxu. Toto rozšíření může být buď instalováno uživatelem, nebo obsaženo v instalačním balíčku.">
+<!ENTITY beforeYouBegin.label "Než začnete">
+<!ENTITY beforeYouBegin.description "Rozmyslete si, které zákaznické úpravy hodláte provést a vytvořte či uložte upravené soubory, jako:
+                                         <html:ul>
+                                         <html:li>Upravené animované soubory loga prohlížeče</html:li>
+                                         <html:li>Vyhledávače (SRC soubory a odpovídající ikony)</html:li>
+                                         <html:li>Zásuvné moduly prohlížeče</html:li>
+                                         <html:li>Rozšíření či témata vzhledu</html:li>
+                                         </html:ul>">
+<!ENTITY configurePage.label "Konfigurace rozšíření">
+<!ENTITY selectConfig.label "Vyberte existující konfiguraci anebo vytvořte novou">
+<!ENTITY selectConfig.description "Vyberte existující konfiguraci, nebo klepněte na &apos;Nová&apos; a vytvořte novou konfiguraci spolu s pracovní plochou, ve které budou ukládány vaše soubory nastavení. Pro úpravu existující konfigurace bez jejího přepsání, ji nejprve vyberte ze seznamu a pak klepněte na &apos;Kopírovat&apos;.">
+<!ENTITY showConfig.label "Zobrazit informaci o konfiguraci">
+<!ENTITY openConfig.label "Open">
+<!ENTITY newConfig.label "Nová">
+<!ENTITY copyConfig.label "Kopírovat">
+<!ENTITY deleteConfig.label "Smazat">
+<!ENTITY createConfig.title "Vytvořit novou konfiguraci">
+<!ENTITY copyConfig.title "Kopírovat existující konfiguraci">
+<!ENTITY configName.label "Název konfigurace">
+<!ENTITY configLocation.label "Umístění konfigurace">
+<!ENTITY saveOnExit.label "Automaticky ulož konfiguraci při zavření">
+<!ENTITY zipLocation.label "Abyste mohli vytvořit XPI, je potřeba použít ZIP. If ZIP není na vaší cestě, můžete uvést jeho umístění zde:">
+<!ENTITY customizeExt.label "Upravit rozšíření">
+<!ENTITY id.label "Unikátní ID:">
+<!ENTITY id.format "Formát: názevFirmy-cck@extensions.doména.tld">
+<!ENTITY name.label "Název:">
+<!ENTITY version.label "Verze:">
+<!ENTITY description.label "Popis:">
+<!ENTITY creator.label "Autor:">
+<!ENTITY homepageURL.label "URL domovské stránky:">
+<!ENTITY updateURL.label "URL adresa pro aktualizace:">
+<!ENTITY updateKey.label "Update Public Key:">
+<!ENTITY updateKey.description "Firefox 3 requires a public key if your extension does not provide a secure update.">
+<!ENTITY icon.label "Ikona:">
+<!ENTITY chooseFile.label "Zvolte soubor...">
+<!ENTITY chooseDir.label "Zvolte adresář...">
+<!ENTITY filename.label "Název souboru:">
+<!ENTITY hidden.label "Nezobrazovat toto rozšíření ve Správci rozšíření.">
+<!ENTITY locked.label "Zamezit odinstalování tohoto rozšíření (rozšíření může být nadále zakázáno).">
+<!ENTITY aboutconfig.label "Neumožnit přístup do about:config">
+<!ENTITY customizePartOne.label "Zákaznická úprava prohlížeče - Část I">
+<!ENTITY orgName.description "Identifikátor společnosti je zahrnut jsko součást řetězce identifikujícího prohlížeč, který se zobrazí, když otevřete nabídku Nápovědy a zvolíte O aplikaci Mozilla Firefox. Údaj je povinný.">
+<!ENTITY orgName.label "Vložte identifikátor vaší společnosti (až 10 znaků, žádné mezery):">
+<!ENTITY orgName.caption "Identifikátor společnosti">
+<!ENTITY homePage.caption "Domovské stránky">
+<!ENTITY homePage.label "URL pro výchozí domovskou stránku:">
+<!ENTITY homePage.description "Tato stránka se zobrazí když uživatelé poprvé spustí Firefox, nebo když klepnou na tlačítko Domů.">
+<!ENTITY homePageWelcome.caption "Welcome Page">
+<!ENTITY homePageWelcome.description "On the very first invocation of Firefox after a new profile is created, a welcome page is displayed. You can choose to replace this page or to not display it at all.">
+<!ENTITY homePageWelcome.label "Replacement Welcome Page URL:">
+<!ENTITY noWelcomePage.label "Do not display the welcome page">
+<!ENTITY homePageOverride.caption "Upgrade Page">
+<!ENTITY homePageOverride.description "Tato stránka se zobrazí při úplně prvním spuštění Firefoxu poté, co je vytvořen nový profil. Není povinné.">
+<!ENTITY homePageOverride.label "Přepsat URL domovské stránky:">
+<!ENTITY noOverridePage.label "Do not display the upgrade page">
+<!ENTITY titleBar.caption "Text v titulku okna prohlížeče">
+<!ENTITY titleBar.label "Upravit text titulku prohlížeče:">
+<!ENTITY titleBar.description "Text, který vložít (například název vaší společnosti) se zobrazí za názvem stránky v titulkové liště okna. Doporučuje se použít formát
+                                         <html:i>Mozilla Firefox: Verze názvuSpolečnosti</html:i>">
+<!ENTITY customizePartTwo.label "Zákaznická úprava prohlížeče - Část II">
+<!ENTITY animLogo.caption "Animované logo">
+<!ENTITY animLogoURL.label "URL talčítka s logem:">
+<!ENTITY animLogoURL.description "Vložte adresu, na kterou se uživatel dostane po klepnutí na tlačítko s animovaným logem.">
+<!ENTITY animLogoTooltip.description "Vložte popisek, který uživatel uvidí, když najede myší na tlačítko s animovaným logem.">
+<!ENTITY animLogoTooltip.label "Popisek talčítka s logem:">
+<!ENTITY animLogoAnim.description "Cesta k vašemu animovanému GIF souboru (16x16 pixelů):">
+<!ENTITY animLogoStill.description "Cesta k vašemu GIF či PNG souboru statického loga (16x16 pixelů):">
+<!ENTITY customizePartThree.label "Zákaznická úprava prohlížeče - Část III">
+<!ENTITY helpMenu.caption "Nabídka nápovědy">
+<!ENTITY helpMenu.description "Můžete přidat položku do nabídky nápovědy, která zajistí odkaz na stránku vaší on-line nápovědy.">
+<!ENTITY helpMenuText.label "Text položky nabídky:">
+<!ENTITY helpMenuURL.label "URL adresa položky nabídky:">
+<!ENTITY helpMenuAccesskey.label "Klávesová zkratka položky nabídky:">
+<!ENTITY customizePartFour.label "Zákaznická úprava prohlížeče - Část IV">
+<!ENTITY allowedSites.caption "Povolené servery">
+<!ENTITY popupAllowedSites.label "Můžete určit domény, pro něž jsou povolena vyskakovací okna. Uveďte seznam domén, oddělených čárkou.">
+<!ENTITY installAllowedSites.label "Můžete určit domény, pro něž jsou povoleny instalace rozčšíření (XPI). Uveďte seznam domén, oddělených čárkou.">
+
+<!ENTITY  cookieAllowedSites.label      "You can specify domains for which cookies are always allowed. List the domains, separated by a comma.">
+
+<!ENTITY  deniedSites.caption          "Denied Sites">
+<!ENTITY  popupDeniedSites.label       "You can specify domains for which popups are denied. List the domains, separated by a comma.">
+<!ENTITY  installDeniedSites.label     "You can specify domains for which software installations (XPIs) are denied. List the domains, separated by a comma.">
+<!ENTITY  cookieDeniedSites.label      "You can specify domains for which cookies are always denied. List the domains, separated by a comma.">
+
+<!ENTITY customizeBrowserPlugins.label "Specifikace zásuvných modulů">
+<!ENTITY browserPlugins.description "Použijte následující tlačítka pro přidání zásuvných modulů prohlížeče.">
+<!ENTITY plugins.label "Zásuvné moduly prohlížeče">
+<!ENTITY plugins.description "Vyberte prosím zásuvný modul prohlížeče a platformu, pro níž je určen.">
+<!ENTITY customizeSearchEngines.label "Specifikace vyhledávačů">
+<!ENTITY searchEngines.description "Použijte následující tlačítka pro přidání vyhledávače.">
+<!ENTITY defaultSearchEngine.label "Default Search Engine">
+<!ENTITY engines.label "Vyhledávače">
+<!ENTITY engines.description "Prosím vyberte soubor .src a odpovídající ikonu.">
+<!ENTITY engine.label "Soubor SRC">
+<!ENTITY engineIcon.label "Soubor ikony:">
+<!ENTITY file.label "Soubor:">
+<!ENTITY folderTitle.label "Název složky:">
+<!ENTITY customizeToolbarOne.label "Specifikace lišty záložek - část I">
+<!ENTITY addToolbarFolder.caption "Přidejte složku do lišty záložek">
+<!ENTITY addToolbarFolder.description "Použijte následující tlačítka pro přidání záložek do složky na liště záložek.">
+<!ENTITY addToolbarBookmark.caption "Přidejte záložky na lištu záložek">
+<!ENTITY addToolbarBookmark.description "Použijte následující tlačítka pro přidání záložek do lišty záložek.">
+<!ENTITY customizeToolbarTwo.label "Specifikace lišty záložek - část II">
+<!ENTITY customizeBookmarksOne.label "Specifikace záložek - část I">
+<!ENTITY customizeBookmarksTwo.label "Specifikace záložek - část II">
+<!ENTITY addBookmarkFolder.caption "Přidejte složku do záložek">
+<!ENTITY addBookmarkFolder.description "Použijte následující tlačítka pro vytvoření složky se záložkama.">
+<!ENTITY addBookmark.caption "Přidejte záložky">
+<!ENTITY addBookmark.description "Použijte následující tlačítka pro přidání záložek.">
+<!ENTITY toolbarLocation.label "Umístění položek lišty záložek">
+<!ENTITY toolbarLocationBegin.label "Umístit položky lišty na začátek">
+<!ENTITY toolbarLocationEnd.label "Umístit položky lišty na konec">
+<!ENTITY bookmarkLocation.label "Umístění položek záložek">
+<!ENTITY bookmarkLocationBegin.label "Umístit záložky na začátek">
+<!ENTITY bookmarkLocationEnd.label "Umístit záložky na konec">
+<!ENTITY bookmark.label "Záložka">
+<!ENTITY bookmark.description "Vložte záložku">
+<!ENTITY bookmarkTitle.label "Název:">
+<!ENTITY bookmarkURL.label "Adresa URL:">
+<!ENTITY liveBookmark.label "Aktuální záložka">
+<!ENTITY separator.label "Oddělovač">
+<!ENTITY customizePrefs.label "Úprava možností nastavení">
+<!ENTITY customizePrefs.description "Použijte následující tlačítka pro přidání výchozích nastavení.">
+<!ENTITY prefs.label "Nastavení">
+<!ENTITY prefName.label "Název nastavení:">
+<!ENTITY prefValue.label "Hodnota:">
+<!ENTITY prefLock.label "Zamknout nastavení">
+<!ENTITY newButton.label "Nové">
+<!ENTITY newButton.accesskey "V">
+<!ENTITY deleteButton.label "Smazat">
+<!ENTITY deleteButton.accesskey "Z">
+<!ENTITY editButton.label "Upravit">
+<!ENTITY editButton.accesskey "A">
+<!ENTITY moveUpButton.label "Posun nahoru">
+<!ENTITY moveUpButton.accesskey "H">
+<!ENTITY moveDownButton.label "Posun dolů">
+<!ENTITY moveDownButton.accesskey "D">
+<!ENTITY customizeRegistry.label "Úprava registrů (pouze pro Windows)">
+<!ENTITY registry.label "Registr">
+<!ENTITY registry.description "Použijte následující tlačítka pro přidání záznamů do registrů Windows. Pamatujte, že tyto položky budou přidány/aktualizovány při každém spuštění prohlížeče.">
+<!ENTITY regDescription.label "Description">
+<!ENTITY regRootKey.label "Kořenový klíč">
+<!ENTITY regKey.label "Klíč">
+<!ENTITY regName.label "Název">
+<!ENTITY regNameValue.label "Hodnota">
+<!ENTITY regType.label "Typ">
+<!ENTITY customizeCerts.label "Specifikace certifikátů">
+<!ENTITY customizeCerts.description "Použijte následující tlačítka pro výběr certifikátů, jež mají být předinstalovány (pouze formátu PEM).">
+<!ENTITY customizeCerts.warning "<html:b>DŮLEŽITÉ: Pokud přidáte do Firfoxu certifikát, NEMŮŽETE
+                                         vydat prohlížeč mimo vaší společnost či instituci a nazývat ho Firefox.
+                                         Tato vlastnost je záměřena především na korporátní uživatele a instituce,
+                                         jež budou rozšiřovat Firefox uvnitř své organizace/společnosti.</html:b>">
+<!ENTITY certs.label "Certifikáty">
+<!ENTITY cert.label "Certifikát">
+<!ENTITY cert.trustSSL "Důvěřovat této CA při identifikaci webových serverů.">
+<!ENTITY cert.trustEmail "Důvěřovat této CA při identifikaci emailových uživatelů.">
+<!ENTITY cert.trustObjSign "Důvěřovat této CA při identifikaci softwarových vývojářů.">
+<!ENTITY customizeBundles.label "Specifikace rozšíření/témat vzhledu">
+<!ENTITY customizeBundles.description "Použijte následující tlačítka pro výběr rozšíření a témat vzhledu, jež se mají nainstalovat s vaším CCK.">
+<!ENTITY customizeBundles.warning "<html:b>DŮLEŽITÉ: Pokud přidáte rozšíření anebo témata vzhledu do vašeho CCK,
+                                         nemůžete již instalovat CCK jako součást instalace Firefoxu. Musíte
+                                         instalovat pomocí prohlížeče nebo mechanismem globální instalace rozšíření.
+                                         </html:b>">
+<!ENTITY bundles.label "Rozšíření/témata vzhledu">
+<!ENTITY customizeProxy.label "Specifikace nastavení proxy serverů">
+
+<!ENTITY autoCCKTypeRadio.label "Store proxy configuration file in the CCK:">
+<!ENTITY autoCCKTypeRadio.accesskey "i">
+
+<!ENTITY showConfig.title "Zobrazit konfiguraci">
+<!ENTITY cckWizard.oncancel "Všechny změněné údaje budou uloženy">
+<!ENTITY cckWizardFinish.description "Klepnět na Dokončit k vytvoření balíčku CCK.">

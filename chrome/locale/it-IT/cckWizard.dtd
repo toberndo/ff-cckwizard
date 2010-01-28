@@ -1,0 +1,175 @@
+<!ENTITY cckWizard.title "Firefox Client Customization Kit (CCK)">
+<!ENTITY cckWizard.description "La configurazione guidata consente di creare un&apos;estensione per personalizzare Firefox. L&apos;estensione creata potrà essere sia installata dall&apos;utente che inclusa in un pacchetto d&apos;installazione">
+<!ENTITY beforeYouBegin.label "Prima di iniziare">
+<!ENTITY beforeYouBegin.description "È possibile decidere quali personalizzazioni effettuare e successivamente creare/raccogliere i file personalizzati, quali:
+                                         <html:ul>
+                                         <html:li>il file per il logo animato del browser</html:li>
+                                         <html:li>i motori di ricerca (file ed immagini relative)</html:li>
+                                         <html:li>i plug-in del browser</html:li>
+                                         <html:li>le estensioni ed i temi</html:li>
+                                         </html:ul>">
+<!ENTITY configurePage.label "Configurazioni dell&apos;estensione">
+<!ENTITY selectConfig.label "Selezione di una configurazione esistente o creazione di una nuova">
+<!ENTITY selectConfig.description "Selezionare una configurazione esistente, o fare clic su &apos;Nuova…&apos; per crearne una nuova ed uno spazio di lavoro in cui salvare i file personalizzati. Per modificare una configurazione esistente senza sovrascrivere quella originale, selezionarla dalla lista e fare clic su &apos;Copia…&apos;">
+<!ENTITY showConfig.label "Mostra le informazioni di configurazione">
+<!ENTITY openConfig.label "Open">
+<!ENTITY newConfig.label "Nuova…">
+<!ENTITY copyConfig.label "Copia…">
+<!ENTITY deleteConfig.label "Elimina">
+<!ENTITY createConfig.title "Crea una nuova configurazione">
+<!ENTITY copyConfig.title "Copia la configurazione esistente">
+<!ENTITY configName.label "Nome della configurazione">
+<!ENTITY configLocation.label "Percorso della configurazione">
+<!ENTITY saveOnExit.label "Salva automaticamente la configurazione quando si chiude il browser">
+<!ENTITY zipLocation.label "<html:b>Importante:</html:b> per creare il file XPI assicurarsi che nel percorso ci sia un programma per comprimere (ZIP o 7-Zip). Utilizzare il pulsante &apos;Sfoglia…&apos; per selezionare uno dei due file eseguibili (nota: se nella cartella selezionata sono presenti entrambi gli eseguibili verrà utilizzato come predefinito zip.exe)">
+<!ENTITY customizeExt.label "Personalizzazione dell&apos;estensione">
+<!ENTITY id.label "ID unico:">
+<!ENTITY id.format "Formato: companyname-cck@extensions.domainname.tld">
+<!ENTITY name.label "Nome:">
+<!ENTITY version.label "Versione:">
+<!ENTITY description.label "Descrizione:">
+<!ENTITY creator.label "Autore:">
+<!ENTITY homepageURL.label "URL del sito:">
+<!ENTITY updateURL.label "URL dell&apos;aggiornamento:">
+<!ENTITY updateKey.label "Chiave pubblica dell&apos;aggiornamento:">
+<!ENTITY updateKey.description "È necessaria una chiave pubblica per la versione 3 di Firefox in caso le proprie estensioni non fornissero un aggiornamento sicuro">
+<!ENTITY icon.label "Icona:">
+<!ENTITY chooseFile.label "Sfoglia…">
+<!ENTITY chooseDir.label "Sfoglia…">
+<!ENTITY filename.label "Nome del file:">
+<!ENTITY hidden.label "Non mostrare l&apos;estensione nella finestra &apos;Estensioni&apos;">
+<!ENTITY locked.label "Impedisci la disinstallazione dell&apos;estensione (opzione annullabile in seguito)">
+<!ENTITY aboutconfig.label "Impedisci l&apos;accesso ad about:config">
+<!ENTITY customizePartOne.label "Prima fase della personalizzazione del browser">
+<!ENTITY orgName.description "L&apos;ID dell&apos;azienda che è incluso nella stringa dello user agent del browser (visualizzabile selezionando nel menu &apos;?&apos; la voce &apos;Informazioni su Mozilla Firefox&apos;) è necessario">
+<!ENTITY orgName.label "ID dell&apos;azienda (non deve contenere più di 10 caratteri né spazi):">
+<!ENTITY orgName.caption "ID dell&apos;azienda">
+<!ENTITY homePage.caption "Pagina iniziale">
+<!ENTITY homePage.label "Indirizzo/i:">
+<!ENTITY homePage.description "Gli indirizzi inseriti verranno caricati all&apos;avvio del browser o facendo clic sul pulsante &apos;Pagina iniziale&apos; nelle barre degli strumenti">
+<!ENTITY homePageWelcome.caption "Pagina di benvenuto">
+<!ENTITY homePageWelcome.description "Al primo avvio di Firefox, dopo la creazione di un nuovo profilo, verrà visualizzata una pagina di benvenuto. È possibile sia sostituire tale pagina che non visualizzarla affatto">
+<!ENTITY homePageWelcome.label "URL della pagina di benvenuto sostitutiva:">
+<!ENTITY noWelcomePage.label "Non visualizzare la pagina di benvenuto">
+<!ENTITY homePageOverride.caption "Pagina per l&apos;aggiornamento">
+<!ENTITY homePageOverride.description "Al primo avvio di Firefox, dopo relativo aggiornamento ad una nuova versione, verrà visualizzata una pagina di benvenuto. È possibile sia sostituire tale pagina che non visualizzarla affatto">
+<!ENTITY homePageOverride.label "URL della pagina per l&apos;aggiornamento:">
+<!ENTITY noOverridePage.label "Non visualizzare la pagina per l&apos;aggiornamento">
+<!ENTITY titleBar.caption "Testo nella barra del titolo della finestra del browser">
+<!ENTITY titleBar.label "Personalizzazione del testo nella barra del titolo">
+<!ENTITY titleBar.description "Il testo inserito (ad esempio, il nome dell&apos;azienda) appare dopo il titolo della pagina nella barra del titolo. Si raccomanda di usare il formato
+                                         <html:i>Mozilla Firefox: edizione di &apos;nome dell&apos;azienda&apos;</html:i>">
+<!ENTITY customizePartTwo.label "Seconda fase della personalizzazione del browser">
+<!ENTITY animLogo.caption "Indicatore attività">
+<!ENTITY animLogoURL.label "URL del pulsante per l&apos;indicatore di attività:">
+<!ENTITY animLogoURL.description "Inserire l&apos;URL che verrà caricato quando gli utenti faranno clic sul pulsante per l&apos;indicatore di attività">
+<!ENTITY animLogoTooltip.description "Inserire il testo del tooltip che verrà visualizzato quando gli utenti passeranno con il mouse sull&apos;indicatore di attività">
+<!ENTITY animLogoTooltip.label "Tooltip del pulsante per l&apos;indicatore di attività:">
+<!ENTITY animLogoAnim.description "Percorso del file .gif animato (16x16 pixel):">
+<!ENTITY animLogoStill.description "Percorso del file .gif oppure .png (16x16 pixel):">
+<!ENTITY customizePartThree.label "Terza fase della personalizzazione del browser">
+<!ENTITY helpMenu.caption "Menu &apos;?&apos;">
+<!ENTITY helpMenu.description "È possibile aggiungere al menu &apos;?&apos; un elemento per fornire un link per la propria pagina di supporto in linea">
+<!ENTITY helpMenuText.label "Testo dell&apos;elemento:">
+<!ENTITY helpMenuURL.label "URL dell&apos;elemento:">
+<!ENTITY helpMenuAccesskey.label "Accesskey dell&apos;elemento:">
+<!ENTITY customizePartFour.label "Quarta fase della personalizzazione del browser">
+<!ENTITY allowedSites.caption "Siti con permesso">
+<!ENTITY popupAllowedSites.label "È possibile indicare quali siti potranno aprire finestre pop-up. Inserire l&apos;indirizzo esatto dei siti a cui dare il permesso separandoli con una virgola">
+<!ENTITY installAllowedSites.label "È possibile indicare quali siti potranno installare software. Inserire l&apos;indirizzo esatto dei siti a cui dare il permesso separandoli con una virgola">
+
+<!ENTITY  cookieAllowedSites.label      "You can specify domains for which cookies are always allowed. List the domains, separated by a comma.">
+
+<!ENTITY  deniedSites.caption          "Denied Sites">
+<!ENTITY  popupDeniedSites.label       "You can specify domains for which popups are denied. List the domains, separated by a comma.">
+<!ENTITY  installDeniedSites.label     "You can specify domains for which software installations (XPIs) are denied. List the domains, separated by a comma.">
+<!ENTITY  cookieDeniedSites.label      "You can specify domains for which cookies are always denied. List the domains, separated by a comma.">
+
+<!ENTITY customizeBrowserPlugins.label "Personalizzazione dei plug-in del browser">
+<!ENTITY browserPlugins.description "Fare clic su &apos;Nuovo…&apos; per aggiungere plug-in">
+<!ENTITY plugins.label "Plug-in del browser">
+<!ENTITY plugins.description "Seleziona un plug-in e la piattaforma per il quale è scritto">
+<!ENTITY customizeSearchEngines.label "Personalizzazione dei motori di ricerca">
+<!ENTITY searchEngines.description "Fare clic su &apos;Nuovo…&apos; per aggiungere motori di ricerca">
+<!ENTITY defaultSearchEngine.label "Motore di ricerca predefinito">
+<!ENTITY engines.label "Motori di ricerca">
+<!ENTITY engines.description "Seleziona un file per il motore di ricerca ed un&apos;immagine corrispondente">
+<!ENTITY engine.label "File per il motore di ricerca">
+<!ENTITY engineIcon.label "Immagine per il file per il motore di ricerca">
+<!ENTITY file.label "File:">
+<!ENTITY folderTitle.label "Nome della cartella:">
+<!ENTITY customizeToolbarOne.label "Prima fase della personalizzazione della barra dei segnalibri">
+<!ENTITY addToolbarFolder.caption "Nuovo segnalibro in una cartella nella barra dei segnalibri">
+<!ENTITY addToolbarFolder.description "Fare clic su &apos;Nuovo…&apos; per aggiungere segnalibri in una cartella nella barra dei segnalibri">
+<!ENTITY addToolbarBookmark.caption "Nuovo segnalibro nella barra dei segnalibri">
+<!ENTITY addToolbarBookmark.description "Fare clic su &apos;Nuovo…&apos; per aggiungere segnalibri nella barra dei segnalibri">
+<!ENTITY customizeToolbarTwo.label "Seconda fase della personalizzazione della barra dei segnalibri">
+<!ENTITY customizeBookmarksOne.label "Prima fase della personalizzazione dei segnalibri">
+<!ENTITY customizeBookmarksTwo.label "Seconda fase della personalizzazione dei segnalibri">
+<!ENTITY addBookmarkFolder.caption "Nuovo segnalibro in una cartella">
+<!ENTITY addBookmarkFolder.description "Fare clic su &apos;Nuovo…&apos; per aggiungere segnalibri in una cartella">
+<!ENTITY addBookmark.caption "Nuovo segnalibro">
+<!ENTITY addBookmark.description "Fare clic su &apos;Nuovo…&apos; per aggiungere segnalibri">
+<!ENTITY toolbarLocation.label "Posizione della barra dei segnalibri">
+<!ENTITY toolbarLocationBegin.label "In cima">
+<!ENTITY toolbarLocationEnd.label "In fondo">
+<!ENTITY bookmarkLocation.label "Posizione del menu dei segnalibri">
+<!ENTITY bookmarkLocationBegin.label "In cima">
+<!ENTITY bookmarkLocationEnd.label "In fondo">
+<!ENTITY bookmark.label "Segnalibro">
+<!ENTITY bookmark.description "Inserisci titolo ed URL del segnalibro">
+<!ENTITY bookmarkTitle.label "Titolo:">
+<!ENTITY bookmarkURL.label "URL:">
+<!ENTITY liveBookmark.label "Segnalibro Live">
+<!ENTITY separator.label "Separatore">
+<!ENTITY customizePrefs.label "Personalizzazione delle opzioni">
+<!ENTITY customizePrefs.description "Fare clic su &apos;Nuovo…&apos; per aggiungere le opzioni predefinite">
+<!ENTITY prefs.label "Opzioni">
+<!ENTITY prefName.label "Nome:">
+<!ENTITY prefValue.label "Valore:">
+<!ENTITY prefLock.label "Blocca le opzioni">
+<!ENTITY newButton.label "Nuovo…">
+<!ENTITY newButton.accesskey "v">
+<!ENTITY deleteButton.label "Elimina">
+<!ENTITY deleteButton.accesskey "E">
+<!ENTITY editButton.label "Modifica…">
+<!ENTITY editButton.accesskey "M">
+<!ENTITY moveUpButton.label "Sposta su">
+<!ENTITY moveUpButton.accesskey "U">
+<!ENTITY moveDownButton.label "Sposta giù">
+<!ENTITY moveDownButton.accesskey "O">
+<!ENTITY customizeRegistry.label "Personalizzazione del registro (solo per ambiente Windows)">
+<!ENTITY registry.label "Registro">
+<!ENTITY registry.description "Fare clic su &apos;Nuovo…&apos; per aggiungere elementi al registro di Windows. Si noti che questi elementi verranno aggiunti/aggiornati ad ogni avvio del browser">
+<!ENTITY regDescription.label "Descrizione">
+<!ENTITY regRootKey.label "Chiave principale">
+<!ENTITY regKey.label "Chiave">
+<!ENTITY regName.label "Nome">
+<!ENTITY regNameValue.label "Valore">
+<!ENTITY regType.label "Tipo">
+<!ENTITY customizeCerts.label "Personalizzazione dei certificati">
+<!ENTITY customizeCerts.description "Fare clic su &apos;Nuovo…&apos; per selezionare i certificati da preinstallare (solo formato PEM)">
+<!ENTITY customizeCerts.warning "<html:b>Importante: se si aggiungono certificati a Firefox, sarà impossibile
+                                         inviare il browser fuori dall&apos;azienda o dall&apos;istituzione denominandolo Firefox.
+                                         Questa caratteristica è progettata soprattutto per utenti di corporazioni ed
+                                         istituzioni che impiegheranno Firefox all&apos;interno delle loro organizzazioni</html:b>">
+<!ENTITY certs.label "Certificati">
+<!ENTITY cert.label "Certificato">
+<!ENTITY cert.trustSSL "Dai fiducia a questa CA per l&apos;identificazione di siti web">
+<!ENTITY cert.trustEmail "Dai fiducia a questa CA per l&apos;identificazione di utenti di posta">
+<!ENTITY cert.trustObjSign "Dai fiducia a questa CA per l&apos;identificazione di produttori software">
+<!ENTITY customizeBundles.label "Personalizzazione di estensioni e temi">
+<!ENTITY customizeBundles.description "Fare clic su &apos;Nuovo…&apos; per selezionare estensioni e temi da installare con CCK">
+<!ENTITY customizeBundles.warning "<html:b>Importante: se si aggiungono estensioni e/o temi a CCK, sarà impossibile
+                                         installare CCK come componente in un&apos;installazione di Firefox. Si dovrà quindi
+                                         installare CCK attraverso il browser
+                                         </html:b>">
+<!ENTITY bundles.label "Estensioni e temi">
+<!ENTITY customizeProxy.label "Personalizzazione della configurazione dei proxy">
+
+<!ENTITY autoCCKTypeRadio.label "Conserva il file di configurazione dei proxy in CCK:">
+<!ENTITY autoCCKTypeRadio.accesskey "y">
+
+<!ENTITY showConfig.title "Configurazione">
+<!ENTITY cckWizard.oncancel "Tutti i dati modificati verranno salvati">
+<!ENTITY cckWizardFinish.description "Fare clic su &apos;Fine&apos; per creare il pacchetto CCK">

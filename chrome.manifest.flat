@@ -1,0 +1,3 @@
+locale cckwizard en-US chrome/locale/en-US/
+content cckwizard chrome/content/
+overlay chrome://browser/content/browser.xul         chrome://cckwizard/content/cckwizard-browser-overlay.xul
