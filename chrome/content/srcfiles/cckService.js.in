@@ -232,6 +232,7 @@ CCKService.prototype = {
 			key.close();
 		} catch (ex) {
 			/* This could fail if you don't have the right authority on Windows */
+			key.close();
 		}
 	},
   addCertificate: function(CertName, CertTrust) {
