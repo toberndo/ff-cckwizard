@@ -1163,9 +1163,25 @@ function CreateCCK()
   if (filename.length == 0)
     filename = "cck";
   filename += ".xpi";
+  
+  var zipContents = ["chrome", "components", "defaults", "platform", "searchplugins", "chrome.manifest", "install.rdf", "cck.config"];
 
+
+  if (document.getElementById('bundleList').getRowCount() > 0) {
+    listbox = document.getElementById('bundleList');
+    
+    var tempfile = Components.classes["@mozilla.org/file/local;1"]
+                               .createInstance(Components.interfaces.nsILocalFile);
+    for (var i=0; i < listbox.getRowCount(); i++) {    
+      listitem = listbox.getItemAtIndex(i);
+      CCKCopyFile(listitem.getAttribute("label"), destdir);
+      tempfile.initWithPath(listitem.getAttribute("label"));
+      zipContents.push(tempfile.leafName);
+    }
+  }
+  
   CCKZip("cck.xpi", destdir,
-         ["chrome", "components", "defaults", "platform", "searchplugins", "chrome.manifest", "install.rdf", "cck.config"]);
+         zipContents);
 
   var outputdir = Components.classes["@mozilla.org/file/local;1"]
                             .createInstance(Components.interfaces.nsILocalFile);
@@ -1173,56 +1189,12 @@ function CreateCCK()
   outputdir.initWithPath(currentconfigpath);
   destdir.append("cck.xpi");
   
-  if (document.getElementById('bundleList').getRowCount() == 0) {
-    outputdir.append(filename);
-    try {
-      outputdir.remove(true);
-    } catch(ex) {}
-    outputdir = outputdir.parent;
-    destdir.copyTo(outputdir, filename);
-  } else {
-    var packagedir = Components.classes["@mozilla.org/file/local;1"]
-                               .createInstance(Components.interfaces.nsILocalFile);                   
-                                                                                          
-    packagedir.initWithPath(currentconfigpath);
-    packagedir.append("package");
-  
-    try {
-      packagedir.remove(true);
-      packagedir.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0775);
-    } catch(ex) {}
-
-    CCKCopyFile(destdir.path, packagedir);
-
-    listbox = document.getElementById('bundleList');
-    
-    var files_to_zip = ["cck.xpi", "install.rdf"];
-    var tempfile = Components.classes["@mozilla.org/file/local;1"]
-                               .createInstance(Components.interfaces.nsILocalFile);
-
-    for (var i=0; i < listbox.getRowCount(); i++) {    
-      listitem = listbox.getItemAtIndex(i);
-      CCKCopyFile(listitem.getAttribute("label"), packagedir);
-      tempfile.initWithPath(listitem.getAttribute("label"));
-      files_to_zip.push(tempfile.leafName);
-    }
-
-    CCKCopyChromeToFile("install.rdf.mip", packagedir)
-
-    packagedir.append("install.rdf.mip");
-    packagedir.moveTo(packagedir.parent, "install.rdf");
-
-    packagedir = packagedir.parent;
-    
-    CCKZip("cck.zip", packagedir, files_to_zip);
-    packagedir.append("cck.zip");
-    outputdir.append(filename);
-    try {
-      outputdir.remove(true);
-    } catch(ex) {}
-    outputdir = outputdir.parent;
-    packagedir.copyTo(outputdir, filename);
-  }
+  outputdir.append(filename);
+  try {
+    outputdir.remove(true);
+  } catch(ex) {}
+  outputdir = outputdir.parent;
+  destdir.copyTo(outputdir, filename);
 
   var bundle = document.getElementById("bundle_cckwizard");
 
@@ -2081,6 +2053,7 @@ function CCKWriteCCKServiceJS(destdir)
 
   str = str.replace(/%uuid%/g, uuidString);
   str = str.replace(/%OrganizationName%/g, document.getElementById("OrganizationName").value);
+  str = str.replace(/%id%/g, document.getElementById("id").value);
 
   cos.writeString(str);
   cos.close();

@@ -46,6 +46,7 @@ CCKService.prototype = {
         break;
       case "final-ui-startup":
         this.init();
+        this.installXPIs();
         break;
     }
   },
@@ -361,6 +362,86 @@ CCKService.prototype = {
   },
   log: function(string) {
     gConsoleService.logStringMessage(string);
+  },
+  installXPIs: function() {
+    /* If there are XPIs, install them */
+    var items_installed = false;
+    var em = Cc["@mozilla.org/extensions/manager;1"]
+                       .getService(Ci.nsIExtensionManager);
+  
+    try {
+      var extdir = em.getInstallLocation("%id%")
+                       .getItemLocation("%id%");
+    } catch (ex) {
+      return;
+    }
+  
+    var e = extdir.directoryEntries;
+    while (e.hasMoreElements()) {
+      var f = e.getNext().QueryInterface(Components.interfaces.nsIFile);
+      var splitpath = f.path.split(".");
+      /* Only load XPI files */
+      if ((splitpath[splitpath.length-1] == "xpi") || (splitpath[splitpath.length-1] == "jar")) {
+        var zipReader = Cc["@mozilla.org/libjar/zip-reader;1"]
+                                  .createInstance(Ci.nsIZipReader);
+        try {
+          zipReader.init(f);
+          zipReader.open();
+        } catch(ex) {
+          zipReader.open(f);
+        }
+        var tempfile = Cc["@mozilla.org/file/directory_service;1"]
+                                 .getService(Ci.nsIProperties)
+                                 .get("TmpD", Ci.nsIFile);
+        tempfile.append("install.rdf");
+        tempfile.createUnique(Ci.nsIFile.NORMAL_FILE_TYPE, 0600);
+        zipReader.extract("install.rdf", tempfile);
+        zipReader.close();
+        var ioServ = Cc["@mozilla.org/network/io-service;1"]
+                               .getService(Ci.nsIIOService);
+        var fph = ioServ.getProtocolHandler("file")
+                        .QueryInterface(Ci.nsIFileProtocolHandler);
+      
+        var fileURL = fph.getURLSpecFromFile(tempfile);
+        var RDF = Cc["@mozilla.org/rdf/rdf-service;1"]
+                             .getService(Ci.nsIRDFService);
+        var InstallManifestRoot = RDF.GetResource("urn:mozilla:install-manifest");
+        var ds = RDF.GetDataSourceBlocking(fileURL);
+        var target = ds.GetTarget(InstallManifestRoot,
+                                  RDF.GetResource("http://www.mozilla.org/2004/em-rdf#version"), true);
+        var newVersion = target.QueryInterface(Ci.nsIRDFLiteral).Value;
+        var target = ds.GetTarget(InstallManifestRoot,
+                                  RDF.GetResource("http://www.mozilla.org/2004/em-rdf#id"), true);
+        var id = target.QueryInterface(Ci.nsIRDFLiteral).Value;
+        /* check to see if ID is already installed */
+        var item = em.getItemForID(id);
+        if (item) {
+          var curVersion = item.version;
+          var versionChecker = Cc["@mozilla.org/xpcom/version-comparator;1"]
+                                         .getService(Ci.nsIVersionComparator);
+          /* if new version > curversion */
+          if (versionChecker.compare(newVersion, curVersion) > 0) {
+            em.installItemFromFile(f, "app-profile");
+            items_installed = true;
+          }
+        } else {
+          em.installItemFromFile(f, "app-profile");
+          items_installed = true;
+        }
+        try {
+          f.remove(true);
+        } catch (ex) {
+          /* Ignore error - it's already gone */
+          /* This happens on FF2 in some cases for some reason */
+        }
+      }
+    }
+    if (items_installed) {
+      var nsIAppStartup = Components.classes["@mozilla.org/toolkit/app-startup;1"]
+                                    .getService(Components.interfaces.nsIAppStartup);
+      nsIAppStartup.quit(nsIAppStartup.eRestart | nsIAppStartup.eAttemptQuit);    
+  
+    }
   },
 
   classDescription: "CCK Service - %OrganizationName%",

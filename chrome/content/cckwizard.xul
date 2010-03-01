@@ -388,7 +388,6 @@
     <groupbox>
       <caption label="&bundles.label;"/>
       <description>&customizeBundles.description;</description>
-      <description>&customizeBundles.warning;</description>
       <box class="ccklist" id="bundleList" new="onNewBundle();" edit="onEditBundle();"/>
     </groupbox>
   </wizardpage>
