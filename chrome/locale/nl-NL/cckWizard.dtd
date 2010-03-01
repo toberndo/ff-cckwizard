@@ -77,6 +77,11 @@
 <!ENTITY allowedSites.caption "Toegestane sites">
 <!ENTITY popupAllowedSites.label "Hier kunnen domeinen worden gespecificeerd waarvoor pop-ups zijn toegestaan. Geef de domeinen in, gescheiden door een komma.">
 <!ENTITY installAllowedSites.label "Hier kunnen domeinen worden ingegeven waarvoor software installaties (XPI’s) zijn toegestaan. Geef de domeinen in, gescheiden door een komma.">
+<!ENTITY cookieAllowedSites.label "You can specify domains for which cookies are always allowed. List the domains, separated by a comma.">
+<!ENTITY deniedSites.caption "Denied Sites">
+<!ENTITY popupDeniedSites.label "You can specify domains for which popups are denied. List the domains, separated by a comma.">
+<!ENTITY installDeniedSites.label "You can specify domains for which software installations (XPIs) are denied. List the domains, separated by a comma.">
+<!ENTITY cookieDeniedSites.label "You can specify domains for which cookies are always denied. List the domains, separated by a comma.">
 <!ENTITY customizeBrowserPlugins.label "Browserplug-ins aanpassen">
 <!ENTITY browserPlugins.description "Gebruik onderstaande knoppen om browserplug-ins toe te voegen">
 <!ENTITY plugins.label "Browserplug-ins">

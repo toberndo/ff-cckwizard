@@ -77,6 +77,11 @@
 <!ENTITY allowedSites.caption "Uprawnione witryny">
 <!ENTITY popupAllowedSites.label "Tutaj można określić domeny witryn, które mogą wyświetlać wyskakujące okienka. Proszę wprowadzić nazwy domen oddzielając je przecinkiem.">
 <!ENTITY installAllowedSites.label "Tutaj można określić domeny witryn, z których można instalować dodatki. Proszę wprowadzić nazwy domen oddzielając je przecinkiem.">
+<!ENTITY cookieAllowedSites.label "You can specify domains for which cookies are always allowed. List the domains, separated by a comma.">
+<!ENTITY deniedSites.caption "Denied Sites">
+<!ENTITY popupDeniedSites.label "You can specify domains for which popups are denied. List the domains, separated by a comma.">
+<!ENTITY installDeniedSites.label "You can specify domains for which software installations (XPIs) are denied. List the domains, separated by a comma.">
+<!ENTITY cookieDeniedSites.label "You can specify domains for which cookies are always denied. List the domains, separated by a comma.">
 <!ENTITY customizeBrowserPlugins.label "Modyfikowanie wtyczek">
 <!ENTITY browserPlugins.description "Aby dodać wtyczkę proszę użyć istniejących przycisków.">
 <!ENTITY plugins.label "Wtyczki">

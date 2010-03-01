@@ -76,6 +76,11 @@
 <!ENTITY allowedSites.caption "Páginas Permitidas">
 <!ENTITY popupAllowedSites.label "Você pode definir domínios aonde popups são permitidos. Liste os domínios separados por uma virgula.">
 <!ENTITY installAllowedSites.label "Você pode definir domínios aonde as instalações de arquivo XPI (extensões) são permitidas. Liste os domínios separados por vírgula.">
+<!ENTITY cookieAllowedSites.label "You can specify domains for which cookies are always allowed. List the domains, separated by a comma.">
+<!ENTITY deniedSites.caption "Denied Sites">
+<!ENTITY popupDeniedSites.label "You can specify domains for which popups are denied. List the domains, separated by a comma.">
+<!ENTITY installDeniedSites.label "You can specify domains for which software installations (XPIs) are denied. List the domains, separated by a comma.">
+<!ENTITY cookieDeniedSites.label "You can specify domains for which cookies are always denied. List the domains, separated by a comma.">
 <!ENTITY customizeBrowserPlugins.label "Personalizando os Plug-ins do Navegador">
 <!ENTITY browserPlugins.description "Use os botões abaixo para adicionar plug-ins no navegador.">
 <!ENTITY plugins.label "Plug-ins do Navegador">
