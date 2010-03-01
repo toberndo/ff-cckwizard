@@ -19,4 +19,4 @@ VERSION=`grep "em:version" install.rdf | sed -e 's/^[ \t]*//g' | sed -e 's/<[^>]
 XPINAME=$EXTENSION-$VERSION
 zip -r -D ../$XPINAME.xpi *
 cd ..
-#rm -rf $EXTENSION
+rm -rf $EXTENSION

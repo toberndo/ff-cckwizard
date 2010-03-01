@@ -1684,6 +1684,12 @@ function CCKWriteProperties(destdir)
     cos.writeString(str);
   }
 
+  if (document.getElementById("appManaged").checked)
+  {
+    str = "appManaged=true\n";
+    cos.writeString(str);
+  }
+
   var radio = document.getElementById('ToolbarLocation');
   str = "ToolbarLocation=" + radio.value + "\n";
   cos.writeString(str);
@@ -1848,7 +1854,7 @@ function CCKWriteDefaultJS(destdir)
 
   var logobuttonurl = document.getElementById("AnimatedLogoURL").value;
   if (logobuttonurl && (logobuttonurl.length > 0)) {
-    /* If the pref is locked, we set it in our service using */
+    /* If the pref is , we set it in our service using */
     /* The value from properties */
     if (!prefIsLocked("browser.throbber.url")) {
       fos.write(throbber1, throbber1.length);
@@ -1861,7 +1867,7 @@ function CCKWriteDefaultJS(destdir)
   var overrideurl = document.getElementById('HomePageOverrideURL').value;
   var welcomeurl = document.getElementById('HomePageWelcomeURL').value;
   if (browserstartuppage && (browserstartuppage.length > 0)) {
-    /* If the pref is locked, we set it in our service using */
+    /* If the pref is , we set it in our service using */
     /* The value from properties */
     if (!prefIsLocked("browser.startup.homepage")) {
       fos.write(homepage1, homepage1.length);
@@ -2074,6 +2080,7 @@ function CCKWriteInstallRDF(destdir)
   var iconURLline =     "<em:iconURL>chrome://cck-%OrganizationName%/content/%iconURL%</em:iconURL>";
   var hiddenline =      "<em:hidden>true</em:hidden>";
   var lockedline =      "<em:locked>true</em:locked>";
+  var appManagedline =   "<em:appManaged>true</em:appManaged>";
 
   iconURLline = iconURLline.replace(/%OrganizationName%/g, document.getElementById("OrganizationName").value);
 
@@ -2189,6 +2196,12 @@ function CCKWriteInstallRDF(destdir)
     str = str.replace(/%lockedline%/g, lockedline);
   } else {
     str = str.replace(/%lockedline%/g, "");
+  }
+
+  if (document.getElementById("appManaged").checked) {
+    str = str.replace(/%appManagedline%/g, appManagedline);
+  } else {
+    str = str.replace(/%appManagedline%/g, "");
   }
 
   cos.writeString(str);
@@ -2801,6 +2814,9 @@ function CCKReadConfigFile(srcdir)
 
   var locked = document.getElementById("locked");
   locked.checked = configarray["locked"];
+  
+  var appManaged = document.getElementById("appManaged");
+  appManaged.checked = configarray["appManaged"];
   
   var aboutconfig = document.getElementById("noaboutconfig");
   aboutconfig.checked = configarray["noaboutconfig"];
