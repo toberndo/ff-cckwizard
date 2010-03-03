@@ -220,7 +220,7 @@
          <vbox align="right">
          </vbox>
          <hbox align="center">
-           <checkbox id="appManaged" label="appManaged"/>
+           <checkbox hidden="true" id="appManaged" label="appManaged"/>
          </hbox>
        </row>
        <row align="center">
