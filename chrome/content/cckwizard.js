@@ -1032,6 +1032,7 @@ function CreateCCK()
   CCKWriteXULOverlay(destdir);
   CCKWriteXULOverlayMac(destdir);
   CCKWriteXULOverlayNonMac(destdir);
+  CCKWriteExtensionsOverlay(destdir);
   CCKWriteDTD(destdir);
   CCKWriteCSS(destdir);
   CCKWriteProperties(destdir);
@@ -1514,6 +1515,34 @@ function CCKWriteXULOverlayMac(destdir)
   }    
 
   str = str.replace(/%OrganizationName%/g, document.getElementById("OrganizationName").value);
+
+  fos.write(str, str.length); 
+  fos.close();
+}
+
+function CCKWriteExtensionsOverlay(destdir)
+{
+  var file = destdir.clone();
+  file.append("cck-extensions-overlay.xul");
+  try {
+    file.remove(false);                         
+  } catch (ex) {}
+  var fos = Components.classes["@mozilla.org/network/file-output-stream;1"]
+                      .createInstance(Components.interfaces.nsIFileOutputStream);
+
+  fos.init(file, -1, -1, false);
+  
+  var ioService=Components.classes["@mozilla.org/network/io-service;1"]
+                          .getService(Components.interfaces.nsIIOService);
+  var scriptableStream=Components.classes["@mozilla.org/scriptableinputstream;1"]
+                                 .getService(Components.interfaces.nsIScriptableInputStream);
+    
+  var channel=ioService.newChannel("chrome://cckwizard/content/srcfiles/cck-extensions-overlay.xul.in",null,null);
+  var input=channel.open();
+  scriptableStream.init(input);
+  var str=scriptableStream.read(input.available());
+  scriptableStream.close();
+  input.close();
 
   fos.write(str, str.length); 
   fos.close();
