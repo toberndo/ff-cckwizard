@@ -28,7 +28,7 @@
     </script>
 <window xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
          id="extensionsManager"
-         onload="Startup();CCKStartup();"/>
+         onload="CCKStartup();Startup();"/>
     <radiogroup id="viewGroup">
         <radio id="extensions-view"
                oncommand="showView('extensions');CCKExtensions();"/>
