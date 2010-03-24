@@ -1707,12 +1707,6 @@ function CCKWriteProperties(destdir)
     cos.writeString(str);
   }
 
-  if (document.getElementById("locked").checked)
-  {
-    str = "locked=true\n";
-    cos.writeString(str);
-  }
-
   if (document.getElementById("appManaged").checked)
   {
     str = "appManaged=true\n";
@@ -2216,14 +2210,10 @@ function CCKWriteInstallRDF(destdir)
   }
   
   if (document.getElementById("hidden").checked) {
+    str = str.replace(/%lockedline%/g, lockedline);
     str = str.replace(/%hiddenline%/g, hiddenline);
   } else {
     str = str.replace(/%hiddenline%/g, "");
-  }
-
-  if (document.getElementById("locked").checked) {
-    str = str.replace(/%lockedline%/g, lockedline);
-  } else {
     str = str.replace(/%lockedline%/g, "");
   }
 
@@ -2841,9 +2831,6 @@ function CCKReadConfigFile(srcdir)
   var hidden = document.getElementById("hidden");
   hidden.checked = configarray["hidden"];
 
-  var locked = document.getElementById("locked");
-  locked.checked = configarray["locked"];
-  
   var appManaged = document.getElementById("appManaged");
   appManaged.checked = configarray["appManaged"];
   

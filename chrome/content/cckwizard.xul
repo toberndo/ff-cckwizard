@@ -213,7 +213,7 @@
          <vbox align="right">
          </vbox>
          <hbox align="center">
-           <checkbox id="locked" label="&locked.label;"/>
+           <checkbox hidden="true" id="locked" label="&locked.label;"/>
          </hbox>
        </row>
        <row align="center">
