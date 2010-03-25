@@ -2604,6 +2604,9 @@ function CCKReadConfigFile(srcdir)
 		case"socksv":
 		  firstpart = "networkProxySOCKSVersion";
 		  break;
+		case"NoProxyname":
+		  firstpart = "networkProxyNone";
+		  break;
 		case "ProxyType":
 		  firstpart = "networkProxyType";
 		  switch (secondpart) {
@@ -3040,30 +3043,22 @@ function toggleProxySettings()
 function DoEnabling()
 {
   var i;
-  var http = document.getElementById("networkProxyHTTP");
-  var httpPort = document.getElementById("networkProxyHTTP_Port");
-  var ftp = document.getElementById("networkProxyFTP");
-  var ftpPort = document.getElementById("networkProxyFTP_Port");
-  var gopher = document.getElementById("networkProxyGopher");
-  var gopherPort = document.getElementById("networkProxyGopher_Port");
-  var socks = document.getElementById("networkProxySOCKS");
-  var socksPort = document.getElementById("networkProxySOCKS_Port");
-  var socksVersion = document.getElementById("networkProxySOCKSVersion");
-  var socksVersion4 = document.getElementById("networkProxySOCKSVersion4");
-  var socksVersion5 = document.getElementById("networkProxySOCKSVersion5");
-  var ssl = document.getElementById("networkProxySSL");
-  var sslPort = document.getElementById("networkProxySSL_Port");
-  var noProxy = document.getElementById("networkProxyNone");
-  var autoURL = document.getElementById("networkProxyAutoconfigURL");
-  var autoFile = document.getElementById("autoproxyfile");
-  var autoFileButton = document.getElementById("autoproxyfilebutton");
   var shareAllProxies = document.getElementById("shareAllProxies");
 
   // convenience arrays
-  var manual = [ftp, ftpPort, gopher, gopherPort, http, httpPort, socks, socksPort, socksVersion, socksVersion4, socksVersion5, ssl, sslPort, noProxy, shareAllProxies];
-  var manual2 = [http, httpPort, noProxy, shareAllProxies];
-  var auto = [autoURL];
-  var file = [autoFile, autoFileButton];
+  var manual = ["networkProxyHTTP", "networkProxyHTTP_Port",
+				"networkProxySSL", "networkProxyFTP",
+				"networkProxyGopher",
+				"networkProxySOCKS", "networkProxySSL_Port",
+				"networkProxyFTP_Port",
+				"networkProxyGopher_Port",
+				"networkProxySOCKS_Port", "networkProxySOCKSVersion4",
+				"networkProxySOCKSVersion5",
+				 "networkProxyNone", "shareAllProxies"];
+
+  var manual2 = ["networkProxyHTTP", "networkProxyHTTP_Port", "networkProxyNone", "shareAllProxies"];
+  var auto = ["networkProxyAutoconfigURL"];
+  var file = ["autoproxyfile", "autoproxyfilebutton"];
 
   // radio buttons
   var radiogroup = document.getElementById("networkProxyType");
@@ -3075,50 +3070,108 @@ function DoEnabling()
     case "4":
     case "5":
       for (i = 0; i < manual.length; i++) {
-        manual[i].setAttribute( "disabled", "true" );
+		updateControl(manual[i], true);
 	  }
       for (i = 0; i < auto.length; i++)
-        auto[i].setAttribute( "disabled", "true" );
+  	    updateControl(auto[i], true);
       break;
       for (i = 0; i < file.length; i++)
-        file[i].setAttribute( "disabled", "true" );
+  	    updateControl(file[i], true);
       break;
     case "1":
       for (i = 0; i < auto.length; i++)
-        auto[i].setAttribute( "disabled", "true" );
+  	    updateControl(auto[i], true);
       for (i = 0; i < file.length; i++)
-        file[i].setAttribute( "disabled", "true" );
+  	    updateControl(file[i], true);
       if (!radiogroup.disabled && !shareAllProxies.checked) {
         for (i = 0; i < manual.length; i++) {
-           manual[i].removeAttribute( "disabled" );
+  		  updateControl(manual[i], false);
         }
       } else {
         for (i = 0; i < manual.length; i++)
-          manual[i].setAttribute("disabled", "true");
+		  updateControl(manual[i], true);
         for (i = 0; i < manual2.length; i++) {
-          manual2[i].removeAttribute( "disabled" );
+		  updateControl(manual2[i], false);
         }
       }
       break;
     case "10":
       for (i = 0; i < auto.length; i++)
-        auto[i].setAttribute( "disabled", "true" );
+  	    updateControl(auto[i], true);
       for (i = 0; i < manual.length; i++)
-        manual[i].setAttribute("disabled", "true");
+		updateControl(manual[i], true);
       if (!radiogroup.disabled)
         for (i = 0; i < file.length; i++)
-          file[i].removeAttribute("disabled");
+  	      updateControl(file[i], false);
       break;
     case "2":
     default:
       for (i = 0; i < manual.length; i++)
-        manual[i].setAttribute("disabled", "true");
+		updateControl(manual[i], true);
       for (i = 0; i < file.length; i++)
-        file[i].setAttribute( "disabled", "true" );
+  	    updateControl(file[i], true);
       if (!radiogroup.disabled)
         for (i = 0; i < auto.length; i++)
-          auto[i].removeAttribute("disabled");
+  	    updateControl(auto[i], false);
       break;
+  }
+}
+
+function updateControl(id, disabled) {
+  var control = document.getElementById(id);
+  control.disabled = disabled;
+  var labels = document.getElementsByAttribute("control", id);
+  if (labels.length > 0)
+    labels[0].disabled = disabled;
+}
+
+function updateProtocols(share) {
+  var shared = ["networkProxySSL", "networkProxyFTP",
+				"networkProxyGopher",
+				"networkProxySOCKS"]
+  var shared_ports = ["networkProxySSL_Port",
+				"networkProxyFTP_Port",
+				"networkProxyGopher_Port",
+				"networkProxySOCKS_Port"]
+  var shared_other = ["networkProxySOCKSVersion4",
+				"networkProxySOCKSVersion5"];
+
+  for (i = 0; i < shared.length; i++)
+    updateControl(shared[i], share.checked);
+  for (i = 0; i < shared_ports.length; i++)
+    updateControl(shared_ports[i], share.checked);
+  for (i = 0; i < shared_other.length; i++)
+    updateControl(shared_other[i], share.checked);
+  if (share.checked) {
+	var ProxyHTTP = document.getElementById("networkProxyHTTP").value;
+	var ProxyHTTP_Port = document.getElementById("networkProxyHTTP_Port").value;
+    for (i = 0; i < shared.length; i++) {
+	  var control = document.getElementById(shared[i]);
+	  control.backup = control.value;
+	  control.value = ProxyHTTP;
+    }
+    for (i = 0; i < shared_ports.length; i++) {
+	  var control = document.getElementById(shared_ports[i]);
+	  control.backup = control.value;
+	  control.value = ProxyHTTP_Port;
+    }  	
+  } else {
+    for (i = 0; i < shared.length; i++) {
+	  var control = document.getElementById(shared[i]);
+	  if (control.backup) {
+  	    control.value = control.backup;
+	  } else {
+		control.value = "";
+	  }
+    }
+    for (i = 0; i < shared_ports.length; i++) {
+	  var control = document.getElementById(shared_ports[i]);
+	  if (control.backup) {
+  	    control.value = control.backup;
+	  } else {
+		control.value = 0;
+	  }
+    }  		
   }
 }
 

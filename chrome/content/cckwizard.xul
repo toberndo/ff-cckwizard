@@ -510,12 +510,12 @@
                 <textbox id="networkProxyHTTP_Port" type="number" max="65535" size="5"
                          preference="network.proxy.http_port"/>
               </hbox>
-            </row>
+            </row> 
             <row>
               <hbox/>
               <hbox>
                 <checkbox id="shareAllProxies" label="&shareproxy.label;" accesskey="&shareproxy.accesskey;"
-                          preference="network.proxy.share_proxy_settings"/>
+                          oncommand="updateProtocols(this);"/>
               </hbox>
             </row>
             <row align="center">
