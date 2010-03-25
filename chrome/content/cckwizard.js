@@ -145,8 +145,7 @@ function OpenConfig()
 	} while (more);
 	stream.close();
 	var configname = name + " (" + version + ")";
-	fp.file.leafName = "";
-	gPrefBranch.setCharPref("cck.config." + configname, fp.file.path);
+	gPrefBranch.setCharPref("cck.config." + configname, fp.file.parent.path);
 	setcurrentconfig(configname);
 	updateconfiglist();
    }
