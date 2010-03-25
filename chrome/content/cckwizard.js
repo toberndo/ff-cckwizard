@@ -2596,7 +2596,7 @@ function CCKReadConfigFile(srcdir)
 		  firstpart = "networkProxyGopher_Port";
 		  break;
 		case"SOCKShostname":
-		  firstpart = "networkProxySOCKS_Port";
+		  firstpart = "networkProxySOCKS";
 		  break;
 		case"SOCKSportno":
 		  firstpart = "networkProxySOCKS_Port";
