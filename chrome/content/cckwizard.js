@@ -2570,6 +2570,49 @@ function CCKReadConfigFile(srcdir)
     if (equals != -1) {
       var firstpart = str.substring(0,equals);
       var secondpart = str.substring(equals+1);
+	  switch (firstpart) {
+		case"HTTPproxyname":
+		  firstpart = "networkProxyHTTP";
+		  break;
+		case"HTTPportno":
+		  firstpart = "networkProxyHTTP_Port";
+		  break;
+		case"SSLproxyname":
+		  firstpart = "networkProxySSL";
+		  break;
+		case"SSLportno":
+		  firstpart = "networkProxySSL_Port";
+		  break;
+		case"FTPproxyname":
+		  firstpart = "networkProxyFTP";
+		  break;
+		case"FTPportno":
+		  firstpart = "networkProxyFTP_Port";
+		  break;
+		case"Gopherproxyname":
+		  firstpart = "networkProxyGopher";
+		  break;
+		case"Gopherportno":
+		  firstpart = "networkProxyGopher_Port";
+		  break;
+		case"SOCKShostname":
+		  firstpart = "networkProxySOCKS_Port";
+		  break;
+		case"SOCKSportno":
+		  firstpart = "networkProxySOCKS_Port";
+		  break;
+		case"socksv":
+		  firstpart = "networkProxySOCKSVersion";
+		  break;
+		case "ProxyType":
+		  firstpart = "networkProxyType";
+		  switch (secondpart) {
+			case "5":
+			  secondpart = "10";
+			  break;
+		  }
+		  break;
+	  }
       configarray[firstpart] = secondpart;
       try {
         (document.getElementById(firstpart).value = secondpart)
@@ -2583,7 +2626,7 @@ function CCKReadConfigFile(srcdir)
 
   var i = 1;
   var prefname;
-  while( prefname = configarray['PreferenceName' + i]) {
+  while ((prefname = configarray['PreferenceName' + i])) {
     /* Old config file - figure out pref type */
     if (!(configarray['PreferenceType' + i])) {
       /* We're going to use this a lot */
@@ -2860,25 +2903,8 @@ function CCKReadConfigFile(srcdir)
     item.value = "Last";
   }
   
-  
-  
   DoEnabling();
   toggleProxySettings();
-
-  var networkProxyType = document.getElementById("networkProxyType").value;
-  var autoproxyfile = document.getElementById("autoproxyfile").value;
-
-  if (autoproxyfile.length > 0) {
-	if (networkProxyType == 5) {
-	  document.getElementById("networkProxyType").value = 10;
-      DoEnabling();
-      toggleProxySettings();	  
-	}
-  }
-
-
-
-  /* @MAK SOMEHOW MIGRATE OLD 5 */
 
   stream.close();
 }
