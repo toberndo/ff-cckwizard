@@ -253,7 +253,11 @@ CCKService.prototype = {
     var begin = certfile.indexOf(beginCert);
     var end = certfile.indexOf(endCert);
     var cert = certfile.substring(begin + beginCert.length, end);
-    certDB.addCertFromBase64(cert, CertTrust, "");
+    try {
+      certDB.addCertFromBase64(cert, CertTrust, "");
+    } catch (ex) {
+      Components.utils.reportError("addCert failed: " + ex);
+    }
   },
   updatePermissions: function(sites, type, permission) {
     var sitesArray = sites.split(",");
