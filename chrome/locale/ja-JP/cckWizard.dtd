@@ -1,7 +1,13 @@
 <!ENTITY cckWizard.title "Firefox クライアント カスタマイズキット (CCK)">
 <!ENTITY cckWizard.description "This tool helps you create an extension that customizes Firefox. This extension can either be installed by the user or included in an install package.">
 <!ENTITY beforeYouBegin.label "Before You Begin">
-<!ENTITY beforeYouBegin.description "Decide which customizations you want to make and create/collect the customized files, such as:">
+<!ENTITY beforeYouBegin.description "Decide which customizations you want to make and create/collect the customized files, such as:
+                                         <html:ul>
+                                         <html:li>ブラウザのアニメーションロゴを変更</html:li>
+                                         <html:li>検索エンジン (SRC ファイルと対応する画像)</html:li>
+                                         <html:li>ブラウザのプラグイン</html:li>
+                                         <html:li>拡張機能とテーマ</html:li>
+                                         </html:ul>">
 <!ENTITY configurePage.label "拡張機能の構成">
 <!ENTITY selectConfig.label "既存の構成を選択するか新しく作成してください">
 <!ENTITY selectConfig.description "Select an existing configuration, or click &apos;New&apos; to create a new configuration and workspace in which to store your custom files. To edit an existing configuration without overwriting the original configuration, select it from the list and click &apos;Copy&apos;.">

@@ -1,7 +1,13 @@
 <!ENTITY cckWizard.title "Firefox 客户端定制工具箱 (CCK)">
 <!ENTITY cckWizard.description "本工具可以帮助你建立一个扩展以定制 Firefox. 这个扩展既可以由用户安装，也可以包含于一个最终的程序安装包之中。">
 <!ENTITY beforeYouBegin.label "在你开始之前">
-<!ENTITY beforeYouBegin.description "决定你需要作出的定义项目，然后建立/收集的其自定义文件，比如:">
+<!ENTITY beforeYouBegin.description "决定你需要作出的定义项目，然后建立/收集的其自定义文件，比如:
+                                         <html:ul>
+                                         <html:li>为浏览器动画徽标 (logo) 设计创建动画图片文件</html:li>
+                                         <html:li>搜索引擎 (SRC 文件以及相关的图片)</html:li>
+                                         <html:li>浏览器插件 (plug-ins)</html:li>
+                                         <html:li>扩展/主题</html:li>
+                                         </html:ul>">
 <!ENTITY configurePage.label "扩展配置">
 <!ENTITY selectConfig.label "选择一个已存在的扩展配置或者创建一个新的配置">
 <!ENTITY selectConfig.description "选择一个已存在的配置，或者点击&quot;新建&quot;来新建一个新的配置和工作空间以存储你的自定义文件。编辑一个已存在的配置而不复写默认的设置，选择下列的表单然后点击&apos;复制&apos; 。">

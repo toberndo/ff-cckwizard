@@ -1,7 +1,13 @@
 <!ENTITY cckWizard.title "Firefox Client Customization Kit (CCK)">
 <!ENTITY cckWizard.description "Dit hulpmiddel helpt bij de creatie van een extensie die Firefox aanpast. Deze extensie kan worden geïnstalleerd door de gebruiker of in een installatiepakket worden ingevoegd.">
 <!ENTITY beforeYouBegin.label "Voordat u begint">
-<!ENTITY beforeYouBegin.description "Bepaal welke aanpassingen u wilt maken en maak/verzamel de aangepaste bestanden, zoals:">
+<!ENTITY beforeYouBegin.description "Bepaal welke aanpassingen u wilt maken en maak/verzamel de aangepaste bestanden, zoals:
+                 <html:ul>
+                 <html:li>Aangepaste animatiebestanden voor het animatielogo van de browser</html:li>
+                 <html:li>Zoekmachines (SRC bestanden en de bijbehorende afbeeldingen)</html:li>
+                 <html:li>Browser plugins</html:li>
+                 <html:li>Extensies/thema’s</html:li>
+                 </html:ul>">
 <!ENTITY configurePage.label "Extensieconfiguraties">
 <!ENTITY selectConfig.label "Selecteer een bestaande configuratie of maak een nieuwe">
 <!ENTITY selectConfig.description "Selecteer een bestaande configuratie, of klik ‘Nieuw’ om een nieuwe configuratie en werkomgeving aan te maken waarin de aangepaste bestanden worden opgeslagen. Selecteer een bestaande configuratie uit de lijst en klik ‘Kopiëren’ om deze te wijzigen zonder de oorspronkelijke configuratie te overschrijven.">

@@ -1,7 +1,13 @@
 <!ENTITY cckWizard.title "Zákazanický kit pro Firefox (CCK)">
 <!ENTITY cckWizard.description "Tento nástroj vám pomůže vytvářet rozšíření pro zákaznickou úpravu Firefoxu. Toto rozšíření může být buď instalováno uživatelem, nebo obsaženo v instalačním balíčku.">
 <!ENTITY beforeYouBegin.label "Než začnete">
-<!ENTITY beforeYouBegin.description "Rozmyslete si, které zákaznické úpravy hodláte provést a vytvořte či uložte upravené soubory, jako:">
+<!ENTITY beforeYouBegin.description "Rozmyslete si, které zákaznické úpravy hodláte provést a vytvořte či uložte upravené soubory, jako:
+                                         <html:ul>
+                                         <html:li>Upravené animované soubory loga prohlížeče</html:li>
+                                         <html:li>Vyhledávače (SRC soubory a odpovídající ikony)</html:li>
+                                         <html:li>Zásuvné moduly prohlížeče</html:li>
+                                         <html:li>Rozšíření či témata vzhledu</html:li>
+                                         </html:ul>">
 <!ENTITY configurePage.label "Konfigurace rozšíření">
 <!ENTITY selectConfig.label "Vyberte existující konfiguraci anebo vytvořte novou">
 <!ENTITY selectConfig.description "Vyberte existující konfiguraci, nebo klepněte na &apos;Nová&apos; a vytvořte novou konfiguraci spolu s pracovní plochou, ve které budou ukládány vaše soubory nastavení. Pro úpravu existující konfigurace bez jejího přepsání, ji nejprve vyberte ze seznamu a pak klepněte na &apos;Kopírovat&apos;.">

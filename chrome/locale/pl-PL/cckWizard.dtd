@@ -1,7 +1,13 @@
 <!ENTITY cckWizard.title "Firefox Client Customization Kit (CCK)">
 <!ENTITY cckWizard.description "To narzędzie pomaga utworzyć rozszerzenie modyfikujące Firefoksa. Może ono być instalowane przez użytkownika lub dołączone do pakietu instalacyjnego.">
 <!ENTITY beforeYouBegin.label "Informacje ogólne">
-<!ENTITY beforeYouBegin.description "Przed przystąpieniem do dalszych czynności proszę zastanowić się i określić rodzaj i zakres modyfikacji oraz jakie pliki modyfikacyjne utworzyć:">
+<!ENTITY beforeYouBegin.description "Przed przystąpieniem do dalszych czynności proszę zastanowić się i określić rodzaj i zakres modyfikacji oraz jakie pliki modyfikacyjne utworzyć:
+                                    <html:ul>  
+                                    <html:li>Logo przeglądarki (pliki dodające animowane logo przeglądarki)</html:li>  
+                                    <html:li>Wyszukiwarki (pliki .src i odpowiadające im obrazki)</html:li>  
+                                    <html:li>Wtyczki</html:li>  
+                                    <html:li>Rozszerzenia/motywy</html:li>  
+                                    </html:ul>">
 <!ENTITY configurePage.label "Konfiguracja">
 <!ENTITY selectConfig.label "Wybór/tworzenie konfiguracji">
 <!ENTITY selectConfig.description "Proszę wybrać istniejącą konfigurację lub nacisnąć przycisk &quot;Nowa&quot;, aby utworzyć nową, a następnie określić miejsce przechowywania plików modyfikacyjnych. Aby edytować istniejącą konfigurację bez nadpisywania oryginalnej należy zaznaczyć ją na liście i nacisnąć przycisk &quot;Kopiuj&quot;.">

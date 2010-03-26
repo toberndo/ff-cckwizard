@@ -1,7 +1,13 @@
 <!ENTITY cckWizard.title "Firefox Client Customization Kit (CCK)">
 <!ENTITY cckWizard.description "Dieser Assistent hilft Ihnen bei der Erstellung einer Erweiterung zur Anpassung von Firefox. Die am Ende erstellte Erweiterung kann entweder vom Benutzer manuell installiert oder direkt in ein Firefox-Installationspaket eingebunden werden.">
 <!ENTITY beforeYouBegin.label "Bevor Sie beginnen">
-<!ENTITY beforeYouBegin.description "Entscheiden Sie, welche Anpassungen Sie vornehmen möchten und erstellen/sammeln sie die benötigten, angepassten Dateien, wie beispielsweise:">
+<!ENTITY beforeYouBegin.description "Entscheiden Sie, welche Anpassungen Sie vornehmen möchten und erstellen/sammeln sie die benötigten, angepassten Dateien, wie beispielsweise:
+<html:ul>
+<html:li>Eigene animierte Dateien für die Ladeanzeige (Throbber) des Browsers</html:li>
+<html:li>Such-Plugins (SRC-Dateien und zugehörige Symbolgrafiken)</html:li>
+<html:li>Browser-Plugins</html:li>
+<html:li>Erweiterungen/Themes</html:li>
+</html:ul>">
 <!ENTITY configurePage.label "Erweiterungskonfigurationen">
 <!ENTITY selectConfig.label "Eine bestehende Konfiguration auswählen oder eine neue erstellen">
 <!ENTITY selectConfig.description "Wählen Sie eine bestehende Konfiguration oder klicken Sie auf &quot;Neu...&quot;, um eine neue Konfiguration und einen neuen Arbeitsbereich zur Speicherung Ihrer spezifischen Dateien erstellen. Um eine bestehende Konfiguration zu bearbeiten, ohne das Original zu überschreiben, wählen Sie diese aus der Liste und klicken Sie auf &quot;Duplizieren...&quot;.">

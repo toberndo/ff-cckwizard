@@ -1,7 +1,13 @@
 <!ENTITY cckWizard.title "Firefox Client Customization Kit (CCK)">
 <!ENTITY cckWizard.description "Dette værktøj hjælper dig med at skabe en udvidelse der brugertilpasser Firefox. Denne udvidelse kan enten installeres af brugeren eller være inkluderet i en installationspakke.">
 <!ENTITY beforeYouBegin.label "Før du begynder">
-<!ENTITY beforeYouBegin.description "Beslut hvilke brugertilretninger til vil lave og opret/saml de brugertilrettede filer, såsom:">
+<!ENTITY beforeYouBegin.description "Beslut hvilke brugertilretninger til vil lave og opret/saml de brugertilrettede filer, såsom:
+                                         <html:ul>
+                                         <html:li>Brugertilrettede animationsfiler til browserens animerede logo</html:li>
+                                         <html:li>Søge-plugins</html:li>
+                                         <html:li>Browser-plugins</html:li>
+                                         <html:li>Udvidelsesmoduler/temaer</html:li>
+                                         </html:ul>">
 <!ENTITY configurePage.label "Udvidelseskonfigurationer">
 <!ENTITY selectConfig.label "Vælg en eksisterende konfiguration eller opret en ny">
 <!ENTITY selectConfig.description "Vælg en eksisterende konfiguration, eller klik &apos;Ny&apos; for at oprette en ny konfiguration og arbejdsområde hvori du kan gemme dine tilpassede filer. For at redigere en eksisterende konfiguration uden at overskrive den originale konfiguration, vælg den på listen og klik &apos;Kopier&apos;.">

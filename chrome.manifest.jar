@@ -8,7 +8,7 @@ locale  cckwizard es-ES jar:chrome/cckwizard.jar!/locale/es-ES/
 locale  cckwizard fr-FR jar:chrome/cckwizard.jar!/locale/fr-FR/
 locale  cckwizard it-IT jar:chrome/cckwizard.jar!/locale/it-IT/
 locale  cckwizard ja-JP jar:chrome/cckwizard.jar!/locale/ja-JP/
-locale  cckwizard nl-NL jar:chrome/cckwizard.jar!/locale/nl-NL/
+locale  cckwizard nl    jar:chrome/cckwizard.jar!/locale/nl/
 locale  cckwizard pl-PL jar:chrome/cckwizard.jar!/locale/pl-PL/
 locale  cckwizard pt-BR jar:chrome/cckwizard.jar!/locale/pt-BR/
 locale  cckwizard ru-RU jar:chrome/cckwizard.jar!/locale/ru-RU/

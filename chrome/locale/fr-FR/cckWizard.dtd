@@ -1,7 +1,13 @@
 <!ENTITY cckWizard.title "Client Customization Kit (CCK) pour Firefox">
 <!ENTITY cckWizard.description "Cet outil vous aide à créer une extension qui servira à personnaliser Firefox. Cette extension pourra être installée par l'utilisateur ou bien incluse dans un paquetage d'installation de Firefox.">
 <!ENTITY beforeYouBegin.label "Avant de commencer">
-<!ENTITY beforeYouBegin.description "Décidez quelles personnalisations vous souhaitez faire et créez/collectez les fichiers modifiés, tels que:">
+<!ENTITY beforeYouBegin.description "Décidez quelles personnalisations vous souhaitez faire et créez/collectez les fichiers modifiés, tels que:
+                                         <html:ul>
+                                         <html:li>Fichier de l&apos;animation pour le logo animé du navigateur</html:li>
+                                         <html:li>Moteur de recherche</html:li>
+                                         <html:li>Plugins du navigateur</html:li>
+                                         <html:li>Extensions/thèmes</html:li>
+                                         </html:ul>">
 <!ENTITY configurePage.label "Configuration de votre extension">
 <!ENTITY selectConfig.label "Choisir une configuration existante ou en créer une nouvelle">
 <!ENTITY selectConfig.description "Choisissez une configuration existante, ou cliquez sur 'Nouveau' pour créer une nouvelle configuration et un nouvel espace de travail dans lequel seront enregistrés vos fichiers personnalisés. Pour modifier une configuration existante sans écraser l'originale, la sélectionner dans la liste et cliquer sur 'Copier'.">

@@ -1,8 +1,13 @@
 <!ENTITY cckWizard.title "Firefox Client Customization Kit (CCK)">
 <!ENTITY cckWizard.description "La configurazione guidata consente di creare un&apos;estensione per personalizzare Firefox. L&apos;estensione creata potrà essere sia installata dall&apos;utente che inclusa in un pacchetto d&apos;installazione">
 <!ENTITY beforeYouBegin.label "Prima di iniziare">
-<!ENTITY beforeYouBegin.description "È possibile decidere quali personalizzazioni effettuare e successivamente creare/raccogliere i file personalizzati, quali:
-">
+ <!ENTITY beforeYouBegin.description "È possibile decidere quali personalizzazioni effettuare e successivamente creare/raccogliere i file personalizzati, quali:
+                                         <html:ul>
+                                         <html:li>il file per il logo animato del browser</html:li>
+                                         <html:li>i motori di ricerca (file ed immagini relative)</html:li>
+                                         <html:li>i plug-in del browser</html:li>
+                                         <html:li>le estensioni ed i temi</html:li>
+                                         </html:ul>">
 <!ENTITY configurePage.label "Configurazioni dell&apos;estensione">
 <!ENTITY selectConfig.label "Selezione di una configurazione esistente o creazione di una nuova">
 <!ENTITY selectConfig.description "Selezionare una configurazione esistente, o fare clic su &apos;Nuova…&apos; per crearne una nuova ed uno spazio di lavoro in cui salvare i file personalizzati. Per modificare una configurazione esistente senza sovrascrivere quella originale, selezionarla dalla lista e fare clic su &apos;Copia…&apos;">
