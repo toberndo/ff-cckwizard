@@ -1,13 +1,7 @@
 <!ENTITY cckWizard.title "Firefox Client Customization Kit (CCK)">
 <!ENTITY cckWizard.description "Dieser Assistent hilft Ihnen bei der Erstellung einer Erweiterung zur Anpassung von Firefox. Die am Ende erstellte Erweiterung kann entweder vom Benutzer manuell installiert oder direkt in ein Firefox-Installationspaket eingebunden werden.">
 <!ENTITY beforeYouBegin.label "Bevor Sie beginnen">
-<!ENTITY beforeYouBegin.description "Entscheiden Sie, welche Anpassungen Sie vornehmen möchten und erstellen/sammeln sie die benötigten, angepassten Dateien, wie beispielsweise:
-<html:ul>
-<html:li>Eigene animierte Dateien für die Ladeanzeige (Throbber) des Browsers</html:li>
-<html:li>Such-Plugins (SRC-Dateien und zugehörige Symbolgrafiken)</html:li>
-<html:li>Browser-Plugins</html:li>
-<html:li>Erweiterungen/Themes</html:li>
-</html:ul>">
+<!ENTITY beforeYouBegin.description "Entscheiden Sie, welche Anpassungen Sie vornehmen möchten und erstellen/sammeln sie die benötigten, angepassten Dateien, wie beispielsweise:">
 <!ENTITY configurePage.label "Erweiterungskonfigurationen">
 <!ENTITY selectConfig.label "Eine bestehende Konfiguration auswählen oder eine neue erstellen">
 <!ENTITY selectConfig.description "Wählen Sie eine bestehende Konfiguration oder klicken Sie auf &quot;Neu...&quot;, um eine neue Konfiguration und einen neuen Arbeitsbereich zur Speicherung Ihrer spezifischen Dateien erstellen. Um eine bestehende Konfiguration zu bearbeiten, ohne das Original zu überschreiben, wählen Sie diese aus der Liste und klicken Sie auf &quot;Duplizieren...&quot;.">
@@ -57,8 +51,7 @@
 <!ENTITY noOverridePage.label "Die Aktualisierungs-Seite nicht anzeigen">
 <!ENTITY titleBar.caption "Titelleiste des Browser-Fensters">
 <!ENTITY titleBar.label "Text in der Titelleiste anpassen:">
-<!ENTITY titleBar.description "Der hier eingegebene Text (z.B. Ihr Firmenname) erscheint nach dem Seitentitel in der 
-Titelleiste. Es wird empfohlen, das Format <html:i>Mozilla Firefox: Firmenname-Edition</html:i> zu verwenden.">
+<!ENTITY titleBar.description "Der hier eingegebene Text (z.B. Ihr Firmenname) erscheint nach dem Seitentitel in der Titelleiste. Es wird empfohlen, das Format <html:i>Mozilla Firefox: Firmenname-Edition</html:i> zu verwenden.">
 <!ENTITY customizePartTwo.label "Browser anpassen - Teil 2">
 <!ENTITY animLogo.caption "Animiertes Logo (Throbber)">
 <!ENTITY animLogoURL.label "Adresse der Schaltfläche:">
@@ -157,10 +150,8 @@ Titelleiste. Es wird empfohlen, das Format <html:i>Mozilla Firefox: Firmenname-E
 <!ENTITY customizeBundles.warning "<html:b>WICHTIG: Wenn sie Erweiterungen und/oder Themes zu Ihrem CCK hinzufügen, kann das CCK nicht mehr automatisch als Teil einer Firefox-Installation installiert werden. Sie müssen es dann entweder über den Browser installieren oder den &apos;-install-global-extension&apos;-Mechanismus verwenden.</html:b>">
 <!ENTITY bundles.label "Erweiterungen/Themes">
 <!ENTITY customizeProxy.label "Proxy-Einstellungen anpassen">
-
 <!ENTITY autoCCKTypeRadio.label "Proxy-Konfigurationsdatei im CCK speichern:">
 <!ENTITY autoCCKTypeRadio.accesskey "i">
-
 <!ENTITY showConfig.title "Konfiguration anzeigen">
 <!ENTITY cckWizard.oncancel "Alle geänderten Daten werden gespeichert.">
 <!ENTITY cckWizardFinish.description "Klicken Sie auf &quot;Beenden&quot;, um Ihr CCK-Paket zu erstellen.">

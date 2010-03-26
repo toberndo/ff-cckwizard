@@ -1,19 +1,13 @@
 <!ENTITY cckWizard.title "Firefox Client Customization Kit (CCK)">
 <!ENTITY cckWizard.description "Esta herramienta le ayudará a crear una extensión para personalizar Firefox. La extensión puede ser instalada por el usuario o incluida en un paquete de instalación.">
 <!ENTITY beforeYouBegin.label "Antes de comenzar">
-<!ENTITY beforeYouBegin.description "Decida que personalizacion deseas hacer o crear/recoger de los archivos modificados para requisitos particulares, por ejemplo: 
-<html:ul>
-<html:li>Archivos de animaciones personalizadas para el logo animado de Firefox</html:li>
-<html:li>Sistemas de busqueda (archivos SRC y las imágenes correspondientes)</html:li>
-<html:li>Plug-ins del Navegador</html:li>
-<html:li>Extensiones y Temas</html:li>
-</html:ul>">
+<!ENTITY beforeYouBegin.description "Decida que personalizacion deseas hacer o crear/recoger de los archivos modificados para requisitos particulares, por ejemplo: ">
 <!ENTITY configurePage.label "Configuraciones de la extensión">
 <!ENTITY selectConfig.label "Seleccione una configuración existente o cree una nueva">
 <!ENTITY selectConfig.description "Seleccione una configuración existente, o pulse &apos;nueva&apos; para crear una configuración y un espacio de trabajo nuevos en los cuales almacenar sus archivos personalizados. Para editar una configuración existente sin sobreescribir la configuración original, seleccionarla de la lista y pulse &apos;copiar&apos;.">
 <!ENTITY showConfig.label "Mostrar información de la configuración">
-<!ENTITY newConfig.label "Nueva">
 <!ENTITY openConfig.label "Open">
+<!ENTITY newConfig.label "Nueva">
 <!ENTITY copyConfig.label "Copiar">
 <!ENTITY deleteConfig.label "Borrar">
 <!ENTITY createConfig.title "Crear nueva configuración">
@@ -57,9 +51,7 @@
 <!ENTITY noOverridePage.label "Do not display the upgrade page">
 <!ENTITY titleBar.caption "Texto de la barra del título de la ventana del navegador">
 <!ENTITY titleBar.label "Personalizar el texto de la barra del título:">
-<!ENTITY titleBar.description "El texto que introduzca (por ejemplo, su nombre de compañía) apareces después del título de la página en la barra del título. Se recomienda utilizar el formato 
-
-<html:i>Mozilla Firefox: Nombre de la compañía</html:i>">
+<!ENTITY titleBar.description "El texto que introduzca (por ejemplo, su nombre de compañía) apareces después del título de la página en la barra del título. Se recomienda utilizar el formato <html:i>Mozilla Firefox: Nombre de la compañía</html:i>">
 <!ENTITY customizePartTwo.label "Personalizar el Navegador - Parte dos">
 <!ENTITY animLogo.caption "Logotipo animado">
 <!ENTITY animLogoURL.label "URL del botón del logotipo">
@@ -147,10 +139,7 @@
 <!ENTITY regType.label "Tipo">
 <!ENTITY customizeCerts.label "Personalizar certificados">
 <!ENTITY customizeCerts.description "Use los botones inferiores para seleccionar certificados para ser instalados previamente (sólo en formato PEM).">
-<!ENTITY customizeCerts.warning "<html:b>IMPORTANTE: Si añade certificados a Firefox, NO PUEDE 
-vender un navegador fuera de tu compañía o institución y llamarlo Firefox.
-Esta característica se piensa sobre todo para los usuarios corporativos
-e institucionales que desarrollarán Firefox dentro de su organización.</html:b>">
+<!ENTITY customizeCerts.warning "<html:b>IMPORTANTE: Si añade certificados a Firefox, NO PUEDE vender un navegador fuera de tu compañía o institución y llamarlo Firefox.Esta característica se piensa sobre todo para los usuarios corporativose institucionales que desarrollarán Firefox dentro de su organización.</html:b>">
 <!ENTITY certs.label "Certificados">
 <!ENTITY cert.label "Certificado">
 <!ENTITY cert.trustSSL "Confiar en este CA para identificar sitios web.">
@@ -158,16 +147,11 @@ e institucionales que desarrollarán Firefox dentro de su organización.</html:b
 <!ENTITY cert.trustObjSign "Confiar en este CA para identificar desarrolladores de software.">
 <!ENTITY customizeBundles.label "Personalizar Extensiones/Temas">
 <!ENTITY customizeBundles.description "Use los botones inferiores para seleccionar las extensiones y temas que se instalaran con su CCK.">
-<!ENTITY customizeBundles.warning "<html:b>IMPORTANTE: Si añade extensiones y/o temas a CCK, 
-no puedes instalar el CCK como parte de una instalación de Firefox. Debes instalar
-a través del navegador o usar el mecanismo de instalación global de extensiones. 
-</html:b>">
+<!ENTITY customizeBundles.warning "<html:b>IMPORTANTE: Si añade extensiones y/o temas a CCK, no puedes instalar el CCK como parte de una instalación de Firefox. Debes instalara través del navegador o usar el mecanismo de instalación global de extensiones. </html:b>">
 <!ENTITY bundles.label "Extensiones/Temas">
 <!ENTITY customizeProxy.label "Personalizar configuraciones del proxy">
-
 <!ENTITY autoCCKTypeRadio.label "Almacenar el archivo de la configuración del proxy en la CCK:">
 <!ENTITY autoCCKTypeRadio.accesskey "i">
-
 <!ENTITY showConfig.title "Mostrar configuración">
 <!ENTITY cckWizard.oncancel "Todos los datos cambiados serán guardados">
 <!ENTITY cckWizardFinish.description "Pulse Terminar para crear su paquete CCK.">

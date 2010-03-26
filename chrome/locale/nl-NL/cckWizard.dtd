@@ -1,13 +1,7 @@
 <!ENTITY cckWizard.title "Firefox Client Customization Kit (CCK)">
 <!ENTITY cckWizard.description "Dit hulpmiddel helpt bij de creatie van een extensie die Firefox aanpast. Deze extensie kan worden geïnstalleerd door de gebruiker of in een installatiepakket worden ingevoegd.">
-<!ENTITY beforeYouBegin.label "Alvorens te beginnen">
-<!ENTITY beforeYouBegin.description "Bepaal welke aanpassingen u wilt maken en maak/verzamel de aangepaste bestanden, zoals:
-                 <html:ul>
-                 <html:li>Aangepaste animatiebestanden voor het animatielogo van de browser</html:li>
-                 <html:li>Zoekmachines (SRC bestanden en de bijbehorende afbeeldingen)</html:li>
-                 <html:li>Browser plugins</html:li>
-                 <html:li>Extensies/thema’s</html:li>
-                 </html:ul>">
+<!ENTITY beforeYouBegin.label "Voordat u begint">
+<!ENTITY beforeYouBegin.description "Bepaal welke aanpassingen u wilt maken en maak/verzamel de aangepaste bestanden, zoals:">
 <!ENTITY configurePage.label "Extensieconfiguraties">
 <!ENTITY selectConfig.label "Selecteer een bestaande configuratie of maak een nieuwe">
 <!ENTITY selectConfig.description "Selecteer een bestaande configuratie, of klik ‘Nieuw’ om een nieuwe configuratie en werkomgeving aan te maken waarin de aangepaste bestanden worden opgeslagen. Selecteer een bestaande configuratie uit de lijst en klik ‘Kopiëren’ om deze te wijzigen zonder de oorspronkelijke configuratie te overschrijven.">
@@ -19,7 +13,7 @@
 <!ENTITY createConfig.title "Nieuwe configuratie aanmaken">
 <!ENTITY copyConfig.title "Bestaande configuratie kopiëren">
 <!ENTITY configName.label "Naam van configuratie">
-<!ENTITY configLocation.label "Lokatie van configuratie">
+<!ENTITY configLocation.label "Locatie van configuratie">
 <!ENTITY saveOnExit.label "Configuratie automatisch bewaren bij afsluiten">
 <!ENTITY zipLocation.label "<html:b>Belangrijk:</html:b> Om de XPI te creëren dient ZIP of 7-Zip gebruikt te worden. Gebruik de knop ‘Bestand kiezen’ om één van deze programma’s te zoeken. Er zal tevens worden geprobeerd ZIP.EXE te gebruiken als dat zich in het pad bevindt.">
 <!ENTITY customizeExt.label "Extensie aanpassen">
@@ -29,13 +23,13 @@
 <!ENTITY version.label "Versie:">
 <!ENTITY description.label "Beschrijving:">
 <!ENTITY creator.label "Schrijver:">
-<!ENTITY homepageURL.label "Homepage-URL:">
+<!ENTITY homepageURL.label "Startpagina-URL:">
 <!ENTITY updateURL.label "Update-URL:">
 <!ENTITY updateKey.label "Publieke sleutel voor update:">
 <!ENTITY updateKey.description "Firefox 3 eist een publieke sleutel als uw extensie geen beveiligde update biedt.">
 <!ENTITY icon.label "Pictogram:">
-<!ENTITY chooseFile.label "Bestand kiezen...">
-<!ENTITY chooseDir.label "Map kiezen...">
+<!ENTITY chooseFile.label "Bestand kiezen…">
+<!ENTITY chooseDir.label "Map kiezen…">
 <!ENTITY filename.label "Bestandsnaam:">
 <!ENTITY hidden.label "Deze extensie niet in de add-onsbeheerder tonen.">
 <!ENTITY locked.label "Deïnstalleren van deze extensie voorkomen (dit kan altijd worden uitgeschakeld)">
@@ -44,9 +38,9 @@
 <!ENTITY orgName.description "De Company Identifier is bijgesloten als onderdeel van de user agent string van de browser wanneer het menu Help wordt geopend en Over Mozilla Firefox wordt geselecteerd. Hij is noodzakelijk.">
 <!ENTITY orgName.label "Voer de Company Identifier in (tot 10 karakters; geen spaties):">
 <!ENTITY orgName.caption "Company Identifier">
-<!ENTITY homePage.caption "Homepage">
-<!ENTITY homePage.label "Standaard homepage-URL:">
-<!ENTITY homePage.description "Deze pagina wordt getoond wanneer gebruikers de Firefox browser starten, of wanneer ze op de Home knop klikken">
+<!ENTITY homePage.caption "Startpagina">
+<!ENTITY homePage.label "Standaard startpagina-URL:">
+<!ENTITY homePage.description "Deze pagina wordt getoond wanneer gebruikers de Firefox browser starten, of wanneer ze op de knop Home klikken">
 <!ENTITY homePageWelcome.caption "Welkomstpagina">
 <!ENTITY homePageWelcome.description "Bij het starten van Firefox nadat een nieuw profiel is aangemaakt wordt een welkomstpagina weergegeven. U kunt ervoor kiezen deze pagina te vervangen of deze in het geheel niet weer te geven.">
 <!ENTITY homePageWelcome.label "URL van vervangende welkomstpagina:">
@@ -57,16 +51,15 @@
 <!ENTITY noOverridePage.label "Upgradepagina niet weergeven">
 <!ENTITY titleBar.caption "Titelbalktekst van browservenster">
 <!ENTITY titleBar.label "Aangepaste titelbalktekst:">
-<!ENTITY titleBar.description "De ingegeven tekst (bijvoorbeeld uw bedrijfsnaam) verschijnt na de paginatitel in de titelbalk. Het wordt aanbevolen de volgende opmaak te gebruiken:
-                  <html:i>Mozilla Firefox: Bedrijfsnaam Editie</html:i>">
+<!ENTITY titleBar.description "De ingegeven tekst (bijvoorbeeld uw bedrijfsnaam) verschijnt na de paginatitel in de titelbalk. Het wordt aanbevolen de volgende opmaak te gebruiken: <html:i>Mozilla Firefox: Bedrijfsnaam Editie</html:i>">
 <!ENTITY customizePartTwo.label "De browser aanpassen - deel twee">
-<!ENTITY animLogo.caption "Animatielogo">
+<!ENTITY animLogo.caption "Geanimeerd logo">
 <!ENTITY animLogoURL.label "Logoknop URL:">
-<!ENTITY animLogoURL.description "Voer de URL in waarnaar gebruikers zullen worden geleid als ze op de animatielogo-knop klikken">
-<!ENTITY animLogoTooltip.description "Voer de tooltip in die gebruikers zullen zien wanneer ze de muisknop boven de animatielogo-knop positioneren.">
+<!ENTITY animLogoURL.description "Voer de URL in waarnaar gebruikers zullen worden geleid als ze op het geanimeerde logo klikken.">
+<!ENTITY animLogoTooltip.description "Voer de tooltip in die gebruikers zullen zien wanneer ze de muisknop boven het geanimeerde logo positioneren.">
 <!ENTITY animLogoTooltip.label "Logoknop tooltip:">
 <!ENTITY animLogoAnim.description "Pad naar animated GIF-bestand (16x16 pixels):">
-<!ENTITY animLogoStill.description "Pad naar stilstaande GIF of PNG bestand (16x16 pixels):">
+<!ENTITY animLogoStill.description "Pad naar stilstaande GIF- of PNG-bestand (16x16 pixels):">
 <!ENTITY customizePartThree.label "De browser aanpassen - deel drie">
 <!ENTITY helpMenu.caption "Menu Help">
 <!ENTITY helpMenu.description "Hier kan een onderdeel aan het menu Help worden toegevoegd dat koppelt naar uw online klantenondersteuningspagina.">
@@ -75,13 +68,13 @@
 <!ENTITY helpMenuAccesskey.label "Toegangstoets menu Help-onderdeel:">
 <!ENTITY customizePartFour.label "De browser aanpassen - deel vier">
 <!ENTITY allowedSites.caption "Toegestane sites">
-<!ENTITY popupAllowedSites.label "Hier kunnen domeinen worden gespecificeerd waarvoor pop-ups zijn toegestaan. Geef de domeinen in, gescheiden door een komma.">
-<!ENTITY installAllowedSites.label "Hier kunnen domeinen worden ingegeven waarvoor software installaties (XPI’s) zijn toegestaan. Geef de domeinen in, gescheiden door een komma.">
-<!ENTITY cookieAllowedSites.label "You can specify domains for which cookies are always allowed. List the domains, separated by a comma.">
-<!ENTITY deniedSites.caption "Denied Sites">
-<!ENTITY popupDeniedSites.label "You can specify domains for which popups are denied. List the domains, separated by a comma.">
-<!ENTITY installDeniedSites.label "You can specify domains for which software installations (XPIs) are denied. List the domains, separated by a comma.">
-<!ENTITY cookieDeniedSites.label "You can specify domains for which cookies are always denied. List the domains, separated by a comma.">
+<!ENTITY popupAllowedSites.label "Hier kunnen domeinen worden ingegeven waarvoor pop-ups zijn toegestaan. Geef de domeinen in, gescheiden door een komma.">
+<!ENTITY installAllowedSites.label "Hier kunnen domeinen worden ingegeven waarvoor softwareinstallaties (XPI’s) zijn toegestaan. Geef de domeinen in, gescheiden door een komma.">
+<!ENTITY cookieAllowedSites.label "Hier kunnen domeinen worden ingegeven waarvoor cookies zijn toegestaan. Geef de domeinen in, gescheiden door een komma.">
+<!ENTITY deniedSites.caption "Geblokkeerde sites">
+<!ENTITY popupDeniedSites.label "Hier kunnen domeinen worden ingegeven waarvoor pop-ups niet zijn toegestaan. Geef de domeinen in, gescheiden door een komma.">
+<!ENTITY installDeniedSites.label "Hier kunnen domeinen worden ingegeven waarvoor softwareinstallaties (XPI’s) niet zijn toegestaan. Geef de domeinen in, gescheiden door een komma.">
+<!ENTITY cookieDeniedSites.label "Hier kunnen domeinen worden ingegeven waarvoor cookies nooit zijn toegestaan. Geef de domeinen in, gescheiden door een komma.">
 <!ENTITY customizeBrowserPlugins.label "Browserplug-ins aanpassen">
 <!ENTITY browserPlugins.description "Gebruik onderstaande knoppen om browserplug-ins toe te voegen">
 <!ENTITY plugins.label "Browserplug-ins">
@@ -107,10 +100,10 @@
 <!ENTITY addBookmarkFolder.description "Gebruik onderstaande knoppen om een map met bladwijzers te maken">
 <!ENTITY addBookmark.caption "Bladwijzers toevoegen">
 <!ENTITY addBookmark.description "Gebruik onderstaande knoppen om bladwijzers toe te voegen">
-<!ENTITY toolbarLocation.label "Lokatie van werkbalkonderdelen">
+<!ENTITY toolbarLocation.label "Locatie van werkbalkonderdelen">
 <!ENTITY toolbarLocationBegin.label "Werkbalkonderdelen vooraan plaatsen">
 <!ENTITY toolbarLocationEnd.label "Werkbalkonderdelen achteraan plaatsen">
-<!ENTITY bookmarkLocation.label "Lokatie van bladwijzers">
+<!ENTITY bookmarkLocation.label "Locatie van bladwijzers">
 <!ENTITY bookmarkLocationBegin.label "Bladwijzers vooraan plaatsen">
 <!ENTITY bookmarkLocationEnd.label "Bladwijzers achteraan plaatsen">
 <!ENTITY bookmark.label "Bladwijzer">
@@ -137,7 +130,7 @@
 <!ENTITY moveDownButton.accesskey "L">
 <!ENTITY customizeRegistry.label "Register aanpassen (alleen Windows)">
 <!ENTITY registry.label "Register">
-<!ENTITY registry.description "Gebruik onderstaande knoppen om onderdelen aan het Windows register toe te voegen. Noot: deze onderdelen zullen elke keer dat de browser start worden toegevoegd/bijgewerkt.">
+<!ENTITY registry.description "Gebruik onderstaande knoppen om onderdelen aan het Windows-register toe te voegen. Noot: deze onderdelen zullen elke keer dat de browser start worden toegevoegd/bijgewerkt.">
 <!ENTITY regDescription.label "Beschrijving">
 <!ENTITY regRootKey.label "Root Key">
 <!ENTITY regKey.label "Key">
@@ -145,11 +138,8 @@
 <!ENTITY regNameValue.label "Naamwaarde">
 <!ENTITY regType.label "Type">
 <!ENTITY customizeCerts.label "Certificaten aanpassen">
-<!ENTITY customizeCerts.description "Gebruik onderstaande knoppen om certificaten te selecteren die voorgeïnstalleerd moeten worden (alleen PEM formaat)">
-<!ENTITY customizeCerts.warning "<html:b>BELANGRIJK: Als er certificaten aan Firefox worden toegevoegd, dan mag de browser
-                    NIET buiten uw bedrijf of instelling worden gebruikt en Firefox worden
-                    genoemd. Deze toepassing is primair bedoeld voor bedrijfs- en institutionele
-                    gebruikers die Firefox binnen hun eigen organisatie zullen gebruiken.</html:b>">
+<!ENTITY customizeCerts.description "Gebruik onderstaande knoppen om certificaten te selecteren die voorgeïnstalleerd moeten worden (alleen PEM-formaat)">
+<!ENTITY customizeCerts.warning "<html:b>BELANGRIJK: Als er certificaten aan Firefox worden toegevoegd, dan mag de browser NIET buiten uw bedrijf of instelling worden gebruikt en Firefox worden genoemd. Deze toepassing is primair bedoeld voor bedrijfs- en institutionele gebruikers die Firefox binnen hun eigen organisatie zullen gebruiken.</html:b>">
 <!ENTITY certs.label "Certificaten">
 <!ENTITY cert.label "Certificaat">
 <!ENTITY cert.trustSSL "Dit certificaat bij identificatie van websites vertrouwen.">
@@ -157,16 +147,11 @@
 <!ENTITY cert.trustObjSign "Dit certificaat bij identificatie van softwareontwikkelaars vertrouwen.">
 <!ENTITY customizeBundles.label "Extensies/Thema’s aanpassen">
 <!ENTITY customizeBundles.description "Gebruik onderstaande knoppen om extensies en thema’s te selecteren die met uw CCK worden geïnstalleerd.">
-<!ENTITY customizeBundles.warning "<html:b>BELANGRIJK: Als u extensies en/of thema’s aan uw CCK toevoegt, kunt u de CCK niet langer
-                    als onderdeel van de Firefox installatie installeren. U dient via de browser
-                    te installeren.
-                    </html:b>">
+<!ENTITY customizeBundles.warning "<html:b>BELANGRIJK: Als u extensies en/of thema’s aan uw CCK toevoegt, kunt u de CCK niet langer als onderdeel van een Firefoxinstallatie installeren. U dient via de browser te installeren.</html:b>">
 <!ENTITY bundles.label "Extensies/Thema’s">
 <!ENTITY customizeProxy.label "Proxyconfiguraties aanpassen">
-
 <!ENTITY autoCCKTypeRadio.label "Proxyconfiguratiebestand opslaan in de CCK:">
 <!ENTITY autoCCKTypeRadio.accesskey "i">
-
 <!ENTITY showConfig.title "Configuratie tonen">
 <!ENTITY cckWizard.oncancel "Alle gewijzigde gegevens zullen worden opgeslagen">
 <!ENTITY cckWizardFinish.description "Klik ‘Klaar’ om uw CCK pakket te creëren.">

@@ -1,19 +1,7 @@
 <!ENTITY cckWizard.title "Firefox クライアント カスタマイズキット (CCK)">
 <!ENTITY cckWizard.description "This tool helps you create an extension that customizes Firefox. This extension can either be installed by the user or included in an install package.">
 <!ENTITY beforeYouBegin.label "Before You Begin">
-<!ENTITY beforeYouBegin.description "Decide which customizations you want to make and create/collect the customized files, such as:
-
-                                         <html:ul>
-
-                                         <html:li>ブラウザのアニメーションロゴを変更</html:li>
-
-                                         <html:li>検索エンジン (SRC ファイルと対応する画像)</html:li>
-
-                                         <html:li>ブラウザのプラグイン</html:li>
-
-                                         <html:li>拡張機能とテーマ</html:li>
-
-                                         </html:ul>">
+<!ENTITY beforeYouBegin.description "Decide which customizations you want to make and create/collect the customized files, such as:">
 <!ENTITY configurePage.label "拡張機能の構成">
 <!ENTITY selectConfig.label "既存の構成を選択するか新しく作成してください">
 <!ENTITY selectConfig.description "Select an existing configuration, or click &apos;New&apos; to create a new configuration and workspace in which to store your custom files. To edit an existing configuration without overwriting the original configuration, select it from the list and click &apos;Copy&apos;.">
@@ -63,8 +51,7 @@
 <!ENTITY noOverridePage.label "Do not display the upgrade page">
 <!ENTITY titleBar.caption "ブラウザのタイトルバーに表示する文字列">
 <!ENTITY titleBar.label "タイトルバーに表示する文字列:">
-<!ENTITY titleBar.description "The text you enter (for example, your company name) appears after the page title in the title bar. It is recommended that you use the format
-                                         <html:i>Mozilla Firefox: Companyname Edition</html:i>">
+<!ENTITY titleBar.description "The text you enter (for example, your company name) appears after the page title in the title bar. It is recommended that you use the format                                         <html:i>Mozilla Firefox: Companyname Edition</html:i>">
 <!ENTITY customizePartTwo.label "ブラウザのカスタマイズ - パート 2">
 <!ENTITY animLogo.caption "アニメーションロゴ">
 <!ENTITY animLogoURL.label "ロゴボタンの URL:">
@@ -152,10 +139,7 @@
 <!ENTITY regType.label "種類">
 <!ENTITY customizeCerts.label "Customize Certificates">
 <!ENTITY customizeCerts.description "Use the buttons below to select certificates to be preinstalled (PEM format only).">
-<!ENTITY customizeCerts.warning "<html:b>IMPORTANT: If you add certificates to Firefox, you CANNOT
-                                         ship a browser outside of your company or institution and call it Firefox.
-                                         This feature is intended primarily for corporate and institutional users
-                                         that will be deploying Firefox inside their organization.</html:b>">
+<!ENTITY customizeCerts.warning "<html:b>IMPORTANT: If you add certificates to Firefox, you CANNOT                                         ship a browser outside of your company or institution and call it Firefox.                                         This feature is intended primarily for corporate and institutional users                                         that will be deploying Firefox inside their organization.</html:b>">
 <!ENTITY certs.label "Certificates">
 <!ENTITY cert.label "Certificate">
 <!ENTITY cert.trustSSL "Trust this CA to identify web sites.">
@@ -163,19 +147,11 @@
 <!ENTITY cert.trustObjSign "Trust this CA to identify software developers.">
 <!ENTITY customizeBundles.label "拡張機能とテーマのカスタマイズ">
 <!ENTITY customizeBundles.description "Use the buttons below to select extensions and themes to be installed with your CCK.">
-<!ENTITY customizeBundles.warning "<html:b>IMPORTANT: If you add extensions and/or themes to your CCK,
-
-                                         you can no longer install the CCK as part of a Firefox install. You must
-
-                                         install through the browser or use the -install-global-extension mechanism.
-
-                                         </html:b>">
+<!ENTITY customizeBundles.warning "<html:b>IMPORTANT: If you add extensions and/or themes to your CCK,                                         you can no longer install the CCK as part of a Firefox install. You must                                         install through the browser or use the -install-global-extension mechanism.                                         </html:b>">
 <!ENTITY bundles.label "拡張機能とテーマ">
 <!ENTITY customizeProxy.label "プロキシの構成をカスタマイズ">
-
 <!ENTITY autoCCKTypeRadio.label "Store proxy configuration file in the CCK:">
 <!ENTITY autoCCKTypeRadio.accesskey "i">
-
 <!ENTITY showConfig.title "構成を表示">
 <!ENTITY cckWizard.oncancel "すべての変更されたデータが保存されます">
 <!ENTITY cckWizardFinish.description "完了をクリックすると CCK パッケージを作成します。">

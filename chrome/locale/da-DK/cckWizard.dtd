@@ -1,13 +1,7 @@
 <!ENTITY cckWizard.title "Firefox Client Customization Kit (CCK)">
 <!ENTITY cckWizard.description "Dette værktøj hjælper dig med at skabe en udvidelse der brugertilpasser Firefox. Denne udvidelse kan enten installeres af brugeren eller være inkluderet i en installationspakke.">
 <!ENTITY beforeYouBegin.label "Før du begynder">
-<!ENTITY beforeYouBegin.description "Beslut hvilke brugertilretninger til vil lave og opret/saml de brugertilrettede filer, såsom:
-                                         <html:ul>
-                                         <html:li>Brugertilrettede animationsfiler til browserens animerede logo</html:li>
-                                         <html:li>Søge-plugins</html:li>
-                                         <html:li>Browser-plugins</html:li>
-                                         <html:li>Udvidelsesmoduler/temaer</html:li>
-                                         </html:ul>">
+<!ENTITY beforeYouBegin.description "Beslut hvilke brugertilretninger til vil lave og opret/saml de brugertilrettede filer, såsom:">
 <!ENTITY configurePage.label "Udvidelseskonfigurationer">
 <!ENTITY selectConfig.label "Vælg en eksisterende konfiguration eller opret en ny">
 <!ENTITY selectConfig.description "Vælg en eksisterende konfiguration, eller klik &apos;Ny&apos; for at oprette en ny konfiguration og arbejdsområde hvori du kan gemme dine tilpassede filer. For at redigere en eksisterende konfiguration uden at overskrive den originale konfiguration, vælg den på listen og klik &apos;Kopier&apos;.">
@@ -57,8 +51,7 @@
 <!ENTITY noOverridePage.label "Vis ikke opgraderings-siden">
 <!ENTITY titleBar.caption "Browser-vinduets titellinjetekst">
 <!ENTITY titleBar.label "Tilpasset titellinjetekst:">
-<!ENTITY titleBar.description "Teksten du indtaster (for eksempel, dit firmanavn) vises efter sidetitlen i titellinjen. Det anbefales at du bruger formatet
-                                         <html:i>Mozilla Firefox: Firmanavn Udgave</html:i>">
+<!ENTITY titleBar.description "Teksten du indtaster (for eksempel, dit firmanavn) vises efter sidetitlen i titellinjen. Det anbefales at du bruger formatet                                         <html:i>Mozilla Firefox: Firmanavn Udgave</html:i>">
 <!ENTITY customizePartTwo.label "Tilret browseren - 2. del">
 <!ENTITY animLogo.caption "Animeret Logo">
 <!ENTITY animLogoURL.label "Logo-knap URL:">
@@ -146,11 +139,7 @@
 <!ENTITY regType.label "Type">
 <!ENTITY customizeCerts.label "Tilret certifikater">
 <!ENTITY customizeCerts.description "Brug knapperne herunder til at vælge de certifikater der skal være præinstallerede (kun i PEM-format).">
-<!ENTITY customizeCerts.warning "Du kan vælge op til fem certifikater der skal præinstalleres.<html:br/><html:br/>
-                                        <html:b>VIGTIGT: Hvis du tilføjer certifikater til Firefox, kan du IKKE
-                                        distribuere browseren udenfor dit firma eller institution og kalde det Firefox.
-                                        Denne facilitet er primært tiltænkt virksomheds- og institutionelle brugere
-                                        som ønsker at udrulle Firefox indenfor deres organisation.</html:b>">
+<!ENTITY customizeCerts.warning "Du kan vælge op til fem certifikater der skal præinstalleres.<html:br/><html:br/>">
 <!ENTITY certs.label "Certifikater">
 <!ENTITY cert.label "Certifikat">
 <!ENTITY cert.trustSSL "Stol på at denne CA identificerer websider.">
@@ -161,10 +150,8 @@
 <!ENTITY customizeBundles.warning "<html:b>VIGTIGT: Hvis du tilføjer udvidelser og/eller temaer i din CCK, kan du ikke længere installere CCK som en del af en Firefox-installation. Du skal installere gennem browseren. </html:b>">
 <!ENTITY bundles.label "Udvidelser/temaer">
 <!ENTITY customizeProxy.label "Tilret proxyopsætning">
-
 <!ENTITY autoCCKTypeRadio.label "Gem proxykonfigurationsfil i CCK:">
 <!ENTITY autoCCKTypeRadio.accesskey "i">
-
 <!ENTITY showConfig.title "Vis konfiguration">
 <!ENTITY cckWizard.oncancel "Alle ændrede data vil blive gemt">
 <!ENTITY cckWizardFinish.description "Klik Færdig for at skabe din CCK-pakke.">

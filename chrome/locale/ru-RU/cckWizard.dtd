@@ -1,13 +1,7 @@
 <!ENTITY cckWizard.title "Средства параметризации корпоративного браузера (Firefox CCK)">
 <!ENTITY cckWizard.description "Этот инструмент создаст расширение, которое параметризирует Firefox. Полученное расширение может быть установлено пользователем, либо включено в исходный инсталяционный пакет Firefox.">
 <!ENTITY beforeYouBegin.label "Перед тем как начать">
-<!ENTITY beforeYouBegin.description "Необходимо определиться какая степень параметризации необходима, какие элементы потребуется создать и настроить:
-<html:ul>
-<html:li>Файлы с анимированным и обычным изображением логотипа компании</html:li>
-<html:li>Поисковики (SRC-файлы и соответствующие файлы иконок)</html:li>
-<html:li>Подключаемые модули (plug-ins)</html:li>
-<html:li>Расширения/Темы</html:li>
-</html:ul>">
+<!ENTITY beforeYouBegin.description "Необходимо определиться какая степень параметризации необходима, какие элементы потребуется создать и настроить:">
 <!ENTITY configurePage.label "Конфигурирование расширения">
 <!ENTITY selectConfig.label "Выбор существующей конфигурации или создание новой">
 <!ENTITY selectConfig.description "Необходимо выбрать либо существующую конфигурацию, либо создать новую (кнопка &apos;Создать&apos;) и определить местоположение параметризированных файлов. Для редактирования существующей конфигурации без перезаписи оригинальной, надо выбрать её из списка и нажать кнопку &apos;Копировать&apos;.">
@@ -57,8 +51,7 @@
 <!ENTITY noOverridePage.label "Не показывать страницу обновления">
 <!ENTITY titleBar.caption "Заголовок окна браузера">
 <!ENTITY titleBar.label "Свой текст заголовка:">
-<!ENTITY titleBar.description "Вводимый текст (например, название вашей компании) появится в заголовке окна после заголовка страницы. Рекомендуется использовать формат:
-<html:i>Mozilla Firefox: Имя-Компании Edition</html:i>">
+<!ENTITY titleBar.description "Вводимый текст (например, название вашей компании) появится в заголовке окна после заголовка страницы. Рекомендуется использовать формат:<html:i>Mozilla Firefox: Имя-Компании Edition</html:i>">
 <!ENTITY customizePartTwo.label "Параметризация браузера - часть Вторая">
 <!ENTITY animLogo.caption "Анимированный логотип">
 <!ENTITY animLogoURL.label "Переход по логотипу:">
@@ -157,10 +150,8 @@
 <!ENTITY customizeBundles.warning "<html:b>ЗАМЕЧАНИЕ: После добавления расширений и/или тем к вашему CCK-пакету, его нельзя будет устанавливать как часть установки Firefox. Чтобы всё же произвести установку, необходимо или использовать механизм &apos;-install-global-extension&apos; </html:b>">
 <!ENTITY bundles.label "Расширения/Темы">
 <!ENTITY customizeProxy.label "Настройка прокси конфигурации">
-
 <!ENTITY autoCCKTypeRadio.label "Сохранить конфигурацию прокси-сервера в CCK-файле:">
 <!ENTITY autoCCKTypeRadio.accesskey "С">
-
 <!ENTITY showConfig.title "Конфигурация">
 <!ENTITY cckWizard.oncancel "Все изменения сохранены">
 <!ENTITY cckWizardFinish.description "Для создания CCK-пакета нажмите &quot;Завершить&quot;.">

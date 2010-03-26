@@ -1,13 +1,7 @@
 <!ENTITY cckWizard.title "Firefox Client Customization Kit (CCK)">
 <!ENTITY cckWizard.description "To narzędzie pomaga utworzyć rozszerzenie modyfikujące Firefoksa. Może ono być instalowane przez użytkownika lub dołączone do pakietu instalacyjnego.">
 <!ENTITY beforeYouBegin.label "Informacje ogólne">
-<!ENTITY beforeYouBegin.description "Przed przystąpieniem do dalszych czynności proszę zastanowić się i określić rodzaj i zakres modyfikacji oraz jakie pliki modyfikacyjne utworzyć:
-                                    <html:ul>  
-                                    <html:li>Logo przeglądarki (pliki dodające animowane logo przeglądarki)</html:li>  
-                                    <html:li>Wyszukiwarki (pliki .src i odpowiadające im obrazki)</html:li>  
-                                    <html:li>Wtyczki</html:li>  
-                                    <html:li>Rozszerzenia/motywy</html:li>  
-                                    </html:ul>">
+<!ENTITY beforeYouBegin.description "Przed przystąpieniem do dalszych czynności proszę zastanowić się i określić rodzaj i zakres modyfikacji oraz jakie pliki modyfikacyjne utworzyć:">
 <!ENTITY configurePage.label "Konfiguracja">
 <!ENTITY selectConfig.label "Wybór/tworzenie konfiguracji">
 <!ENTITY selectConfig.description "Proszę wybrać istniejącą konfigurację lub nacisnąć przycisk &quot;Nowa&quot;, aby utworzyć nową, a następnie określić miejsce przechowywania plików modyfikacyjnych. Aby edytować istniejącą konfigurację bez nadpisywania oryginalnej należy zaznaczyć ją na liście i nacisnąć przycisk &quot;Kopiuj&quot;.">
@@ -57,8 +51,7 @@
 <!ENTITY noOverridePage.label "Nie wyświetlaj strony informacyjnej aktualizacji">
 <!ENTITY titleBar.caption "Tekst paska tytułu">
 <!ENTITY titleBar.label "Wprowadź tekst paska tytułu:">
-<!ENTITY titleBar.description "Wprowadzony tekst (np. nazwa firmy) jest wyświetlany na pasku tytułu za nazwą strony. Zaleca się stosować następujący format:
-                              <html:i>Mozilla Firefox: Edycja Nazwa_firmy</html:i>">
+<!ENTITY titleBar.description "Wprowadzony tekst (np. nazwa firmy) jest wyświetlany na pasku tytułu za nazwą strony. Zaleca się stosować następujący format:                              <html:i>Mozilla Firefox: Edycja Nazwa_firmy</html:i>">
 <!ENTITY customizePartTwo.label "Modyfikowanie przeglądarki - część druga">
 <!ENTITY animLogo.caption "Animowane logo">
 <!ENTITY animLogoURL.label "Adres URL">
@@ -157,10 +150,8 @@
 <!ENTITY customizeBundles.warning "<html:b>Ważne: Jeśli do pakietu CCK zostaną dodane rozszerzenia i/lub motywy, nie będzie można instalować pakietu jako części instalacji Firefoksa. Należy wówczas instalować go poprzez przeglądarkę.</html:b>">
 <!ENTITY bundles.label "Rozszerzenia/Motywy">
 <!ENTITY customizeProxy.label "Modyfikowanie ustawień proxy">
-
 <!ENTITY autoCCKTypeRadio.label "Zapisz plik konfiguracyjny proxy w CCK:">
 <!ENTITY autoCCKTypeRadio.accesskey "Z">
-
 <!ENTITY showConfig.title "Informacje o konfiguracji">
 <!ENTITY cckWizard.oncancel "Wszystkie zmiany zostaną zapisane">
 <!ENTITY cckWizardFinish.description "Naciśnij przycisk &quot;Zakończ&quot;, aby utworzyć pakiet CCK.">

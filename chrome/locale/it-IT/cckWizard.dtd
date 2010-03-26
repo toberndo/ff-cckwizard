@@ -2,17 +2,12 @@
 <!ENTITY cckWizard.description "La configurazione guidata consente di creare un&apos;estensione per personalizzare Firefox. L&apos;estensione creata potrà essere sia installata dall&apos;utente che inclusa in un pacchetto d&apos;installazione">
 <!ENTITY beforeYouBegin.label "Prima di iniziare">
 <!ENTITY beforeYouBegin.description "È possibile decidere quali personalizzazioni effettuare e successivamente creare/raccogliere i file personalizzati, quali:
-                                         <html:ul>
-                                         <html:li>il file per il logo animato del browser</html:li>
-                                         <html:li>i motori di ricerca (file ed immagini relative)</html:li>
-                                         <html:li>i plug-in del browser</html:li>
-                                         <html:li>le estensioni ed i temi</html:li>
-                                         </html:ul>">
+">
 <!ENTITY configurePage.label "Configurazioni dell&apos;estensione">
 <!ENTITY selectConfig.label "Selezione di una configurazione esistente o creazione di una nuova">
 <!ENTITY selectConfig.description "Selezionare una configurazione esistente, o fare clic su &apos;Nuova…&apos; per crearne una nuova ed uno spazio di lavoro in cui salvare i file personalizzati. Per modificare una configurazione esistente senza sovrascrivere quella originale, selezionarla dalla lista e fare clic su &apos;Copia…&apos;">
 <!ENTITY showConfig.label "Mostra le informazioni di configurazione">
-<!ENTITY openConfig.label "Open">
+<!ENTITY openConfig.label "Apri…">
 <!ENTITY newConfig.label "Nuova…">
 <!ENTITY copyConfig.label "Copia…">
 <!ENTITY deleteConfig.label "Elimina">
@@ -21,7 +16,7 @@
 <!ENTITY configName.label "Nome della configurazione">
 <!ENTITY configLocation.label "Percorso della configurazione">
 <!ENTITY saveOnExit.label "Salva automaticamente la configurazione quando si chiude il browser">
-<!ENTITY zipLocation.label "<html:b>Importante:</html:b> per creare il file XPI assicurarsi che nel percorso ci sia un programma per comprimere (ZIP o 7-Zip). Utilizzare il pulsante &apos;Sfoglia…&apos; per selezionare uno dei due file eseguibili (nota: se nella cartella selezionata sono presenti entrambi gli eseguibili verrà utilizzato come predefinito zip.exe)">
+<!ENTITY zipLocation.label "<html:b>Importante:</html:b> per creare il file XPI assicurarsi che nel percorso ci sia un programma per comprimere (ZIP o 7-Zip). Utilizzare il pulsante 'Sfoglia…' per selezionare uno dei due file eseguibili (nota: se nella cartella selezionata sono presenti entrambi gli eseguibili verrà utilizzato come predefinito zip.exe)">
 <!ENTITY customizeExt.label "Personalizzazione dell&apos;estensione">
 <!ENTITY id.label "ID unico:">
 <!ENTITY id.format "Formato: companyname-cck@extensions.domainname.tld">
@@ -74,14 +69,14 @@
 <!ENTITY helpMenuURL.label "URL dell&apos;elemento:">
 <!ENTITY helpMenuAccesskey.label "Accesskey dell&apos;elemento:">
 <!ENTITY customizePartFour.label "Quarta fase della personalizzazione del browser">
-<!ENTITY allowedSites.caption "Siti con permesso">
+<!ENTITY allowedSites.caption "Siti permessi">
 <!ENTITY popupAllowedSites.label "È possibile indicare quali siti potranno aprire finestre pop-up. Inserire l&apos;indirizzo esatto dei siti a cui dare il permesso separandoli con una virgola">
 <!ENTITY installAllowedSites.label "È possibile indicare quali siti potranno installare software. Inserire l&apos;indirizzo esatto dei siti a cui dare il permesso separandoli con una virgola">
-<!ENTITY cookieAllowedSites.label "You can specify domains for which cookies are always allowed. List the domains, separated by a comma.">
-<!ENTITY deniedSites.caption "Denied Sites">
-<!ENTITY popupDeniedSites.label "You can specify domains for which popups are denied. List the domains, separated by a comma.">
-<!ENTITY installDeniedSites.label "You can specify domains for which software installations (XPIs) are denied. List the domains, separated by a comma.">
-<!ENTITY cookieDeniedSites.label "You can specify domains for which cookies are always denied. List the domains, separated by a comma.">
+<!ENTITY cookieAllowedSites.label "È possibile indicare per quali dominii sono permessi i cookie. Inserire l&apos;indirizzo esatto dei dominii a cui dare il permesso separandoli con una virgola">
+<!ENTITY deniedSites.caption "Siti non permessi">
+<!ENTITY popupDeniedSites.label "È possibile indicare quali siti non potranno aprire finestre pop-up. Inserire l&apos;indirizzo esatto dei siti a cui non dare il permesso separandoli con una virgola">
+<!ENTITY installDeniedSites.label "È possibile indicare quali siti non potranno installare software. Inserire l&apos;indirizzo esatto dei siti a cui non dare il permesso separandoli con una virgola">
+<!ENTITY cookieDeniedSites.label "È possibile indicare per quali dominii non sono permessi i cookie. Inserire l&apos;indirizzo esatto dei dominii a cui non dare il permesso separandoli con una virgola">
 <!ENTITY customizeBrowserPlugins.label "Personalizzazione dei plug-in del browser">
 <!ENTITY browserPlugins.description "Fare clic su &apos;Nuovo…&apos; per aggiungere plug-in">
 <!ENTITY plugins.label "Plug-in del browser">
@@ -163,10 +158,8 @@
                                          </html:b>">
 <!ENTITY bundles.label "Estensioni e temi">
 <!ENTITY customizeProxy.label "Personalizzazione della configurazione dei proxy">
-
-<!ENTITY autoCCKTypeRadio.label "Conserva il file di configurazione dei proxy in CCK:">
-<!ENTITY autoCCKTypeRadio.accesskey "y">
-
+<!ENTITY autoCCKTypeRadio.label "Conserva il file di configurazione dei proxy nel CCK:">
+<!ENTITY autoCCKTypeRadio.accesskey "i">
 <!ENTITY showConfig.title "Configurazione">
 <!ENTITY cckWizard.oncancel "Tutti i dati modificati verranno salvati">
 <!ENTITY cckWizardFinish.description "Fare clic su &apos;Fine&apos; per creare il pacchetto CCK">

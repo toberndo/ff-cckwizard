@@ -1,13 +1,7 @@
 <!ENTITY cckWizard.title "Zákazanický kit pro Firefox (CCK)">
 <!ENTITY cckWizard.description "Tento nástroj vám pomůže vytvářet rozšíření pro zákaznickou úpravu Firefoxu. Toto rozšíření může být buď instalováno uživatelem, nebo obsaženo v instalačním balíčku.">
 <!ENTITY beforeYouBegin.label "Než začnete">
-<!ENTITY beforeYouBegin.description "Rozmyslete si, které zákaznické úpravy hodláte provést a vytvořte či uložte upravené soubory, jako:
-                                         <html:ul>
-                                         <html:li>Upravené animované soubory loga prohlížeče</html:li>
-                                         <html:li>Vyhledávače (SRC soubory a odpovídající ikony)</html:li>
-                                         <html:li>Zásuvné moduly prohlížeče</html:li>
-                                         <html:li>Rozšíření či témata vzhledu</html:li>
-                                         </html:ul>">
+<!ENTITY beforeYouBegin.description "Rozmyslete si, které zákaznické úpravy hodláte provést a vytvořte či uložte upravené soubory, jako:">
 <!ENTITY configurePage.label "Konfigurace rozšíření">
 <!ENTITY selectConfig.label "Vyberte existující konfiguraci anebo vytvořte novou">
 <!ENTITY selectConfig.description "Vyberte existující konfiguraci, nebo klepněte na &apos;Nová&apos; a vytvořte novou konfiguraci spolu s pracovní plochou, ve které budou ukládány vaše soubory nastavení. Pro úpravu existující konfigurace bez jejího přepsání, ji nejprve vyberte ze seznamu a pak klepněte na &apos;Kopírovat&apos;.">
@@ -57,8 +51,7 @@
 <!ENTITY noOverridePage.label "Do not display the upgrade page">
 <!ENTITY titleBar.caption "Text v titulku okna prohlížeče">
 <!ENTITY titleBar.label "Upravit text titulku prohlížeče:">
-<!ENTITY titleBar.description "Text, který vložít (například název vaší společnosti) se zobrazí za názvem stránky v titulkové liště okna. Doporučuje se použít formát
-                                         <html:i>Mozilla Firefox: Verze názvuSpolečnosti</html:i>">
+<!ENTITY titleBar.description "Text, který vložít (například název vaší společnosti) se zobrazí za názvem stránky v titulkové liště okna. Doporučuje se použít formát                                         <html:i>Mozilla Firefox: Verze názvuSpolečnosti</html:i>">
 <!ENTITY customizePartTwo.label "Zákaznická úprava prohlížeče - Část II">
 <!ENTITY animLogo.caption "Animované logo">
 <!ENTITY animLogoURL.label "URL talčítka s logem:">
@@ -146,10 +139,7 @@
 <!ENTITY regType.label "Typ">
 <!ENTITY customizeCerts.label "Specifikace certifikátů">
 <!ENTITY customizeCerts.description "Použijte následující tlačítka pro výběr certifikátů, jež mají být předinstalovány (pouze formátu PEM).">
-<!ENTITY customizeCerts.warning "<html:b>DŮLEŽITÉ: Pokud přidáte do Firfoxu certifikát, NEMŮŽETE
-                                         vydat prohlížeč mimo vaší společnost či instituci a nazývat ho Firefox.
-                                         Tato vlastnost je záměřena především na korporátní uživatele a instituce,
-                                         jež budou rozšiřovat Firefox uvnitř své organizace/společnosti.</html:b>">
+<!ENTITY customizeCerts.warning "<html:b>DŮLEŽITÉ: Pokud přidáte do Firfoxu certifikát, NEMŮŽETE                                         vydat prohlížeč mimo vaší společnost či instituci a nazývat ho Firefox.                                         Tato vlastnost je záměřena především na korporátní uživatele a instituce,                                         jež budou rozšiřovat Firefox uvnitř své organizace/společnosti.</html:b>">
 <!ENTITY certs.label "Certifikáty">
 <!ENTITY cert.label "Certifikát">
 <!ENTITY cert.trustSSL "Důvěřovat této CA při identifikaci webových serverů.">
@@ -157,16 +147,11 @@
 <!ENTITY cert.trustObjSign "Důvěřovat této CA při identifikaci softwarových vývojářů.">
 <!ENTITY customizeBundles.label "Specifikace rozšíření/témat vzhledu">
 <!ENTITY customizeBundles.description "Použijte následující tlačítka pro výběr rozšíření a témat vzhledu, jež se mají nainstalovat s vaším CCK.">
-<!ENTITY customizeBundles.warning "<html:b>DŮLEŽITÉ: Pokud přidáte rozšíření anebo témata vzhledu do vašeho CCK,
-                                         nemůžete již instalovat CCK jako součást instalace Firefoxu. Musíte
-                                         instalovat pomocí prohlížeče nebo mechanismem globální instalace rozšíření.
-                                         </html:b>">
+<!ENTITY customizeBundles.warning "<html:b>DŮLEŽITÉ: Pokud přidáte rozšíření anebo témata vzhledu do vašeho CCK,                                         nemůžete již instalovat CCK jako součást instalace Firefoxu. Musíte                                         instalovat pomocí prohlížeče nebo mechanismem globální instalace rozšíření.                                         </html:b>">
 <!ENTITY bundles.label "Rozšíření/témata vzhledu">
 <!ENTITY customizeProxy.label "Specifikace nastavení proxy serverů">
-
 <!ENTITY autoCCKTypeRadio.label "Store proxy configuration file in the CCK:">
 <!ENTITY autoCCKTypeRadio.accesskey "i">
-
 <!ENTITY showConfig.title "Zobrazit konfiguraci">
 <!ENTITY cckWizard.oncancel "Všechny změněné údaje budou uloženy">
 <!ENTITY cckWizardFinish.description "Klepnět na Dokončit k vytvoření balíčku CCK.">

@@ -1,16 +1,10 @@
 <!ENTITY cckWizard.title "Client Customization Kit (CCK) pour Firefox">
-<!ENTITY cckWizard.description "Cet outil vous aide à créer une extension qui servira à personnaliser Firefox. Cette extension pourra être installée par l&apos;utilisateur ou bien incluse dans un paquetage d&apos;installation de Firefox.">
+<!ENTITY cckWizard.description "Cet outil vous aide à créer une extension qui servira à personnaliser Firefox. Cette extension pourra être installée par l'utilisateur ou bien incluse dans un paquetage d'installation de Firefox.">
 <!ENTITY beforeYouBegin.label "Avant de commencer">
-<!ENTITY beforeYouBegin.description "Décidez quelles personnalisations vous souhaitez faire et créez/collectez les fichiers modifiés, tels que:
-                                         <html:ul>
-                                         <html:li>Fichier de l&apos;animation pour le logo animé du navigateur</html:li>
-                                         <html:li>Moteur de recherche</html:li>
-                                         <html:li>Plugins du navigateur</html:li>
-                                         <html:li>Extensions/thèmes</html:li>
-                                         </html:ul>">
+<!ENTITY beforeYouBegin.description "Décidez quelles personnalisations vous souhaitez faire et créez/collectez les fichiers modifiés, tels que:">
 <!ENTITY configurePage.label "Configuration de votre extension">
 <!ENTITY selectConfig.label "Choisir une configuration existante ou en créer une nouvelle">
-<!ENTITY selectConfig.description "Choisissez une configuration existante, ou cliquez sur &apos;Nouveau&apos; pour créer une nouvelle configuration et un nouvel espace de travail dans lequel seront enregistrés vos fichiers personnalisés. Pour modifier une configuration existante sans écraser l&apos;originale, la sélectionner dans la liste et cliquer sur &apos;Copier&apos;.">
+<!ENTITY selectConfig.description "Choisissez une configuration existante, ou cliquez sur 'Nouveau' pour créer une nouvelle configuration et un nouvel espace de travail dans lequel seront enregistrés vos fichiers personnalisés. Pour modifier une configuration existante sans écraser l'originale, la sélectionner dans la liste et cliquer sur 'Copier'.">
 <!ENTITY showConfig.label "Afficher les informations de configuration">
 <!ENTITY openConfig.label "Open">
 <!ENTITY newConfig.label "Nouveau">
@@ -21,67 +15,67 @@
 <!ENTITY configName.label "Nom de la configuration">
 <!ENTITY configLocation.label "Emplacement de la configuration">
 <!ENTITY saveOnExit.label "Enregistrer automatiquement cette configuration à la sortie">
-<!ENTITY zipLocation.label "Pour créer le XPI, nous devons utiliser ZIP (info-zip.org). Si zip.exe n&apos;est pas dans votre répertoire, vous pouvez le préciser ici :">
-<!ENTITY customizeExt.label "Personnalissation de votre extension">
+<!ENTITY zipLocation.label "Pour créer le XPI, nous devons utiliser ZIP (info-zip.org). Si zip.exe n'est pas dans votre répertoire, vous pouvez le préciser ici :">
+<!ENTITY customizeExt.label "Personnalisation de votre extension">
 <!ENTITY id.label "ID unique :">
 <!ENTITY id.format "Format: nom_organisation-cck@extensions.nom_domaine.tld">
 <!ENTITY name.label "Nom :">
 <!ENTITY version.label "Version :">
 <!ENTITY description.label "Description :">
 <!ENTITY creator.label "Créateur :">
-<!ENTITY homepageURL.label "Adresse de la page d&apos;accueil :">
+<!ENTITY homepageURL.label "Adresse de la page d'accueil :">
 <!ENTITY updateURL.label "Adresse du fichier de mise à jour :">
-<!ENTITY updateKey.label "Update Public Key:">
-<!ENTITY updateKey.description "Firefox 3 requires a public key if your extension does not provide a secure update.">
+<!ENTITY updateKey.label "Mettre à jour la clé publique :">
+<!ENTITY updateKey.description "Firefox 3 nécessite une clé publique si votre extension ne fournit pas de misà jour sécurisée.">
 <!ENTITY icon.label "Icône :">
 <!ENTITY chooseFile.label "Choisir un fichier...">
 <!ENTITY chooseDir.label "Choisir un répertoire...">
 <!ENTITY filename.label "Nom du fichier :">
-<!ENTITY hidden.label "Cacher cette extension dans le gestionnaire d&apos;extensions.">
-<!ENTITY locked.label "Empêcher la désinstallation de cette extension (elle restera désactivable).">
-<!ENTITY aboutconfig.label "Ne pas autoriser l&apos;accès à about:config">
+<!ENTITY hidden.label "Cacher cette extension dans le gestionnaire d'extensions.">
+<!ENTITY locked.label "Empêcher la désinstallation de cette extension (elle peut encore être désactivée).">
+<!ENTITY aboutconfig.label "Ne pas autoriser l'accès à about:config">
 <!ENTITY customizePartOne.label "Personnalisation du navigateur - Partie 1">
-<!ENTITY orgName.description "L&apos;identité de l&apos;organisation est intégrée dans la chaine de caractères (CK-identité) de l&apos;agent utilisateur du navigateur, qui apparaît dans le menu d&apos;Aide, quand vous choisissez &apos;À propos de Mozilla Firefox&apos;. Cette identité est obligatoire.">
-<!ENTITY orgName.label "Identité de votre organisation (10 caractères maximum - pas d&apos;espaces)">
-<!ENTITY orgName.caption "Identité de l&apos;organisation">
-<!ENTITY homePage.caption "Pages d&apos;accueil">
-<!ENTITY homePage.label "Page d&apos;accueil par défaut du navigateur :">
-<!ENTITY homePage.description "Cette page est affichée quand les utilisateurs lancent Firefox ou quand ils cliquent sur le bouton &apos;Accueil&apos;.">
-<!ENTITY homePageWelcome.caption "Welcome Page">
-<!ENTITY homePageWelcome.description "On the very first invocation of Firefox after a new profile is created, a welcome page is displayed. You can choose to replace this page or to not display it at all.">
-<!ENTITY homePageWelcome.label "Replacement Welcome Page URL:">
-<!ENTITY noWelcomePage.label "Do not display the welcome page">
-<!ENTITY homePageOverride.caption "Upgrade Page">
-<!ENTITY homePageOverride.description "Cette page est affichée lors de la toute première ouverture de Firefox, après la création d&apos;un nouveau profil. Cette option est facultative.">
-<!ENTITY homePageOverride.label "Pages d&apos;accueil primaire :">
-<!ENTITY noOverridePage.label "Do not display the upgrade page">
+<!ENTITY orgName.description "L'identité de l'organisation est intégrée dans la chaine de caractères (CK-identité) de l'agent utilisateur du navigateur, qui apparaît dans le menu d'Aide, quand vous choisissez 'À propos de Mozilla Firefox'. Cette identité est obligatoire.">
+<!ENTITY orgName.label "Identité de votre organisation (10 caractères maximum - pas d'espaces)">
+<!ENTITY orgName.caption "Identité de l'organisation">
+<!ENTITY homePage.caption "Pages d'accueil">
+<!ENTITY homePage.label "Page d'accueil par défaut du navigateur :">
+<!ENTITY homePage.description "Cette page est affichée quand les utilisateurs lancent Firefox ou quand ils cliquent sur le bouton 'Accueil'.">
+<!ENTITY homePageWelcome.caption "Page d'accueil">
+<!ENTITY homePageWelcome.description "Au tout premier lancement de Firefox après la création d'un nouveau profil, une page d'accueil est affichée. Vous pouvez choisir de remplacer cette page ou de ne pas du tout l'afficher.">
+<!ENTITY homePageWelcome.label "Remplacement de l'adresse URL de la page d'accueil :">
+<!ENTITY noWelcomePage.label "Ne pas afficher la page d'accueil">
+<!ENTITY homePageOverride.caption "Mettre la page à jour">
+<!ENTITY homePageOverride.description "Cette page est affichée lors de la toute première ouverture de Firefox, après la création d'un nouveau profil. Cette option est facultative.">
+<!ENTITY homePageOverride.label "Pages d'accueil primaire :">
+<!ENTITY noOverridePage.label "Ne pas afficher la page de mise à jour">
 <!ENTITY titleBar.caption "Texte de la barre de titre de la fenêtre du navigateur">
 <!ENTITY titleBar.label "Texte de la barre de titre du navigateur :">
-<!ENTITY titleBar.description "Le texte saisi ici (par exemple nom_organisation) apparaîtra après le titre de la page web, dans la barre de titre du navigateur. Il est recommandé d&apos;utiliser le format
+<!ENTITY titleBar.description "Le texte saisi ici (par exemple nom_organisation) apparaîtra après le titre de la page web, dans la barre de titre du navigateur. Il est recommandé d'utiliser le format
                                          <html:i>Mozilla Firefox: nom_organisation Édition</html:i>">
 <!ENTITY customizePartTwo.label "Personnalisation du navigateur - Partie 2">
 <!ENTITY animLogo.caption "Logo animé (throbber)">
 <!ENTITY animLogoURL.label "Adresse cible :">
-<!ENTITY animLogoURL.description "Entrez l&apos;adresse cible que les utilisateurs verront lorsqu&apos;ils cliqueront sur le logo animé.">
-<!ENTITY animLogoTooltip.description "Entrez le texte de l&apos;infobulle que les utilisateurs verront au survol de la souris sur le logo animé.">
-<!ENTITY animLogoTooltip.label "Texte de l&apos;infobulle :">
+<!ENTITY animLogoURL.description "Entrez l'adresse cible que les utilisateurs verront lorsqu'ils cliqueront sur le logo animé.">
+<!ENTITY animLogoTooltip.description "Entrez le texte de l'infobulle que les utilisateurs verront au survol de la souris sur le logo animé.">
+<!ENTITY animLogoTooltip.label "Texte de l'infobulle :">
 <!ENTITY animLogoAnim.description "Votre logo animé, fichier GIF (16x16 pixels) :">
 <!ENTITY animLogoStill.description "Votre logo fixe, fichier GIF ou PNG (16x16 pixels) :">
 <!ENTITY customizePartThree.label "Personnalisation du navigateur - Partie 3">
-<!ENTITY helpMenu.caption "Menu d&apos;aide">
-<!ENTITY helpMenu.description "Vous pouvez ajouter une entrée dans le menu d&apos;aide pour proposer un lien vers votre page d&apos;assistance en ligne, pour vos clients.">
-<!ENTITY helpMenuText.label "Texte de l&apos;entrée du menu d&apos;aide:">
-<!ENTITY helpMenuURL.label "Adresse (URL) le la page d&apos;assistance :">
-<!ENTITY helpMenuAccesskey.label "Raccourci clavier de l&apos;entrée du menu d&apos;aide :">
+<!ENTITY helpMenu.caption "Menu d'aide">
+<!ENTITY helpMenu.description "Vous pouvez ajouter une entrée dans le menu d'aide pour proposer un lien vers votre page d'assistance en ligne, pour vos clients.">
+<!ENTITY helpMenuText.label "Texte de l'entrée du menu d'aide:">
+<!ENTITY helpMenuURL.label "Adresse (URL) le la page d'assistance :">
+<!ENTITY helpMenuAccesskey.label "Raccourci clavier de l'entrée du menu d'aide :">
 <!ENTITY customizePartFour.label "Personnalisation du navigateur - Partie 4">
 <!ENTITY allowedSites.caption "Sites autorisés">
 <!ENTITY popupAllowedSites.label "Vous pouvez spécifier les domaines pour lesquels les popups sont autorisés. Listez les domaines séparés par des virgules.">
-<!ENTITY installAllowedSites.label "Vous pouvez spécifier les domaines pour lesquels l&apos;installation des XPIs est autorisée. Listez les domaines séparés par des virgules, saisir foo.com <html:b>et non</html:b> *.foo.com.">
-<!ENTITY cookieAllowedSites.label "You can specify domains for which cookies are always allowed. List the domains, separated by a comma.">
-<!ENTITY deniedSites.caption "Denied Sites">
-<!ENTITY popupDeniedSites.label "You can specify domains for which popups are denied. List the domains, separated by a comma.">
-<!ENTITY installDeniedSites.label "You can specify domains for which software installations (XPIs) are denied. List the domains, separated by a comma.">
-<!ENTITY cookieDeniedSites.label "You can specify domains for which cookies are always denied. List the domains, separated by a comma.">
+<!ENTITY installAllowedSites.label "Vous pouvez spécifier les domaines pour lesquels l'installation des XPIs est autorisée. Listez les domaines séparés par des virgules, saisir foo.com <html:b>et non</html:b> *.foo.com.">
+<!ENTITY cookieAllowedSites.label "Vous pouvez spécifier les domaines pour lesquels les cookies sont toujours autorisés. Listez les domaines, séparés par des virgules.">
+<!ENTITY deniedSites.caption "Sites refusés">
+<!ENTITY popupDeniedSites.label "Vous pouvez préciser les domaines pour lesquels les popups sont refusés. Listez les domaines, séparés par des virgules.">
+<!ENTITY installDeniedSites.label "Vous pouvez préciser les domaines pour lesquels l'installation des XPI est refusée. Listez les domaines, séparés par des virgules.">
+<!ENTITY cookieDeniedSites.label "Vous pouvez préciser les domaines pour lesquels les cookies sont refusés. Listez les domaines, séparés par des virgules.">
 <!ENTITY customizeBrowserPlugins.label "Personnalisation des plugins du navigateur (pas les extensions)">
 <!ENTITY browserPlugins.description "Utilisez les boutons ci-contre pour ajouter des plugins au navigateur.">
 <!ENTITY plugins.label "Plugins du navigateur">
@@ -90,9 +84,9 @@
 <!ENTITY searchEngines.description "Utilisez les boutons ci-contre pour ajouter des moteurs de recherche">
 <!ENTITY defaultSearchEngine.label "Moteur de recherche par défaut">
 <!ENTITY engines.label "Moteurs de recherche">
-<!ENTITY engines.description "Veuillez choisir un fichier de plugin de moteur de recherche et, si elle existe, l&apos;icône correspondante.">
+<!ENTITY engines.description "Veuillez choisir un fichier de plugin de moteur de recherche et, si elle existe, l'icône correspondante.">
 <!ENTITY engine.label "Fichier du moteur de  recherche:">
-<!ENTITY engineIcon.label "Fichier de l&apos;icône :">
+<!ENTITY engineIcon.label "Fichier de l'icône :">
 <!ENTITY file.label "Fichier :">
 <!ENTITY folderTitle.label "Titre du dossier :">
 <!ENTITY customizeToolbarOne.label "Personnalisation la barre des marque-pages - Partie 1">
@@ -163,10 +157,8 @@
                                          </html:b>">
 <!ENTITY bundles.label "Extensions/Thèmes">
 <!ENTITY customizeProxy.label "Personnalisation des configurations de serveur proxy">
-
 <!ENTITY autoCCKTypeRadio.label "Enregistrer le fichier de configuration du proxy dans le kit CCK :">
 <!ENTITY autoCCKTypeRadio.accesskey "s">
-
 <!ENTITY showConfig.title "Afficher la configuration">
 <!ENTITY cckWizard.oncancel "Toutes les modifications seront enregistrées">
 <!ENTITY cckWizardFinish.description "Cliquer sur &apos;Terminer&apos; pour créer votre paquetage CCK">

@@ -1,13 +1,7 @@
 <!ENTITY cckWizard.title "Firefox 客户端定制工具箱 (CCK)">
 <!ENTITY cckWizard.description "本工具可以帮助你建立一个扩展以定制 Firefox. 这个扩展既可以由用户安装，也可以包含于一个最终的程序安装包之中。">
 <!ENTITY beforeYouBegin.label "在你开始之前">
-<!ENTITY beforeYouBegin.description "决定你需要作出的定义项目，然后建立/收集的其自定义文件，比如:
-                                         <html:ul>
-                                         <html:li>为浏览器动画徽标 (logo) 设计创建动画图片文件</html:li>
-                                         <html:li>搜索引擎 (SRC 文件以及相关的图片)</html:li>
-                                         <html:li>浏览器插件 (plug-ins)</html:li>
-                                         <html:li>扩展/主题</html:li>
-                                         </html:ul>">
+<!ENTITY beforeYouBegin.description "决定你需要作出的定义项目，然后建立/收集的其自定义文件，比如:">
 <!ENTITY configurePage.label "扩展配置">
 <!ENTITY selectConfig.label "选择一个已存在的扩展配置或者创建一个新的配置">
 <!ENTITY selectConfig.description "选择一个已存在的配置，或者点击&quot;新建&quot;来新建一个新的配置和工作空间以存储你的自定义文件。编辑一个已存在的配置而不复写默认的设置，选择下列的表单然后点击&apos;复制&apos; 。">
@@ -57,8 +51,7 @@
 <!ENTITY noOverridePage.label "Do not display the upgrade page">
 <!ENTITY titleBar.caption "浏览器窗口标题栏文字">
 <!ENTITY titleBar.label "定制标题栏文字:">
-<!ENTITY titleBar.description "你键入的文字 (举例来说你的公司名) 将会显示在标题栏页面的标题上。我们极力推荐你使用此类格式
-                                         <html:i>Mozilla Firefox: 公司名 版本号</html:i>">
+<!ENTITY titleBar.description "你键入的文字 (举例来说你的公司名) 将会显示在标题栏页面的标题上。我们极力推荐你使用此类格式                                         <html:i>Mozilla Firefox: 公司名 版本号</html:i>">
 <!ENTITY customizePartTwo.label "定制 浏览器 - 第二部分">
 <!ENTITY animLogo.caption "动画徽标">
 <!ENTITY animLogoURL.label "徽标按钮 URL:">
@@ -146,10 +139,7 @@
 <!ENTITY regType.label "类别 (Type)">
 <!ENTITY customizeCerts.label "定制 证书">
 <!ENTITY customizeCerts.description "使用下边的按钮以选择预安装的证书 (仅 PEM 格式).">
-<!ENTITY customizeCerts.warning "<html:b>IMPORTANT: If you add certificates to Firefox, you CANNOT
-                                         ship a browser outside of your company or institution and call it Firefox.
-                                         This feature is intended primarily for corporate and institutional users
-                                         that will be deploying Firefox inside their organization.</html:b>">
+<!ENTITY customizeCerts.warning "<html:b>IMPORTANT: If you add certificates to Firefox, you CANNOT                                         ship a browser outside of your company or institution and call it Firefox.                                         This feature is intended primarily for corporate and institutional users                                         that will be deploying Firefox inside their organization.</html:b>">
 <!ENTITY certs.label "证书(s)">
 <!ENTITY cert.label "证书">
 <!ENTITY cert.trustSSL "信任此证书以认同站点">
@@ -157,16 +147,11 @@
 <!ENTITY cert.trustObjSign "信任此证书以认同软件开发者">
 <!ENTITY customizeBundles.label "定制 扩展 /主题">
 <!ENTITY customizeBundles.description "使用下面的按钮以选择将会于你的 CCK 包一起安装的扩展和主题。">
-<!ENTITY customizeBundles.warning "<html:b>IMPORTANT: If you add extensions and/or themes to your CCK,
-                                         you can no longer install the CCK as part of a Firefox install. You must
-                                         install through the browser or use the -install-global-extension mechanism.
-                                         </html:b>">
+<!ENTITY customizeBundles.warning "<html:b>IMPORTANT: If you add extensions and/or themes to your CCK,                                         you can no longer install the CCK as part of a Firefox install. You must                                         install through the browser or use the -install-global-extension mechanism.                                         </html:b>">
 <!ENTITY bundles.label "扩展/主题">
 <!ENTITY customizeProxy.label "定制 代理设置">
-
 <!ENTITY autoCCKTypeRadio.label "Store proxy configuration file in the CCK:">
 <!ENTITY autoCCKTypeRadio.accesskey "i">
-
 <!ENTITY showConfig.title "显示配置">
 <!ENTITY cckWizard.oncancel "保存所有更改的数据">
 <!ENTITY cckWizardFinish.description "点击完成以建立你的 CCK 包">
