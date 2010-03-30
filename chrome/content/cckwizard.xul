@@ -367,7 +367,7 @@
       <groupbox>
       <caption label="&plugins.label;"/>
       <description>&browserPlugins.description;</description>
-      <box class="ccklist" id="browserPluginList" new="onNewBrowserPlugin();" edit="onEditBrowserPlugin();"/>
+      <box class="ccklist" id="browserPluginList" new="onNewBrowserPlugin" edit="onEditBrowserPlugin"/>
     </groupbox>
   </wizardpage>
 
@@ -376,7 +376,7 @@
     <groupbox>
       <caption label="&engines.label;"/>
     <description>&searchEngines.description;</description>
-    <box class="ccklist" id="searchEngineList" new="onNewSearchEngine();" edit="onEditSearchEngine();"
+    <box class="ccklist" id="searchEngineList" new="onNewSearchEngine" edit="onEditSearchEngine"
          ondelete="RefreshDefaultSearchEngines()" onmoveup="RefreshDefaultSearchEngines()" onmovedown="RefreshDefaultSearchEngines()"/>
     <spacer />
 
@@ -395,7 +395,7 @@
     <groupbox>
       <caption label="&bundles.label;"/>
       <description>&customizeBundles.description;</description>
-      <box class="ccklist" id="bundleList" new="onNewBundle();" edit="onEditBundle();"/>
+      <box class="ccklist" id="bundleList" new="onNewBundle" edit="onEditBundle"/>
     </groupbox>
   </wizardpage>
 
@@ -409,7 +409,7 @@
         <label>&folderTitle.label;</label>
         <textbox id="ToolbarFolder1"/>
       </hbox>
-      <box class="ccklist" id="tbFolder.bookmarkList" new="onNewBookmark();" edit="onEditBookmark();"/>
+      <box class="ccklist" id="tbFolder.bookmarkList" new="onNewBookmark" edit="onEditBookmark"/>
     </groupbox>
   </wizardpage>
 
@@ -417,7 +417,7 @@
     <groupbox>
       <caption label="&addToolbarBookmark.caption;"/>
       <description>&addToolbarBookmark.description;</description>
-      <box class="ccklist" id="tb.bookmarkList" new="onNewBookmark();" edit="onEditBookmark();"/>
+      <box class="ccklist" id="tb.bookmarkList" new="onNewBookmark" edit="onEditBookmark"/>
     </groupbox>
     <groupbox>
       <caption label="&toolbarLocation.label;"/>
@@ -438,7 +438,7 @@
         <label control="BookmarkFolder1">&folderTitle.label;</label>
         <textbox id="BookmarkFolder1"/>
       </hbox>
-      <box class="ccklist" id="bmFolder.bookmarkList" new="onNewBookmark();" edit="onEditBookmark();"/>
+      <box class="ccklist" id="bmFolder.bookmarkList" new="onNewBookmark" edit="onEditBookmark"/>
     </groupbox>
   </wizardpage>
 
@@ -446,7 +446,7 @@
     <groupbox>
       <caption label="&addBookmark.caption;"/>
       <description>&addBookmark.description;</description>
-      <box class="ccklist" id="bm.bookmarkList" new="onNewBookmark();" edit="onEditBookmark();"/>
+      <box class="ccklist" id="bm.bookmarkList" new="onNewBookmark" edit="onEditBookmark"/>
     </groupbox>
     <groupbox>
       <caption label="&bookmarkLocation.label;"/>
@@ -463,7 +463,7 @@
     <groupbox>
       <caption label="&prefs.label;"/>
       <description>&customizePrefs.description;</description>
-      <box flex="1" class="ccklist" id="prefList" new="onNewPreference();" edit="onEditPreference();"/>
+      <box flex="1" class="ccklist" id="prefList" new="onNewPreference();" edit="onEditPreference"/>
     </groupbox>
   </wizardpage>
 
@@ -471,7 +471,7 @@
     <groupbox>
       <caption label="&registry.label;"/>
       <description>&registry.description;</description>
-      <box class="ccklist" id="regList" new="onNewRegKey();" edit="onEditRegKey();"/>
+      <box class="ccklist" id="regList" new="onNewRegKey" edit="onEditRegKey"/>
     </groupbox>
   </wizardpage>
 
@@ -480,7 +480,7 @@
       <caption label="&certs.label;"/>
       <description>&customizeCerts.description;</description>
       <description>&customizeCerts.warning;</description>
-      <box class="ccklist" id="certList" new="onNewCert();" edit="onEditCert();"/>
+      <box class="ccklist" id="certList" new="onNewCert" edit="onEditCert"/>
     </groupbox>
   </wizardpage>
   

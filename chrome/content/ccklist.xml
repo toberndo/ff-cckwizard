@@ -92,8 +92,9 @@
         this._enableDisableButtons();
       </handler>
       <handler event="dblclick">
-        if (event.originalTarget.tagName == "listitem")
-          eval(this.getAttribute("edit"));	
+        if (event.originalTarget.tagName == "listitem") {
+		  window[this.getAttribute("edit")]();
+        }
       </handler>
       <handler event="command">
         if (event.originalTarget.type == "delete") {
@@ -131,9 +132,9 @@
           }
           listbox.selectItem(newlistitem);
         } else {
-          eval(this.getAttribute(event.originalTarget.type));
+		  window[this.getAttribute(event.originalTarget.type)]();
         }
-        eval(this.getAttribute("on" + event.originalTarget.type));	
+		window[this.getAttribute("on" + event.originalTarget.type)]();
         this._enableDisableButtons();
       </handler>
       <handler event="keypress" keycode="VK_DELETE">

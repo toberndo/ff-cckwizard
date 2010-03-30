@@ -48,7 +48,7 @@
         ondialogaccept="return OnBookmarkOK()"
         onload="OnBookmarkLoad();"
         width="500"
-        height="200"
+        height="210"
         >
   <script src="chrome://cckwizard/content/cckwizard.js"/>
   <vbox>
