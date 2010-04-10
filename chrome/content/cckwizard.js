@@ -1049,7 +1049,7 @@ function CreateCCK()
     CCKCopyFile(listitem.getAttribute("label"), destdir);
   }
 
-  if (document.getElementById("networkProxyType").value == "5") {
+  if (document.getElementById("networkProxyType").value == "10") {
     CCKCopyFile(document.getElementById("autoproxyfile").value, destdir);
   }
 
