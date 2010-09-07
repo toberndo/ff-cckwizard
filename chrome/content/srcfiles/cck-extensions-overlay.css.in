@@ -1,4 +1,5 @@
 richlistitem[addonID="%id%"],
+richlistitem[value=%id%],
 richlistitem[locked="true"] {
   display: none;
 }
