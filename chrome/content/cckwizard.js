@@ -1522,7 +1522,7 @@ function CCKWriteXULOverlayMac(destdir)
 function CCKWriteExtensionsOverlay(destdir)
 {
   var file = destdir.clone();
-  file.append("cck-extensions-overlay.xul");
+  file.append("cck-extensions-overlay.css");
   try {
     file.remove(false);                         
   } catch (ex) {}
@@ -1536,12 +1536,14 @@ function CCKWriteExtensionsOverlay(destdir)
   var scriptableStream=Components.classes["@mozilla.org/scriptableinputstream;1"]
                                  .getService(Components.interfaces.nsIScriptableInputStream);
     
-  var channel=ioService.newChannel("chrome://cckwizard/content/srcfiles/cck-extensions-overlay.xul.in",null,null);
+  var channel=ioService.newChannel("chrome://cckwizard/content/srcfiles/cck-extensions-overlay.css.in",null,null);
   var input=channel.open();
   scriptableStream.init(input);
   var str=scriptableStream.read(input.available());
   scriptableStream.close();
   input.close();
+
+  str = str.replace(/%id%/g, document.getElementById("id").value);
 
   fos.write(str, str.length); 
   fos.close();

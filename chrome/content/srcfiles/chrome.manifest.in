@@ -1,6 +1,7 @@
 overlay chrome://browser/content/browser.xul  chrome://cck-%OrganizationName%/content/cck-browser-overlay.xul
 overlay chrome://browser/content/browser.xul  chrome://cck-%OrganizationName%/content/cck-browser-overlay-nonmac.xul os!=Darwin
 overlay chrome://browser/content/browser.xul  chrome://cck-%OrganizationName%/content/cck-browser-overlay-mac.xul os=Darwin
-overlay chrome://mozapps/content/extensions/extensions.xul chrome://cck-%OrganizationName%/content/cck-extensions-overlay.xul appversion>3.5.*
+style chrome://mozapps/content/extensions/extensions.xul chrome://cck-%OrganizationName%/content/cck-extensions-overlay.css appversion>3.5.*
+
 style   chrome://global/content/config.xul    chrome://cck-%OrganizationName%/content/cck-config.css
 content	cck-%OrganizationName%	jar:chrome/cck.jar!/content/cck/
