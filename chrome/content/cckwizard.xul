@@ -463,7 +463,7 @@
     <groupbox>
       <caption label="&prefs.label;"/>
       <description>&customizePrefs.description;</description>
-      <box flex="1" class="ccklist" id="prefList" new="onNewPreference();" edit="onEditPreference"/>
+      <box flex="1" class="ccklist" id="prefList" new="onNewPreference" edit="onEditPreference"/>
     </groupbox>
   </wizardpage>
 
