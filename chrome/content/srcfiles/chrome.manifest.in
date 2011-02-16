@@ -2,6 +2,10 @@ overlay chrome://browser/content/browser.xul  chrome://cck-%OrganizationName%/co
 overlay chrome://browser/content/browser.xul  chrome://cck-%OrganizationName%/content/cck-browser-overlay-nonmac.xul os!=Darwin
 overlay chrome://browser/content/browser.xul  chrome://cck-%OrganizationName%/content/cck-browser-overlay-mac.xul os=Darwin
 style chrome://mozapps/content/extensions/extensions.xul chrome://cck-%OrganizationName%/content/cck-extensions-overlay.css
+style about:addons chrome://cck-%OrganizationName%/content/cck-extensions-overlay.css
 
 style   chrome://global/content/config.xul    chrome://cck-%OrganizationName%/content/cck-config.css
 content	cck-%OrganizationName%	jar:chrome/cck.jar!/content/cck/
+
+component {f4616ed3-54e5-4d5b-9308-bcecc3a179d0} components/disableAboutConfig.js
+contract @mozilla.org/network/protocol/about;1?what=config {f4616ed3-54e5-4d5b-9308-bcecc3a179d0}
