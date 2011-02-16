@@ -8,11 +8,7 @@
 	
 	var firstrun = prefBranch.getBoolPref("firstrun");
   
-	/* get installed version */
-	var em = Components.classes["@mozilla.org/extensions/manager;1"]
-					   .getService(Ci.nsIExtensionManager);
-  
-	var curVersion = em.getItemForID("cckwizard@extensions.mozilla.org").version;
+	var curVersion = "0.0.0";
   
 	function startPage(pageName) {
 	  gBrowser.selectedTab = gBrowser.addTab("http://kaply.com/addons/cckwizard/" + pageName);
