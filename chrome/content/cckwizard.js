@@ -1959,7 +1959,7 @@ function CCKWriteDefaultJS(destdir)
 
   switch ( radiogroup.value ) {
     case "1":
-      var proxystringlist = ["networkProxyHTTP","networkProxySSL","networkProxyFTP","networkProxyGopher","networkProxyNone","networkProxyAutoconfigURL" ];
+      var proxystringlist = ["networkProxyHTTP","networkProxySSL","networkProxyFTP","networkProxyNone","networkProxyAutoconfigURL" ];
   
       for (i = 0; i < proxystringlist.length; i++) {
         var proxyitem = document.getElementById(proxystringlist[i]);
@@ -1969,7 +1969,7 @@ function CCKWriteDefaultJS(destdir)
         }
       }
   
-      var proxyintegerlist = ["networkProxyHTTP_Port","networkProxySSL_Port","networkProxyFTP_Port","networkProxyGopher_Port","networkProxySOCKSVersion","networkProxyType"];
+      var proxyintegerlist = ["networkProxyHTTP_Port","networkProxySSL_Port","networkProxyFTP_Port","networkProxySOCKSVersion","networkProxyType"];
 
       for (i = 0; i < proxyintegerlist.length; i++) {
         var proxyitem = document.getElementById(proxyintegerlist[i]);
@@ -2591,12 +2591,6 @@ function CCKReadConfigFile(srcdir)
 		case"FTPportno":
 		  firstpart = "networkProxyFTP_Port";
 		  break;
-		case"Gopherproxyname":
-		  firstpart = "networkProxyGopher";
-		  break;
-		case"Gopherportno":
-		  firstpart = "networkProxyGopher_Port";
-		  break;
 		case"SOCKShostname":
 		  firstpart = "networkProxySOCKS";
 		  break;
@@ -3048,10 +3042,8 @@ function DoEnabling()
   // convenience arrays
   var manual = ["networkProxyHTTP", "networkProxyHTTP_Port",
 				"networkProxySSL", "networkProxyFTP",
-				"networkProxyGopher",
 				"networkProxySOCKS", "networkProxySSL_Port",
 				"networkProxyFTP_Port",
-				"networkProxyGopher_Port",
 				"networkProxySOCKS_Port", "networkProxySOCKSVersion4",
 				"networkProxySOCKSVersion5",
 				 "networkProxyNone", "shareAllProxies"];
@@ -3127,11 +3119,9 @@ function updateControl(id, disabled) {
 
 function updateProtocols(share) {
   var shared = ["networkProxySSL", "networkProxyFTP",
-				"networkProxyGopher",
 				"networkProxySOCKS"]
   var shared_ports = ["networkProxySSL_Port",
 				"networkProxyFTP_Port",
-				"networkProxyGopher_Port",
 				"networkProxySOCKS_Port"]
   var shared_other = ["networkProxySOCKSVersion4",
 				"networkProxySOCKSVersion5"];
