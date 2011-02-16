@@ -399,7 +399,7 @@ var prefsLockOnly = ["browser.startup.homepage", "browser.throbber.url",
                      "network.proxy.type", "network.proxy.http", "network.proxy.http_port",
                      "network.proxy.share_proxy_settings", "network.proxy.ssl",
                      "network.proxy.ssl_port", "network.proxy.ftp", "network.proxy.ftp_port",
-                     "network.proxy.gopher", "network.proxy.gopher_port", "network.proxy.socks",
+                     "network.proxy.socks",
                      "network.proxy.socks_port", "network.proxy.socks_version",
                      "network.proxy.no_proxies_on", "network.proxy.autoconfig_url"];
 
@@ -3016,8 +3016,6 @@ function toggleProxySettings()
   var httpPort = document.getElementById("networkProxyHTTP_Port");
   var ftp = document.getElementById("networkProxyFTP");
   var ftpPort = document.getElementById("networkProxyFTP_Port");
-  var gopher = document.getElementById("networkProxyGopher");
-  var gopherPort = document.getElementById("networkProxyGopher_Port");
   var socks = document.getElementById("networkProxySOCKS");
   var socksPort = document.getElementById("networkProxySOCKS_Port");
   var socksVersion = document.getElementById("networkProxySOCKSVersion");
@@ -3027,9 +3025,9 @@ function toggleProxySettings()
   var sslPort = document.getElementById("networkProxySSL_Port");
   
   // arrays
-  var urls = [ftp,gopher,ssl];
-  var ports = [ftpPort,gopherPort,sslPort];
-  var allFields = [ftp,gopher,ssl,ftpPort,gopherPort,sslPort,socks,socksPort,socksVersion,socksVersion4,socksVersion5];
+  var urls = [ftp,ssl];
+  var ports = [ftpPort,sslPort];
+  var allFields = [ftp,ssl,ftpPort,sslPort,socks,socksPort,socksVersion,socksVersion4,socksVersion5];
 
   var i;
   if ((document.getElementById("shareAllProxies").checked) || document.getElementById("networkProxyType").value != "1") {
