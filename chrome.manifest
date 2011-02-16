@@ -17,3 +17,4 @@ locale  cckwizard zh-CN chrome/locale/zh-CN/
 component {f0747ed9-764a-4501-a7e5-4d1493605430} components/prefAutoCompleteService.js
 contract @mozilla.org/autocomplete/search;1?name=prefs {f0747ed9-764a-4501-a7e5-4d1493605430}
 
+resource cckwizard modules/

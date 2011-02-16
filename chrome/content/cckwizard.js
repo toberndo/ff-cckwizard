@@ -1008,7 +1008,11 @@ function onEditBundle()
 }
 
 function CreateCCK()
-{ 
+{
+  var uuidGenerator = Components.classes["@mozilla.org/uuid-generator;1"]
+                                .getService(Components.interfaces.nsIUUIDGenerator);
+  var uuid = uuidGenerator.generateUUID().toString();  
+  
   gPrefBranch.setCharPref("cck.path_to_zip", document.getElementById("zipLocation").value);
 /* ---------- */
   var destdir = Components.classes["@mozilla.org/file/local;1"]
@@ -1031,7 +1035,10 @@ function CreateCCK()
   CCKWriteXULOverlay(destdir);
   CCKWriteXULOverlayMac(destdir);
   CCKWriteXULOverlayNonMac(destdir);
-  CCKWriteExtensionsOverlay(destdir);
+  if (document.getElementById("hidden").checked)
+  {
+    CCKWriteExtensionsOverlay(destdir);
+  }
   CCKWriteDTD(destdir);
   CCKWriteCSS(destdir);
   CCKWriteProperties(destdir);
@@ -1085,13 +1092,24 @@ function CreateCCK()
 
   destdir.initWithPath(currentconfigpath);
   destdir.append("xpi");
+  destdir.append("modules");
+  try {
+    destdir.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0775);
+  } catch(ex) {}
+
+  CCKWriteCCKModuleJS(destdir);
+
+/* ---------- */
+
+  destdir.initWithPath(currentconfigpath);
+  destdir.append("xpi");
   destdir.append("components");
   try {
     destdir.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0775);
   } catch(ex) {}
 
 //  CCKCopyChromeToFile("cckService.js", destdir);
-  CCKWriteCCKServiceJS(destdir);
+  CCKWriteCCKServiceJS(destdir, uuid);
   if (document.getElementById("noaboutconfig").checked)
     CCKCopyChromeToFile("disableAboutConfig.js", destdir);
   
@@ -1156,7 +1174,7 @@ function CreateCCK()
   destdir.initWithPath(currentconfigpath);
   destdir.append("xpi");
 
-  CCKWriteChromeManifest(destdir);
+  CCKWriteChromeManifest(destdir, uuid);
   CCKWriteInstallRDF(destdir);
          
   var filename = document.getElementById("filename").value;
@@ -1164,7 +1182,7 @@ function CreateCCK()
     filename = "cck";
   filename += ".xpi";
   
-  var zipContents = ["chrome", "components", "defaults", "platform", "searchplugins", "chrome.manifest", "install.rdf", "cck.config"];
+  var zipContents = ["chrome", "modules", "components", "defaults", "platform", "searchplugins", "chrome.manifest", "install.rdf", "cck.config"];
 
 
   if (document.getElementById('bundleList').getRowCount() > 0) {
@@ -2039,7 +2057,7 @@ function CCKWriteDefaultJS(destdir)
   fos.close();
 }
 
-function CCKWriteCCKServiceJS(destdir)
+function CCKWriteCCKServiceJS(destdir, uuid)
 {
   var idline =          "<em:id>%id%</em:id>";
 
@@ -2072,16 +2090,7 @@ function CCKWriteCCKServiceJS(destdir)
   scriptableStream.close();
   input.close();
 
-  var uuidString = "{31aec909-8e86-4397-9380-63a59e0c5ff6}";
-  try {
-    var uuidGenerator = 
-      Components.classes["@mozilla.org/uuid-generator;1"]
-                .getService(Components.interfaces.nsIUUIDGenerator);
-      var uuid = uuidGenerator.generateUUID();
-      uuidString = uuid.toString();
-  } catch (ex) {}
-
-  str = str.replace(/%uuid%/g, uuidString);
+  str = str.replace(/%uuid%/g, uuid);
   str = str.replace(/%OrganizationName%/g, document.getElementById("OrganizationName").value);
   str = str.replace(/%id%/g, document.getElementById("id").value);
 
@@ -2089,6 +2098,48 @@ function CCKWriteCCKServiceJS(destdir)
   cos.close();
   fos.close();
 }
+
+function CCKWriteCCKModuleJS(destdir)
+{
+  var idline =          "<em:id>%id%</em:id>";
+
+
+  var file = destdir.clone();
+
+  file.append("cckModule.jsm");
+  try {
+    file.remove(false);                         
+  } catch (ex) {
+  }
+  var fos = Components.classes["@mozilla.org/network/file-output-stream;1"]
+                       .createInstance(Components.interfaces.nsIFileOutputStream);
+  var cos = Components.classes["@mozilla.org/intl/converter-output-stream;1"]
+                      .createInstance(Components.interfaces.nsIConverterOutputStream);
+
+  fos.init(file, -1, -1, false);
+  cos.init(fos, null, 0, null);
+
+  var ioService=Components.classes["@mozilla.org/network/io-service;1"]
+    .getService(Components.interfaces.nsIIOService);
+  var scriptableStream=Components
+    .classes["@mozilla.org/scriptableinputstream;1"]
+    .getService(Components.interfaces.nsIScriptableInputStream);
+
+  var channel=ioService.newChannel("chrome://cckwizard/content/srcfiles/cckModule.jsm.in",null,null);
+  var input=channel.open();
+  scriptableStream.init(input);
+  var str=scriptableStream.read(input.available());
+  scriptableStream.close();
+  input.close();
+
+  str = str.replace(/%OrganizationName%/g, document.getElementById("OrganizationName").value);
+  str = str.replace(/%id%/g, document.getElementById("id").value);
+
+  cos.writeString(str);
+  cos.close();
+  fos.close();
+}
+
 
 
 function CCKWriteInstallRDF(destdir)
@@ -2229,8 +2280,11 @@ function CCKWriteInstallRDF(destdir)
   fos.close();
 }
 
-function CCKWriteChromeManifest(destdir)
+function CCKWriteChromeManifest(destdir, uuid)
 {
+  var disableAboutConfig1 =     "component {f4616ed3-54e5-4d5b-9308-bcecc3a179d0} components/disableAboutConfig.js";
+  var disableAboutConfig2 =     "contract @mozilla.org/network/protocol/about;1?what=config {f4616ed3-54e5-4d5b-9308-bcecc3a179d0}";
+
   var file = destdir.clone();
 
   file.append("chrome.manifest");
@@ -2260,6 +2314,15 @@ function CCKWriteChromeManifest(destdir)
   input.close();
 
   str = str.replace(/%OrganizationName%/g, document.getElementById("OrganizationName").value);
+  str = str.replace(/%uuid%/g, uuid);
+
+  if (document.getElementById("noaboutconfig").checked) {
+    str = str.replace(/%disableAboutConfig1%/g, disableAboutConfig1);
+    str = str.replace(/%disableAboutConfig2%/g, disableAboutConfig2);
+  } else {
+    str = str.replace(/%disableAboutConfig1%/g, "");
+    str = str.replace(/%disableAboutConfig2%/g, "");
+  }
 
   cos.writeString(str);
   cos.close();

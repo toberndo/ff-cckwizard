@@ -6,6 +6,11 @@ style about:addons chrome://cck-%OrganizationName%/content/cck-extensions-overla
 
 style   chrome://global/content/config.xul    chrome://cck-%OrganizationName%/content/cck-config.css
 content	cck-%OrganizationName%	jar:chrome/cck.jar!/content/cck/
+resource cck-%OrganizationName% modules/
 
-component {f4616ed3-54e5-4d5b-9308-bcecc3a179d0} components/disableAboutConfig.js
-contract @mozilla.org/network/protocol/about;1?what=config {f4616ed3-54e5-4d5b-9308-bcecc3a179d0}
+%disableAboutConfig1%
+%disableAboutConfig2%
+
+component %uuid% components/cckService.js
+contract @mozilla.org/cck-service-%OrganizationName%;2 %uuid%
+category profile-after-change CCKService @mozilla.org/cck-service-%OrganizationName%;2

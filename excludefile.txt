@@ -1,4 +1,5 @@
 .DS_Store
+*.komodoproject
 *.kpf
 buildit.sh
 excludefile.txt
