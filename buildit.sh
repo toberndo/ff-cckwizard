@@ -1,22 +1,24 @@
-EXTENSION=cckwizard
-rm  *.xpi
-rm -rf $EXTENSION
-mkdir $EXTENSION
-cd $EXTENSION
+SHORTNAME=cckwizard
+export SHORTNAME=$SHORTNAME
+rm  $SHORTNAME*.xpi
+rm -rf $SHORTNAME
+mkdir $SHORTNAME
+cd $SHORTNAME
 rsync -r --exclude=.svn --exclude-from=../excludefile.txt ../* .
-rm chrome.manifest
-rm chrome.manifest.flat
-mv chrome.manifest.jar chrome.manifest
+#VERSION=`grep "em:version" install.rdf | sed -e 's/[ \t]*em:version=//;s/"//g'`
+VERSION=`grep "em:version" install.rdf | sed -e 's/[ \t]*<em:version>//;s/<\/em:version>//g'`
+export VERSION=$VERSION
+perl -pi -e 's/chrome\/skin/jar:chrome\/$ENV{"SHORTNAME"}.jar!\/skin/gi' chrome.manifest
+perl -pi -e 's/chrome\/content/jar:chrome\/$ENV{"SHORTNAME"}.jar!\/content/gi' chrome.manifest
+perl -pi -e 's/chrome\/locale/jar:chrome\/$ENV{"SHORTNAME"}.jar!\/locale/gi' chrome.manifest
 cd chrome
-zip -r $EXTENSION.jar content locale skin
+perl -pi -e 's/0.0.0/$ENV{"VERSION"}/gi' content/*.js
+zip -r $SHORTNAME.jar content locale skin
 rm -rf content
 rm -rf locale
 rm -rf skin
 cd ../..
-cd $EXTENSION
-#VERSION=`grep "em:version" install.rdf | sed -e 's/[ \t]*em:version=//;s/"//g'`
-VERSION=`grep "em:version" install.rdf | sed -e 's/^[ \t]*//g' | sed -e 's/<[^>]*>//g'`
-XPINAME=$EXTENSION-$VERSION
-zip -r -D ../$XPINAME.xpi *
+cd $SHORTNAME
+zip -r -D ../$SHORTNAME-$VERSION.xpi *
 cd ..
-rm -rf $EXTENSION
+rm -rf $SHORTNAME
