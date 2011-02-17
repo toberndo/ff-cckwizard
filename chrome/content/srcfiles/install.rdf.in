@@ -24,6 +24,8 @@ xmlns:em="http://www.mozilla.org/2004/em-rdf#">
             </Description>
         </em:targetApplication>
 
+        <em:unpack>true</em:unpack>
+
     </Description>
 
 </RDF>

@@ -14,6 +14,11 @@ const gIOService = Cc["@mozilla.org/network/io-service;1"].getService(Ci.nsIIOSe
 const gBundleService = Cc["@mozilla.org/intl/stringbundle;1"].getService(Ci.nsIStringBundleService);
 const gCCKBundle = gBundleService.createBundle("chrome://cck-%OrganizationName%/content/cck.properties");
 
+var em;
+if (Cc["@mozilla.org/extensions/manager;1"]) {
+  em = Cc["@mozilla.org/extensions/manager;1"].getService(Ci.nsIExtensionManager);
+}
+
 var bookmarks;
 var livemarks;
 var annoService;
@@ -32,6 +37,16 @@ var CCKService = {
         livemarks = Cc["@mozilla.org/browser/livemark-service;2"].getService(Ci.nsILivemarkService);
         annoService = Cc["@mozilla.org/browser/annotation-service;1"].getService(Ci.nsIAnnotationService);
         init();
+        if (Cc["@mozilla.org/extensions/manager;1"]) {
+          var location = em.getInstallLocation("%id%").getItemLocation("%id%");
+          installXPIs(location);
+        } else {
+          Components.utils.import("resource://gre/modules/AddonManager.jsm");  
+          AddonManager.getAddonByID("%id%", function(addon) {
+            var location = addon.getResourceURI("").QueryInterface(Components.interfaces.nsIFileURL).file;
+            installXPIs(location);
+          });
+        }
         break;
 
       case "em-action-requested":
@@ -481,6 +496,54 @@ function makeURI(aURL, aOriginCharset, aBaseURI) {
     log(aURL);
   }
   return null;
+}
+
+
+function installXPIs(location) {
+  var xpisToInstall = [];
+  var numXPIsInstalled = 0;
+
+  var e = location.directoryEntries;
+  while (e.hasMoreElements()) {
+    var f = e.getNext().QueryInterface(Components.interfaces.nsIFile);
+    var splitpath = f.path.split(".");
+    if (splitpath[splitpath.length-1] == "xpi") {
+      xpisToInstall.push(f);
+    }
+  }
+  for (let i=0; i < xpisToInstall.length; i++) {
+    if (Cc["@mozilla.org/extensions/manager;1"]) {
+      em.installItemFromFile(xpisToInstall[i], "app-profile");
+    } else {
+      AddonManager.getInstallForFile(xpisToInstall[i], function(addonInstall) {
+        let listener = {
+          onInstallEnded: function(addon) {
+            numXPIsInstalled++;
+            if (numXPIsInstalled == xpisToInstall.length) {
+              restartApp(xpisToInstall);
+            }
+          }
+        }
+        addonInstall.addListener(listener);
+        addonInstall.install();
+      });
+    }
+  }
+  if (Cc["@mozilla.org/extensions/manager;1"]) {
+    if (xpisToInstall.length > 0) {
+      restartApp(xpisToInstall);
+    }
+  }
+}
+
+function restartApp(xpisToRemove) {
+  for (let i=0; i < xpisToRemove.length; i++) {
+    try {
+      xpisToRemove[i].remove(true);
+    } catch (ex) {}
+  }
+  var nsIAppStartup = Cc["@mozilla.org/toolkit/app-startup;1"].getService(Components.interfaces.nsIAppStartup);
+  nsIAppStartup.quit(nsIAppStartup.eRestart | nsIAppStartup.eAttemptQuit);
 }
 
 function log(string) {
