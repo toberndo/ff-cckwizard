@@ -127,7 +127,7 @@ function OpenConfig()
 	var lis = cis.QueryInterface(Components.interfaces.nsIUnicharLineInputStream);
 	var line = {value:null};
 
-	configarray = new Array();
+	var configarray = new Array();
 	do {
 	  var more = lis.readLine(line);
 	  var str = line.value;
@@ -386,9 +386,9 @@ function onEditPreference()
   window.openDialog("chrome://cckwizard/content/pref.xul","editpref","chrome,centerscreen,modal");
 }
 
-Array.prototype.exists = function (x) {
+function arrayItemExists(inArray, inItem) {
     for (var i = 0; i < this.length; i++) {
-        if (this[i] == x) return true;
+        if (inArray[i] == inItem) return true;
     }
     return false;
 }
@@ -412,7 +412,7 @@ function OnPrefLoad()
       document.getElementById('prefvalue').preftype = nsIPrefBranch.PREF_INT;
     }
     document.getElementById('prefname').value = listbox.selectedItem.label;
-    if (prefsLockOnly.exists(listbox.selectedItem.label)) {
+    if (arrayItemExists(prefsLockOnly, listbox.selectedItem.label)) {
       document.getElementById('prefvalue').disabled = true;
       document.getElementById('prefvalue').value = this.opener.document.getElementById("bundle_cckwizard").getString("lockError");      
     } else {
@@ -474,7 +474,7 @@ function prefSetPrefValue()
     document.getElementById('prefvalue').hidden = false;
     document.getElementById('prefvalueboolean').hidden = true;
   }
-  if (prefsLockOnly.exists(prefname)) {
+  if (arrayItemExists(prefsLockOnly, prefname)) {
     document.getElementById('prefvalue').disabled = true;
     document.getElementById('prefvalue').value = this.opener.document.getElementById("bundle_cckwizard").getString("lockError");      
   } else {
@@ -495,13 +495,13 @@ function OnPrefOK()
     }
   }
 
-  if (prefsLockOnly.exists(document.getElementById('prefname').value)) {
+  if (arrayItemExists(prefsLockOnly, document.getElementById('prefname').value)) {
      document.getElementById('prefvalue').value = "";
   }
 
   var value = document.getElementById('prefvalue').value;
   
-  if ((document.getElementById('prefvalue').preftype == nsIPrefBranch.PREF_INT) && (!(prefsLockOnly.exists(document.getElementById('prefname').value)))) {
+  if ((document.getElementById('prefvalue').preftype == nsIPrefBranch.PREF_INT) && (!(arrayItemExists(prefsLockOnly, document.getElementById('prefname').value)))) {
     if (parseInt(value) != value) {
       gPromptService.alert(window, bundle.getString("windowTitle"),
                            bundle.getString("intError"));
@@ -2627,7 +2627,7 @@ function CCKReadConfigFile(srcdir)
   var lis = cis.QueryInterface(Components.interfaces.nsIUnicharLineInputStream);
   var line = {value:null};
   
-  configarray = new Array();
+  var configarray = new Array();
   do {
     var more = lis.readLine(line);
     var str = line.value;
