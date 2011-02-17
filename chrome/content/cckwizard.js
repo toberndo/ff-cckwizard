@@ -2996,9 +2996,10 @@ function Validate(field, message)
 
 function ValidateNoSpace(field, message)
 {
+  var alphaExp = /^[0-9a-zA-Z\-\.\_]+$/;
   for (var i=0; i < arguments.length; i++) {
     var str = document.getElementById(arguments[i]).value;
-    if ((str == '') || (str.match(" "))) {
+	if (!alphaExp.test(str)) {
       var bundle = document.getElementById("bundle_cckwizard");
       gPromptService.alert(window, bundle.getString("windowTitle"), bundle.getString(arguments[i] + ".error"));
       return false;
