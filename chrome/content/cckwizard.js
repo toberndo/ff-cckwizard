@@ -1874,11 +1874,11 @@ function CCKWriteDefaultJS(destdir)
 
   var chromeurl =   "chrome://cck-%OrganizationName%/content/cck.properties";
   var prefend = '");\n';
-  var useragent1begin = 'pref("general.useragent.vendorComment", "CK-';
-  var useragent2begin = 'pref("general.useragent.extra.cck", "(CK-';
+  //var useragent1begin = 'pref("general.useragent.vendorComment", "CK-';
+  //var useragent2begin = 'pref("general.useragent.extra.cck", "(CK-';
 
-  var useragent1end = '");\n';
-  var useragent2end = ')");\n';
+  //var useragent1end = '");\n';
+  //var useragent2end = ')");\n';
 
   var searchengine1 = 'pref("browser.search.defaultenginename", "chrome://cck-%OrganizationName%/content/cck.properties");\n';
   var searchengine2 = 'pref("browser.search.order.1",           "chrome://cck-%OrganizationName%/content/cck.properties");\n';
@@ -1944,15 +1944,15 @@ function CCKWriteDefaultJS(destdir)
   }
   
 
-  var useragent = document.getElementById("OrganizationName").value;
-  if (useragent && (useragent.length > 0)) {
-    fos.write(useragent1begin, useragent1begin.length);
-    fos.write(useragent, useragent.length);
-    fos.write(useragent1end, useragent1end.length);
-    fos.write(useragent2begin, useragent2begin.length);
-    fos.write(useragent, useragent.length);
-    fos.write(useragent2end, useragent2end.length);
-  }
+  //var useragent = document.getElementById("OrganizationName").value;
+  //if (useragent && (useragent.length > 0)) {
+  //  fos.write(useragent1begin, useragent1begin.length);
+  //  fos.write(useragent, useragent.length);
+  //  fos.write(useragent1end, useragent1end.length);
+  //  fos.write(useragent2begin, useragent2begin.length);
+  //  fos.write(useragent, useragent.length);
+  //  fos.write(useragent2end, useragent2end.length);
+  //}
 
   // Preferences
   var listbox = document.getElementById("prefList");
