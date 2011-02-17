@@ -8,14 +8,15 @@ xmlns:em="http://www.mozilla.org/2004/em-rdf#">
         <em:version>1.3b1</em:version>
         <em:description></em:description>
         <em:creator>Michael Kaply</em:creator>
-        <em:homepageURL>http://www.mozilla.org/projects/cck/firefox</em:homepageURL>
+        <em:contributor>Rick Alther</em:contributor>
+        <em:homepageURL>http://code.google.com/p/ff-cckwizard/</em:homepageURL>
         <em:iconURL>chrome://cckwizard/content/cckwizard.png</em:iconURL>
         <em:unpack>true</em:unpack>
 
         <em:targetApplication>
             <Description>
                 <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
-                <em:minVersion>3.0</em:minVersion>
+                <em:minVersion>3.5</em:minVersion>
                 <em:maxVersion>4.0.*</em:maxVersion>
             </Description>
         </em:targetApplication>
