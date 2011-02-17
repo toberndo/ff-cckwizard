@@ -11,18 +11,18 @@
 	var curVersion = "0.0.0";
   
 	function startPage(pageName) {
-	  gBrowser.selectedTab = gBrowser.addTab("http://kaply.com/addons/cckwizard/" + pageName);
+	  gBrowser.selectedTab = gBrowser.addTab("http://mike.kaply.com/addons/cckwizard/" + pageName);
 	}
   
 	if (firstrun) {
-	  window.setTimeout(startPage, 1000, "install");
+	  window.setTimeout(function() {startPage("install");}, 0);
 	  prefBranch.setBoolPref("firstrun", false);
 	  prefBranch.setCharPref("installedVersion", curVersion);
 	} else {
 	  try {
 		var installedVersion = prefBranch.getCharPref("installedVersion");
 		if (curVersion > installedVersion) {
-		window.setTimeout(startPage, 1000, "upgrade");
+	      window.setTimeout(function() {startPage("upgrade");}, 0);
 		  prefBranch.setCharPref("installedVersion", curVersion);
 		}
 	  } catch (ex) {
