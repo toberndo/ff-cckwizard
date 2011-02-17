@@ -70,7 +70,7 @@
     </groupbox>
  </wizardpage>    
 
- <wizardpage label="&configurePage.label;" onpageshow="ShowMain();" onpageadvanced="return ValidateFile('zipLocation');">
+ <wizardpage label="&configurePage.label;" onpageshow="ShowMain();">
    <groupbox>
      <caption label="&selectConfig.label;"/>
      <description>&selectConfig.description;</description>
