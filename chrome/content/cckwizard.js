@@ -2996,7 +2996,7 @@ function Validate(field, message)
 
 function ValidateNoSpace(field, message)
 {
-  var alphaExp = /^[0-9a-zA-Z\-\.\_]+$/;
+  var alphaExp = /^[0-9a-zA-Z\-\_]+$/;
   for (var i=0; i < arguments.length; i++) {
     var str = document.getElementById(arguments[i]).value;
 	if (!alphaExp.test(str)) {
