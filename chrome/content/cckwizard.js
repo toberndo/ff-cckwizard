@@ -195,18 +195,6 @@ function OpenCCKWizard()
      document.getElementById("saveOnExit").checked = gPrefBranch.getBoolPref("cck.save_on_exit");
    } catch (ex) {
    }
-   if (Components.interfaces.nsIZipWriter) {
-     document.getElementById("zipLocation").hidden = true;
-     document.getElementById("zipLocationLabel").hidden = true;
-     document.getElementById("zipLocationButton").hidden = true;
-   } else {
-     try {
-       document.getElementById("zipLocation").value = gPrefBranch.getCharPref("cck.path_to_zip");
-     } catch (ex) {
-     }
-   }
-   
-
 }
 
 function ShowMain()
@@ -313,7 +301,6 @@ function CloseCCKWizard()
   if (button == 0) {
     saveconfig();
   }
-  gPrefBranch.setCharPref("cck.path_to_zip", document.getElementById("zipLocation").value);
 }
 
 
@@ -332,7 +319,7 @@ function ClearAll()
           (elements[i].nodeName == "radiogroup") ||
           (elements[i].id == "RootKey1") ||
           (elements[i].id == "Type1")) {
-        if ((elements[i].id != "saveOnExit") && (elements[i].id != "zipLocation")) {
+        if (elements[i].id != "saveOnExit") {
           elements[i].value = "";
         }
       } else if (elements[i].nodeName == "checkbox") {
@@ -1013,7 +1000,6 @@ function CreateCCK()
                                 .getService(Components.interfaces.nsIUUIDGenerator);
   var uuid = uuidGenerator.generateUUID().toString();  
   
-  gPrefBranch.setCharPref("cck.path_to_zip", document.getElementById("zipLocation").value);
 /* ---------- */
   var destdir = Components.classes["@mozilla.org/file/local;1"]
                           .createInstance(Components.interfaces.nsILocalFile);
@@ -1288,107 +1274,30 @@ function CCKZip(zipfile, location, files_to_zip)
     file.remove(false);
   } catch (ex) {}
 
-  if (Components.interfaces.nsIZipWriter) {
-    var archivefileobj = location.clone();
-    archivefileobj.append(zipfile);
+  var archivefileobj = location.clone();
+  archivefileobj.append(zipfile);
 
-    var zipwriter = Components.Constructor("@mozilla.org/zipwriter;1", "nsIZipWriter");
-    var zipwriterobj = new zipwriter();
-    zipwriterobj.open(archivefileobj, 0x04 | 0x08 | 0x20);
+  var zipwriter = Components.Constructor("@mozilla.org/zipwriter;1", "nsIZipWriter");
+  var zipwriterobj = new zipwriter();
+  zipwriterobj.open(archivefileobj, 0x04 | 0x08 | 0x20);
 
-    for (var i=0; i < files_to_zip.length; i++) {
-      var sourcepathobj = location.clone();
-      sourcepathobj.append(files_to_zip[i]);
-      if (sourcepathobj.exists() && sourcepathobj.isDirectory()) {
-        zwRecurse(zipwriterobj, sourcepathobj, location);
-      } else if (sourcepathobj.exists()) {
-        /* Remove beginning of path */
-        var path = sourcepathobj.path.replace(location.path, "");
-        /* Remove beginning slash */
-        path = path.substr(1);
-      /* Convert backslashes to forward slashes */
-        path = path.replace(/\\/g, '/');
-        zipwriterobj.addEntryFile(path, Components.interfaces.nsIZipWriter.COMPRESSION_NONE, sourcepathobj, false);
-      }
-    }
-    zipwriterobj.close();
-    return;
-  }
-
-  var zipLocation = document.getElementById("zipLocation").value;
-  if (zipLocation.length == 0) {
-    zipLocation = "zip";
-  }
-
-  var scriptfile = location.clone();
-             
-  if ((navigator.platform == "Win32") || (navigator.platform == "OS/2"))
-    scriptfile.append("ccktemp.cmd");
-  else
-    scriptfile.append("ccktemp.sh");  
-  var fos = Components.classes["@mozilla.org/network/file-output-stream;1"]
-                       .createInstance(Components.interfaces.nsIFileOutputStream);
-  fos.init(scriptfile, -1, -1, false);
-  
-  var line = "cd ";
-  // this param causes a drive switch on win32
-  if (navigator.platform == "Win32")
-    line += "/d ";
-  line += "\"" + location.path + "\"\n";
-  fos.write(line, line.length);
-  var zipParams = "-r";
-  /* check for 7zip */
-  if (zipLocation.match("7z")) {
-    zipParams = "a -tZIP";
-  }
-  if ((navigator.platform == "Win32") || (navigator.platform == "OS/2"))
-    line =  "\"" + zipLocation + "\" " + zipParams + " \"" + location.path + "\\" + zipfile + "\"";
-  else
-    line = zipLocation + " " + zipParams + " \"" + location.path + "/" + zipfile + "\"";  
   for (var i=0; i < files_to_zip.length; i++) {
-    line += " " + files_to_zip[i];
+	var sourcepathobj = location.clone();
+	sourcepathobj.append(files_to_zip[i]);
+	if (sourcepathobj.exists() && sourcepathobj.isDirectory()) {
+	  zwRecurse(zipwriterobj, sourcepathobj, location);
+	} else if (sourcepathobj.exists()) {
+	  /* Remove beginning of path */
+	  var path = sourcepathobj.path.replace(location.path, "");
+	  /* Remove beginning slash */
+	  path = path.substr(1);
+	/* Convert backslashes to forward slashes */
+	  path = path.replace(/\\/g, '/');
+	  zipwriterobj.addEntryFile(path, Components.interfaces.nsIZipWriter.COMPRESSION_NONE, sourcepathobj, false);
+	}
   }
-  line += "\n";
-  fos.write(line, line.length);  
-  fos.close();
-
-  var sh;
-
-  // create an nsILocalFile for the executable
-  if ((navigator.platform != "Win32") && (navigator.platform != "OS/2")) {
-    sh = Components.classes["@mozilla.org/file/local;1"]
-                   .createInstance(Components.interfaces.nsILocalFile);
-    sh.initWithPath("/bin/sh");
-  }
-  // create an nsIProcess
-  var process = Components.classes["@mozilla.org/process/util;1"]
-                          .createInstance(Components.interfaces.nsIProcess);
-                          
-  if ((navigator.platform == "Win32") || (navigator.platform == "OS/2"))
-    process.init(scriptfile);
-  else
-    process.init(sh);
-
-  var args = [scriptfile.path];
-  
-  try {
-    process.run(true, args, args.length);
-  } catch (ex) {
-  }
-
-  var file = location.clone();
-  file.append(zipfile);
-  if (navigator.platform == "OS/2") {
-    var bundle = document.getElementById("bundle_cckwizard");
-    gPromptService.alert(window, bundle.getString("windowTitle"),
-                       "OS/2 problem workaround - Click OK to continue");
-  }
-  if (!file.exists()) {
-    var bundle = document.getElementById("bundle_cckwizard");
-    gPromptService.alert(window, bundle.getString("windowTitle"),
-                       bundle.getString("zipError"));
-  }
-  scriptfile.remove(false);
+  zipwriterobj.close();
+  return;
 }
 
 function CCKWriteXULOverlay(destdir)
@@ -2436,7 +2345,7 @@ function CCKWriteConfigFile(destdir)
     if ((elements[i].nodeName == "textbox") ||
         (elements[i].id == "RootKey1") ||
         (elements[i].id == "Type1")) {
-      if ((elements[i].id != "saveOnExit") && (elements[i].id != "zipLocation")) {
+      if (elements[i].id != "saveOnExit") {
         if (elements[i].value.length > 0) {
           var line = elements[i].getAttribute("id") + "=" + elements[i].value + "\n";
           cos.writeString(line);

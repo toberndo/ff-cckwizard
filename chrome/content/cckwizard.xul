@@ -89,15 +89,6 @@
      </hbox>
      <checkbox id="saveOnExit" label="&saveOnExit.label;" oncommand="SetSaveOnExitPref();"/>
    </groupbox>
-   <vbox>
-  
-    <description id="zipLocationLabel">&zipLocation.label;</description>
-
-         <hbox align="center">
-           <textbox flex="1" id="zipLocation"/>
-           <button id="zipLocationButton" label="&chooseFile.label;" oncommand="choosefile('zipLocation');"/>
-         </hbox>
-  </vbox>
  </wizardpage>
 
  <wizardpage label="&customizeExt.label;"
