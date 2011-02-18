@@ -1852,7 +1852,7 @@ function CCKWriteDefaultJS(destdir)
   for (var i=0; i < listbox.getRowCount(); i++) {
     var listitem = listbox.getItemAtIndex(i);
     /* allow for locking prefs without setting value */
-    if ((listitem.getAttribute("value").length) && (!(prefsLockOnly.exists(listitem.getAttribute("label"))))) {
+    if ((listitem.getAttribute("value").length) && (!(arrayItemExists(prefsLockOnly, listitem.getAttribute("label"))))) {
       var line;
       /* If it is a string, put quotes around it */
       if (listitem.cck['type'] == "string") {
