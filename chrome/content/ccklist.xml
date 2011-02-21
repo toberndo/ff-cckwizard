@@ -132,9 +132,11 @@
           }
           listbox.selectItem(newlistitem);
         } else {
-		  window[this.getAttribute(event.originalTarget.type)]();
+		      window[this.getAttribute(event.originalTarget.type)]();
         }
-		window[this.getAttribute("on" + event.originalTarget.type)]();
+				try {
+		      window[this.getAttribute("on" + event.originalTarget.type)]();
+				} catch(ex) {}
         this._enableDisableButtons();
       </handler>
       <handler event="keypress" keycode="VK_DELETE">
