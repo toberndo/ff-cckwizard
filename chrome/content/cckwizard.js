@@ -1751,11 +1751,16 @@ function CCKWriteProperties(destdir)
     listitem = listbox.getItemAtIndex(i);
     var file = Components.classes["@mozilla.org/file/local;1"]
                          .createInstance(Components.interfaces.nsILocalFile);
-    file.initWithPath(listitem.getAttribute("label"));
-    str = "Cert"+ (i+1) + "=" + file.leafName + "\n";
-    cos.writeString(str);
-    str = "CertTrust" + (i+1) + "=" + listitem.getAttribute("value") + "\n";
-    cos.writeString(str);
+    try {
+      file.initWithPath(listitem.getAttribute("label"));
+      str = "Cert"+ (i+1) + "=" + file.leafName + "\n";
+      cos.writeString(str);
+      str = "CertTrust" + (i+1) + "=" + listitem.getAttribute("value") + "\n";
+      cos.writeString(str);
+	} catch(ex) {
+      gPromptService.alert(window, bundle.getString("windowTitle"),
+                                 "Unable to locate certificate: " + listitem.getAttribute("label"));
+	}
   }
 
   cos.close();
