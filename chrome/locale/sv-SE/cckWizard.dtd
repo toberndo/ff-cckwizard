@@ -1,0 +1,180 @@
+<!ENTITY cckWizard.title "Klientanpassningspaket för Firefox">
+<!ENTITY cckWizard.description "Den här guiden hjälper dig att skapa ett tillägg som anpassar Firefox, ett CCK (client customization kit). Tillägget kan sedan antingen installeras av användaren eller inkluderas i ett installationspaket.">
+<!ENTITY  beforeYouBegin.label          "Innan du sätter igång">
+<!ENTITY  beforeYouBegin.description    "Bestäm vilka anpassningar du vill göra och skapa/samla in de anpassade filerna, t.ex.:
+                                         <html:ul>
+                                         <html:li>Anpassade animerade filer för webbläsarens animerade logotyp</html:li>
+                                         <html:li>Sökmotorer</html:li>
+                                         <html:li>Insticksmoduler</html:li>
+                                         <html:li>Tillägg/teman</html:li>
+                                         </html:ul>">
+<!ENTITY configurePage.label "Tilläggskonfigurationer">
+<!ENTITY selectConfig.label "Välj en befintlig konfiguration eller skapa en ny">
+<!ENTITY selectConfig.description "Välj en befintlig konfiguration, eller klicka på &quot;Nytt&quot; för att skapa en ny konfiguration och arbetstya där dina anpassade filer skall lagras. För att redigera en befintlig konfiguration utan att ersätta originalkonfigurationen, välj den ur listan och klicka på &quot;Kopiera&quot;.">
+<!ENTITY showConfig.label "Visa konfig-info">
+<!ENTITY openConfig.label "Öppna">
+<!ENTITY newConfig.label "Nytt">
+<!ENTITY copyConfig.label "Kopiera">
+<!ENTITY deleteConfig.label "Ta bort">
+<!ENTITY createConfig.title "Skapa ny konfiguration">
+<!ENTITY copyConfig.title "Kopiera befintlig konfiguration">
+<!ENTITY configName.label "Konfigurationens namn">
+<!ENTITY configLocation.label "Konfigurationens plats">
+<!ENTITY saveOnExit.label "Spara konfigurationen automatiskt när programmet avslutas">
+<!ENTITY zipLocation.label "<html:b>Viktigt:</html:b> För att skapa XPI-filen, så måste ZIP eller 7-Zip användas. Använd knappen &quot;Välj fil&quot; för att leta reda på en av dessa exekverbara programfiler. Obs.: Vi kommer att försöka använda ZIP.EXE om den finns på sökvägen.">
+<!ENTITY customizeExt.label "Anpassa tillägg">
+<!ENTITY id.label "Unikt ID:">
+<!ENTITY id.format "Format: företagsnamn-cck@tilläggets.domännamn.tld">
+<!ENTITY name.label "Namn:">
+<!ENTITY version.label "Version:">
+<!ENTITY description.label "Beskrivning:">
+<!ENTITY creator.label "Skapat av:">
+<!ENTITY homepageURL.label "Webbplats-URL:">
+<!ENTITY updateURL.label "Uppdaterings-URL:">
+<!ENTITY updateKey.label "Uppdatera offentlig nyckel:">
+<!ENTITY updateKey.description "Firefox 3 kräver en offentlig nyckel om ditt tillägg inte tillhandahåller en säker uppdatering.">
+<!ENTITY icon.label "Ikon:">
+<!ENTITY chooseFile.label "Välj fil...">
+<!ENTITY chooseDir.label "Välj mapp...">
+<!ENTITY filename.label "Filnamn:">
+<!ENTITY hidden.label "Visa inte detta tillägg i tilläggshanteraren.">
+<!ENTITY locked.label "Förhindra att detta tillägg avinstalleras (det kan fortfarande inaktiveras).">
+<!ENTITY aboutconfig.label "Tillåt inte åtkomst till about:config">
+<!ENTITY customizePartOne.label "Anpassa webbläsaren: Del ett">
+<!ENTITY orgName.description "Företagsidentifieraren inkluderas som en del av webbläsarens användaragentsträng, som visas när du öppnar Hjälp-menyn och väljer Om Mozilla Firefox. Den är obligatorisk.">
+<!ENTITY orgName.label "Ange din företagsidentifierare (högst 10 tecken; inga blanksteg):">
+<!ENTITY orgName.caption "Företagsidentifierare">
+<!ENTITY homePage.caption "Startsida">
+<!ENTITY homePage.label "Standardwebbplats-URL:">
+<!ENTITY homePage.description "Denna sida visas när användarna för första gången startar Firefox, eller när de klickar på startsideknappen.">
+<!ENTITY homePageWelcome.caption "Välkomstsida">
+<!ENTITY homePageWelcome.description "Vid den allra första starten av Firefox efter att en ny profil har skapats, så visas en välkomstsida. Du kan välja att ersätta denna sida eller att inte visa den alls.">
+<!ENTITY homePageWelcome.label "Alternativ välkomstside-URL:">
+<!ENTITY noWelcomePage.label "Visa inte välkomstsidan">
+<!ENTITY homePageOverride.caption "Uppgraderingssida">
+<!ENTITY homePageOverride.description "Efter uppgradering till en ny version av Firefox, så visas en sida som åsidosätter startsidan. Du kan välja att ersätta denna sida eller att inte visa den alls.">
+<!ENTITY homePageOverride.label "Uppgraderingsside-URL:">
+<!ENTITY noOverridePage.label "Visa inte uppgraderingssidan">
+<!ENTITY titleBar.caption "Webbläsarfönstrets namnlisttext">
+<!ENTITY titleBar.label "Anpassad namnlisttext:">
+<!ENTITY titleBar.description "Texten du anger (t.ex. namnet på ditt företag) syns efter sidrubriken i namnlisten. Det rekommenderas att du använder formatet
+
+
+                                         <html:i>Mozilla Firefox: Företagsnamn Edition</html:i>">
+<!ENTITY customizePartTwo.label "Anpassa webbläsaren: Del två">
+<!ENTITY animLogo.caption "Animerad logotyp">
+<!ENTITY animLogoURL.label "Logotypknapps-URL:">
+<!ENTITY animLogoURL.description "Ange URL:en som användarna kommer att gå till när de klickar på den animerade logotypknappen.">
+<!ENTITY animLogoTooltip.description "Ange verktygstipset som användarna kommer att se när de för muspekaren över den animerade logotypknappen.">
+<!ENTITY animLogoTooltip.label "Logotypknappens verktygstips:">
+<!ENTITY animLogoAnim.description "Sökväg till din animerade GIF-fil (16x16 pixlar):">
+<!ENTITY animLogoStill.description "Sökväg till din GIF- eller PNG-fil i viloläge (16x16 pixlar):">
+<!ENTITY customizePartThree.label "Anpassa webbläsaren: Del tre">
+<!ENTITY helpMenu.caption "Hjälp-meny">
+<!ENTITY helpMenu.description "Du kan lägga till ett objekt i Hjälp-menyn som tillhandahåller en länk till din onlinebaserade kundsupportsida.">
+<!ENTITY helpMenuText.label "Menyobjekttext:">
+<!ENTITY helpMenuURL.label "Hjälp-menyobjekt-URL:">
+<!ENTITY helpMenuAccesskey.label "Hjälp-menyobjektets snabbtangent:">
+<!ENTITY customizePartFour.label "Anpassa webbläsaren: Del fyra">
+<!ENTITY allowedSites.caption "Betrodda webbplatser">
+<!ENTITY popupAllowedSites.label "Du kan ange domäner som tillåts öppna popup-fönster. Lista domäner, avgränsade med ett kommatecken.">
+<!ENTITY installAllowedSites.label "Du kan ange domäner som tillåts installera mjukvara (XPI:er). Lista domäner, avgränsade med ett kommatecken.">
+<!ENTITY cookieAllowedSites.label "Du kan ange domäner som alltid tillåts använda kakor. Lista domäner, avgränsade med ett kommatecken.">
+<!ENTITY deniedSites.caption "Blockerade webbplatser">
+<!ENTITY popupDeniedSites.label "Du kan ange domäner som inte tillåts öppna popup-fönster. Lista domäner, avgränsade med ett kommatecken.">
+<!ENTITY installDeniedSites.label "Du kan ange domäner som inte tillåts installera mjukvara (XPI:er). Lista domäner, avgränsade med ett kommatecken.">
+<!ENTITY cookieDeniedSites.label "Du kan ange domäner som aldrig tillåts använda kakor. Lista domäner, avgränsade med ett kommatecken.">
+<!ENTITY customizeBrowserPlugins.label "Anpassa insticksmoduler">
+<!ENTITY browserPlugins.description "Använd knapparna nedan för att lägga till webbläsarinsticksmoduler.">
+<!ENTITY plugins.label "Insticksmoduler">
+<!ENTITY plugins.description "Var vänlig välj en insticksmodul och plattformen den är skapad för.">
+<!ENTITY customizeSearchEngines.label "Anpassa sökmotorer">
+<!ENTITY searchEngines.description "Använd knapparna nedan för att lägga till sökmotorer.">
+<!ENTITY defaultSearchEngine.label "Standardsökmotor">
+<!ENTITY engines.label "Sökmotorer">
+<!ENTITY engines.description "Var vänlig välj en sökmotor och (om tillämpligt) motsvarande bild.">
+<!ENTITY engine.label "Sökmotor:">
+<!ENTITY engineIcon.label "Bildfil:">
+<!ENTITY file.label "Fil:">
+<!ENTITY folderTitle.label "Mappnamn:">
+<!ENTITY customizeToolbarOne.label "Anpassa bokmärkesfältet: Del ett">
+<!ENTITY addToolbarFolder.caption "Lägg till en mapp i bokmärkesfältet">
+<!ENTITY addToolbarFolder.description "Använd knapparna nedan för att lägga till bokmärken i en mapp i bokmärkesfältet.">
+<!ENTITY addToolbarBookmark.caption "Lägg till bokmärken i bokmärkesfältet">
+<!ENTITY addToolbarBookmark.description "Använd knapparna nedan för att lägga till bokmärken i bokmärkesfältet.">
+<!ENTITY customizeToolbarTwo.label "Anpassa bokmärkesfältet: Del två">
+<!ENTITY customizeBookmarksOne.label "Anpassa bokmärken: Del ett">
+<!ENTITY customizeBookmarksTwo.label "Anpassa bokmärken: Del två">
+<!ENTITY addBookmarkFolder.caption "Lägg till en mapp i Bokmärken-menyn">
+<!ENTITY addBookmarkFolder.description "Använd knapparna nedan för att skapa en mapp med bokmärken.">
+<!ENTITY addBookmark.caption "Lägg till bokmärken">
+<!ENTITY addBookmark.description "Använd knapparna nedan för att lägga till bokmärken.">
+<!ENTITY toolbarLocation.label "Plats för bokmärkesfältsobjekt">
+<!ENTITY toolbarLocationBegin.label "Infoga bokmärkesfältsobjekt i början">
+<!ENTITY toolbarLocationEnd.label "Infoga bokmärkesfältsobjekt i slutet">
+<!ENTITY bookmarkLocation.label "Plats för Bokmärken-menyobjekt">
+<!ENTITY bookmarkLocationBegin.label "Infoga Bokmärken-menyobjekt i början">
+<!ENTITY bookmarkLocationEnd.label "Infoga Bokmärken-menyobjekt i slutet">
+<!ENTITY bookmark.label "Bokmärke">
+<!ENTITY bookmark.description "Skapa/redigera ett bokmärke">
+<!ENTITY bookmarkTitle.label "Rubrik:">
+<!ENTITY bookmarkURL.label "URL:">
+<!ENTITY liveBookmark.label "Smart bokmärke">
+<!ENTITY separator.label "Avgränsare">
+<!ENTITY customizePrefs.label "Anpassa inställningar">
+<!ENTITY customizePrefs.description "Använd knapparna nedan för att lägga till standardinställningar.">
+<!ENTITY prefs.label "Inställningar">
+<!ENTITY prefName.label "Inställningens namn:">
+<!ENTITY prefValue.label "Värde: ">
+<!ENTITY prefLock.label "Lås inställningen">
+<!ENTITY newButton.label "Nytt">
+<!ENTITY newButton.accesskey "N">
+<!ENTITY deleteButton.label "Ta bort">
+<!ENTITY deleteButton.accesskey "T">
+<!ENTITY editButton.label "Redigera">
+<!ENTITY editButton.accesskey "R">
+<!ENTITY moveUpButton.label "Flytta uppåt">
+<!ENTITY moveUpButton.accesskey "u">
+<!ENTITY moveDownButton.label "Flytta nedåt">
+<!ENTITY moveDownButton.accesskey "e">
+<!ENTITY customizeRegistry.label "Anpassa registret (endast Windows)">
+<!ENTITY registry.label "Register">
+<!ENTITY registry.description "Använd knapparna nedan för att lägga till poster i Windows-registret. Obs.: Dessa objekt kommer att läggas till/uppdateras varje gång webbläsaren startas.">
+<!ENTITY regDescription.label "Beskrivning">
+<!ENTITY regRootKey.label "Rotnyckel">
+<!ENTITY regKey.label "Nyckel">
+<!ENTITY regName.label "Namn">
+<!ENTITY regNameValue.label "Namnvärde">
+<!ENTITY regType.label "Typ">
+<!ENTITY customizeCerts.label "Anpassa certifikat">
+<!ENTITY customizeCerts.description "Använd knapparna nedan för att välja de certifikat som skall förinstalleras (endast PEM-format).">
+<!ENTITY customizeCerts.warning "<html:b>VIKTIGT: Om du lägger till certifikat i Firefox, så FÅR DU INTE
+
+
+                                         leverera en webbläsare utanför ditt företag eller institution och kalla den Firefox.
+
+                                         Denna funktion är i första hand avsedd för företags- och institutionsanvändare
+
+                                         som kommer att distribuera Firefox inom sin egen organisation.</html:b>">
+<!ENTITY certs.label "Certifikat">
+<!ENTITY cert.label "Certifikat">
+<!ENTITY cert.trustSSL "Betro denna CA att verifiera identiteten på webbplatser.">
+<!ENTITY cert.trustEmail "Betro denna CA att verifiera identiteten på e-postanvändare.">
+<!ENTITY cert.trustObjSign "Betro denna CA att verifiera identiteten på programvaruutvecklare.">
+<!ENTITY customizeBundles.label "Anpassa tillägg/teman">
+<!ENTITY customizeBundles.description "Använd knapparna nedan för att välja de tillägg och teman som skall installeras med ditt CCK.">
+<!ENTITY customizeBundles.warning "<html:b>VIKTIGT: Om du lägger till tillägg och/eller teman i ditt CCK,
+
+
+                                         så får du inte längre installera CCK:et som en del av en Firefox-installation. Du måste
+
+                                         installera det via webbläsaren.
+
+                                         </html:b>">
+<!ENTITY bundles.label "Tillägg/teman">
+<!ENTITY customizeProxy.label "Anpassa proxykonfigurationer">
+<!ENTITY autoCCKTypeRadio.label "Lagra proxykonfigurationsfilen i CCK:et:">
+<!ENTITY autoCCKTypeRadio.accesskey "i">
+<!ENTITY showConfig.title "Visa konfiguration">
+<!ENTITY cckWizard.oncancel "All ändrad data kommer att sparas">
+<!ENTITY cckWizardFinish.description "Klicka på &quot;Slutför&quot; för att skapa ditt CCK-paket.">
