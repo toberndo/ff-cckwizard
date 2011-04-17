@@ -41,7 +41,7 @@ var CCKService = {
           var location = em.getInstallLocation("%id%").getItemLocation("%id%");
           installXPIs(location);
         } else {
-          Components.utils.import("resource://gre/modules/AddonManager.jsm");  
+          Components.utils.import("resource://gre/modules/AddonManager.jsm");
           AddonManager.getAddonByID("%id%", function(addon) {
             var location = addon.getResourceURI("").QueryInterface(Components.interfaces.nsIFileURL).file;
             installXPIs(location);
@@ -107,7 +107,7 @@ function init() {
       }
       i++;
     } while (prefName);
-  
+
     /* Windows only */
     if ("@mozilla.org/windows-registry-key;1" in Cc) {
       var RegName, RootKey, Key, Name, NameValue, Type;
@@ -125,8 +125,8 @@ function init() {
         addRegistryKey(RootKey, Key, Name, NameValue, Type);
         i++;
       } while (RegName)
-    } 
-    
+    }
+
     var CertName, CertTrust;
     i=1;
     do {
@@ -139,7 +139,7 @@ function init() {
       addCertificate(CertName, CertTrust);
       i++;
     } while (CertName)
-    
+
     var sites;
     sites = getString("PopupAllowedSites");
     if (sites)
@@ -170,7 +170,7 @@ function init() {
     if (mybookmarks.length > 0) {
       return;
     }
-    
+
     var ToolbarLocation;
     ToolbarLocation = getString("ToolbarLocation");
     if ((ToolbarLocation) && (ToolbarLocation == "First")) {
@@ -180,7 +180,7 @@ function init() {
       addFolder("Toolbar", bookmarks.toolbarFolder, -1, annoId);
       addBookmarks("Toolbar", bookmarks.toolbarFolder, -1, annoId);
     }
-    
+
     var BookmarkLocation;
     BookmarkLocation = getString("BookmarkLocation");
     if ((BookmarkLocation) && (BookmarkLocation == "First")) {
@@ -271,6 +271,7 @@ function deleteRegistryKey(RootKey, ParentKey, KeyToDelete)
 {
    const nsIWindowsRegKey = Ci.nsIWindowsRegKey;
    var key = null;
+   var deleted = false;
 
    try
    {
@@ -297,7 +298,17 @@ function deleteRegistryKey(RootKey, ParentKey, KeyToDelete)
       var keyName;
       while (key.childCount > 0) {
          keyName = key.getChildName(0);
-         deleteRegistryKey(RootKey, ParentKey + "\\" + KeyToDelete, keyName);
+
+         // If we failed to delete the registry key, abort or we'll go into an infinite recursive loop
+         // since there will always be a child key.
+         if ( !deleteRegistryKey(RootKey, ParentKey + "\\" + KeyToDelete, keyName) ) {
+            log("[DEBUG] Failed to delete registry key: " + KeyToDelete + ".  Aborting deletion of registry key.\n");
+            if (key) {
+               key.close();
+            }
+
+            return false;
+         }
       }
 
       key.close();
@@ -305,13 +316,16 @@ function deleteRegistryKey(RootKey, ParentKey, KeyToDelete)
       key.open(rootKey, ParentKey, nsIWindowsRegKey.ACCESS_READ);
       key.removeChild(KeyToDelete);
       key.close();
+      deleted = true;
    }
    catch (ex) {
-      log("[DEBUG] delete registry key failed: " + ex + "\n");
+      log("[DEBUG] delete registry key failed:\nParent Key: " + RootKey + "\\" + ParentKey + "\nKeyToDelete: " + KeyToDelete + "\n" + ex + "\n");
       if (key) {
          key.close();
       }
    }
+
+   return deleted;
 }
 
 
@@ -324,7 +338,7 @@ function addCertificate(CertName, CertTrust) {
   var certfile=scriptableStream.read(input.available());
   scriptableStream.close();
   input.close();
-  
+
   var beginCert = "-----BEGIN CERTIFICATE-----";
   var endCert = "-----END CERTIFICATE-----";
 
@@ -346,7 +360,7 @@ function updatePermissions(sites, type, permission) {
       var uri = gIOService.newURI("http://" + sitesArray[i], null, null);
       gPermMgr.add(uri, type, permission);
     } catch (ex) {}
-  }   
+  }
 }
 
 function addBookmarks(prefix, container, location, inId) {
