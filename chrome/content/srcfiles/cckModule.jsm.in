@@ -83,31 +83,32 @@ function init() {
     gPrefBranch.setBoolPref("extensions.%id%.install-event-fired", true);
   }
 
+  /* Always lock preferences */
+  var prefName;
+  var i=1;
+  do {
+    prefName = getString("LockPref" + i);
+    if (prefName) {
+      if ((prefName == "browser.startup.homepage") ||
+          (prefName == "browser.search.defaultenginename") ||
+          (prefName == "browser.search.order.1") ||
+          (prefName == "browser.throbber.url")) {
+        var url = getString(prefName);
+        if (url) {
+          gDefPrefBranch.setCharPref(prefName, url);
+        } else {
+          url = gDefPrefBranch.getComplexValue(prefName, Ci.nsIPrefLocalizedString).data;
+          gDefPrefBranch.setCharPref(prefName, url);
+        }
+      }
+      gPrefBranch.lockPref(prefName);
+    }
+    i++;
+  } while (prefName);
+
   if (firstrun || extVersion != installedVersion)
   {
     // New install, update or re-enabled.  Currently there is no difference.
-    var prefName;
-    var i=1;
-    do {
-      prefName = getString("LockPref" + i);
-      if (prefName) {
-        if ((prefName == "browser.startup.homepage") ||
-            (prefName == "browser.search.defaultenginename") ||
-            (prefName == "browser.search.order.1") ||
-            (prefName == "browser.throbber.url")) {
-          var url = getString(prefName);
-          if (url) {
-            gDefPrefBranch.setCharPref(prefName, url);
-          } else {
-            url = gDefPrefBranch.getComplexValue(prefName, Ci.nsIPrefLocalizedString).data;
-            gDefPrefBranch.setCharPref(prefName, url);
-          }
-        }
-        gPrefBranch.lockPref(prefName);
-      }
-      i++;
-    } while (prefName);
-
     /* Windows only */
     if ("@mozilla.org/windows-registry-key;1" in Cc) {
       var RegName, RootKey, Key, Name, NameValue, Type;
@@ -194,15 +195,15 @@ function init() {
 }
 
 function uninit() {
-  var i = 1;
-  var prefName;
-  do {
-    prefName = getString("LockPref" + i);
-    if (prefName && prefName.length) {
-      gPrefBranch.unlockPref(prefName);
-    }
-    i++;
-  } while (prefName && prefName.length);
+//  var i = 1;
+//  var prefName;
+//  do {
+//    prefName = getString("LockPref" + i);
+//    if (prefName && prefName.length) {
+//      gPrefBranch.unlockPref(prefName);
+//    }
+//    i++;
+//  } while (prefName && prefName.length);
 
   if (gPrefBranch.prefHasUserValue("extensions.%id%.install-event-fired")) {
     gPrefBranch.clearUserPref("extensions.%id%.install-event-fired");
