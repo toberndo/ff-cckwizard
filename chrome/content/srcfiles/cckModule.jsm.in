@@ -28,6 +28,15 @@ var CCKService = {
   observe: function observe(subject, topic, data) {
     switch (topic) {
       case "profile-before-change":
+        var i = 1;
+        var prefName;
+        do {
+          prefName = getString("LockPref" + i);
+          if (prefName && prefName.length) {
+            gPrefBranch.unlockPref(prefName);
+          }
+          i++;
+        } while (prefName && prefName.length);
         if (CCKService.beingUninstalled) {
           uninit();
         }
@@ -195,16 +204,6 @@ function init() {
 }
 
 function uninit() {
-//  var i = 1;
-//  var prefName;
-//  do {
-//    prefName = getString("LockPref" + i);
-//    if (prefName && prefName.length) {
-//      gPrefBranch.unlockPref(prefName);
-//    }
-//    i++;
-//  } while (prefName && prefName.length);
-
   if (gPrefBranch.prefHasUserValue("extensions.%id%.install-event-fired")) {
     gPrefBranch.clearUserPref("extensions.%id%.install-event-fired");
   }
