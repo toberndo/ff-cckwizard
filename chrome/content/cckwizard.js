@@ -2054,6 +2054,8 @@ function CCKWriteInstallRDF(destdir)
   var hiddenline =      "<em:hidden>true</em:hidden>";
   var lockedline =      "<em:locked>true</em:locked>";
   var appManagedline =   "<em:appManaged>true</em:appManaged>";
+  var minVersionline =   "<em:minVersion>%minVersion%</em:minVersion>";
+  var maxVersionline =   "<em:maxVersion>%maxVersion%</em:maxVersion>";
 
   iconURLline = iconURLline.replace(/%OrganizationName%/g, document.getElementById("OrganizationName").value);
 
@@ -2106,6 +2108,22 @@ function CCKWriteInstallRDF(destdir)
     str = str.replace(/%version%/g, document.getElementById("version").value);
   } else {
     str = str.replace(/%versionline%/g, "");
+  }
+
+  var minVersion = document.getElementById("ffMinVersion").value;
+  str = str.replace(/%minVersionline%/g, minVersionline);
+  if (minVersion && (minVersion.length > 0)) {
+    str = str.replace(/%minVersion%/g, minVersion);
+  } else {
+    str = str.replace(/%minVersion%/g, "3.6");
+  }
+
+  var maxVersion = document.getElementById("ffMaxVersion").value;
+  str = str.replace(/%maxVersionline%/g, maxVersionline);
+  if (maxVersion && (maxVersion.length > 0)) {
+    str = str.replace(/%maxVersion%/g, maxVersion);
+  } else {
+    str = str.replace(/%maxVersion%/g, "*");
   }
 
   var description = document.getElementById("description").value;
