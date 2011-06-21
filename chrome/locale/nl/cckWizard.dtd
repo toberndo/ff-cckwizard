@@ -27,6 +27,9 @@
 <!ENTITY id.format "Opmaak: bedrijfsnaam-cck@extensies.domeinnaam.tld">
 <!ENTITY name.label "Naam:">
 <!ENTITY version.label "Versie:">
+<!ENTITY  ffVersion.label               "Firefox version:">
+<!ENTITY  minimum.label                 "Minimum">
+<!ENTITY  maximum.label                 "Maximum">
 <!ENTITY description.label "Beschrijving:">
 <!ENTITY creator.label "Schrijver:">
 <!ENTITY homepageURL.label "Startpagina-URL:">

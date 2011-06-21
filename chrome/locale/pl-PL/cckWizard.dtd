@@ -27,6 +27,9 @@
 <!ENTITY id.format "Format: nazwa_firmy-cck@domena.rozszerzenia.tld">
 <!ENTITY name.label "Nazwa:">
 <!ENTITY version.label "Wersja:">
+<!ENTITY  ffVersion.label               "Firefox version:">
+<!ENTITY  minimum.label                 "Minimum">
+<!ENTITY  maximum.label                 "Maximum">
 <!ENTITY description.label "Opis:">
 <!ENTITY creator.label "Autor:">
 <!ENTITY homepageURL.label "Strona domowa:">

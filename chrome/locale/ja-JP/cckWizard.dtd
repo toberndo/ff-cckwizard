@@ -27,6 +27,9 @@
 <!ENTITY id.format "入力形式: companyname-cck@extensions.domainname.tld">
 <!ENTITY name.label "名前:">
 <!ENTITY version.label "バージョン:">
+<!ENTITY  ffVersion.label               "Firefox version:">
+<!ENTITY  minimum.label                 "Minimum">
+<!ENTITY  maximum.label                 "Maximum">
 <!ENTITY description.label "概要:">
 <!ENTITY creator.label "作成者:">
 <!ENTITY homepageURL.label "ホームページの URL:">

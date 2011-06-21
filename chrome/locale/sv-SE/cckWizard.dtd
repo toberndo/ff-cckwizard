@@ -27,6 +27,9 @@
 <!ENTITY id.format "Format: företagsnamn-cck@tilläggets.domännamn.tld">
 <!ENTITY name.label "Namn:">
 <!ENTITY version.label "Version:">
+<!ENTITY  ffVersion.label               "Firefox version:">
+<!ENTITY  minimum.label                 "Minimum">
+<!ENTITY  maximum.label                 "Maximum">
 <!ENTITY description.label "Beskrivning:">
 <!ENTITY creator.label "Skapat av:">
 <!ENTITY homepageURL.label "Webbplats-URL:">

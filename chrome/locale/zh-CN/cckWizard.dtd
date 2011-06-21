@@ -27,6 +27,9 @@
 <!ENTITY id.format "格式 : companyname-cck@extensions.domainname.tld">
 <!ENTITY name.label "名称:">
 <!ENTITY version.label "版本:">
+<!ENTITY  ffVersion.label               "Firefox version:">
+<!ENTITY  minimum.label                 "Minimum">
+<!ENTITY  maximum.label                 "Maximum">
 <!ENTITY description.label "描述:">
 <!ENTITY creator.label "创建者:">
 <!ENTITY homepageURL.label "主页 URL:">

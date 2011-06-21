@@ -33,6 +33,9 @@
 <!ENTITY  id.format                     "Format: companyname-cck@extensions.domainname.tld">
 <!ENTITY  name.label                    "Name:">
 <!ENTITY  version.label                 "Version:">
+<!ENTITY  ffVersion.label               "Firefox version:">
+<!ENTITY  minimum.label                 "Minimum">
+<!ENTITY  maximum.label                 "Maximum">
 <!ENTITY  description.label             "Description:">
 <!ENTITY  creator.label                 "Creator:">
 <!ENTITY  homepageURL.label             "Homepage URL:">
@@ -48,7 +51,6 @@
 <!ENTITY  hidden.label                  "Do not show this extension in the extension manager.">
 <!ENTITY  locked.label                  "Prevent the uninstall of this extension (it can still be disabled).">
 <!ENTITY  aboutconfig.label             "Do not allow access to about:config">
-
 
 <!ENTITY  customizePartOne.label        "Customize the Browser - Part One">
 

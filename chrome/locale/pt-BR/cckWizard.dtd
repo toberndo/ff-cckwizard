@@ -27,6 +27,9 @@
 <!ENTITY id.format "Formato: empresa-cck@extensoes.dominio.tld">
 <!ENTITY name.label "Nome:">
 <!ENTITY version.label "Versão:">
+<!ENTITY  ffVersion.label               "Firefox version:">
+<!ENTITY  minimum.label                 "Minimum">
+<!ENTITY  maximum.label                 "Maximum">
 <!ENTITY description.label "Descrição:">
 <!ENTITY creator.label "Criador:">
 <!ENTITY homepageURL.label "URL da Página:">

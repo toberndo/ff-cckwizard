@@ -125,6 +125,28 @@
          <textbox id="version"/>
        </row>
        <row align="center">
+        <vbox align="right">
+        <label>&ffVersion.label;</label>
+        </vbox>
+        <hbox align="center">
+          <label control="ffMinVersion">&minimum.label;</label>
+          <menulist editable="true" id="ffMinVersion">
+            <menupopup>
+              <menuitem label="3.6" value="3.6"/>
+              <menuitem label="4" value="4"/>
+            </menupopup>
+          </menulist>
+           <label control="ffMaxVersion">&maximum.label;</label>
+          <menulist editable="true" id="ffMaxVersion">
+            <menupopup>
+              <menuitem label="3.6.*" value="3.6.*"/>
+              <menuitem label="4.*" value="4.*"/>
+              <menuitem label="*" value="*"/>
+            </menupopup>
+          </menulist>
+        </hbox>
+       </row>
+       <row align="center">
          <vbox align="right">
            <label control="description">&description.label;</label>
          </vbox>
@@ -220,28 +242,6 @@
          <hbox align="center">
            <checkbox id="noaboutconfig" label="&aboutconfig.label;"/>
          </hbox>
-       </row>
-       <row align="center">
-        <vbox align="right">
-        Firefox version:
-        </vbox>
-        <hbox align="center">
-          <label control="ffMinVersion">Minimum</label>
-          <menulist editable="true" id="ffMinVersion">
-            <menupopup>
-              <menuitem label="3.6" value="3.6"/>
-              <menuitem label="4" value="4"/>
-            </menupopup>
-          </menulist>
-           <label control="ffMaxVersion">Maximum</label>
-          <menulist editable="true" id="ffMaxVersion">
-            <menupopup>
-              <menuitem label="3.6.*" value="3.6.*"/>
-              <menuitem label="4.*" value="4.*"/>
-              <menuitem label="*" value="*"/>
-            </menupopup>
-          </menulist>
-        </hbox>
        </row>
      </rows>
    </grid>
