@@ -1,4 +1,8 @@
 /*
+ * $Revision$
+ * $Date$
+ * $Author$
+ * 
 //@line 40 "/Users/mkaply/Projects/Firefox/mozilla/extensions/cck/browser/resources/content/cckwizard/cckwizard.js"
 */
 
@@ -26,14 +30,14 @@ function choosefile(labelname)
 
     if (currentconfigpath) {
       destdir.initWithPath(currentconfigpath);
-	  fp.displayDirectory = destdir;
+      fp.displayDirectory = destdir;
     }
 
 
-   if (fp.show() == nsIFilePicker.returnOK && fp.fileURL.spec && fp.fileURL.spec.length > 0) {
-     var label = document.getElementById(labelname);
-     label.value = fp.file.path;
-   }
+    if (fp.show() == nsIFilePicker.returnOK && fp.fileURL.spec && fp.fileURL.spec.length > 0) {
+    	var label = document.getElementById(labelname);
+    	label.value = fp.file.path;
+    }
   }
   catch(ex) {
   }
@@ -75,14 +79,14 @@ function chooseimage(labelname, imagename)
 
     if (currentconfigpath) {
       destdir.initWithPath(currentconfigpath);
-	  fp.displayDirectory = destdir;
+      fp.displayDirectory = destdir;
     }
 
-   if (fp.show() == nsIFilePicker.returnOK && fp.fileURL.spec && fp.fileURL.spec.length > 0) {
-     var label = document.getElementById(labelname);
-     label.value = fp.file.path;
-     document.getElementById(imagename).src = fp.fileURL.spec;
-   }
+    if (fp.show() == nsIFilePicker.returnOK && fp.fileURL.spec && fp.fileURL.spec.length > 0) {
+    	var label = document.getElementById(labelname);
+    	label.value = fp.file.path;
+    	document.getElementById(imagename).src = fp.fileURL.spec;
+    }
   }
   catch(ex) {
   }
@@ -2349,28 +2353,34 @@ function CCKWriteConfigFile(destdir)
 
   var elements = document.getElementsByAttribute("id", "*")
   for (var i=0; i < elements.length; i++) {
-    if ((elements[i].nodeName == "textbox") ||
-        (elements[i].id == "RootKey1") ||
-        (elements[i].id == "Type1")) {
+    if ( (elements[i].nodeName == "textbox") ||
+         (elements[i].id == "RootKey1") ||
+         (elements[i].id == "Type1") ||
+         (elements[i].id == "ffMinVersion") ||
+         (elements[i].id == "ffMaxVersion") ) 
+    {
       if (elements[i].id != "saveOnExit") {
         if (elements[i].value.length > 0) {
           var line = elements[i].getAttribute("id") + "=" + elements[i].value + "\n";
           cos.writeString(line);
         }
       }
-    } else if (elements[i].nodeName == "radiogroup") {
+    } 
+    else if (elements[i].nodeName == "radiogroup") {
         if ((elements[i].value.length > 0) && (elements[i].value != "0")) {
           var line = elements[i].getAttribute("id") + "=" + elements[i].value + "\n";
           cos.writeString(line);
         }
-    } else if (elements[i].nodeName == "checkbox") {
+    } 
+    else if (elements[i].nodeName == "checkbox") {
       if (elements[i].id != "saveOnExit") {
         if (elements[i].checked) {
           var line = elements[i].getAttribute("id") + "=" + elements[i].checked + "\n";
           cos.writeString(line);
         }
       }
-    } else if (elements[i].id == "prefList") {
+    } 
+    else if (elements[i].id == "prefList") {
       var listbox = document.getElementById('prefList');    
       for (var j=0; j < listbox.getRowCount(); j++) {
         var listitem = listbox.getItemAtIndex(j);
@@ -2380,16 +2390,17 @@ function CCKWriteConfigFile(destdir)
           var line = "PreferenceValue" + (j+1) + "=" + listitem.getAttribute("value") + "\n";
           cos.writeString(line);
         }
-	      if (listitem.cck['type'].length > 0) {
+	    if (listitem.cck['type'].length > 0) {
           var line = "PreferenceType" + (j+1) + "=" + listitem.cck['type'] + "\n";
           cos.writeString(line);
-	      }
-	      if (listitem.cck['lock'].length > 0) {
+	    }
+	    if (listitem.cck['lock'].length > 0) {
           var line = "PreferenceLock" + (j+1) + "=" + listitem.cck['lock'] + "\n";
           cos.writeString(line);
-	      }
+	    }
       }
-    } else if (elements[i].id == "browserPluginList") {
+    } 
+    else if (elements[i].id == "browserPluginList") {
       listbox = document.getElementById('browserPluginList');    
       for (var j=0; j < listbox.getRowCount(); j++) {
         listitem = listbox.getItemAtIndex(j);
@@ -2398,9 +2409,10 @@ function CCKWriteConfigFile(destdir)
         if (listitem.getAttribute("value")) {
           var line = "BrowserPluginType" + (j+1) + "=" + listitem.getAttribute("value") + "\n";
           cos.writeString(line);
-	      }
+	    }
       }
-    } else if (elements[i].id == "tbFolder.bookmarkList") {
+    } 
+    else if (elements[i].id == "tbFolder.bookmarkList") {
       listbox = document.getElementById('tbFolder.bookmarkList');
       for (var j=0; j < listbox.getRowCount(); j++) {
         listitem = listbox.getItemAtIndex(j);
@@ -2409,61 +2421,62 @@ function CCKWriteConfigFile(destdir)
         if (listitem.getAttribute("value")) {
           var line = "ToolbarFolder1.BookmarkURL" + (j+1) + "=" + listitem.getAttribute("value") + "\n";
           cos.writeString(line);
-	      }
-	      if (listitem.cck['type'].length > 0) {
+	    }
+	    if (listitem.cck['type'].length > 0) {
           var line = "ToolbarFolder1.BookmarkType" + (j+1) + "=" + listitem.cck['type'] + "\n";
           cos.writeString(line);
-	      }
+	    }
       }
-    } else if (elements[i].id == "tb.bookmarkList") {
+    } 
+    else if (elements[i].id == "tb.bookmarkList") {
       listbox = document.getElementById('tb.bookmarkList');
       for (var j=0; j < listbox.getRowCount(); j++) {
         listitem = listbox.getItemAtIndex(j);
         var line = "ToolbarBookmarkTitle" + (j+1) + "=" + listitem.getAttribute("label") + "\n";
         cos.writeString(line);
-	      if (listitem.getAttribute("value")) {
+	    if (listitem.getAttribute("value")) {
           var line = "ToolbarBookmarkURL" + (j+1) + "=" + listitem.getAttribute("value") + "\n";
           cos.writeString(line);
-	      }
-	      if (listitem.cck['type'].length > 0) {
-          var line = "ToolbarBookmarkType" + (j+1) + "=" + listitem.cck['type'] + "\n";
+	    }
+	    if (listitem.cck['type'].length > 0) {
+	      var line = "ToolbarBookmarkType" + (j+1) + "=" + listitem.cck['type'] + "\n";
           cos.writeString(line);
-	      }
-      }
-      
-    } else if (elements[i].id == "bmFolder.bookmarkList") {
+	    }
+      }  
+    } 
+    else if (elements[i].id == "bmFolder.bookmarkList") {
       listbox = document.getElementById('bmFolder.bookmarkList');
       for (var j=0; j < listbox.getRowCount(); j++) {
         listitem = listbox.getItemAtIndex(j);
         var line = "BookmarkFolder1.BookmarkTitle" + (j+1) + "=" + listitem.getAttribute("label") + "\n";
         cos.writeString(line);
-	      if (listitem.getAttribute("value")) {
+	    if (listitem.getAttribute("value")) {
           var line = "BookmarkFolder1.BookmarkURL" + (j+1) + "=" + listitem.getAttribute("value") + "\n";
           cos.writeString(line);
-	      }
-	      if (listitem.cck['type'].length > 0) {
+	    }
+	    if (listitem.cck['type'].length > 0) {
           var line = "BookmarkFolder1.BookmarkType" + (j+1) + "=" + listitem.cck['type'] + "\n";
           cos.writeString(line);
-	      }
+	    }
       }
-      
-    } else if (elements[i].id == "bm.bookmarkList") {
+    } 
+    else if (elements[i].id == "bm.bookmarkList") {
       listbox = document.getElementById('bm.bookmarkList');
       for (var j=0; j < listbox.getRowCount(); j++) {
         listitem = listbox.getItemAtIndex(j);
         var line = "BookmarkTitle" + (j+1) + "=" + listitem.getAttribute("label") + "\n";
         cos.writeString(line);
-	      if (listitem.getAttribute("value")) {
+	    if (listitem.getAttribute("value")) {
           var line = "BookmarkURL" + (j+1) + "=" + listitem.getAttribute("value") + "\n";
           cos.writeString(line);
-	      }
-	      if (listitem.cck['type'].length > 0) {
+	    }
+	    if (listitem.cck['type'].length > 0) {
           var line = "BookmarkType" + (j+1) + "=" + listitem.cck['type'] + "\n";
           cos.writeString(line);
-	      }
-      }
-      
-    } else if (elements[i].id == "regList") {
+	    }
+      } 
+    } 
+    else if (elements[i].id == "regList") {
       listbox = document.getElementById('regList');    
       for (var j=0; j < listbox.getRowCount(); j++) {
         listitem = listbox.getItemAtIndex(j);
@@ -2480,7 +2493,8 @@ function CCKWriteConfigFile(destdir)
         var line = "Type" + (j+1) + "=" + listitem.cck['type'] + "\n";
         cos.writeString(line);
       }
-    } else if (elements[i].id == "searchEngineList") {
+    } 
+    else if (elements[i].id == "searchEngineList") {
       listbox = document.getElementById('searchEngineList');    
       for (var j=0; j < listbox.getRowCount(); j++) {
         listitem = listbox.getItemAtIndex(j);
@@ -2489,14 +2503,16 @@ function CCKWriteConfigFile(destdir)
         var line = "SearchEngineIcon" + (j+1) + "=" + listitem.cck['iconurl'] + "\n";
         cos.writeString(line);
       }
-    } else if (elements[i].id == "bundleList") {
+    } 
+    else if (elements[i].id == "bundleList") {
       listbox = document.getElementById('bundleList')    
       for (var j=0; j < listbox.getRowCount(); j++) {
         listitem = listbox.getItemAtIndex(j);
         var line = "BundlePath" + (j+1) + "=" + listitem.getAttribute("label") + "\n";
         cos.writeString(line);
       }
-    } else if (elements[i].id == "certList") {
+    } 
+    else if (elements[i].id == "certList") {
       listbox = document.getElementById('certList')    
       for (var j=0; j < listbox.getRowCount(); j++) {
         listitem = listbox.getItemAtIndex(j);
@@ -2505,18 +2521,21 @@ function CCKWriteConfigFile(destdir)
         var line = "CertTrust" + (j+1) + "=" + listitem.getAttribute("value") + "\n";
         cos.writeString(line);
       }
-    } else if (elements[i].id == "defaultSearchEngine") {
+    } 
+    else if (elements[i].id == "defaultSearchEngine") {
       if (elements[i].selectedItem) {
         if (elements[i].selectedItem.value) {
           var line = "DefaultSearchEngine=" + elements[i].selectedItem.value + "\n";
           cos.writeString(line);
         }
-      } else {
-          var line = "DefaultSearchEngine=" + elements[i].value + "\n";
-          cos.writeString(line);
+      } 
+      else {
+      	var line = "DefaultSearchEngine=" + elements[i].value + "\n";
+        cos.writeString(line);
       }
-    }
+    }  
   }
+  
   cos.close();
   fos.close();
 }
