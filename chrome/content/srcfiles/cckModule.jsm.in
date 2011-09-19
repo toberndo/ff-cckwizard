@@ -521,7 +521,8 @@ function installXPIs(location) {
   while (e.hasMoreElements()) {
     var f = e.getNext().QueryInterface(Components.interfaces.nsIFile);
     var splitpath = f.path.split(".");
-    if (splitpath[splitpath.length-1] == "xpi") {
+    if ((splitpath[splitpath.length-1] == "xpi") ||
+        (splitpath[splitpath.length-1] == "jar")) {
       xpisToInstall.push(f);
     }
   }
