@@ -2,7 +2,7 @@
  * $Revision$
  * $Date$
  * $Author$
- * 
+ *
 //@line 40 "/Users/mkaply/Projects/Firefox/mozilla/extensions/cck/browser/resources/content/cckwizard/cckwizard.js"
 */
 
@@ -13,7 +13,7 @@ var configarray = new Array();
 const nsIPrefBranch = Components.interfaces.nsIPrefBranch;
 var gPrefBranch = Components.classes["@mozilla.org/preferences-service;1"]
                             .getService(nsIPrefBranch);
-                            
+
 var gPromptService = Components.classes["@mozilla.org/embedcomp/prompt-service;1"]
                                .getService(Components.interfaces.nsIPromptService);
 
@@ -168,7 +168,7 @@ function CreateConfig()
 function CopyConfig()
 {
   window.openDialog("chrome://cckwizard/content/config.xul","copyconfig","chrome,centerscreen,modal");
-  
+
   updateconfiglist();
 }
 
@@ -216,7 +216,7 @@ function updateconfiglist()
   var selecteditem = false;
 
 
-  
+
   var list = gPrefBranch.getChildList("cck.config.", {});
   for (var i = 0; i < list.length; ++i) {
     configname = list[i].replace(/cck.config./g, "");
@@ -270,7 +270,7 @@ function saveconfig()
   if (currentconfigpath) {
   var destdir = Components.classes["@mozilla.org/file/local;1"]
                           .createInstance(Components.interfaces.nsILocalFile);
-  
+
 
 
     destdir.initWithPath(currentconfigpath);
@@ -301,7 +301,7 @@ function CloseCCKWizard()
   } else {
     button = 0;
   }
-  
+
   if (button == 0) {
     saveconfig();
   }
@@ -363,7 +363,7 @@ function configCheckOKButton()
   if ((document.getElementById("cnc-name").value) && (document.getElementById("cnc-location").value)) {
     document.documentElement.getButton("accept").setAttribute( "disabled", "false" );
   } else {
-    document.documentElement.getButton("accept").setAttribute( "disabled", "true" );  
+    document.documentElement.getButton("accept").setAttribute( "disabled", "true" );
   }
 }
 
@@ -396,7 +396,7 @@ var prefsLockOnly = ["browser.startup.homepage", "browser.throbber.url",
 
 function OnPrefLoad()
 {
-  var listbox = this.opener.document.getElementById('prefList');    
+  var listbox = this.opener.document.getElementById('prefList');
   if (window.name == 'editpref') {
     window.title = listbox.selectedItem.cck['type'];
     if (listbox.selectedItem.cck['type'] == "integer") {
@@ -405,7 +405,7 @@ function OnPrefLoad()
     document.getElementById('prefname').value = listbox.selectedItem.label;
     if (arrayItemExists(prefsLockOnly, listbox.selectedItem.label)) {
       document.getElementById('prefvalue').disabled = true;
-      document.getElementById('prefvalue').value = this.opener.document.getElementById("bundle_cckwizard").getString("lockError");      
+      document.getElementById('prefvalue').value = this.opener.document.getElementById("bundle_cckwizard").getString("lockError");
     } else {
       document.getElementById('prefvalue').value = listbox.selectedItem.value;
     }
@@ -419,7 +419,7 @@ function OnPrefLoad()
     }
   }
   prefCheckOKButton();
-  
+
 }
 
 function prefCheckOKButton()
@@ -427,7 +427,7 @@ function prefCheckOKButton()
   if (document.getElementById("prefname").value) {
     document.documentElement.getButton("accept").setAttribute( "disabled", "false" );
   } else {
-    document.documentElement.getButton("accept").setAttribute( "disabled", "true" );  
+    document.documentElement.getButton("accept").setAttribute( "disabled", "true" );
   }
 }
 
@@ -467,7 +467,7 @@ function prefSetPrefValue()
   }
   if (arrayItemExists(prefsLockOnly, prefname)) {
     document.getElementById('prefvalue').disabled = true;
-    document.getElementById('prefvalue').value = this.opener.document.getElementById("bundle_cckwizard").getString("lockError");      
+    document.getElementById('prefvalue').value = this.opener.document.getElementById("bundle_cckwizard").getString("lockError");
   } else {
     document.getElementById('prefvalue').disabled = false;
   }
@@ -476,13 +476,13 @@ function prefSetPrefValue()
 function OnPrefOK()
 {
   var bundle = this.opener.document.getElementById("bundle_cckwizard");
-  
+
   var listbox = this.opener.document.getElementById("prefList");
   for (var i=0; i < listbox.getRowCount(); i++) {
     if ((document.getElementById('prefname').value == listbox.getItemAtIndex(i).label) && (window.name == 'newpref')) {
       gPromptService.alert(window, bundle.getString("windowTitle"),
                            bundle.getString("prefExistsError"));
-      return false;                           
+      return false;
     }
   }
 
@@ -491,7 +491,7 @@ function OnPrefOK()
   }
 
   var value = document.getElementById('prefvalue').value;
-  
+
   if ((document.getElementById('prefvalue').preftype == nsIPrefBranch.PREF_INT) && (!(arrayItemExists(prefsLockOnly, document.getElementById('prefname').value)))) {
     if (parseInt(value) != value) {
       gPromptService.alert(window, bundle.getString("windowTitle"),
@@ -505,11 +505,11 @@ function OnPrefOK()
   if (window.name == 'newpref') {
     var preftype;
     if ((value.toLowerCase() == "true") || (value.toLowerCase() == "false")) {
-      preftype = "boolean";            
+      preftype = "boolean";
     } else if (parseInt(value) == value) {
-      preftype = "integer";      
+      preftype = "integer";
     } else {
-      preftype  = "string";      
+      preftype  = "string";
       if (value.charAt(0) == '"')
         value = value.substring(1,value.length);
       if (value.charAt(value.length-1) == '"')
@@ -557,7 +557,7 @@ function onEditBookmark()
 
 function OnBookmarkLoad()
 {
-  var listbox = this.opener.document.getElementById(getPageId() +'.bookmarkList');    
+  var listbox = this.opener.document.getElementById(getPageId() +'.bookmarkList');
   if (window.name == 'editbookmark') {
     document.getElementById('bookmarkname').value = listbox.selectedItem.label;
     document.getElementById('bookmarkurl').value = listbox.selectedItem.value;
@@ -578,7 +578,7 @@ function bookmarkCheckOKButton()
   if ((document.getElementById('bookmarktype').value == "separator") || ((document.getElementById("bookmarkname").value) && (document.getElementById("bookmarkurl").value))) {
     document.documentElement.getButton("accept").disabled = false;
   } else {
-    document.documentElement.getButton("accept").disabled = true;  
+    document.documentElement.getButton("accept").disabled = true;
   }
 }
 
@@ -637,13 +637,13 @@ function onEditBrowserPlugin()
 
 function OnPluginLoad()
 {
-  var listbox = this.opener.document.getElementById('browserPluginList');    
+  var listbox = this.opener.document.getElementById('browserPluginList');
   if (window.name == 'editplugin') {
     document.getElementById('pluginpath').value = listbox.selectedItem.label;
     document.getElementById('plugintype').value = listbox.selectedItem.value;
   }
   pluginCheckOKButton();
-  
+
 }
 
 function pluginCheckOKButton()
@@ -651,7 +651,7 @@ function pluginCheckOKButton()
   if (document.getElementById("pluginpath").value) {
     document.documentElement.getButton("accept").setAttribute( "disabled", "false" );
   } else {
-    document.documentElement.getButton("accept").setAttribute( "disabled", "true" );  
+    document.documentElement.getButton("accept").setAttribute( "disabled", "true" );
   }
 }
 
@@ -661,7 +661,7 @@ function OnBrowserPluginOK()
     return false;
   }
 
-  var listbox = this.opener.document.getElementById('browserPluginList');    
+  var listbox = this.opener.document.getElementById('browserPluginList');
   if (window.name == 'newplugin') {
     var listitem = listbox.appendItem(document.getElementById('pluginpath').value, document.getElementById('plugintype').value);
   } else {
@@ -702,7 +702,7 @@ function regCheckOKButton()
       (document.getElementById("NameValue").value)) {
       document.documentElement.getButton("accept").setAttribute( "disabled", "false" );
   } else {
-    document.documentElement.getButton("accept").setAttribute( "disabled", "true" );  
+    document.documentElement.getButton("accept").setAttribute( "disabled", "true" );
   }
 }
 
@@ -729,7 +729,7 @@ function RefreshDefaultSearchEngines()
   menulist = document.getElementById('defaultSearchEngine');
   if (!menulist)
     menulist = this.opener.document.getElementById('defaultSearchEngine');
-  
+
   var listbox;
   listbox = document.getElementById('searchEngineList');
   if (!listbox)
@@ -738,9 +738,9 @@ function RefreshDefaultSearchEngines()
   var curitem = menulist.value;
   menulist.selectedIndex = -1;
   menulist.removeAllItems();
-  
+
   var setcuritem = false;
-  
+
   var bundle = document.getElementById("bundle_cckwizard");
   var menulistitem = menulist.appendItem(bundle.getString("useBrowserDefault"), "");
   menulistitem.minWidth=menulist.width;
@@ -766,7 +766,7 @@ function RefreshDefaultSearchEngines()
 
   if (setcuritem)
     menulist.value = curitem;
-  else 
+  else
     menulist.selectedIndex = 0;
 }
 
@@ -782,7 +782,7 @@ function onEditSearchEngine()
 
 function OnSearchEngineLoad()
 {
-  var listbox = this.opener.document.getElementById('searchEngineList');    
+  var listbox = this.opener.document.getElementById('searchEngineList');
   if (window.name == 'editsearchengine') {
     document.getElementById('searchengine').value = listbox.selectedItem.cck['engineurl'];
     document.getElementById('searchengineicon').value = listbox.selectedItem.cck['iconurl'];
@@ -793,15 +793,15 @@ function OnSearchEngineLoad()
     }
   }
   searchEngineCheckOKButton();
-  
+
 }
 
 function searchEngineCheckOKButton()
 {
-  if (document.getElementById("searchengine").value) {    
+  if (document.getElementById("searchengine").value) {
     document.documentElement.getButton("accept").setAttribute( "disabled", "false" );
   } else {
-    document.documentElement.getButton("accept").setAttribute( "disabled", "true" );  
+    document.documentElement.getButton("accept").setAttribute( "disabled", "true" );
   }
   if (!(document.getElementById("searchengineicon").value)) {
     var searchengineimage;
@@ -844,7 +844,7 @@ function OnSearchEngineOK()
   }
   if (window.name == 'newsearchengine') {
     listitem = listbox.appendItem(name, "");
-    listitem.setAttribute("class", "listitem-iconic");    
+    listitem.setAttribute("class", "listitem-iconic");
   } else {
     listitem = listbox.selectedItem;
     listbox.selectedItem.label = name;
@@ -886,7 +886,7 @@ function onEditCert()
 
 function OnCertLoad()
 {
-  var listbox = this.opener.document.getElementById('certList');    
+  var listbox = this.opener.document.getElementById('certList');
   if (window.name == 'editcert') {
     document.getElementById('certpath').value = listbox.selectedItem.label;
     var trustString = listbox.selectedItem.value;
@@ -908,7 +908,7 @@ function certCheckOKButton()
   if (document.getElementById("certpath").value) {
     document.documentElement.getButton("accept").setAttribute( "disabled", "false" );
   } else {
-    document.documentElement.getButton("accept").setAttribute( "disabled", "true" );  
+    document.documentElement.getButton("accept").setAttribute( "disabled", "true" );
   }
 }
 
@@ -978,7 +978,7 @@ function onEditBundle()
     sourcefile.initWithPath(filename);
     var ioServ = Components.classes["@mozilla.org/network/io-service;1"]
                            .getService(Components.interfaces.nsIIOService);
-                           
+
   } catch (ex) {
   }
 
@@ -1002,26 +1002,26 @@ function CreateCCK()
 {
   var uuidGenerator = Components.classes["@mozilla.org/uuid-generator;1"]
                                 .getService(Components.interfaces.nsIUUIDGenerator);
-  var uuid = uuidGenerator.generateUUID().toString();  
-  
+  var uuid = uuidGenerator.generateUUID().toString();
+
 /* ---------- */
   var destdir = Components.classes["@mozilla.org/file/local;1"]
                           .createInstance(Components.interfaces.nsILocalFile);
   destdir.initWithPath(currentconfigpath);
-  
+
   CCKWriteConfigFile(destdir);
 
   destdir.append("jar");
   try {
     destdir.remove(true);
   } catch(ex) {}
-  
+
   destdir.append("content");
   destdir.append("cck");
   try {
     destdir.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0775);
   } catch(ex) {}
-  
+
   CCKWriteXULOverlay(destdir);
   CCKWriteXULOverlayMac(destdir);
   CCKWriteXULOverlayNonMac(destdir);
@@ -1056,7 +1056,7 @@ function CreateCCK()
   zipdir.initWithPath(currentconfigpath);
   zipdir.append("jar");
   CCKZip("cck.jar", zipdir, ["content"]);
-  
+
 /* ---------- */
 
   destdir.initWithPath(currentconfigpath);
@@ -1065,10 +1065,10 @@ function CreateCCK()
     destdir.remove(true);
   } catch(ex) {}
   try {
-    destdir.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0775);    
+    destdir.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0775);
   } catch(ex) {}
-  
-  CCKWriteConfigFile(destdir);  
+
+  CCKWriteConfigFile(destdir);
   destdir.append("chrome");
   try {
     destdir.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0775);
@@ -1102,7 +1102,7 @@ function CreateCCK()
   CCKWriteCCKServiceJS(destdir, uuid);
   if (document.getElementById("noaboutconfig").checked)
     CCKCopyChromeToFile("disableAboutConfig.js", destdir);
-  
+
 /* ---------- */
 
   destdir.initWithPath(currentconfigpath);
@@ -1114,7 +1114,7 @@ function CreateCCK()
   } catch(ex) {}
 
   CCKWriteDefaultJS(destdir)
-  
+
 /* ---------- */
 
   destdir.initWithPath(currentconfigpath);
@@ -1166,28 +1166,28 @@ function CreateCCK()
 
   CCKWriteChromeManifest(destdir, uuid);
   CCKWriteInstallRDF(destdir);
-         
+
   var filename = document.getElementById("filename").value;
   if (filename.length == 0)
     filename = "cck";
   filename += ".xpi";
-  
+
   var zipContents = ["chrome", "modules", "components", "defaults", "platform", "searchplugins", "chrome.manifest", "install.rdf", "cck.config"];
 
 
   if (document.getElementById('bundleList').getRowCount() > 0) {
     listbox = document.getElementById('bundleList');
-    
+
     var tempfile = Components.classes["@mozilla.org/file/local;1"]
                                .createInstance(Components.interfaces.nsILocalFile);
-    for (var i=0; i < listbox.getRowCount(); i++) {    
+    for (var i=0; i < listbox.getRowCount(); i++) {
       listitem = listbox.getItemAtIndex(i);
       CCKCopyFile(listitem.getAttribute("label"), destdir);
       tempfile.initWithPath(listitem.getAttribute("label"));
       zipContents.push(tempfile.leafName);
     }
   }
-  
+
   CCKZip("cck.xpi", destdir,
          zipContents);
 
@@ -1196,7 +1196,7 @@ function CreateCCK()
 
   outputdir.initWithPath(currentconfigpath);
   destdir.append("cck.xpi");
-  
+
   outputdir.append(filename);
   try {
     outputdir.remove(true);
@@ -1220,7 +1220,7 @@ function CCKCopyChromeToFile(chromefile, location)
   file.append(chromefile);
 
   try {
-    file.remove(false);                         
+    file.remove(false);
   } catch (ex) {
   }
   var fos = Components.classes["@mozilla.org/network/file-output-stream;1"]
@@ -1233,7 +1233,7 @@ function CCKCopyChromeToFile(chromefile, location)
   var scriptableStream=Components
     .classes["@mozilla.org/scriptableinputstream;1"]
     .getService(Components.interfaces.nsIScriptableInputStream);
-    
+
   var channel=ioService.newChannel("chrome://cckwizard/content/srcfiles/" + chromefile + ".in",null,null);
   var input=channel.open();
   scriptableStream.init(input);
@@ -1241,7 +1241,7 @@ function CCKCopyChromeToFile(chromefile, location)
   scriptableStream.close();
   input.close();
 
-  fos.write(str, str.length); 
+  fos.write(str, str.length);
   fos.close();
 }
 
@@ -1312,18 +1312,18 @@ function CCKWriteXULOverlay(destdir)
   var file = destdir.clone();
   file.append("cck-browser-overlay.xul");
   try {
-    file.remove(false);                         
+    file.remove(false);
   } catch (ex) {}
   var fos = Components.classes["@mozilla.org/network/file-output-stream;1"]
                       .createInstance(Components.interfaces.nsIFileOutputStream);
 
   fos.init(file, -1, -1, false);
-  
+
   var ioService=Components.classes["@mozilla.org/network/io-service;1"]
                           .getService(Components.interfaces.nsIIOService);
   var scriptableStream=Components.classes["@mozilla.org/scriptableinputstream;1"]
                                  .getService(Components.interfaces.nsIScriptableInputStream);
-    
+
   var channel=ioService.newChannel("chrome://cckwizard/content/srcfiles/cck-browser-overlay.xul.in",null,null);
   var input=channel.open();
   scriptableStream.init(input);
@@ -1332,7 +1332,7 @@ function CCKWriteXULOverlay(destdir)
   input.close();
 
   var throbberurl = document.getElementById("AnimatedLogoURL").value;
-  if (throbberurl && (throbberurl.length > 0)) 
+  if (throbberurl && (throbberurl.length > 0))
     str = str.replace(/%button%/g, tooltipXUL);
   else
     str = str.replace(/%button%/g, "");
@@ -1345,38 +1345,50 @@ function CCKWriteXULOverlay(destdir)
 
   str = str.replace(/%OrganizationName%/g, document.getElementById("OrganizationName").value);
 
-  fos.write(str, str.length); 
+  fos.write(str, str.length);
   fos.close();
 }
+
+
 function CCKWriteXULOverlayNonMac(destdir)
 {
-  var helpmenu1   = '  <menupopup id="menu_HelpPopup">\n';
-  var helpmenu2   = '    <menuseparator insertafter="aboutSeparator"/>\n';
-  var helpmenu3   = '    <menuitem label="&cckHelp.label;" insertafter="aboutSeparator"\n';
-  var helpmenu4   = '              accesskey="&cckHelp.accesskey;"\n';
-  var helpmenu5   = '              oncommand="openUILink(getCCKLink(\'cckhelp.url\'), event, false, true);"\n';
-  var helpmenu6   = '              onclick="checkForMiddleClick(this, event);"/>\n';
-  var helpmenu7   = '  </menupopup>\n';
+  var helpmenu1 = '\n  <menupopup id="menu_HelpPopup">\n';
+  var helpmenu2 = '    <menuseparator insertafter="aboutSeparator"/>\n';
+  var helpmenu3 = '    <menuitem label="&cckHelp.label;" insertafter="aboutSeparator"\n';
+  var helpmenu4 = '              accesskey="&cckHelp.accesskey;"\n';
+  var helpmenu5 = '              oncommand="openUILink(getCCKLink(\'cckhelp.url\'), event, false, true);"\n';
+  var helpmenu6 = '              onclick="checkForMiddleClick(this, event);"/>\n';
+  var helpmenu7 = '  </menupopup>\n\n';
+  var helpmenu8 = '  <!-- Firefox App Menu (4 and higher) -->\n'
+  var helpmenu9 = '  <menupopup id="appmenu_helpMenupopup">\n';
+  var helpmenu10 = '    <menuitem label="&cckHelp.label;" insertbefore="appmenu_about"\n';
+  var helpmenu11 = '              accesskey="&cckHelp.accesskey;"\n';
+  var helpmenu12 = '              oncommand="openUILink(getCCKLink(\'cckhelp.url\'), event, false, true);"\n';
+  var helpmenu13 = '              onclick="checkForMiddleClick(this, event);"/>\n';
+  var helpmenu14 = '    <menuseparator insertbefore="appmenu_about"/>\n'
+  var helpmenu15 = '  </menupopup>\n';
 
   var file = destdir.clone();
   file.append("cck-browser-overlay-nonmac.xul");
   try {
-    file.remove(false);                         
-  } catch (ex) {}
+    file.remove(false);
+  }
+  catch (ex) {}
+
   var fos = Components.classes["@mozilla.org/network/file-output-stream;1"]
                       .createInstance(Components.interfaces.nsIFileOutputStream);
 
   fos.init(file, -1, -1, false);
-  
-  var ioService=Components.classes["@mozilla.org/network/io-service;1"]
-                          .getService(Components.interfaces.nsIIOService);
-  var scriptableStream=Components.classes["@mozilla.org/scriptableinputstream;1"]
-                                 .getService(Components.interfaces.nsIScriptableInputStream);
-    
-  var channel=ioService.newChannel("chrome://cckwizard/content/srcfiles/cck-browser-overlay-menu.xul.in",null,null);
-  var input=channel.open();
+
+  var ioService = Components.classes["@mozilla.org/network/io-service;1"]
+                            .getService(Components.interfaces.nsIIOService);
+  var scriptableStream = Components.classes["@mozilla.org/scriptableinputstream;1"]
+                                   .getService(Components.interfaces.nsIScriptableInputStream);
+
+  var channel = ioService.newChannel("chrome://cckwizard/content/srcfiles/cck-browser-overlay-menu.xul.in", null, null);
+  var input = channel.open();
   scriptableStream.init(input);
-  var str=scriptableStream.read(input.available());
+  var str = scriptableStream.read( input.available() );
   scriptableStream.close();
   input.close();
 
@@ -1387,17 +1399,26 @@ function CCKWriteXULOverlayNonMac(destdir)
     if (helpmenuakey && (helpmenuakey.length > 0)) {
       helpmenuXUL += helpmenu4;
     }
-    helpmenuXUL += helpmenu5 + helpmenu6 + helpmenu7;
+
+    helpmenuXUL += helpmenu5 + helpmenu6 + helpmenu7 + helpmenu8 + helpmenu9 + helpmenu10;
+    if (helpmenuakey && (helpmenuakey.length > 0)) {
+      helpmenuXUL += helpmenu11;
+    }
+
+    helpmenuXUL += helpmenu12 + helpmenu13 + helpmenu14 + helpmenu15;
+
     str = str.replace(/%menupopup%/g, helpmenuXUL);
-  } else {
+  }
+  else {
     str = str.replace(/%menupopup%/g, "");
-  }    
+  }
 
   str = str.replace(/%OrganizationName%/g, document.getElementById("OrganizationName").value);
 
-  fos.write(str, str.length); 
+  fos.write(str, str.length);
   fos.close();
 }
+
 
 function CCKWriteXULOverlayMac(destdir)
 {
@@ -1412,18 +1433,18 @@ function CCKWriteXULOverlayMac(destdir)
   var file = destdir.clone();
   file.append("cck-browser-overlay-mac.xul");
   try {
-    file.remove(false);                         
+    file.remove(false);
   } catch (ex) {}
   var fos = Components.classes["@mozilla.org/network/file-output-stream;1"]
                       .createInstance(Components.interfaces.nsIFileOutputStream);
 
   fos.init(file, -1, -1, false);
-  
+
   var ioService=Components.classes["@mozilla.org/network/io-service;1"]
                           .getService(Components.interfaces.nsIIOService);
   var scriptableStream=Components.classes["@mozilla.org/scriptableinputstream;1"]
                                  .getService(Components.interfaces.nsIScriptableInputStream);
-    
+
   var channel=ioService.newChannel("chrome://cckwizard/content/srcfiles/cck-browser-overlay-menu.xul.in",null,null);
   var input=channel.open();
   scriptableStream.init(input);
@@ -1442,31 +1463,32 @@ function CCKWriteXULOverlayMac(destdir)
     str = str.replace(/%menupopup%/g, helpmenuXUL);
   } else {
     str = str.replace(/%menupopup%/g, "");
-  }    
+  }
 
   str = str.replace(/%OrganizationName%/g, document.getElementById("OrganizationName").value);
 
-  fos.write(str, str.length); 
+  fos.write(str, str.length);
   fos.close();
 }
+
 
 function CCKWriteExtensionsOverlay(destdir)
 {
   var file = destdir.clone();
   file.append("cck-extensions-overlay.css");
   try {
-    file.remove(false);                         
+    file.remove(false);
   } catch (ex) {}
   var fos = Components.classes["@mozilla.org/network/file-output-stream;1"]
                       .createInstance(Components.interfaces.nsIFileOutputStream);
 
   fos.init(file, -1, -1, false);
-  
+
   var ioService=Components.classes["@mozilla.org/network/io-service;1"]
                           .getService(Components.interfaces.nsIIOService);
   var scriptableStream=Components.classes["@mozilla.org/scriptableinputstream;1"]
                                  .getService(Components.interfaces.nsIScriptableInputStream);
-    
+
   var channel=ioService.newChannel("chrome://cckwizard/content/srcfiles/cck-extensions-overlay.css.in",null,null);
   var input=channel.open();
   scriptableStream.init(input);
@@ -1476,7 +1498,7 @@ function CCKWriteExtensionsOverlay(destdir)
 
   str = str.replace(/%id%/g, document.getElementById("id").value);
 
-  fos.write(str, str.length); 
+  fos.write(str, str.length);
   fos.close();
 }
 
@@ -1542,21 +1564,21 @@ function CCKWriteDTD(destdir)
   var file = destdir.clone();
   file.append("cck.dtd");
   try {
-    file.remove(false);                         
+    file.remove(false);
   } catch (ex) {}
   var fos = Components.classes["@mozilla.org/network/file-output-stream;1"]
                       .createInstance(Components.interfaces.nsIFileOutputStream);
   var cos = Components.classes["@mozilla.org/intl/converter-output-stream;1"]
                       .createInstance(Components.interfaces.nsIConverterOutputStream);
-  
+
   fos.init(file, -1, -1, false);
   cos.init(fos, null, 0, null);
-  
+
   var ioService=Components.classes["@mozilla.org/network/io-service;1"]
                           .getService(Components.interfaces.nsIIOService);
   var scriptableStream=Components.classes["@mozilla.org/scriptableinputstream;1"]
                                  .getService(Components.interfaces.nsIScriptableInputStream);
-    
+
   var channel=ioService.newChannel("chrome://cckwizard/content/srcfiles/cck.dtd.in",null,null);
   var input=channel.open();
   scriptableStream.init(input);
@@ -1568,7 +1590,7 @@ function CCKWriteDTD(destdir)
   str = str.replace(/%mainWindow.titlemodifier%/g, htmlEscape(document.getElementById("CompanyName").value));
   str = str.replace(/%cckHelp.label%/g, htmlEscape(document.getElementById("HelpMenuCommandName").value));
   str = str.replace(/%cckHelp.accesskey%/g, document.getElementById("HelpMenuCommandAccesskey").value);
-  cos.writeString(str); 
+  cos.writeString(str);
   cos.close();
   fos.close();
 }
@@ -1578,9 +1600,9 @@ function CCKWriteProperties(destdir)
 {
   var file = destdir.clone();
   file.append("cck.properties");
-  
+
   try {
-    file.remove(false);                         
+    file.remove(false);
   } catch (ex) {}
   var fos = Components.classes["@mozilla.org/network/file-output-stream;1"]
                       .createInstance(Components.interfaces.nsIFileOutputStream);
@@ -1589,12 +1611,12 @@ function CCKWriteProperties(destdir)
 
   fos.init(file, -1, -1, false);
   cos.init(fos, null, 0, null);
-  
+
   var ioService=Components.classes["@mozilla.org/network/io-service;1"]
                           .getService(Components.interfaces.nsIIOService);
   var scriptableStream=Components.classes["@mozilla.org/scriptableinputstream;1"]
                                  .getService(Components.interfaces.nsIScriptableInputStream);
-    
+
   var channel=ioService.newChannel("chrome://cckwizard/content/srcfiles/cck.properties.in",null,null);
   var input=channel.open();
   scriptableStream.init(input);
@@ -1632,7 +1654,7 @@ function CCKWriteProperties(destdir)
   str = str.replace(/%InstallDeniedSites%/g, document.getElementById("InstallDeniedSites").value);
   str = str.replace(/%CookieDeniedSites%/g, document.getElementById("CookieDeniedSites").value);
   cos.writeString(str);
-  
+
   if (document.getElementById("hidden").checked)
   {
     str = "hidden=true\n";
@@ -1654,7 +1676,7 @@ function CCKWriteProperties(destdir)
   if (str && str.length) {
     str = "ToolbarFolder1=" + str + "\n";
     cos.writeString(str);
-    var listbox = document.getElementById('tbFolder.bookmarkList');    
+    var listbox = document.getElementById('tbFolder.bookmarkList');
     for (var j=0; j < listbox.getRowCount(); j++) {
       listitem = listbox.getItemAtIndex(j);
       str = "ToolbarFolder1.BookmarkTitle" + (j+1) + "=" + listitem.getAttribute("label") + "\n";
@@ -1668,7 +1690,7 @@ function CCKWriteProperties(destdir)
     }
   }
 
-  listbox = document.getElementById('tb.bookmarkList');    
+  listbox = document.getElementById('tb.bookmarkList');
   for (var j=0; j < listbox.getRowCount(); j++) {
     var listitem = listbox.getItemAtIndex(j);
     str = "ToolbarBookmarkTitle" + (j+1) + "=" + listitem.getAttribute("label") + "\n";
@@ -1689,7 +1711,7 @@ function CCKWriteProperties(destdir)
   if (str && str.length) {
     str = "BookmarkFolder1=" + str + "\n";
     cos.writeString(str);
-    listbox = document.getElementById('bmFolder.bookmarkList');    
+    listbox = document.getElementById('bmFolder.bookmarkList');
     for (var j=0; j < listbox.getRowCount(); j++) {
       listitem = listbox.getItemAtIndex(j);
       str = "BookmarkFolder1.BookmarkTitle" + (j+1) + "=" + listitem.getAttribute("label") + "\n";
@@ -1703,7 +1725,7 @@ function CCKWriteProperties(destdir)
     }
   }
 
-  listbox = document.getElementById('bm.bookmarkList');    
+  listbox = document.getElementById('bm.bookmarkList');
   for (var j=0; j < listbox.getRowCount(); j++) {
     listitem = listbox.getItemAtIndex(j);
     str = "BookmarkTitle" + (j+1) + "=" + listitem.getAttribute("label") + "\n";
@@ -1716,7 +1738,7 @@ function CCKWriteProperties(destdir)
     }
   }
 
-  
+
   // Registry Keys
   listbox = document.getElementById("regList");
   for (var i=0; i < listbox.getRowCount(); i++) {
@@ -1748,7 +1770,7 @@ function CCKWriteProperties(destdir)
     }
   }
 
-  
+
   listbox = document.getElementById('certList');
 
   for (var i=0; i < listbox.getRowCount(); i++) {
@@ -1802,7 +1824,7 @@ function CCKWriteDefaultJS(destdir)
 
   var file = destdir.clone();
   file.append("firefox-cck.js");
-             
+
   var fos = Components.classes["@mozilla.org/network/file-output-stream;1"]
                        .createInstance(Components.interfaces.nsIFileOutputStream);
   fos.init(file, -1, -1, false);
@@ -1855,7 +1877,7 @@ function CCKWriteDefaultJS(destdir)
       fos.write(searchengine2, searchengine2.length);
     }
   }
-  
+
   // Preferences
   var listbox = document.getElementById("prefList");
   for (var i=0; i < listbox.getRowCount(); i++) {
@@ -1872,7 +1894,7 @@ function CCKWriteDefaultJS(destdir)
       fos.write(line, line.length);
     }
   }
-  
+
   var radiogroup = document.getElementById("networkProxyType");
   if (radiogroup.value == "")
     radiogroup.value = "0";
@@ -1880,7 +1902,7 @@ function CCKWriteDefaultJS(destdir)
   switch ( radiogroup.value ) {
     case "1":
       var proxystringlist = ["networkProxyHTTP","networkProxySSL","networkProxyFTP","networkProxyNone","networkProxyAutoconfigURL" ];
-  
+
       for (i = 0; i < proxystringlist.length; i++) {
         var proxyitem = document.getElementById(proxystringlist[i]);
         if (proxyitem.value.length > 0) {
@@ -1888,7 +1910,7 @@ function CCKWriteDefaultJS(destdir)
           fos.write(line, line.length);
         }
       }
-  
+
       var proxyintegerlist = ["networkProxyHTTP_Port","networkProxySSL_Port","networkProxyFTP_Port","networkProxySOCKSVersion","networkProxyType"];
 
       for (i = 0; i < proxyintegerlist.length; i++) {
@@ -1898,14 +1920,14 @@ function CCKWriteDefaultJS(destdir)
           fos.write(line, line.length);
         }
       }
-  
+
       var proxyitem = document.getElementById("shareAllProxies");
       var line = 'pref("' + proxyitem.getAttribute("preference") + '", ' + proxyitem.checked + ');\n';
       fos.write(line, line.length);
       break;
     case "2":
       var proxystringlist = ["networkProxyAutoconfigURL"];
-  
+
       for (i = 0; i < proxystringlist.length; i++) {
         var proxyitem = document.getElementById(proxystringlist[i]);
         if (proxyitem.value.length > 0) {
@@ -1913,7 +1935,7 @@ function CCKWriteDefaultJS(destdir)
           fos.write(line, line.length);
         }
       }
-      
+
       var proxyintegerlist = ["networkProxyType"];
 
       for (i = 0; i < proxyintegerlist.length; i++) {
@@ -1935,7 +1957,7 @@ function CCKWriteDefaultJS(destdir)
           fos.write(line, line.length);
         }
       }
-      break;      
+      break;
     case "10":
       var file = Components.classes["@mozilla.org/file/local;1"]
                            .createInstance(Components.interfaces.nsILocalFile);
@@ -1947,9 +1969,9 @@ function CCKWriteDefaultJS(destdir)
       var line = 'pref("network.proxy.autoconfig_url", "chrome://cck-%OrganizationName%/content/' + file.leafName + '");\n';
 	  line = line.replace(/%OrganizationName%/g, document.getElementById("OrganizationName").value);
 
-	  
+
       fos.write(line, line.length);
-      
+
       var line = 'pref("network.proxy.type", 2);\n';
       fos.write(line, line.length);
 
@@ -1968,7 +1990,7 @@ function CCKWriteCCKServiceJS(destdir, uuid)
 
   file.append("cckService.js");
   try {
-    file.remove(false);                         
+    file.remove(false);
   } catch (ex) {
   }
   var fos = Components.classes["@mozilla.org/network/file-output-stream;1"]
@@ -2010,7 +2032,7 @@ function CCKWriteCCKModuleJS(destdir)
 
   file.append("cckModule.jsm");
   try {
-    file.remove(false);                         
+    file.remove(false);
   } catch (ex) {
   }
   var fos = Components.classes["@mozilla.org/network/file-output-stream;1"]
@@ -2052,8 +2074,8 @@ function CCKWriteInstallRDF(destdir)
   var descriptionline = "<em:description>%description%</em:description>";
   var creatorline =     "<em:creator>%creator%</em:creator>";
   var homepageURLline = "<em:homepageURL>%homepageURL%</em:homepageURL>";
-  var updateURLline =   "<em:updateURL>%updateURL%</em:updateURL>";  
-  var updateKeyline =   "<em:updateKey>%updateKey%</em:updateKey>";  
+  var updateURLline =   "<em:updateURL>%updateURL%</em:updateURL>";
+  var updateKeyline =   "<em:updateKey>%updateKey%</em:updateKey>";
   var iconURLline =     "<em:iconURL>chrome://cck-%OrganizationName%/content/%iconURL%</em:iconURL>";
   var hiddenline =      "<em:hidden>true</em:hidden>";
   var lockedline =      "<em:locked>true</em:locked>";
@@ -2091,7 +2113,7 @@ function CCKWriteInstallRDF(destdir)
   var str=scriptableStream.read(input.available());
   scriptableStream.close();
   input.close();
-  
+
   var id = document.getElementById("id").value;
   if (id && (id.length > 0)) {
     str = str.replace(/%idline%/g, idline);
@@ -2180,7 +2202,7 @@ function CCKWriteInstallRDF(destdir)
   } else {
     str = str.replace(/%iconURLline%/g, "");
   }
-  
+
   if (document.getElementById("hidden").checked) {
     str = str.replace(/%lockedline%/g, lockedline);
     str = str.replace(/%hiddenline%/g, hiddenline);
@@ -2256,7 +2278,7 @@ function CCKCopyFile(source, destination)
 {
   if (source.length == 0)
     return false;
-  
+
   var sourcefile = Components.classes["@mozilla.org/file/local;1"]
                        .createInstance(Components.interfaces.nsILocalFile);
   sourcefile.initWithPath(source);
@@ -2267,7 +2289,7 @@ function CCKCopyFile(source, destination)
   try {
     destfile.remove(false);
   } catch (ex) {}
-  
+
   try {
     sourcefile.copyTo(destination, "");
   } catch (ex) {
@@ -2277,7 +2299,7 @@ function CCKCopyFile(source, destination)
       consoleService.logStringMessage(bundle.getString("windowTitle") + ": " + ex + "\n\nSource: " +  source + "\n\nDestination: " + destination.path );
       throw("Stopping Javascript execution");
   }
-  
+
   return true;
 }
 
@@ -2294,7 +2316,7 @@ function InitConfigInfo()
   file.initWithPath(this.opener.currentconfigpath);
 
   file.append("cck.config");
-  
+
   if (!file.exists())
     return;
 
@@ -2302,19 +2324,19 @@ function InitConfigInfo()
                          .createInstance(Components.interfaces.nsIFileInputStream);
 
   stream.init(file, 0x01, 0644, 0);
-  
+
   var lis = stream.QueryInterface(Components.interfaces.nsILineInputStream);
   var line = {value:null};
-  
+
   var box = document.getElementById("showconfigy");
-  
+
   do {
     var more = lis.readLine(line);
     var str = line.value;
     box.value += str;
     box.value += "\n";
   } while (more);
-  
+
   stream.close();
 }
 
@@ -2340,14 +2362,14 @@ function CCKWriteConfigFile(destdir)
         } else {
           return;
         }
-  }  
+  }
   file.append("cck.config");
-             
+
   var fos = Components.classes["@mozilla.org/network/file-output-stream;1"]
                        .createInstance(Components.interfaces.nsIFileOutputStream);
   var cos = Components.classes["@mozilla.org/intl/converter-output-stream;1"]
                       .createInstance(Components.interfaces.nsIConverterOutputStream);
-  
+
   fos.init(file, -1, -1, false);
   cos.init(fos, null, 0, null);
 
@@ -2357,7 +2379,7 @@ function CCKWriteConfigFile(destdir)
          (elements[i].id == "RootKey1") ||
          (elements[i].id == "Type1") ||
          (elements[i].id == "ffMinVersion") ||
-         (elements[i].id == "ffMaxVersion") ) 
+         (elements[i].id == "ffMaxVersion") )
     {
       if (elements[i].id != "saveOnExit") {
         if (elements[i].value.length > 0) {
@@ -2365,13 +2387,13 @@ function CCKWriteConfigFile(destdir)
           cos.writeString(line);
         }
       }
-    } 
+    }
     else if (elements[i].nodeName == "radiogroup") {
         if ((elements[i].value.length > 0) && (elements[i].value != "0")) {
           var line = elements[i].getAttribute("id") + "=" + elements[i].value + "\n";
           cos.writeString(line);
         }
-    } 
+    }
     else if (elements[i].nodeName == "checkbox") {
       if (elements[i].id != "saveOnExit") {
         if (elements[i].checked) {
@@ -2379,9 +2401,9 @@ function CCKWriteConfigFile(destdir)
           cos.writeString(line);
         }
       }
-    } 
+    }
     else if (elements[i].id == "prefList") {
-      var listbox = document.getElementById('prefList');    
+      var listbox = document.getElementById('prefList');
       for (var j=0; j < listbox.getRowCount(); j++) {
         var listitem = listbox.getItemAtIndex(j);
         var line = "PreferenceName" + (j+1) + "=" + listitem.getAttribute("label") + "\n";
@@ -2399,9 +2421,9 @@ function CCKWriteConfigFile(destdir)
           cos.writeString(line);
 	    }
       }
-    } 
+    }
     else if (elements[i].id == "browserPluginList") {
-      listbox = document.getElementById('browserPluginList');    
+      listbox = document.getElementById('browserPluginList');
       for (var j=0; j < listbox.getRowCount(); j++) {
         listitem = listbox.getItemAtIndex(j);
         var line = "BrowserPluginPath" + (j+1) + "=" + listitem.getAttribute("label") + "\n";
@@ -2411,7 +2433,7 @@ function CCKWriteConfigFile(destdir)
           cos.writeString(line);
 	    }
       }
-    } 
+    }
     else if (elements[i].id == "tbFolder.bookmarkList") {
       listbox = document.getElementById('tbFolder.bookmarkList');
       for (var j=0; j < listbox.getRowCount(); j++) {
@@ -2427,7 +2449,7 @@ function CCKWriteConfigFile(destdir)
           cos.writeString(line);
 	    }
       }
-    } 
+    }
     else if (elements[i].id == "tb.bookmarkList") {
       listbox = document.getElementById('tb.bookmarkList');
       for (var j=0; j < listbox.getRowCount(); j++) {
@@ -2442,8 +2464,8 @@ function CCKWriteConfigFile(destdir)
 	      var line = "ToolbarBookmarkType" + (j+1) + "=" + listitem.cck['type'] + "\n";
           cos.writeString(line);
 	    }
-      }  
-    } 
+      }
+    }
     else if (elements[i].id == "bmFolder.bookmarkList") {
       listbox = document.getElementById('bmFolder.bookmarkList');
       for (var j=0; j < listbox.getRowCount(); j++) {
@@ -2459,7 +2481,7 @@ function CCKWriteConfigFile(destdir)
           cos.writeString(line);
 	    }
       }
-    } 
+    }
     else if (elements[i].id == "bm.bookmarkList") {
       listbox = document.getElementById('bm.bookmarkList');
       for (var j=0; j < listbox.getRowCount(); j++) {
@@ -2474,10 +2496,10 @@ function CCKWriteConfigFile(destdir)
           var line = "BookmarkType" + (j+1) + "=" + listitem.cck['type'] + "\n";
           cos.writeString(line);
 	    }
-      } 
-    } 
+      }
+    }
     else if (elements[i].id == "regList") {
-      listbox = document.getElementById('regList');    
+      listbox = document.getElementById('regList');
       for (var j=0; j < listbox.getRowCount(); j++) {
         listitem = listbox.getItemAtIndex(j);
         var line = "RegName" + (j+1) + "=" + listitem.getAttribute("label") + "\n";
@@ -2493,9 +2515,9 @@ function CCKWriteConfigFile(destdir)
         var line = "Type" + (j+1) + "=" + listitem.cck['type'] + "\n";
         cos.writeString(line);
       }
-    } 
+    }
     else if (elements[i].id == "searchEngineList") {
-      listbox = document.getElementById('searchEngineList');    
+      listbox = document.getElementById('searchEngineList');
       for (var j=0; j < listbox.getRowCount(); j++) {
         listitem = listbox.getItemAtIndex(j);
         var line = "SearchEngine" + (j+1) + "=" + listitem.cck['engineurl'] + "\n";
@@ -2503,17 +2525,17 @@ function CCKWriteConfigFile(destdir)
         var line = "SearchEngineIcon" + (j+1) + "=" + listitem.cck['iconurl'] + "\n";
         cos.writeString(line);
       }
-    } 
+    }
     else if (elements[i].id == "bundleList") {
-      listbox = document.getElementById('bundleList')    
+      listbox = document.getElementById('bundleList')
       for (var j=0; j < listbox.getRowCount(); j++) {
         listitem = listbox.getItemAtIndex(j);
         var line = "BundlePath" + (j+1) + "=" + listitem.getAttribute("label") + "\n";
         cos.writeString(line);
       }
-    } 
+    }
     else if (elements[i].id == "certList") {
-      listbox = document.getElementById('certList')    
+      listbox = document.getElementById('certList')
       for (var j=0; j < listbox.getRowCount(); j++) {
         listitem = listbox.getItemAtIndex(j);
         var line = "CertPath" + (j+1) + "=" + listitem.getAttribute("label") + "\n";
@@ -2521,21 +2543,21 @@ function CCKWriteConfigFile(destdir)
         var line = "CertTrust" + (j+1) + "=" + listitem.getAttribute("value") + "\n";
         cos.writeString(line);
       }
-    } 
+    }
     else if (elements[i].id == "defaultSearchEngine") {
       if (elements[i].selectedItem) {
         if (elements[i].selectedItem.value) {
           var line = "DefaultSearchEngine=" + elements[i].selectedItem.value + "\n";
           cos.writeString(line);
         }
-      } 
+      }
       else {
       	var line = "DefaultSearchEngine=" + elements[i].value + "\n";
         cos.writeString(line);
       }
-    }  
+    }
   }
-  
+
   cos.close();
   fos.close();
 }
@@ -2544,13 +2566,13 @@ function CCKReadConfigFile(srcdir)
 {
   var file = srcdir.clone();
   file.append("cck.config");
-  
+
   if (!file.exists()) {
     DoEnabling();
     toggleProxySettings();
     return;
   }
-  
+
   var stream = Components.classes["@mozilla.org/network/file-input-stream;1"]
                          .createInstance(Components.interfaces.nsIFileInputStream);
   var cis = Components.classes["@mozilla.org/intl/converter-input-stream;1"]
@@ -2561,7 +2583,7 @@ function CCKReadConfigFile(srcdir)
   cis.init(stream,  null, 1024, Components.interfaces.nsIConverterInputStream.DEFAULT_REPLACEMENT_CHARACTER);
   var lis = cis.QueryInterface(Components.interfaces.nsIUnicharLineInputStream);
   var line = {value:null};
-  
+
   var configarray = new Array();
   do {
     var more = lis.readLine(line);
@@ -2616,7 +2638,7 @@ function CCKReadConfigFile(srcdir)
       } catch (ex) {}
     }
   } while (more);
-  
+
   // handle prefs
   var listbox = document.getElementById('prefList');
   listbox.clear();
@@ -2649,7 +2671,7 @@ function CCKReadConfigFile(srcdir)
     } else {
       listitem = listbox.appendItem(prefname, "");
     }
-    
+
     if (configarray['PreferenceLock' + i] == "true") {
       listitem.cck['lock'] = "true";
     } else {
@@ -2657,12 +2679,12 @@ function CCKReadConfigFile(srcdir)
     }
     listitem.cck['type'] = configarray['PreferenceType' + i];
     i++;
-  }  
+  }
 
   // handle plugins
   listbox = document.getElementById('browserPluginList');
   listbox.clear();
-  
+
 
   var i = 1;
   var pluginname;
@@ -2673,7 +2695,7 @@ function CCKReadConfigFile(srcdir)
       listbox.appendItem(pluginname, null);
     }
     i++;
-  }  
+  }
 
   // handle toolbar folder with bookmarks
   listbox = document.getElementById('tbFolder.bookmarkList');
@@ -2722,8 +2744,8 @@ function CCKReadConfigFile(srcdir)
       listitem.setAttribute("image", "chrome://browser/skin/Bookmarks-folder.png");
     }
     i++;
-  }  
-  
+  }
+
   // handle folder with bookmarks
   listbox = document.getElementById('bmFolder.bookmarkList');
   listbox.clear();
@@ -2771,11 +2793,11 @@ function CCKReadConfigFile(srcdir)
       listitem.setAttribute("image", "chrome://browser/skin/Bookmarks-folder.png");
     }
     i++;
-  }  
+  }
 
 
-  
-  
+
+
   // handle registry items
   listbox = document.getElementById('regList');
   listbox.clear();
@@ -2817,7 +2839,7 @@ function CCKReadConfigFile(srcdir)
   while ((bundlepath = configarray['BundlePath' + i])) {
     var listitem = listbox.appendItem(bundlepath, "");
     i++;
-  }  
+  }
 
   var sourcefile = Components.classes["@mozilla.org/file/local;1"]
                        .createInstance(Components.interfaces.nsILocalFile);
@@ -2860,7 +2882,7 @@ function CCKReadConfigFile(srcdir)
     listitem.cck['iconurl'] = configarray[searchname + 'Icon' + i];
     i++;
   }
-  
+
   RefreshDefaultSearchEngines();
 
   if (configarray["DefaultSearchEngine"]) {
@@ -2872,10 +2894,10 @@ function CCKReadConfigFile(srcdir)
 
   var appManaged = document.getElementById("appManaged");
   appManaged.checked = configarray["appManaged"];
-  
+
   var aboutconfig = document.getElementById("noaboutconfig");
   aboutconfig.checked = configarray["noaboutconfig"];
-  
+
   var noWelcomePage = document.getElementById("noWelcomePage");
   noWelcomePage.checked = configarray["noWelcomePage"];
 
@@ -2885,21 +2907,21 @@ function CCKReadConfigFile(srcdir)
 
   var proxyitem = document.getElementById("shareAllProxies");
   proxyitem.checked = configarray["shareAllProxies"];
-  
+
   var item = document.getElementById("ToolbarLocation");
   if (configarray["ToolbarLocation"]) {
     item.value = configarray["ToolbarLocation"];
   } else {
     item.value = "Last";
   }
-  
+
   var item = document.getElementById("BookmarkLocation");
   if (configarray["BookmarkLocation"]) {
     item.value = configarray["BookmarkLocation"];
   } else {
     item.value = "Last";
   }
-  
+
   DoEnabling();
   toggleProxySettings();
 
@@ -2909,7 +2931,7 @@ function CCKReadConfigFile(srcdir)
 function Validate(field, message)
 {
   var gIDTest = /^(\{[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\}|[a-z0-9-\._]*\@[a-z0-9-\._]+)$/i;
-  
+
   for (var i=0; i < arguments.length; i++) {
     /* special case ID */
     if (document.getElementById(arguments[i]).id == "id") {
@@ -3016,7 +3038,7 @@ function toggleProxySettings()
   var socksVersion5 = document.getElementById("networkProxySOCKSVersion5");
   var ssl = document.getElementById("networkProxySSL");
   var sslPort = document.getElementById("networkProxySSL_Port");
-  
+
   // arrays
   var urls = [ftp,ssl];
   var ports = [ftpPort,sslPort];
@@ -3143,7 +3165,7 @@ function updateProtocols(share) {
 	  var control = document.getElementById(shared_ports[i]);
 	  control.backup = control.value;
 	  control.value = ProxyHTTP_Port;
-    }  	
+    }
   } else {
     for (i = 0; i < shared.length; i++) {
 	  var control = document.getElementById(shared[i]);
@@ -3160,7 +3182,7 @@ function updateProtocols(share) {
 	  } else {
 		control.value = 0;
 	  }
-    }  		
+    }
   }
 }
 
