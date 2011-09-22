@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<overlay id="cckwizardOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script type="application/x-javascript;version=1.7" src="cckwizardOverlay.js" />
+  <menupopup id="menu_ToolsPopup">
+    <menuitem label="CCK Wizard" insertafter="webDeveloperMenu" accesskey="z"
+              oncommand="window.openDialog('chrome://cckwizard/content/cckwizard.xul','cckwizard','chrome,centerscreen');"
+              onclick="checkForMiddleClick(this, event);"/>
+  </menupopup>
+
+  <vbox id="appmenuPrimaryPane">
+    <menuitem label="CCK Wizard" insertafter="appmenu_webDeveloper" accesskey="z"
+                oncommand="window.openDialog('chrome://cckwizard/content/cckwizard.xul','cckwizard','chrome,centerscreen');"
+                onclick="checkForMiddleClick(this, event);"/>
+  </vbox>
+</overlay>

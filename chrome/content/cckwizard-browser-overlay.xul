@@ -7,4 +7,3 @@
               onclick="checkForMiddleClick(this, event);"/>
   </menupopup>
 </overlay>
-

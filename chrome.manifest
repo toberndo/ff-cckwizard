@@ -1,5 +1,6 @@
 content cckwizard chrome/content/
-overlay chrome://browser/content/browser.xul         chrome://cckwizard/content/cckwizard-browser-overlay.xul
+overlay chrome://browser/content/browser.xul  chrome://cckwizard/content/cckwizard-browser-overlay.xul  appversion<4
+overlay chrome://browser/content/browser.xul  chrome://cckwizard/content/cckwizard-browser-overlay4.xul appversion>=4
 locale  cckwizard en-US chrome/locale/en-US/
 locale  cckwizard cs-CZ chrome/locale/cs-CZ/
 locale  cckwizard da-DK chrome/locale/da-DK/
