@@ -5,7 +5,7 @@ style chrome://mozapps/content/extensions/extensions.xul chrome://cck-%Organizat
 style about:addons chrome://cck-%OrganizationName%/content/cck-extensions-overlay.css
 
 style   chrome://global/content/config.xul    chrome://cck-%OrganizationName%/content/cck-config.css
-content	cck-%OrganizationName%	jar:chrome/cck.jar!/content/cck/
+content	cck-%OrganizationName%	chrome/content/cck/
 resource cck-%OrganizationName% modules/
 
 %disableAboutConfig1%

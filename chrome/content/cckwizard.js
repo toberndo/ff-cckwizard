@@ -1011,11 +1011,17 @@ function CreateCCK()
 
   CCKWriteConfigFile(destdir);
 
-  destdir.append("jar");
+  destdir.initWithPath(currentconfigpath);
+  destdir.append("xpi");
   try {
     destdir.remove(true);
   } catch(ex) {}
+  try {
+    destdir.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0775);
+  } catch(ex) {}
 
+  CCKWriteConfigFile(destdir);
+  destdir.append("chrome");
   destdir.append("content");
   destdir.append("cck");
   try {
@@ -1050,33 +1056,6 @@ function CreateCCK()
     CCKCopyFile(document.getElementById("autoproxyfile").value, destdir);
   }
 
-/* copy/create contents.rdf if 1.0 */
-  var zipdir = Components.classes["@mozilla.org/file/local;1"]
-                         .createInstance(Components.interfaces.nsILocalFile);
-  zipdir.initWithPath(currentconfigpath);
-  zipdir.append("jar");
-  CCKZip("cck.jar", zipdir, ["content"]);
-
-/* ---------- */
-
-  destdir.initWithPath(currentconfigpath);
-  destdir.append("xpi");
-  try {
-    destdir.remove(true);
-  } catch(ex) {}
-  try {
-    destdir.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0775);
-  } catch(ex) {}
-
-  CCKWriteConfigFile(destdir);
-  destdir.append("chrome");
-  try {
-    destdir.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0775);
-  } catch(ex) {}
-
-  zipdir.append("cck.jar");
-
-  CCKCopyFile(zipdir.path, destdir);
 
 /* ---------- */
 
