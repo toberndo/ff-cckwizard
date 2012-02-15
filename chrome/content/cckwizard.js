@@ -627,46 +627,50 @@ function enableBookmarkButtons() {
 
 function onNewBrowserPlugin()
 {
-  window.openDialog("chrome://cckwizard/content/plugin.xul","newplugin","chrome,centerscreen,modal");
+  try {
+    var nsIFilePicker = Components.interfaces.nsIFilePicker;
+    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+    var bundle = document.getElementById("bundle_cckwizard");
+    fp.init(window, bundle.getString("chooseFile"), nsIFilePicker.modeOpen);
+    fp.appendFilters(nsIFilePicker.filterHTML | nsIFilePicker.filterText |
+                     nsIFilePicker.filterAll | nsIFilePicker.filterImages | nsIFilePicker.filterXML);
+
+    if (fp.show() == nsIFilePicker.returnOK && fp.fileURL.spec && fp.fileURL.spec.length > 0) {
+      var listbox = document.getElementById('browserPluginList');
+      var listitem = listbox.appendItem(fp.file.path, "");
+    }
+  }
+  catch(ex) {
+  }
 }
 
 function onEditBrowserPlugin()
 {
-  window.openDialog("chrome://cckwizard/content/plugin.xul","editplugin","chrome,centerscreen,modal");
-}
+  var listbox = document.getElementById('browserPluginList');
+  var filename = listbox.selectedItem.label;
+  var sourcefile = Components.classes["@mozilla.org/file/local;1"]
+                       .createInstance(Components.interfaces.nsILocalFile);
+  try {
+    sourcefile.initWithPath(filename);
+    var ioServ = Components.classes["@mozilla.org/network/io-service;1"]
+                           .getService(Components.interfaces.nsIIOService);
 
-function OnPluginLoad()
-{
-  var listbox = this.opener.document.getElementById('browserPluginList');
-  if (window.name == 'editplugin') {
-    document.getElementById('pluginpath').value = listbox.selectedItem.label;
-    document.getElementById('plugintype').value = listbox.selectedItem.value;
-  }
-  pluginCheckOKButton();
-
-}
-
-function pluginCheckOKButton()
-{
-  if (document.getElementById("pluginpath").value) {
-    document.documentElement.getButton("accept").setAttribute( "disabled", "false" );
-  } else {
-    document.documentElement.getButton("accept").setAttribute( "disabled", "true" );
-  }
-}
-
-function OnBrowserPluginOK()
-{
-  if (!(ValidateFile('pluginpath'))) {
-    return false;
+  } catch (ex) {
   }
 
-  var listbox = this.opener.document.getElementById('browserPluginList');
-  if (window.name == 'newplugin') {
-    var listitem = listbox.appendItem(document.getElementById('pluginpath').value, document.getElementById('plugintype').value);
-  } else {
-    listbox.selectedItem.label = document.getElementById('pluginpath').value;
-    listbox.selectedItem.value = document.getElementById('plugintype').selectedItem.value;
+  try {
+    var nsIFilePicker = Components.interfaces.nsIFilePicker;
+    var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+    var bundle = document.getElementById("bundle_cckwizard");
+    fp.init(window, bundle.getString("chooseFile"), nsIFilePicker.modeOpen);
+    fp.displayDirectory = sourcefile.parent;
+    fp.defaultString = sourcefile.leafName;
+    fp.appendFilters(nsIFilePicker.filterAll);
+    if (fp.show() == nsIFilePicker.returnOK && fp.fileURL.spec && fp.fileURL.spec.length > 0) {
+      listbox.selectedItem.label = fp.file.path;
+    }
+  }
+  catch(ex) {
   }
 }
 
@@ -1098,7 +1102,7 @@ function CreateCCK()
 
   destdir.initWithPath(currentconfigpath);
   destdir.append("xpi");
-  destdir.append("platform");
+  destdir.append("plugins");
   try {
     destdir.remove(true);
     destdir.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0775);
@@ -1108,18 +1112,7 @@ function CreateCCK()
 
   for (var i=0; i < listbox.getRowCount(); i++) {
     listitem = listbox.getItemAtIndex(i);
-    var pluginsubdir = destdir.clone();
-    /* If there is no value, assume windows - this should only happen for migration */
-    if (listitem.getAttribute("value")) {
-      pluginsubdir.append(listitem.getAttribute("value"));
-    } else {
-      pluginsubdir.append("WINNT_x86-msvc");
-    }
-    pluginsubdir.append("plugins");
-    try {
-      pluginsubdir.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0775);
-    } catch(ex) {}
-    CCKCopyFile(listitem.getAttribute("label"), pluginsubdir);
+    CCKCopyFile(listitem.getAttribute("label"), destdir);
   }
 
   listbox = document.getElementById('searchEngineList');
