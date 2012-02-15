@@ -172,6 +172,12 @@ function init() {
 
     gPrefBranch.setCharPref("extensions.%id%.version", extVersion);
 
+    /* Remove previous version bookmarks */
+    if (extVersion != installedVersion) {
+      var id = getString("id");
+      removeBookmarks(id + "/" + installedVersion);
+    }
+
     // Setup bookmarks
     var annoId = id + "/" + extVersion;
     var mybookmarks = annoService.getItemsWithAnnotation(annoId, {});
