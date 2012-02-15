@@ -3,9 +3,9 @@ const Ci = Components.interfaces;
 
 Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
 
-function CCKService() {}
+function %OrganizationName%CCKService() {}
 
-CCKService.prototype = {
+%OrganizationName%CCKService.prototype = {
   observe: function(aSubject, aTopic, aData) {
     switch(aTopic) {
       case "profile-after-change":
@@ -21,7 +21,7 @@ CCKService.prototype = {
 }
 
 if (XPCOMUtils.generateNSGetFactory)
-  var NSGetFactory = XPCOMUtils.generateNSGetFactory([CCKService]);
+  var NSGetFactory = XPCOMUtils.generateNSGetFactory([%OrganizationName%CCKService]);
 else
-  var NSGetModule = XPCOMUtils.generateNSGetModule([CCKService]);
+  var NSGetModule = XPCOMUtils.generateNSGetModule([%OrganizationName%CCKService]);
 

@@ -23,7 +23,7 @@ var bookmarks;
 var livemarks;
 var annoService;
 
-var CCKService = {
+var CCK = {
   beingUninstalled: false,
   observe: function observe(subject, topic, data) {
     switch (topic) {
@@ -37,7 +37,7 @@ var CCKService = {
           }
           i++;
         } while (prefName && prefName.length);
-        if (CCKService.beingUninstalled) {
+        if (CCK.beingUninstalled) {
           uninit();
         }
         break;
@@ -63,10 +63,10 @@ var CCKService = {
         if (subject.id == "%id%") {
           switch (data) {
             case "item-uninstalled":
-              CCKService.beingUninstalled = true;
+              CCK.beingUninstalled = true;
               break;
             case "item-cancel-action":
-              CCKService.beingUninstalled = false;
+              CCK.beingUninstalled = false;
               break;
           }
         }
@@ -566,20 +566,20 @@ function log(string) {
   dump(string);
 }
 
-gObserver.addObserver(CCKService, "em-action-requested", false);
-gObserver.addObserver(CCKService, "profile-before-change", false);
-gObserver.addObserver(CCKService, "profile-after-change", false);
-gObserver.addObserver(CCKService, "final-ui-startup", false);
+gObserver.addObserver(CCK, "em-action-requested", false);
+gObserver.addObserver(CCK, "profile-before-change", false);
+gObserver.addObserver(CCK, "profile-after-change", false);
+gObserver.addObserver(CCK, "final-ui-startup", false);
 
 let listener = {
   onUninstalling: function(addon) {
     if (addon.id == "%id%") {
-      CCKService.beingUninstalled = true;
+      CCK.beingUninstalled = true;
     }
   },
   onOperationCancelled: function(addon) {
     if (addon.id == "%id%") {
-      CCKService.beingUninstalled = false;
+      CCK.beingUninstalled = false;
     }
   }
 }
