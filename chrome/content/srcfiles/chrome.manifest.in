@@ -4,7 +4,6 @@ overlay chrome://browser/content/browser.xul  chrome://cck-%OrganizationName%/co
 style chrome://mozapps/content/extensions/extensions.xul chrome://cck-%OrganizationName%/content/cck-extensions-overlay.css
 style about:addons chrome://cck-%OrganizationName%/content/cck-extensions-overlay.css
 
-style   chrome://global/content/config.xul    chrome://cck-%OrganizationName%/content/cck-config.css
 content	cck-%OrganizationName%	chrome/content/cck/
 resource cck-%OrganizationName% modules/
 

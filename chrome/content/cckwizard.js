@@ -1047,7 +1047,7 @@ function CreateCCK()
   CCKCopyFile(document.getElementById("LargeStillPath").value, destdir);
   CCKCopyChromeToFile("cck.js", destdir)
   if (document.getElementById("noaboutconfig").checked)
-    CCKCopyChromeToFile("cck-config.css", destdir)
+    CCKCopyChromeToFile("cck-config.xul", destdir)
 
   var listbox = document.getElementById('certList');
 
@@ -1083,8 +1083,6 @@ function CreateCCK()
 
 //  CCKCopyChromeToFile("cckService.js", destdir);
   CCKWriteCCKServiceJS(destdir, uuid);
-  if (document.getElementById("noaboutconfig").checked)
-    CCKCopyChromeToFile("disableAboutConfig.js", destdir);
 
 /* ---------- */
 
@@ -2196,8 +2194,8 @@ function CCKWriteInstallRDF(destdir)
 
 function CCKWriteChromeManifest(destdir, uuid)
 {
-  var disableAboutConfig1 =     "component {f4616ed3-54e5-4d5b-9308-bcecc3a179d0} components/disableAboutConfig.js";
-  var disableAboutConfig2 =     "contract @mozilla.org/network/protocol/about;1?what=config {f4616ed3-54e5-4d5b-9308-bcecc3a179d0}";
+  var disableAboutConfig1 =     "overlay   chrome://global/content/config.xul    chrome://cck-%OrganizationName%/content/cck-config.xul";
+  var disableAboutConfig2 =     "overlay   about:config    chrome://cck-%OrganizationName%/content/cck-config.xul";
 
   var file = destdir.clone();
 
@@ -2227,9 +2225,6 @@ function CCKWriteChromeManifest(destdir, uuid)
   scriptableStream.close();
   input.close();
 
-  str = str.replace(/%OrganizationName%/g, document.getElementById("OrganizationName").value);
-  str = str.replace(/%uuid%/g, uuid);
-
   if (document.getElementById("noaboutconfig").checked) {
     str = str.replace(/%disableAboutConfig1%/g, disableAboutConfig1);
     str = str.replace(/%disableAboutConfig2%/g, disableAboutConfig2);
@@ -2237,6 +2232,9 @@ function CCKWriteChromeManifest(destdir, uuid)
     str = str.replace(/%disableAboutConfig1%/g, "");
     str = str.replace(/%disableAboutConfig2%/g, "");
   }
+
+  str = str.replace(/%OrganizationName%/g, document.getElementById("OrganizationName").value);
+  str = str.replace(/%uuid%/g, uuid);
 
   cos.writeString(str);
   cos.close();
