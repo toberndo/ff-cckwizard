@@ -134,6 +134,7 @@
             <menupopup>
               <menuitem label="3.6" value="3.6"/>
               <menuitem label="4" value="4"/>
+              <menuitem label="10" value="10"/>
             </menupopup>
           </menulist>
            <label control="ffMaxVersion">&maximum.label;</label>
@@ -141,6 +142,7 @@
             <menupopup>
               <menuitem label="3.6.*" value="3.6.*"/>
               <menuitem label="4.*" value="4.*"/>
+              <menuitem label="10.*" value="4.*"/>
               <menuitem label="*" value="*"/>
             </menupopup>
           </menulist>
