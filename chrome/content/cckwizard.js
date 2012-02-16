@@ -1102,7 +1102,6 @@ function CreateCCK()
   destdir.append("xpi");
   destdir.append("plugins");
   try {
-    destdir.remove(true);
     destdir.create(Components.interfaces.nsIFile.DIRECTORY_TYPE, 0775);
   } catch(ex) {}
 
@@ -1142,7 +1141,7 @@ function CreateCCK()
     filename = "cck";
   filename += ".xpi";
 
-  var zipContents = ["chrome", "modules", "components", "defaults", "platform", "searchplugins", "chrome.manifest", "install.rdf", "cck.config"];
+  var zipContents = ["chrome", "plugins", "modules", "components", "defaults", "platform", "searchplugins", "chrome.manifest", "install.rdf", "cck.config"];
 
 
   if (document.getElementById('bundleList').getRowCount() > 0) {
