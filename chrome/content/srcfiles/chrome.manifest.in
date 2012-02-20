@@ -12,4 +12,4 @@ resource cck-%OrganizationName% modules/
 
 component %uuid% components/cckService.js
 contract @mozilla.org/cck-service-%OrganizationName%;2 %uuid%
-category profile-after-change %OrganizationName%CCKService @mozilla.org/cck-service-%OrganizationName%;2
+category profile-after-change %OrganizationNameNoDashes%CCKService @mozilla.org/cck-service-%OrganizationName%;2

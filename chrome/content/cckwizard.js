@@ -1952,9 +1952,6 @@ function CCKWriteDefaultJS(destdir)
 
 function CCKWriteCCKServiceJS(destdir, uuid)
 {
-  var idline =          "<em:id>%id%</em:id>";
-
-
   var file = destdir.clone();
 
   file.append("cckService.js");
@@ -1984,7 +1981,9 @@ function CCKWriteCCKServiceJS(destdir, uuid)
   input.close();
 
   str = str.replace(/%uuid%/g, uuid);
-  str = str.replace(/%OrganizationName%/g, document.getElementById("OrganizationName").value);
+  var organizationName = document.getElementById("OrganizationName").value
+  str = str.replace(/%OrganizationName%/g, organizationName);
+  str = str.replace(/%OrganizationNameNoDashes%/g, organizationName.replace('-','_'));
   str = str.replace(/%id%/g, document.getElementById("id").value);
 
   cos.writeString(str);
@@ -1994,9 +1993,6 @@ function CCKWriteCCKServiceJS(destdir, uuid)
 
 function CCKWriteCCKModuleJS(destdir)
 {
-  var idline =          "<em:id>%id%</em:id>";
-
-
   var file = destdir.clone();
 
   file.append("cckModule.jsm");
@@ -2232,7 +2228,9 @@ function CCKWriteChromeManifest(destdir, uuid)
     str = str.replace(/%disableAboutConfig2%/g, "");
   }
 
-  str = str.replace(/%OrganizationName%/g, document.getElementById("OrganizationName").value);
+  var organizationName = document.getElementById("OrganizationName").value
+  str = str.replace(/%OrganizationName%/g, organizationName);
+  str = str.replace(/%OrganizationNameNoDashes%/g, organizationName.replace('-','_'));
   str = str.replace(/%uuid%/g, uuid);
 
   cos.writeString(str);
