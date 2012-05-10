@@ -1917,6 +1917,7 @@ function CCKWriteDefaultJS(destdir)
       break;
     case "4":
     case "5":
+    case "0":
       var proxyintegerlist = ["networkProxyType"];
 
       for (i = 0; i < proxyintegerlist.length; i++) {
@@ -2356,7 +2357,7 @@ function CCKWriteConfigFile(destdir)
       }
     }
     else if (elements[i].nodeName == "radiogroup") {
-        if ((elements[i].value.length > 0) && (elements[i].value != "0")) {
+        if (elements[i].value.length > 0) {
           var line = elements[i].getAttribute("id") + "=" + elements[i].value + "\n";
           cos.writeString(line);
         }
