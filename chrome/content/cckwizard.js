@@ -412,8 +412,8 @@ function OnPrefLoad()
     if (listbox.selectedItem.cck['type'] == "integer") {
       document.getElementById('prefvalue').preftype = nsIPrefBranch.PREF_INT;
     }
-    document.getElementById('prefname').value = listbox.selectedItem.label;
-    if (arrayItemExists(prefsLockOnly, listbox.selectedItem.label)) {
+    document.getElementById('prefname').value = listbox.selectedItem.cck['prefname'];
+    if (arrayItemExists(prefsLockOnly, listbox.selectedItem.cck['prefname'])) {
       document.getElementById('prefvalue').disabled = true;
       document.getElementById('prefvalue').value = this.opener.document.getElementById("bundle_cckwizard").getString("lockError");
     } else {
@@ -489,7 +489,7 @@ function OnPrefOK()
 
   var listbox = this.opener.document.getElementById("prefList");
   for (var i=0; i < listbox.getRowCount(); i++) {
-    if ((document.getElementById('prefname').value == listbox.getItemAtIndex(i).label) && (window.name == 'newpref')) {
+    if ((document.getElementById('prefname').value == listbox.getItemAtIndex(i).cck['prefname']) && (window.name == 'newpref')) {
       gPromptService.alert(window, bundle.getString("windowTitle"),
                            bundle.getString("prefExistsError"));
       return false;
@@ -526,23 +526,29 @@ function OnPrefOK()
         if (value.charAt(value.length-2) != '\\')
           value = value.substring(0,value.length-1);
     }
-    listitem = listbox.appendItem(document.getElementById('prefname').value, value);
+    listitem = listbox.appendItem(document.getElementById('prefname').value + " (" + value + ")", value);
+    listitem.cck['prefname'] = document.getElementById('prefname').value;
+    listitem.cck['value'] = value;
     listitem.cck['type'] = preftype;
   } else {
     listitem = listbox.selectedItem;
-    listitem.setAttribute("label", document.getElementById('prefname').value);
     value = document.getElementById('prefvalue').value;
     if (value.charAt(0) == '"')
       value = value.substring(1,value.length);
     if (value.charAt(value.length-1) == '"')
       if (value.charAt(value.length-2) != '\\')
         value = value.substring(0,value.length-1);
+    listitem.setAttribute("label", document.getElementById('prefname').value + " (" + value + ")");
     listitem.setAttribute("value", value);
+    listitem.cck['prefname'] = document.getElementById('prefname').value;
+    listitem.cck['value'] = value;
   }
   if (document.getElementById('lockPref').checked) {
+    listitem.setAttribute("locked", "true");
     listitem.cck['lock'] = "true";
   } else {
     listitem.cck['lock'] = "";
+    listitem.removeAttribute("locked");
   }
 }
 
@@ -1780,7 +1786,7 @@ function CCKWriteProperties(destdir)
   for (var i=0; i < listbox.getRowCount(); i++) {
     listitem = listbox.getItemAtIndex(i);
     if (listitem.cck['lock'] == "true") {
-      str = "LockPref" + (j) + "=" + listitem.getAttribute("label") + "\n";
+      str = "LockPref" + (j) + "=" + listitem.cck['prefname'] + "\n";
       cos.writeString(str);
       j++;
     }
@@ -1814,7 +1820,7 @@ function prefIsLocked(prefname)
   var listbox = document.getElementById("prefList");
   for (var i=0; i < listbox.getRowCount(); i++) {
     var listitem = listbox.getItemAtIndex(i);
-    if (prefname == listitem.getAttribute("label"))
+    if (prefname == listitem.cck['prefname'])
       if (listitem.cck['lock'] == "true")
         return true;
   }
@@ -1899,13 +1905,13 @@ function CCKWriteDefaultJS(destdir)
   for (var i=0; i < listbox.getRowCount(); i++) {
     var listitem = listbox.getItemAtIndex(i);
     /* allow for locking prefs without setting value */
-    if ((listitem.getAttribute("value").length) && (!(arrayItemExists(prefsLockOnly, listitem.getAttribute("label"))))) {
+    if ((listitem.getAttribute("value").length) && (!(arrayItemExists(prefsLockOnly, listitem.cck['prefname'])))) {
       var line;
       /* If it is a string, put quotes around it */
       if (listitem.cck['type'] == "string") {
-        line = 'pref("' + listitem.getAttribute("label") + '", ' + '"' + listitem.getAttribute("value") + '"' + ');\n';
+        line = 'pref("' + listitem.cck['prefname'] + '", ' + '"' + listitem.getAttribute("value") + '"' + ');\n';
       } else {
-        line = 'pref("' + listitem.getAttribute("label") + '", ' + listitem.getAttribute("value") + ');\n';
+        line = 'pref("' + listitem.cck['prefname'] + '", ' + listitem.getAttribute("value") + ');\n';
       }
       fos.write(line, line.length);
     }
@@ -2432,7 +2438,7 @@ function CCKWriteConfigFile(destdir)
       var listbox = document.getElementById('prefList');
       for (var j=0; j < listbox.getRowCount(); j++) {
         var listitem = listbox.getItemAtIndex(j);
-        var line = "PreferenceName" + (j+1) + "=" + listitem.getAttribute("label") + "\n";
+        var line = "PreferenceName" + (j+1) + "=" + listitem.cck['prefname'] + "\n";
         cos.writeString(line);
         if (listitem.getAttribute("value").length) {
           var line = "PreferenceValue" + (j+1) + "=" + listitem.getAttribute("value") + "\n";
@@ -2677,6 +2683,7 @@ function CCKReadConfigFile(srcdir)
 
   var i = 1;
   var prefname;
+  var listitem;
   while ((prefname = configarray['PreferenceName' + i])) {
     /* Old config file - figure out pref type */
     if (!(configarray['PreferenceType' + i])) {
@@ -2699,10 +2706,11 @@ function CCKReadConfigFile(srcdir)
       configarray['PreferenceValue' + i] = value;
     }
     if (configarray['PreferenceValue' + i]) {
-      listitem = listbox.appendItem(prefname, configarray['PreferenceValue' + i]);
+      listitem = listbox.appendItem(prefname + "  (" + configarray['PreferenceValue' + i] + ")", configarray['PreferenceValue' + i]);
     } else {
       listitem = listbox.appendItem(prefname, "");
     }
+    listitem.cck['prefname'] = prefname;
 
     if (configarray['PreferenceLock' + i] == "true") {
       listitem.cck['lock'] = "true";

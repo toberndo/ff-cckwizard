@@ -3,3 +3,7 @@ box.ccklist {
 }
 
 .listcell-icon { max-width: 16px; max-height: 16px; }
+
+#prefList listitem[locked="true"] {
+  font-style: italic;
+}
