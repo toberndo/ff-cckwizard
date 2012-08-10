@@ -75,6 +75,12 @@
 <!ENTITY helpMenuText.label "Menu-onderdeeltekst:">
 <!ENTITY helpMenuURL.label "URL van menu Help-onderdeel:">
 <!ENTITY helpMenuAccesskey.label "Toegangstoets menu Help-onderdeel:">
+<!ENTITY userInterface.caption "User Interface Elements">
+<!ENTITY userInterface.description "You can customize the Firefox user interface. These settings can be overridden by a user.">
+<!ENTITY bookmarksbar.label "Display the Bookmarks Toolbar">
+<!ENTITY addonbar.label "Display the Add-on Bar">
+<!ENTITY menubar.label "Display the Menu Bar">
+<!ENTITY tabsonbottom.label "Default to Tabs on Bottom">
 <!ENTITY customizePartFour.label "De browser aanpassen - deel vier">
 <!ENTITY allowedSites.caption "Toegestane sites">
 <!ENTITY popupAllowedSites.label "Hier kunnen domeinen worden ingegeven waarvoor pop-ups zijn toegestaan. Geef de domeinen in, gescheiden door een komma.">

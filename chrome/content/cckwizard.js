@@ -1275,8 +1275,12 @@ function CCKZip(zipfile, location, files_to_zip)
 
 function CCKWriteXULOverlay(destdir)
 {
-  var tooltipXUL  = '  <button id="navigator-throbber" oncommand="goClickThrobber(\'browser.throbber.url\', event)" onclick="checkForMiddleClick(this, event);" tooltiptext="&throbber.tooltip;" disabled="false"/>\n';
-  var titlebarXUL = '  <window id="main-window" titlemodifier="&mainWindow.titlemodifier;"/>\n';
+  var tooltipXUL  = '  <button id="navigator-throbber" oncommand="goClickThrobber(\'browser.throbber.url\', event)" onclick="checkForMiddleClick(this, event);" tooltiptext="&throbber.tooltip;" disabled="false"/>';
+  var titlebarXUL = '  <window id="main-window" titlemodifier="&mainWindow.titlemodifier;"/>';
+  var bookmarksbarXUL = '  <toolbar id="PersonalToolbar" collapsed="false"/>';
+  var tabsonbottomXUL = '  <toolbox id="navigator-toolbox" tabsonbottom="false"/>';
+  var menubarXUL = '  <toolbar id="toolbar-menubar" autohide="false"/>';
+  var addonbarXUL = '  <toolbar id="addon-bar" collapsed="false"/>';
 
   var file = destdir.clone();
   file.append("cck-browser-overlay.xul");
@@ -1313,6 +1317,32 @@ function CCKWriteXULOverlay(destdir)
     str = str.replace(/%window%/g, "");
 
   str = str.replace(/%OrganizationName%/g, document.getElementById("OrganizationName").value);
+
+  if (document.getElementById("tabsonbottom").checked)
+    str = str.replace(/%tabsonbottom%/g, tabsonbottomXUL);
+  else
+    str = str.replace(/%tabsonbottom%/g, "");
+
+  var numToolbarFolders = document.getElementById('tbFolder.bookmarkList').getRowCount();
+  var numToolbarBookmarks = document.getElementById('tb.bookmarkList').getRowCount();
+
+  if (document.getElementById("bookmarksbar").checked ||
+      numToolbarBookmarks > 0 ||
+      numToolbarBookmarks > 0)
+    str = str.replace(/%bookmarksbar%/g, bookmarksbarXUL);
+  else
+    str = str.replace(/%bookmarksbar%/g, "");
+
+  if (document.getElementById("menubar").checked)
+    str = str.replace(/%menubar%/g, menubarXUL);
+  else
+    str = str.replace(/%menubar%/g, "");
+
+  if (document.getElementById("addonbar").checked)
+    str = str.replace(/%addonbar%/g, addonbarXUL);
+  else
+    str = str.replace(/%addonbar%/g, "");
+
 
   fos.write(str, str.length);
   fos.close();
@@ -1947,6 +1977,13 @@ function CCKWriteDefaultJS(destdir)
 
       break;
   }
+
+  // Firefox 14 and beyond uses a pref for tabs on top
+  if (document.getElementById("tabsonbottom").checked) {
+    var line = 'pref("browser.tabs.onTop", false);\n';
+    fos.write(line, line.length);
+  }
+
 
   fos.close();
 }
@@ -2869,8 +2906,20 @@ function CCKReadConfigFile(srcdir)
   var noWelcomePage = document.getElementById("noWelcomePage");
   noWelcomePage.checked = configarray["noWelcomePage"];
 
-  var noWelcomePage = document.getElementById("noOverridePage");
-  noWelcomePage.checked = configarray["noOverridePage"];
+  var noOverridePage = document.getElementById("noOverridePage");
+  noOverridePage.checked = configarray["noOverridePage"];
+
+  var tabsonbottom = document.getElementById("tabsonbottom");
+  tabsonbottom.checked = configarray["tabsonbottom"];
+
+  var bookmarksbar = document.getElementById("bookmarksbar");
+  bookmarksbar.checked = configarray["bookmarksbar"];
+
+  var menubar = document.getElementById("menubar");
+  menubar.checked = configarray["menubar"];
+
+  var addonbar = document.getElementById("addonbar");
+  addonbar.checked = configarray["addonbar"];
 
 
   var proxyitem = document.getElementById("shareAllProxies");

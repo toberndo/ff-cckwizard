@@ -75,6 +75,12 @@
 <!ENTITY helpMenuText.label "Название элемента меню:">
 <!ENTITY helpMenuURL.label "URL страницы для перехода по элементу меню:">
 <!ENTITY helpMenuAccesskey.label "Быстрая клавиша для вызова этого элемента меню:">
+<!ENTITY userInterface.caption "User Interface Elements">
+<!ENTITY userInterface.description "You can customize the Firefox user interface. These settings can be overridden by a user.">
+<!ENTITY bookmarksbar.label "Display the Bookmarks Toolbar">
+<!ENTITY addonbar.label "Display the Add-on Bar">
+<!ENTITY menubar.label "Display the Menu Bar">
+<!ENTITY tabsonbottom.label "Default to Tabs on Bottom">
 <!ENTITY customizePartFour.label "Параметризация браузера - часть Четвёртая">
 <!ENTITY allowedSites.caption "Разрешённые сайты">
 <!ENTITY popupAllowedSites.label "Перечисление сайтов, которым разрешено открывать всплывающие окна. Список доменов, разделённых запятой.">

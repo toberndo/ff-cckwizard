@@ -3,10 +3,12 @@
 <?xml-stylesheet href="chrome://cck-%OrganizationName%/content/cck.css" type="text/css"?>
 <overlay id="cckOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
   <script src="chrome://cck-%OrganizationName%/content/cck.js"/>
-
   %button%
-
   %window%
+  %bookmarksbar%
+  %tabsonbottom%
+  %menubar%
+  %addonbar%
   <stringbundleset id="stringbundleset">
     <stringbundle id="bundle_cck" src="chrome://cck-%OrganizationName%/content/cck.properties"/>
   </stringbundleset>

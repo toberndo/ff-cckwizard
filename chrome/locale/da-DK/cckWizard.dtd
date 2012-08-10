@@ -75,6 +75,12 @@
 <!ENTITY helpMenuText.label "Menupunkt tekst:">
 <!ENTITY helpMenuURL.label "Hjælp-menupunkt URL:">
 <!ENTITY helpMenuAccesskey.label "Hjælp-menupunkt genvejstast:">
+<!ENTITY userInterface.caption "User Interface Elements">
+<!ENTITY userInterface.description "You can customize the Firefox user interface. These settings can be overridden by a user.">
+<!ENTITY bookmarksbar.label "Display the Bookmarks Toolbar">
+<!ENTITY addonbar.label "Display the Add-on Bar">
+<!ENTITY menubar.label "Display the Menu Bar">
+<!ENTITY tabsonbottom.label "Default to Tabs on Bottom">
 <!ENTITY customizePartFour.label "Tilret browseren - 4. del">
 <!ENTITY allowedSites.caption "Tilladte Sites">
 <!ENTITY popupAllowedSites.label "Du kan angive domæner for hvilke popups er tilladte. Oplist domænerne, adskilt af komma.">

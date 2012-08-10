@@ -343,6 +343,14 @@
         <textbox id="HelpMenuCommandAccesskey" flex="1"/>
       </vbox>
     </groupbox>
+    <groupbox>
+      <caption label="&userInterface.caption;"/>
+      <description>&userInterface.description;</description>
+      <checkbox id="bookmarksbar" label="&bookmarksbar.label;"/>
+      <checkbox id="addonbar" label="&addonbar.label;"/>
+      <checkbox id="menubar" label="&menubar.label;"/>
+      <checkbox id="tabsonbottom" label="&tabsonbottom.label;"/>
+    </groupbox>
   </wizardpage>
       
   <wizardpage label="&customizePartFour.label;">  

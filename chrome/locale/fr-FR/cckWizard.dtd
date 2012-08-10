@@ -76,6 +76,12 @@
 <!ENTITY helpMenuText.label "Texte de l'entrée du menu d'aide:">
 <!ENTITY helpMenuURL.label "Adresse (URL) le la page d'assistance :">
 <!ENTITY helpMenuAccesskey.label "Raccourci clavier de l'entrée du menu d'aide :">
+<!ENTITY userInterface.caption "User Interface Elements">
+<!ENTITY userInterface.description "You can customize the Firefox user interface. These settings can be overridden by a user.">
+<!ENTITY bookmarksbar.label "Display the Bookmarks Toolbar">
+<!ENTITY addonbar.label "Display the Add-on Bar">
+<!ENTITY menubar.label "Display the Menu Bar">
+<!ENTITY tabsonbottom.label "Default to Tabs on Bottom">
 <!ENTITY customizePartFour.label "Personnalisation du navigateur - Partie 4">
 <!ENTITY allowedSites.caption "Sites autorisés">
 <!ENTITY popupAllowedSites.label "Vous pouvez spécifier les domaines pour lesquels les popups sont autorisés. Listez les domaines séparés par des virgules.">
