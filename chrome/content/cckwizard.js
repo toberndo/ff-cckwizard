@@ -245,7 +245,7 @@ function updateconfiglist()
     menulist.selectedIndex = 0;
     setcurrentconfig(configlist[0]);
   }
-  if (list.length == 0) {
+  if (configlist.length == 0) {
     document.getElementById('example-window').canAdvance = false;
     document.getElementById('byb-configs').disabled = true;
     document.getElementById('deleteconfig').disabled = true;
