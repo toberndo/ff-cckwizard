@@ -204,6 +204,10 @@ function OpenCCKWizard()
 function ShowMain()
 {
    document.getElementById('example-window').canRewind = false;
+   try {
+    currentconfigname = gPrefBranch.getCharPref("cck.lastconfig");
+    setcurrentconfig(currentconfigname);
+   } catch (ex) {}
    updateconfiglist();
 }
 
@@ -217,9 +221,14 @@ function updateconfiglist()
 
 
 
-  var list = gPrefBranch.getChildList("cck.config.", {});
-  for (var i = 0; i < list.length; ++i) {
-    configname = list[i].replace(/cck.config./g, "");
+  var preflist = gPrefBranch.getChildList("cck.config.", {});
+  var configlist = [];
+  for (var i = 0; i < preflist.length; ++i) {
+    configlist.push(preflist[i].replace(/cck.config./g, ""));
+  }
+  configlist.sort();
+  for (var i = 0; i < configlist.length; ++i) {
+    configname = configlist[i];
     var menulistitem = menulist.appendItem(configname,configname);
     menulistitem.minWidth=menulist.width;
     if (configname == currentconfigname) {
@@ -232,9 +241,9 @@ function updateconfiglist()
       document.getElementById('copyconfig').disabled = false;
     }
   }
-  if ((!selecteditem) && (list.length > 0)) {
+  if ((!selecteditem) && (configlist.length > 0)) {
     menulist.selectedIndex = 0;
-    setcurrentconfig(list[0].replace(/cck.config./g, ""));
+    setcurrentconfig(configlist[0]);
   }
   if (list.length == 0) {
     document.getElementById('example-window').canAdvance = false;
@@ -249,6 +258,7 @@ function updateconfiglist()
 
 function setcurrentconfig(newconfig)
 {
+  gPrefBranch.setCharPref("cck.lastconfig", newconfig);
   var destdir = Components.classes["@mozilla.org/file/local;1"]
                           .createInstance(Components.interfaces.nsILocalFile);
 
