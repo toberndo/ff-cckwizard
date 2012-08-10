@@ -41,7 +41,7 @@ var CCK = {
           uninit();
         }
         break;
-      case "final-ui-startup":
+      case "distribution-customization-complete":
         bookmarks = Cc["@mozilla.org/browser/nav-bookmarks-service;1"].getService(Ci.nsINavBookmarksService);
         livemarks = Cc["@mozilla.org/browser/livemark-service;2"].getService(Ci.nsILivemarkService);
         annoService = Cc["@mozilla.org/browser/annotation-service;1"].getService(Ci.nsIAnnotationService);
@@ -575,7 +575,8 @@ function log(string) {
 gObserver.addObserver(CCK, "em-action-requested", false);
 gObserver.addObserver(CCK, "profile-before-change", false);
 gObserver.addObserver(CCK, "profile-after-change", false);
-gObserver.addObserver(CCK, "final-ui-startup", false);
+//gObserver.addObserver(CCK, "final-ui-startup", false);
+gObserver.addObserver(CCK, "distribution-customization-complete", false);
 
 let listener = {
   onUninstalling: function(addon) {
