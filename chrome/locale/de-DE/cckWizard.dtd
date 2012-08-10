@@ -108,6 +108,10 @@
 <!ENTITY addToolbarFolder.description "Benutzen Sie die nachfolgenden Schaltflächen, um Lesezeichen zu einem Ordner in der Lesezeichen-Symbolleiste hinzuzufügen.">
 <!ENTITY addToolbarBookmark.caption "Lesezeichen zur Lesezeichen-Symbolleiste hinzufügen">
 <!ENTITY addToolbarBookmark.description "Benutzen Sie die nachfolgenden Schaltflächen, um Lesezeichen zur Lesezeichen-Symbolleiste hinzuzufügen.">
+<!ENTITY removeToolbarBookmarks.caption "Remove default bookmarks">
+<!ENTITY removeToolbarBookmarks.description  "Select the default bookmarks you want removed">
+<!ENTITY mostVisited.label "Most Visited">
+<!ENTITY gettingStarted.label "Getting Started">
 <!ENTITY customizeToolbarTwo.label "Lesezeichen-Symbolleiste anpassen - Teil 2">
 <!ENTITY customizeBookmarksOne.label "Lesezeichen anpassen - Teil 1">
 <!ENTITY customizeBookmarksTwo.label "Lesezeichen anpassen - Teil 2">
@@ -121,6 +125,11 @@
 <!ENTITY bookmarkLocation.label "Platzierung der Lesezeicheneinträge">
 <!ENTITY bookmarkLocationBegin.label "Am Anfang platzieren">
 <!ENTITY bookmarkLocationEnd.label "Am Ende platzieren">
+<!ENTITY removeBookmarks.caption "Remove default bookmarks">
+<!ENTITY removeBookmarks.description "Select the default bookmarks you want removed">
+<!ENTITY recentlyBookmarked.label "Recently Bookmarked">
+<!ENTITY recentTags.label "Recent Tags">
+<!ENTITY firefoxFolder.label "Mozilla Firefox folder">
 <!ENTITY bookmark.label "Lesezeichen">
 <!ENTITY bookmark.description "Geben Sie ein Lesezeichen ein.">
 <!ENTITY bookmarkTitle.label "Name:">

@@ -108,6 +108,10 @@
 <!ENTITY addToolbarFolder.description "Použijte následující tlačítka pro přidání záložek do složky na liště záložek.">
 <!ENTITY addToolbarBookmark.caption "Přidejte záložky na lištu záložek">
 <!ENTITY addToolbarBookmark.description "Použijte následující tlačítka pro přidání záložek do lišty záložek.">
+<!ENTITY removeToolbarBookmarks.caption "Remove default bookmarks">
+<!ENTITY removeToolbarBookmarks.description  "Select the default bookmarks you want removed">
+<!ENTITY mostVisited.label "Most Visited">
+<!ENTITY gettingStarted.label "Getting Started">
 <!ENTITY customizeToolbarTwo.label "Specifikace lišty záložek - část II">
 <!ENTITY customizeBookmarksOne.label "Specifikace záložek - část I">
 <!ENTITY customizeBookmarksTwo.label "Specifikace záložek - část II">
@@ -121,6 +125,11 @@
 <!ENTITY bookmarkLocation.label "Umístění položek záložek">
 <!ENTITY bookmarkLocationBegin.label "Umístit záložky na začátek">
 <!ENTITY bookmarkLocationEnd.label "Umístit záložky na konec">
+<!ENTITY removeBookmarks.caption "Remove default bookmarks">
+<!ENTITY removeBookmarks.description "Select the default bookmarks you want removed">
+<!ENTITY recentlyBookmarked.label "Recently Bookmarked">
+<!ENTITY recentTags.label "Recent Tags">
+<!ENTITY firefoxFolder.label "Mozilla Firefox folder">
 <!ENTITY bookmark.label "Záložka">
 <!ENTITY bookmark.description "Vložte záložku">
 <!ENTITY bookmarkTitle.label "Název:">

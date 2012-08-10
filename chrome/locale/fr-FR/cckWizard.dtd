@@ -109,6 +109,10 @@
 <!ENTITY addToolbarFolder.description "Utilisez les boutons ci-contre pour ajouter des marque-pages à un dossier sur la barre des marque-pages.">
 <!ENTITY addToolbarBookmark.caption "Ajouter des marque-pages à la barre des marque-pages">
 <!ENTITY addToolbarBookmark.description "Utilisez les boutons ci-contre pour ajouter des marque-pages à la barre des marque-pages">
+<!ENTITY removeToolbarBookmarks.caption "Remove default bookmarks">
+<!ENTITY removeToolbarBookmarks.description  "Select the default bookmarks you want removed">
+<!ENTITY mostVisited.label "Most Visited">
+<!ENTITY gettingStarted.label "Getting Started">
 <!ENTITY customizeToolbarTwo.label "Personnalisation la barre des marque-pages - Partie 2">
 <!ENTITY customizeBookmarksOne.label "Personnaliser les marque-pages - Partie 1">
 <!ENTITY customizeBookmarksTwo.label "Personnaliser les marque-pages - Partie 2">
@@ -122,6 +126,11 @@
 <!ENTITY bookmarkLocation.label "Position des éléments de marque-page">
 <!ENTITY bookmarkLocationBegin.label "Placer les éléments de marque-page au début">
 <!ENTITY bookmarkLocationEnd.label "Placer les éléments de marque-page à la fin">
+<!ENTITY removeBookmarks.caption "Remove default bookmarks">
+<!ENTITY removeBookmarks.description "Select the default bookmarks you want removed">
+<!ENTITY recentlyBookmarked.label "Recently Bookmarked">
+<!ENTITY recentTags.label "Recent Tags">
+<!ENTITY firefoxFolder.label "Mozilla Firefox folder">
 <!ENTITY bookmark.label "Marque-page">
 <!ENTITY bookmark.description "Entrer un marque-page">
 <!ENTITY bookmarkTitle.label "Titre :">

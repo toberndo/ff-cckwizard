@@ -177,6 +177,11 @@ function init() {
       var id = getString("id");
       removeBookmarks(id + "/" + installedVersion);
     }
+    if (firstrun) {
+      var bookmarksToRemove = getString("defaultBookmarksToRemove");
+      if (bookmarksToRemove)
+        removeDefaultBookmarks(bookmarksToRemove.split(','));
+    }
 
     // Setup bookmarks
     var annoId = id + "/" + extVersion;
@@ -494,6 +499,55 @@ function removeBookmarks(annoId)
     catch(ex) {
       log("Exception checking if folder is empty: " + ex + "\n");
     }
+  }
+}
+
+function removeDefaultBookmarks(bookmarksToRemove) {
+  if (bookmarksToRemove.indexOf("firefoxFolder") != -1) {
+    var firefoxFolder = bookmarks.getIdForItemAt(bookmarks.bookmarksMenuFolder, 3);
+    if ((firefoxFolder != -1) && (bookmarks.getItemType(firefoxFolder) == bookmarks.TYPE_FOLDER)) {
+      var aboutMozilla = bookmarks.getIdForItemAt(firefoxFolder, 3);
+      if (aboutMozilla != -1 &&
+          bookmarks.getItemType(aboutMozilla) == bookmarks.TYPE_BOOKMARK &&
+          /http:\/\/www.mozilla.com\/.*\/about/.test(bookmarks.getBookmarkURI(aboutMozilla).spec))
+        bookmarks.removeItem(firefoxFolder);
+    }
+  }
+  /* Remove the separator if we remove everything above it or everything below it */
+  if (bookmarksToRemove.indexOf("firefoxFolder") != -1 ||
+      (bookmarksToRemove.indexOf("recentTags") != -1 && bookmarksToRemove.indexOf("recentlyBookmarked") != -1))
+  {
+    var separator = bookmarks.getIdForItemAt(bookmarks.bookmarksMenuFolder, 2);
+    if (separator !=-1 && bookmarks.getItemType(separator) == bookmarks.TYPE_SEPARATOR)
+      bookmarks.removeItem(separator);
+  }
+  if (bookmarksToRemove.indexOf("recentTags") != -1) {
+    var recentTags = bookmarks.getIdForItemAt(bookmarks.bookmarksMenuFolder, 1);
+    if (recentTags !=-1 &&
+        bookmarks.getItemType(recentTags) == bookmarks.TYPE_BOOKMARK &&
+        /^place:/.test(bookmarks.getBookmarkURI(recentTags).spec))
+      bookmarks.removeItem(recentTags);
+  }
+  if (bookmarksToRemove.indexOf("recentlyBookmarked") != -1) {
+    var recentlyBookmarked = bookmarks.getIdForItemAt(bookmarks.bookmarksMenuFolder, 0);
+    if (recentlyBookmarked !=-1 &&
+        bookmarks.getItemType(recentlyBookmarked) == bookmarks.TYPE_BOOKMARK &&
+        /^place:/.test(bookmarks.getBookmarkURI(recentlyBookmarked).spec))
+      bookmarks.removeItem(recentlyBookmarked);
+  }
+  if (bookmarksToRemove.indexOf("gettingStarted") != -1) {
+    var gettingStarted = bookmarks.getIdForItemAt(bookmarks.toolbarFolder, 1);
+    if (gettingStarted != -1 &&
+        bookmarks.getItemType(gettingStarted) == bookmarks.TYPE_BOOKMARK &&
+        /http:\/\/www.mozilla.com\/.*\/firefox\/central/.test(bookmarks.getBookmarkURI(gettingStarted).spec))
+      bookmarks.removeItem(gettingStarted);
+  }
+  if (bookmarksToRemove.indexOf("mostVisited") != -1) {
+    var mostVisited = bookmarks.getIdForItemAt(bookmarks.toolbarFolder, 0);
+    if (mostVisited != -1 &&
+        bookmarks.getItemType(mostVisited) == bookmarks.TYPE_BOOKMARK &&
+        /^place:/.test(bookmarks.getBookmarkURI(mostVisited).spec))
+      bookmarks.removeItem(mostVisited);
   }
 }
 

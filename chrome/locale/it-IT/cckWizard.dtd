@@ -109,6 +109,10 @@
 <!ENTITY addToolbarFolder.description "Fare clic su &apos;Nuovo…&apos; per aggiungere segnalibri in una cartella nella barra dei segnalibri">
 <!ENTITY addToolbarBookmark.caption "Nuovo segnalibro nella barra dei segnalibri">
 <!ENTITY addToolbarBookmark.description "Fare clic su &apos;Nuovo…&apos; per aggiungere segnalibri nella barra dei segnalibri">
+<!ENTITY removeToolbarBookmarks.caption "Remove default bookmarks">
+<!ENTITY removeToolbarBookmarks.description  "Select the default bookmarks you want removed">
+<!ENTITY mostVisited.label "Most Visited">
+<!ENTITY gettingStarted.label "Getting Started">
 <!ENTITY customizeToolbarTwo.label "Seconda fase della personalizzazione della barra dei segnalibri">
 <!ENTITY customizeBookmarksOne.label "Prima fase della personalizzazione dei segnalibri">
 <!ENTITY customizeBookmarksTwo.label "Seconda fase della personalizzazione dei segnalibri">
@@ -122,6 +126,11 @@
 <!ENTITY bookmarkLocation.label "Posizione del menu dei segnalibri">
 <!ENTITY bookmarkLocationBegin.label "In cima">
 <!ENTITY bookmarkLocationEnd.label "In fondo">
+<!ENTITY removeBookmarks.caption "Remove default bookmarks">
+<!ENTITY removeBookmarks.description "Select the default bookmarks you want removed">
+<!ENTITY recentlyBookmarked.label "Recently Bookmarked">
+<!ENTITY recentTags.label "Recent Tags">
+<!ENTITY firefoxFolder.label "Mozilla Firefox folder">
 <!ENTITY bookmark.label "Segnalibro">
 <!ENTITY bookmark.description "Inserisci titolo ed URL del segnalibro">
 <!ENTITY bookmarkTitle.label "Titolo:">

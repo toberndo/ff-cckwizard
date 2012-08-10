@@ -142,7 +142,10 @@
 <!ENTITY  addToolbarBookmark.caption    "Add bookmarks to the bookmarks toolbar">
 <!ENTITY  addToolbarBookmark.description "Use the buttons below to add bookmarks to the bookmarks toolbar.">
 
-
+<!ENTITY  removeToolbarBookmarks.caption "Remove default bookmarks">
+<!ENTITY  removeToolbarBookmarks.description  "Select the default bookmarks you want removed">
+<!ENTITY  mostVisited.label "Most Visited">
+<!ENTITY  gettingStarted.label "Getting Started">
 
 <!ENTITY  customizeToolbarTwo.label     "Customize the Bookmarks Toolbar - Part Two">
 
@@ -161,6 +164,11 @@
 <!ENTITY  bookmarkLocationBegin.label   "Place bookmark items at the beginning">
 <!ENTITY  bookmarkLocationEnd.label     "Place bookmark items at the end">
 
+<!ENTITY  removeBookmarks.caption        "Remove default bookmarks">
+<!ENTITY  removeBookmarks.description    "Select the default bookmarks you want removed">
+<!ENTITY  recentlyBookmarked.label      "Recently Bookmarked">
+<!ENTITY  recentTags.label              "Recent Tags">
+<!ENTITY  firefoxFolder.label           "Mozilla Firefox folder">
 
 <!ENTITY  bookmark.label                "Bookmark">
 <!ENTITY  bookmark.description          "Enter a Bookmark">

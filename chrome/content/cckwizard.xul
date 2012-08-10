@@ -451,6 +451,12 @@
         </hbox>
       </radiogroup>
     </groupbox>
+    <groupbox>
+      <caption label="&removeToolbarBookmarks.caption;"/>
+      <description>&removeToolbarBookmarks.description;</description>
+      <checkbox id="mostVisited" label="&mostVisited.label;"/>
+      <checkbox id="gettingStarted" label="&gettingStarted.label;"/>
+    </groupbox>
   </wizardpage>
 
   <wizardpage id="bmFolder" label="&customizeBookmarksOne.label;" onpageadvanced="if (document.getElementById('bmFolder.bookmarkList').getRowCount() > 0) return Validate('BookmarkFolder1');">
@@ -479,6 +485,13 @@
           <radio value="First" label="&bookmarkLocationBegin.label;"/>
         </hbox>
       </radiogroup>
+    </groupbox>
+    <groupbox>
+      <caption label="&removeBookmarks.caption;"/>
+      <description>&removeBookmarks.description;</description>
+      <checkbox id="recentlyBookmarked" label="&recentlyBookmarked.label;"/>
+      <checkbox id="recentTags" label="&recentTags.label;"/>
+      <checkbox id="firefoxFolder" label="&firefoxFolder.label;"/>
     </groupbox>
   </wizardpage>
 

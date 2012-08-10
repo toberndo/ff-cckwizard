@@ -108,6 +108,10 @@
 <!ENTITY addToolbarFolder.description "Aby dodać zakładki do folderu znajdującego się na pasku zakładek proszę użyć istniejących przycisków.">
 <!ENTITY addToolbarBookmark.caption "Dodawanie zakładek do paska zakładek">
 <!ENTITY addToolbarBookmark.description "Aby dodać zakładki do paska zakładek proszę użyć istniejących przycisków.">
+<!ENTITY removeToolbarBookmarks.caption "Remove default bookmarks">
+<!ENTITY removeToolbarBookmarks.description  "Select the default bookmarks you want removed">
+<!ENTITY mostVisited.label "Most Visited">
+<!ENTITY gettingStarted.label "Getting Started">
 <!ENTITY customizeToolbarTwo.label "Modyfikowanie paska zakładek - część druga">
 <!ENTITY customizeBookmarksOne.label "Modyfikowanie zakładek - część pierwsza">
 <!ENTITY customizeBookmarksTwo.label "Modyfikowanie zakładek - część druga">
@@ -121,6 +125,11 @@
 <!ENTITY bookmarkLocation.label "Lokalizacja elementów zakładek">
 <!ENTITY bookmarkLocationBegin.label "Umieść elementy zakładek na początku">
 <!ENTITY bookmarkLocationEnd.label "Umieść elementy zakładek na końcu">
+<!ENTITY removeBookmarks.caption "Remove default bookmarks">
+<!ENTITY removeBookmarks.description "Select the default bookmarks you want removed">
+<!ENTITY recentlyBookmarked.label "Recently Bookmarked">
+<!ENTITY recentTags.label "Recent Tags">
+<!ENTITY firefoxFolder.label "Mozilla Firefox folder">
 <!ENTITY bookmark.label "Zakładka">
 <!ENTITY bookmark.description "Wprowadź dane zakładki">
 <!ENTITY bookmarkTitle.label "Tytuł:">

@@ -108,6 +108,10 @@
 <!ENTITY addToolbarFolder.description "Brug knapperne herunder til at tilføje bogmærker til en mappe på bogmærker-værktøjslinjen.">
 <!ENTITY addToolbarBookmark.caption "Tilføj bogmærker til bogmærker-værktøjslinjen">
 <!ENTITY addToolbarBookmark.description "Du kan tilføje op til fem bogmærker til den personlige værktøjslinje.">
+<!ENTITY removeToolbarBookmarks.caption "Remove default bookmarks">
+<!ENTITY removeToolbarBookmarks.description  "Select the default bookmarks you want removed">
+<!ENTITY mostVisited.label "Most Visited">
+<!ENTITY gettingStarted.label "Getting Started">
 <!ENTITY customizeToolbarTwo.label "Tilret bogmærker-værktøjslinje - 2. del">
 <!ENTITY customizeBookmarksOne.label "Tilret bogmærker - 1. del">
 <!ENTITY customizeBookmarksTwo.label "Tilret bogmærker - 2. del">
@@ -121,6 +125,11 @@
 <!ENTITY bookmarkLocation.label "Placering af bogmærke-elementer">
 <!ENTITY bookmarkLocationBegin.label "Placer bogmærke-elementer først">
 <!ENTITY bookmarkLocationEnd.label "Placer bogmærke-elementer sidst">
+<!ENTITY removeBookmarks.caption "Remove default bookmarks">
+<!ENTITY removeBookmarks.description "Select the default bookmarks you want removed">
+<!ENTITY recentlyBookmarked.label "Recently Bookmarked">
+<!ENTITY recentTags.label "Recent Tags">
+<!ENTITY firefoxFolder.label "Mozilla Firefox folder">
 <!ENTITY bookmark.label "Bogmærke">
 <!ENTITY bookmark.description "Indtast et bogmærke">
 <!ENTITY bookmarkTitle.label "Titel:">

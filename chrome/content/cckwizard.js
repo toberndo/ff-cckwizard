@@ -1737,6 +1737,13 @@ function CCKWriteProperties(destdir)
     }
   }
 
+  var defaultBookmarkIDs = ["mostVisited", "gettingStarted", "recentlyBookmarked", "recentTags", "firefoxFolder"];
+  var defaultBookmarksToRemove = [];
+  for (var i=0; i < defaultBookmarkIDs.length; i++)
+    if (document.getElementById(defaultBookmarkIDs[i]).checked)
+      defaultBookmarksToRemove.push(defaultBookmarkIDs[i]);
+  if (defaultBookmarksToRemove.length > 0)
+    cos.writeString("defaultBookmarksToRemove=" + defaultBookmarksToRemove.join(','));
 
   // Registry Keys
   listbox = document.getElementById("regList");
@@ -2378,6 +2385,8 @@ function CCKWriteConfigFile(destdir)
   fos.init(file, -1, -1, false);
   cos.init(fos, null, 0, null);
 
+  var defaultBookmarkIDs = ["mostVisited", "gettingStarted", "recentlyBookmarked", "recentTags", "firefoxFolder"];
+
   var elements = document.getElementsByAttribute("id", "*")
   for (var i=0; i < elements.length; i++) {
     if ( (elements[i].nodeName == "textbox") ||
@@ -2400,7 +2409,9 @@ function CCKWriteConfigFile(destdir)
         }
     }
     else if (elements[i].nodeName == "checkbox") {
-      if (elements[i].id != "saveOnExit") {
+      if (elements[i].id != "saveOnExit" &&
+          defaultBookmarkIDs.indexOf(elements[i].id) == -1)
+      {
         if (elements[i].checked) {
           var line = elements[i].getAttribute("id") + "=" + elements[i].checked + "\n";
           cos.writeString(line);
@@ -2562,6 +2573,12 @@ function CCKWriteConfigFile(destdir)
       }
     }
   }
+  var defaultBookmarksToRemove = [];
+  for (var i=0; i < defaultBookmarkIDs.length; i++)
+    if (document.getElementById(defaultBookmarkIDs[i]).checked)
+      defaultBookmarksToRemove.push(defaultBookmarkIDs[i]);
+  if (defaultBookmarksToRemove.length > 0)
+    cos.writeString("defaultBookmarksToRemove=" + defaultBookmarksToRemove.join(','));
 
   cos.close();
   fos.close();
@@ -2921,6 +2938,11 @@ function CCKReadConfigFile(srcdir)
   var addonbar = document.getElementById("addonbar");
   addonbar.checked = configarray["addonbar"];
 
+  if (configarray["defaultBookmarksToRemove"]) {
+    var defaultBookmarksToRemove = configarray["defaultBookmarksToRemove"].split(',');
+    for (var i=0; i < defaultBookmarksToRemove.length; i++)
+      document.getElementById(defaultBookmarksToRemove[i]).checked = true;
+  }
 
   var proxyitem = document.getElementById("shareAllProxies");
   proxyitem.checked = configarray["shareAllProxies"];

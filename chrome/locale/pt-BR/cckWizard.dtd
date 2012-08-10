@@ -109,6 +109,10 @@
 <!ENTITY addToolbarFolder.description "Utilize os botões abaixo para acrescentar favoritos a uma pasta na barra de favoritos.">
 <!ENTITY addToolbarBookmark.caption "Acrescenta bookmarks à barra de favoritos">
 <!ENTITY addToolbarBookmark.description "Utilize os botões abaixo para acrescentar favoritos à barra de favoritos.">
+<!ENTITY removeToolbarBookmarks.caption "Remove default bookmarks">
+<!ENTITY removeToolbarBookmarks.description  "Select the default bookmarks you want removed">
+<!ENTITY mostVisited.label "Most Visited">
+<!ENTITY gettingStarted.label "Getting Started">
 <!ENTITY customizeToolbarTwo.label "Personalizando a Barra de Favoritos - Parte Dois">
 <!ENTITY customizeBookmarksOne.label "Personalizando os Favoritos - Parte Um">
 <!ENTITY customizeBookmarksTwo.label "Personalizando os Favoritos - Parte Dois">
@@ -122,6 +126,11 @@
 <!ENTITY bookmarkLocation.label "Localização dos itens de favoritos">
 <!ENTITY bookmarkLocationBegin.label "Inserir os favoritos no começo">
 <!ENTITY bookmarkLocationEnd.label "Inserir os favoritos no final">
+<!ENTITY removeBookmarks.caption "Remove default bookmarks">
+<!ENTITY removeBookmarks.description "Select the default bookmarks you want removed">
+<!ENTITY recentlyBookmarked.label "Recently Bookmarked">
+<!ENTITY recentTags.label "Recent Tags">
+<!ENTITY firefoxFolder.label "Mozilla Firefox folder">
 <!ENTITY bookmark.label "Favorito">
 <!ENTITY bookmark.description "Entre com um Favorito">
 <!ENTITY bookmarkTitle.label "Título:">

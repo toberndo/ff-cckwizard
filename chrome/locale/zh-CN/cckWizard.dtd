@@ -108,6 +108,10 @@
 <!ENTITY addToolbarFolder.description "使用下边的按钮以在书签工具栏上添加书签至文件夹中。">
 <!ENTITY addToolbarBookmark.caption "添加书签至书签工具栏">
 <!ENTITY addToolbarBookmark.description "使用下边的按钮以在书签工具栏上添加书签。">
+<!ENTITY removeToolbarBookmarks.caption "Remove default bookmarks">
+<!ENTITY removeToolbarBookmarks.description  "Select the default bookmarks you want removed">
+<!ENTITY mostVisited.label "Most Visited">
+<!ENTITY gettingStarted.label "Getting Started">
 <!ENTITY customizeToolbarTwo.label "定制 书签工具栏 - 第二部分">
 <!ENTITY customizeBookmarksOne.label "定制书签 - 第一部分">
 <!ENTITY customizeBookmarksTwo.label "定制书签 - 第二部分">
@@ -121,6 +125,11 @@
 <!ENTITY bookmarkLocation.label "书签项目路径">
 <!ENTITY bookmarkLocationBegin.label "放置书签项目于最前边">
 <!ENTITY bookmarkLocationEnd.label "放置书签项目于最后边">
+<!ENTITY removeBookmarks.caption "Remove default bookmarks">
+<!ENTITY removeBookmarks.description "Select the default bookmarks you want removed">
+<!ENTITY recentlyBookmarked.label "Recently Bookmarked">
+<!ENTITY recentTags.label "Recent Tags">
+<!ENTITY firefoxFolder.label "Mozilla Firefox folder">
 <!ENTITY bookmark.label "书签">
 <!ENTITY bookmark.description "键入一项书签">
 <!ENTITY bookmarkTitle.label "标题:">

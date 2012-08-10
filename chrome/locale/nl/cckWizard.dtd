@@ -108,6 +108,10 @@
 <!ENTITY addToolbarFolder.description "Gebruik onderstaande knoppen om bladwijzers aan een map op de bladwijzerwerkbalk toe te voegen.">
 <!ENTITY addToolbarBookmark.caption "Bladwijzers toevoegen aan de bladwijzerwerkbalk">
 <!ENTITY addToolbarBookmark.description "Gebruik onderstaande knoppen om bladwijzers aan de bladwijzerwerkbalk toe te voegen.">
+<!ENTITY removeToolbarBookmarks.caption "Remove default bookmarks">
+<!ENTITY removeToolbarBookmarks.description  "Select the default bookmarks you want removed">
+<!ENTITY mostVisited.label "Most Visited">
+<!ENTITY gettingStarted.label "Getting Started">
 <!ENTITY customizeToolbarTwo.label "De Bladwijzerwerkbalk aanpassen - deel twee">
 <!ENTITY customizeBookmarksOne.label "Bladwijzers aanpassen - deel één">
 <!ENTITY customizeBookmarksTwo.label "Bladwijzers aanpassen - deel twee">
@@ -121,6 +125,11 @@
 <!ENTITY bookmarkLocation.label "Locatie van bladwijzers">
 <!ENTITY bookmarkLocationBegin.label "Bladwijzers vooraan plaatsen">
 <!ENTITY bookmarkLocationEnd.label "Bladwijzers achteraan plaatsen">
+<!ENTITY removeBookmarks.caption "Remove default bookmarks">
+<!ENTITY removeBookmarks.description "Select the default bookmarks you want removed">
+<!ENTITY recentlyBookmarked.label "Recently Bookmarked">
+<!ENTITY recentTags.label "Recent Tags">
+<!ENTITY firefoxFolder.label "Mozilla Firefox folder">
 <!ENTITY bookmark.label "Bladwijzer">
 <!ENTITY bookmark.description "Voer bladwijzer in">
 <!ENTITY bookmarkTitle.label "Titel:">

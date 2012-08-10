@@ -108,6 +108,10 @@
 <!ENTITY addToolbarFolder.description "Use los botones inferiores para añadir marcadores a una carpeta de la barra de herramientas de  marcadores.">
 <!ENTITY addToolbarBookmark.caption "Añadir marcadores a la barra de herramientas de marcadores">
 <!ENTITY addToolbarBookmark.description "Use los botones inferiores para añadir marcadores en la barra de herramientas de marcadores.">
+<!ENTITY removeToolbarBookmarks.caption "Remove default bookmarks">
+<!ENTITY removeToolbarBookmarks.description  "Select the default bookmarks you want removed">
+<!ENTITY mostVisited.label "Most Visited">
+<!ENTITY gettingStarted.label "Getting Started">
 <!ENTITY customizeToolbarTwo.label "Personalizar la barra de herramientas de marcadores - Parte dos">
 <!ENTITY customizeBookmarksOne.label "Personalizar marcadores - Parte uno">
 <!ENTITY customizeBookmarksTwo.label "Personalizar marcadores - Parte dos">
@@ -121,6 +125,11 @@
 <!ENTITY bookmarkLocation.label "Ubicación de los elementos de los marcadores">
 <!ENTITY bookmarkLocationBegin.label "Colocar los elementos de los marcadores al principio">
 <!ENTITY bookmarkLocationEnd.label "Colocar los elementos de los marcadores al final">
+<!ENTITY removeBookmarks.caption "Remove default bookmarks">
+<!ENTITY removeBookmarks.description "Select the default bookmarks you want removed">
+<!ENTITY recentlyBookmarked.label "Recently Bookmarked">
+<!ENTITY recentTags.label "Recent Tags">
+<!ENTITY firefoxFolder.label "Mozilla Firefox folder">
 <!ENTITY bookmark.label "Marcador">
 <!ENTITY bookmark.description "Introduzca un marcador">
 <!ENTITY bookmarkTitle.label "Título:">

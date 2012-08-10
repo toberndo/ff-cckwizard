@@ -108,6 +108,10 @@
 <!ENTITY addToolbarFolder.description "Use the buttons below to add bookmarks to a folder on the bookmarks toolbar.">
 <!ENTITY addToolbarBookmark.caption "Add bookmarks to the bookmarks toolbar">
 <!ENTITY addToolbarBookmark.description "Use the buttons below to add bookmarks to the bookmarks toolbar.">
+<!ENTITY removeToolbarBookmarks.caption "Remove default bookmarks">
+<!ENTITY removeToolbarBookmarks.description  "Select the default bookmarks you want removed">
+<!ENTITY mostVisited.label "Most Visited">
+<!ENTITY gettingStarted.label "Getting Started">
 <!ENTITY customizeToolbarTwo.label "ブックマークツールバーのカスタマイズ - パート 2">
 <!ENTITY customizeBookmarksOne.label "ブックマークのカスタマイズ - パート 1">
 <!ENTITY customizeBookmarksTwo.label "ブックマークのカスタマイズ - パート 2">
@@ -121,6 +125,11 @@
 <!ENTITY bookmarkLocation.label "Location of bookmark items">
 <!ENTITY bookmarkLocationBegin.label "Place bookmark items at the beginning">
 <!ENTITY bookmarkLocationEnd.label "Place bookmark items at the end">
+<!ENTITY removeBookmarks.caption "Remove default bookmarks">
+<!ENTITY removeBookmarks.description "Select the default bookmarks you want removed">
+<!ENTITY recentlyBookmarked.label "Recently Bookmarked">
+<!ENTITY recentTags.label "Recent Tags">
+<!ENTITY firefoxFolder.label "Mozilla Firefox folder">
 <!ENTITY bookmark.label "ブックマーク">
 <!ENTITY bookmark.description "ブックマークを入力">
 <!ENTITY bookmarkTitle.label "タイトル:">

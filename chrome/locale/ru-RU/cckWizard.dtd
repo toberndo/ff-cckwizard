@@ -108,6 +108,10 @@
 <!ENTITY addToolbarFolder.description "Для добавления закладок в папку панели закладок необходимо использовать кнопки ниже.">
 <!ENTITY addToolbarBookmark.caption "Добавление закладок в панель закладок">
 <!ENTITY addToolbarBookmark.description "Для добавления закладок в панель закладок необходимо использовать кнопки ниже.">
+<!ENTITY removeToolbarBookmarks.caption "Remove default bookmarks">
+<!ENTITY removeToolbarBookmarks.description  "Select the default bookmarks you want removed">
+<!ENTITY mostVisited.label "Most Visited">
+<!ENTITY gettingStarted.label "Getting Started">
 <!ENTITY customizeToolbarTwo.label "Параметризация панели закладок - часть Вторая">
 <!ENTITY customizeBookmarksOne.label "Параметризация Закладок - часть Первая">
 <!ENTITY customizeBookmarksTwo.label "Параметризация Закладок - часть Вторая">
@@ -121,6 +125,11 @@
 <!ENTITY bookmarkLocation.label "Расположение закладок">
 <!ENTITY bookmarkLocationBegin.label "Разместить закладки в начале">
 <!ENTITY bookmarkLocationEnd.label "Разместить закладки в конце">
+<!ENTITY removeBookmarks.caption "Remove default bookmarks">
+<!ENTITY removeBookmarks.description "Select the default bookmarks you want removed">
+<!ENTITY recentlyBookmarked.label "Recently Bookmarked">
+<!ENTITY recentTags.label "Recent Tags">
+<!ENTITY firefoxFolder.label "Mozilla Firefox folder">
 <!ENTITY bookmark.label "Закладка">
 <!ENTITY bookmark.description "Ввод закладки">
 <!ENTITY bookmarkTitle.label "Заголовок:">
