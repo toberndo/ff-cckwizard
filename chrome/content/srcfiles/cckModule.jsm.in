@@ -52,8 +52,10 @@ var CCK = {
         } else {
           Components.utils.import("resource://gre/modules/AddonManager.jsm");
           AddonManager.getAddonByID("%id%", function(addon) {
-            var location = addon.getResourceURI("").QueryInterface(Components.interfaces.nsIFileURL).file;
-            installXPIs(location);
+            if (addon) {
+              var location = addon.getResourceURI("").QueryInterface(Components.interfaces.nsIFileURL).file;
+              installXPIs(location);
+            }
           });
         }
         break;
