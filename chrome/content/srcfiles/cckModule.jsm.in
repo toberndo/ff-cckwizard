@@ -27,6 +27,14 @@ var CCK = {
   beingUninstalled: false,
   observe: function observe(subject, topic, data) {
     switch (topic) {
+      case "nsPref:changed":
+        if (data == "browser.places.smartBookmarksVersion") {
+          gPrefBranch.removeObserver("browser.places.smartBookmarksVersion", CCK, false);
+          var bookmarksToRemove = getString("defaultBookmarksToRemove");
+          if (bookmarksToRemove)
+            removeDefaultBookmarks(bookmarksToRemove.split(','));
+        }
+        break;
       case "profile-before-change":
         var i = 1;
         var prefName;
@@ -42,6 +50,13 @@ var CCK = {
         }
         break;
       case "distribution-customization-complete":
+        // If we are being invoked at first run, we need to hold off on removing
+        // default bookmarks until after the smart bookmarks are initialized
+        try {
+          gPrefBranch.getIntPref("browser.places.smartBookmarksVersion");
+        } catch (ex) {
+          gPrefBranch.addObserver("browser.places.smartBookmarksVersion", CCK, false);
+        }
         bookmarks = Cc["@mozilla.org/browser/nav-bookmarks-service;1"].getService(Ci.nsINavBookmarksService);
         livemarks = Cc["@mozilla.org/browser/livemark-service;2"].getService(Ci.nsILivemarkService);
         annoService = Cc["@mozilla.org/browser/annotation-service;1"].getService(Ci.nsIAnnotationService);
