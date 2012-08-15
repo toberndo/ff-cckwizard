@@ -116,6 +116,7 @@ function init() {
     prefName = getString("LockPref" + i);
     if (prefName) {
       if ((prefName == "browser.startup.homepage") ||
+          (prefName == "startup.homepage_welcome_url") ||
           (prefName == "browser.search.defaultenginename") ||
           (prefName == "browser.search.order.1") ||
           (prefName == "browser.throbber.url")) {
