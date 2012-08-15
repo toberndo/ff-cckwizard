@@ -387,13 +387,6 @@ function onEditPreference()
   window.openDialog("chrome://cckwizard/content/pref.xul","editpref","chrome,centerscreen,modal");
 }
 
-function arrayItemExists(inArray, inItem) {
-    for (var i = 0; i < this.length; i++) {
-        if (inArray[i] == inItem) return true;
-    }
-    return false;
-}
-
 var prefsLockOnly = ["browser.startup.homepage", "browser.throbber.url",
                      "startup.homepage_override_url", "startup.homepage_welcome_url",
                      "browser.search.defaultenginename", "browser.search.order.1",
@@ -413,7 +406,7 @@ function OnPrefLoad()
       document.getElementById('prefvalue').preftype = nsIPrefBranch.PREF_INT;
     }
     document.getElementById('prefname').value = listbox.selectedItem.cck['prefname'];
-    if (arrayItemExists(prefsLockOnly, listbox.selectedItem.cck['prefname'])) {
+    if (prefsLockOnly.indexOf(listbox.selectedItem.cck['prefname']) > -1) {
       document.getElementById('prefvalue').disabled = true;
       document.getElementById('prefvalue').value = this.opener.document.getElementById("bundle_cckwizard").getString("lockError");
     } else {
@@ -475,7 +468,7 @@ function prefSetPrefValue()
     document.getElementById('prefvalue').hidden = false;
     document.getElementById('prefvalueboolean').hidden = true;
   }
-  if (arrayItemExists(prefsLockOnly, prefname)) {
+  if (prefsLockOnly.indexOf(prefname) > -1) {
     document.getElementById('prefvalue').disabled = true;
     document.getElementById('prefvalue').value = this.opener.document.getElementById("bundle_cckwizard").getString("lockError");
   } else {
@@ -496,13 +489,13 @@ function OnPrefOK()
     }
   }
 
-  if (arrayItemExists(prefsLockOnly, document.getElementById('prefname').value)) {
+  if (prefsLockOnly.indexOf(document.getElementById('prefname').value) > -1) {
      document.getElementById('prefvalue').value = "";
   }
 
   var value = document.getElementById('prefvalue').value;
 
-  if ((document.getElementById('prefvalue').preftype == nsIPrefBranch.PREF_INT) && (!(arrayItemExists(prefsLockOnly, document.getElementById('prefname').value)))) {
+  if ((document.getElementById('prefvalue').preftype == nsIPrefBranch.PREF_INT) && (!(prefsLockOnly.indexOf(document.getElementById('prefname').value) > -1))) {
     if (parseInt(value) != value) {
       gPromptService.alert(window, bundle.getString("windowTitle"),
                            bundle.getString("intError"));
@@ -1905,7 +1898,7 @@ function CCKWriteDefaultJS(destdir)
   for (var i=0; i < listbox.getRowCount(); i++) {
     var listitem = listbox.getItemAtIndex(i);
     /* allow for locking prefs without setting value */
-    if ((listitem.getAttribute("value").length) && (!(arrayItemExists(prefsLockOnly, listitem.cck['prefname'])))) {
+    if ((listitem.getAttribute("value").length) && (!(prefsLockOnly.indexOf(listitem.cck['prefname']) > -1))) {
       var line;
       /* If it is a string, put quotes around it */
       if (listitem.cck['type'] == "string") {
