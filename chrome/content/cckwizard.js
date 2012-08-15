@@ -1759,7 +1759,7 @@ function CCKWriteProperties(destdir)
     if (document.getElementById(defaultBookmarkIDs[i]).checked)
       defaultBookmarksToRemove.push(defaultBookmarkIDs[i]);
   if (defaultBookmarksToRemove.length > 0)
-    cos.writeString("defaultBookmarksToRemove=" + defaultBookmarksToRemove.join(','));
+    cos.writeString("defaultBookmarksToRemove=" + defaultBookmarksToRemove.join(',') + "\n");
 
   // Registry Keys
   listbox = document.getElementById("regList");
@@ -2594,7 +2594,7 @@ function CCKWriteConfigFile(destdir)
     if (document.getElementById(defaultBookmarkIDs[i]).checked)
       defaultBookmarksToRemove.push(defaultBookmarkIDs[i]);
   if (defaultBookmarksToRemove.length > 0)
-    cos.writeString("defaultBookmarksToRemove=" + defaultBookmarksToRemove.join(','));
+    cos.writeString("defaultBookmarksToRemove=" + defaultBookmarksToRemove.join(',') + "\n");
 
   cos.close();
   fos.close();
