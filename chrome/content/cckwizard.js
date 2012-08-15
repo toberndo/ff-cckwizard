@@ -1671,6 +1671,16 @@ function CCKWriteProperties(destdir)
     cos.writeString(str);
   }
 
+  if (document.getElementById("noOverridePage").checked) {
+    str = "noOverridePage=true\n";
+    cos.writeString(str);
+  }
+  if (document.getElementById("noWelcomePage").checked) {
+    str = "noWelcomePage=true\n";
+    cos.writeString(str);
+  }
+
+
   var radio = document.getElementById('ToolbarLocation');
   str = "ToolbarLocation=" + radio.value + "\n";
   cos.writeString(str);

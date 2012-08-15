@@ -49,6 +49,14 @@ var CCK = {
           }
           i++;
         } while (prefName && prefName.length);
+        var noWelcomePage = getString("noWelcomePage");
+        if (noWelcomePage) {
+          gPrefBranch.clearUserPref("startup.homepage_welcome_url");
+        }
+        var noOverridePage = getString("noOverridePage");
+        if (noOverridePage) {
+          gPrefBranch.clearUserPref("startup.homepage_override_url");
+        }
         if (CCK.beingUninstalled) {
           uninit();
         }
@@ -139,6 +147,28 @@ function init() {
     }
     i++;
   } while (prefName);
+
+  // This is a hack to work around coexistence with distribution.ini
+  // distribution.ini will set default values, so we can't. And we can't
+  // set user values that are empty strings. So set them to about:blank
+  // and the magic happens
+  var noWelcomePage = getString("noWelcomePage");
+  if (noWelcomePage) {
+    gPrefBranch.setCharPref("startup.homepage_welcome_url", "about:blank");
+  }
+  var noOverridePage = getString("noOverridePage");
+  if (noOverridePage) {
+    gPrefBranch.setCharPref("startup.homepage_override_url", "about:blank");
+  }
+
+  /* If no welcome or no override, set the values as default preferences */
+  var noWelcomePage = getString("noWelcomePage");
+  if (noWelcomePage)
+    gDefPrefBranch.setCharPref("startup.homepage_welcome_url", "");
+  var noOverridePage = getString("noOverridePage");
+  if (noOverridePage)
+    gDefPrefBranch.setCharPref("startup.homepage_override_url", "");
+  
 
   if (firstrun || extVersion != installedVersion)
   {
