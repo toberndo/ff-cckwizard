@@ -23,6 +23,10 @@ var bookmarks;
 var livemarks;
 var annoService;
 
+var firstrun = false;
+var extVersion;
+var installedVersion;
+
 var CCK = {
   beingUninstalled: false,
   observe: function observe(subject, topic, data) {
@@ -49,17 +53,7 @@ var CCK = {
           uninit();
         }
         break;
-      case "distribution-customization-complete":
-        // If we are being invoked at first run, we need to hold off on removing
-        // default bookmarks until after the smart bookmarks are initialized
-        try {
-          gPrefBranch.getIntPref("browser.places.smartBookmarksVersion");
-        } catch (ex) {
-          gPrefBranch.addObserver("browser.places.smartBookmarksVersion", CCK, false);
-        }
-        bookmarks = Cc["@mozilla.org/browser/nav-bookmarks-service;1"].getService(Ci.nsINavBookmarksService);
-        livemarks = Cc["@mozilla.org/browser/livemark-service;2"].getService(Ci.nsILivemarkService);
-        annoService = Cc["@mozilla.org/browser/annotation-service;1"].getService(Ci.nsIAnnotationService);
+      case "final-ui-startup":
         init();
         if (Cc["@mozilla.org/extensions/manager;1"]) {
           var location = em.getInstallLocation("%id%").getItemLocation("%id%");
@@ -74,7 +68,20 @@ var CCK = {
           });
         }
         break;
-
+      case "distribution-customization-complete":
+        // If we are being invoked at first run, we need to hold off on removing
+        // default bookmarks until after the smart bookmarks are initialized
+        var smartBookmarksVersion = 0;
+        try {
+          smartBookmarksVersion = gPrefBranch.getIntPref("browser.places.smartBookmarksVersion");
+        } catch (ex) {}
+        if (smartBookmarksVersion == 0)
+          gPrefBranch.addObserver("browser.places.smartBookmarksVersion", CCK, false);
+        bookmarks = Cc["@mozilla.org/browser/nav-bookmarks-service;1"].getService(Ci.nsINavBookmarksService);
+        livemarks = Cc["@mozilla.org/browser/livemark-service;2"].getService(Ci.nsILivemarkService);
+        annoService = Cc["@mozilla.org/browser/annotation-service;1"].getService(Ci.nsIAnnotationService);
+        initBookmarks();
+        break;
       case "em-action-requested":
         subject.QueryInterface(Components.interfaces.nsIUpdateItem);
         if (subject.id == "%id%") {
@@ -94,15 +101,13 @@ var CCK = {
 
 function init() {
   var id = getString("id");
-  var extVersion = getString("version");
+  extVersion = getString("version");
 
-  var installedVersion = null;
+  installedVersion = null;
 
   if (gPrefBranch.prefHasUserValue("extensions.%id%.version")) {
     installedVersion = gPrefBranch.getCharPref("extensions.%id%.version");
   }
-
-  var firstrun = false;
 
   if (!gPrefBranch.prefHasUserValue("extensions.%id%.install-event-fired")) {
     firstrun = true;
@@ -189,7 +194,14 @@ function init() {
       updatePermissions(sites, "cookie", 2);
 
     gPrefBranch.setCharPref("extensions.%id%.version", extVersion);
+  }
+}
 
+// bookmarks init has to be done later than the rest
+function initBookmarks()
+{
+  if (firstrun || extVersion != installedVersion)
+  {
     /* Remove previous version bookmarks */
     if (extVersion != installedVersion) {
       var id = getString("id");
@@ -647,7 +659,7 @@ function log(string) {
 gObserver.addObserver(CCK, "em-action-requested", false);
 gObserver.addObserver(CCK, "profile-before-change", false);
 gObserver.addObserver(CCK, "profile-after-change", false);
-//gObserver.addObserver(CCK, "final-ui-startup", false);
+gObserver.addObserver(CCK, "final-ui-startup", false);
 gObserver.addObserver(CCK, "distribution-customization-complete", false);
 
 let listener = {
