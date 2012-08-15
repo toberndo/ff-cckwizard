@@ -387,6 +387,8 @@ function onEditPreference()
   window.openDialog("chrome://cckwizard/content/pref.xul","editpref","chrome,centerscreen,modal");
 }
 
+// The lock only pref list is for preferences that are set via the pages
+// We don't want to double set them
 var prefsLockOnly = ["browser.startup.homepage", "browser.throbber.url",
                      "startup.homepage_override_url", "startup.homepage_welcome_url",
                      "browser.search.defaultenginename", "browser.search.order.1",
@@ -1638,13 +1640,6 @@ function CCKWriteProperties(destdir)
   str = str.replace(/%browser.throbber.url%/g, document.getElementById("AnimatedLogoURL").value);
   str = str.replace(/%cckhelp.url%/g, document.getElementById("HelpMenuCommandURL").value);
   str = str.replace(/%browser.startup.homepage%/g, document.getElementById("HomePageURL").value);
-  str = str.replace(/%startup.homepage_welcome_url%/g, document.getElementById("HomePageWelcomeURL").value);
-  var overrideurl = document.getElementById('HomePageOverrideURL').value;
-  if (overrideurl && overrideurl.length) {
-    str = str.replace(/%startup.homepage_override_url%/g, overrideurl);
-  } else {
-    str = str.replace(/%startup.homepage_override_url%/g, document.getElementById("HomePageURL").value);
-  }
 
   var bundle = document.getElementById("bundle_cckwizard");
 
@@ -1876,13 +1871,11 @@ function CCKWriteDefaultJS(destdir)
     fos.write(prefend, prefend.length);
   }
   if ((welcomeurl && welcomeurl.length) || (document.getElementById("noWelcomePage").checked)) {
-    if (!prefIsLocked("startup.homepage_welcome_url")) {
-      fos.write(homepage3, homepage3.length);
-      if (!document.getElementById("noWelcomePage").checked) {
-        fos.write(welcomeurl, welcomeurl.length);
-      }
-      fos.write(prefend, prefend.length);
+    fos.write(homepage3, homepage3.length);
+    if (!document.getElementById("noWelcomePage").checked) {
+      fos.write(welcomeurl, welcomeurl.length);
     }
+    fos.write(prefend, prefend.length);
   }
 
   var bundle = document.getElementById("bundle_cckwizard");

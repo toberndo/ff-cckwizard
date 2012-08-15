@@ -120,8 +120,10 @@ function init() {
   do {
     prefName = getString("LockPref" + i);
     if (prefName) {
+      // Because of a bug in Firefox (bug 333049), you cannot lock complex
+      // preferences. This is a workaround for that.
+      // We query the value and set it as the default before locking
       if ((prefName == "browser.startup.homepage") ||
-          (prefName == "startup.homepage_welcome_url") ||
           (prefName == "browser.search.defaultenginename") ||
           (prefName == "browser.search.order.1") ||
           (prefName == "browser.throbber.url")) {
