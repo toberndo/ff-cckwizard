@@ -1057,8 +1057,6 @@ function CreateCCK()
   CCKCopyFile(document.getElementById("LargeAnimPath").value, destdir);
   CCKCopyFile(document.getElementById("LargeStillPath").value, destdir);
   CCKCopyChromeToFile("cck.js", destdir)
-  if (document.getElementById("noaboutconfig").checked)
-    CCKCopyChromeToFile("cck-config.xul", destdir)
 
   var listbox = document.getElementById('certList');
 
@@ -1094,6 +1092,8 @@ function CreateCCK()
 
 //  CCKCopyChromeToFile("cckService.js", destdir);
   CCKWriteCCKServiceJS(destdir, uuid);
+  if (document.getElementById("noaboutconfig").checked)
+    CCKCopyChromeToFile("disableAboutConfig.js", destdir);
 
 /* ---------- */
 
@@ -2249,9 +2249,8 @@ function CCKWriteInstallRDF(destdir)
 
 function CCKWriteChromeManifest(destdir, uuid)
 {
-  var disableAboutConfig1 =     "overlay   chrome://global/content/config.xul    chrome://cck-%OrganizationName%/content/cck-config.xul";
-  var disableAboutConfig2 =     "overlay   about:config    chrome://cck-%OrganizationName%/content/cck-config.xul";
-
+  var disableAboutConfig1 =     "component {f4616ed3-54e5-4d5b-9308-bcecc3a179d0} components/disableAboutConfig.js";
+  var disableAboutConfig2 =     "contract @mozilla.org/network/protocol/about;1?what=config {f4616ed3-54e5-4d5b-9308-bcecc3a179d0}";
   var file = destdir.clone();
 
   file.append("chrome.manifest");
