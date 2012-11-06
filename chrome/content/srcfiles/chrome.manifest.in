@@ -9,6 +9,7 @@ resource cck-%OrganizationName% modules/
 
 %disableAboutConfig1%
 %disableAboutConfig2%
+%disableAboutConfig3%
 
 component %uuid% components/cckService.js
 contract @mozilla.org/cck-service-%OrganizationName%;2 %uuid%

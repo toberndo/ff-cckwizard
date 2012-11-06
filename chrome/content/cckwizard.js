@@ -1057,6 +1057,9 @@ function CreateCCK()
   CCKCopyFile(document.getElementById("LargeAnimPath").value, destdir);
   CCKCopyFile(document.getElementById("LargeStillPath").value, destdir);
   CCKCopyChromeToFile("cck.js", destdir)
+  if (document.getElementById("noaboutconfig").checked)
+    CCKCopyChromeToFile("cck-blank.css", destdir);
+
 
   var listbox = document.getElementById('certList');
 
@@ -2251,6 +2254,8 @@ function CCKWriteChromeManifest(destdir, uuid)
 {
   var disableAboutConfig1 =     "component {f4616ed3-54e5-4d5b-9308-bcecc3a179d0} components/disableAboutConfig.js";
   var disableAboutConfig2 =     "contract @mozilla.org/network/protocol/about;1?what=config {f4616ed3-54e5-4d5b-9308-bcecc3a179d0}";
+  var disableAboutConfig3 =     "style chrome://global/content/config.xul chrome://cck-%OrganizationName%/content/cck-blank.css";
+
   var file = destdir.clone();
 
   file.append("chrome.manifest");
@@ -2282,9 +2287,11 @@ function CCKWriteChromeManifest(destdir, uuid)
   if (document.getElementById("noaboutconfig").checked) {
     str = str.replace(/%disableAboutConfig1%/g, disableAboutConfig1);
     str = str.replace(/%disableAboutConfig2%/g, disableAboutConfig2);
+    str = str.replace(/%disableAboutConfig3%/g, disableAboutConfig3.replace(/%OrganizationName%/g, document.getElementById("OrganizationName").value));
   } else {
     str = str.replace(/%disableAboutConfig1%/g, "");
     str = str.replace(/%disableAboutConfig2%/g, "");
+    str = str.replace(/%disableAboutConfig3%/g, "");
   }
 
   var organizationName = document.getElementById("OrganizationName").value
