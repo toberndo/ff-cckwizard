@@ -2153,7 +2153,7 @@ function CCKWriteInstallRDF(destdir)
     str = str.replace(/%nameline%/g, nameline);
     str = str.replace(/%name%/g, htmlEscape(document.getElementById("name").value));
   } else {
-    str = str.replace(/%nameline%/g, "");
+    str = str.replace(/%nameline%(\r\n|\n|\r)/g, "");
   }
 
   var version = document.getElementById("version").value;
@@ -2161,7 +2161,7 @@ function CCKWriteInstallRDF(destdir)
     str = str.replace(/%versionline%/g, versionline);
     str = str.replace(/%version%/g, document.getElementById("version").value);
   } else {
-    str = str.replace(/%versionline%/g, "");
+    str = str.replace(/%versionline%(\r\n|\n|\r)/g, "");
   }
 
   var minVersion = document.getElementById("ffMinVersion").value;
@@ -2185,7 +2185,7 @@ function CCKWriteInstallRDF(destdir)
     str = str.replace(/%descriptionline%/g, descriptionline);
     str = str.replace(/%description%/g, htmlEscape(document.getElementById("description").value));
   } else {
-    str = str.replace(/%descriptionline%/g, "");
+    str = str.replace(/%descriptionline%(\r\n|\n|\r)/g, "");
   }
 
   var creator = document.getElementById("creator").value;
@@ -2193,7 +2193,7 @@ function CCKWriteInstallRDF(destdir)
     str = str.replace(/%creatorline%/g, creatorline);
     str = str.replace(/%creator%/g, htmlEscape(document.getElementById("creator").value));
   } else {
-    str = str.replace(/%creatorline%/g, "");
+    str = str.replace(/%creatorline%(\r\n|\n|\r)/g, "");
   }
 
   var homepageURL = document.getElementById("homepageURL").value;
@@ -2201,7 +2201,7 @@ function CCKWriteInstallRDF(destdir)
     str = str.replace(/%homepageURLline%/g, homepageURLline);
     str = str.replace(/%homepageURL%/g, document.getElementById("homepageURL").value);
   } else {
-    str = str.replace(/%homepageURLline%/g, "");
+    str = str.replace(/%homepageURLline%(\r\n|\n|\r)/g, "");
   }
 
   var updateURL = document.getElementById("updateURL").value;
@@ -2209,7 +2209,7 @@ function CCKWriteInstallRDF(destdir)
     str = str.replace(/%updateURLline%/g, updateURLline);
     str = str.replace(/%updateURL%/g, document.getElementById("updateURL").value);
   } else {
-    str = str.replace(/%updateURLline%/g, "");
+    str = str.replace(/%updateURLline%(\r\n|\n|\r)/g, "");
   }
 
   var updateKey = document.getElementById("updateKey").value;
@@ -2217,7 +2217,7 @@ function CCKWriteInstallRDF(destdir)
     str = str.replace(/%updateKeyline%/g, updateKeyline);
     str = str.replace(/%updateKey%/g, document.getElementById("updateKey").value);
   } else {
-    str = str.replace(/%updateKeyline%/g, "");
+    str = str.replace(/%updateKeyline%(\r\n|\n|\r)/g, "");
   }
 
   var iconURL = document.getElementById("iconURL").value;
@@ -2228,21 +2228,21 @@ function CCKWriteInstallRDF(destdir)
     str = str.replace(/%iconURLline%/g, iconURLline);
     str = str.replace(/%iconURL%/g, sourcefile.leafName);
   } else {
-    str = str.replace(/%iconURLline%/g, "");
+    str = str.replace(/%iconURLline%(\r\n|\n|\r)/g, "");
   }
 
   if (document.getElementById("hidden").checked) {
     str = str.replace(/%lockedline%/g, lockedline);
     str = str.replace(/%hiddenline%/g, hiddenline);
   } else {
-    str = str.replace(/%hiddenline%/g, "");
-    str = str.replace(/%lockedline%/g, "");
+    str = str.replace(/%hiddenline%(\r\n|\n|\r)/g, "");
+    str = str.replace(/%lockedline%(\r\n|\n|\r)/g, "");
   }
 
   if (document.getElementById("appManaged").checked) {
     str = str.replace(/%appManagedline%/g, appManagedline);
   } else {
-    str = str.replace(/%appManagedline%/g, "");
+    str = str.replace(/%appManagedline%(\r\n|\n|\r)/g, "");
   }
 
   cos.writeString(str);
@@ -2252,9 +2252,9 @@ function CCKWriteInstallRDF(destdir)
 
 function CCKWriteChromeManifest(destdir, uuid)
 {
-  var disableAboutConfig1 =     "component {f4616ed3-54e5-4d5b-9308-bcecc3a179d0} components/disableAboutConfig.js";
-  var disableAboutConfig2 =     "contract @mozilla.org/network/protocol/about;1?what=config {f4616ed3-54e5-4d5b-9308-bcecc3a179d0}";
-  var disableAboutConfig3 =     "style chrome://global/content/config.xul chrome://cck-%OrganizationName%/content/cck-blank.css";
+  var disableAboutConfig1 = "component {f4616ed3-54e5-4d5b-9308-bcecc3a179d0} components/disableAboutConfig.js";
+  var disableAboutConfig2 = "contract @mozilla.org/network/protocol/about;1?what=config {f4616ed3-54e5-4d5b-9308-bcecc3a179d0}";
+  var disableAboutConfig3 = "style chrome://global/content/config.xul chrome://cck-%OrganizationName%/content/cck-blank.css";
 
   var file = destdir.clone();
 
@@ -2289,9 +2289,9 @@ function CCKWriteChromeManifest(destdir, uuid)
     str = str.replace(/%disableAboutConfig2%/g, disableAboutConfig2);
     str = str.replace(/%disableAboutConfig3%/g, disableAboutConfig3.replace(/%OrganizationName%/g, document.getElementById("OrganizationName").value));
   } else {
-    str = str.replace(/%disableAboutConfig1%/g, "");
-    str = str.replace(/%disableAboutConfig2%/g, "");
-    str = str.replace(/%disableAboutConfig3%/g, "");
+    str = str.replace(/%disableAboutConfig1%(\r\n|\n|\r)/g, "");
+    str = str.replace(/%disableAboutConfig2%(\r\n|\n|\r)/g, "");
+    str = str.replace(/%disableAboutConfig3%(\r\n|\n|\r)/g, "");
   }
 
   var organizationName = document.getElementById("OrganizationName").value
