@@ -1868,7 +1868,7 @@ function CCKWriteDefaultJS(destdir)
   var overrideurl = document.getElementById('HomePageOverrideURL').value;
   var welcomeurl = document.getElementById('HomePageWelcomeURL').value;
   if (browserstartuppage && (browserstartuppage.length > 0)) {
-    /* If the pref is , we set it in our service using */
+    /* If the pref is locked, we set it in our service using */
     /* The value from properties */
     if (!prefIsLocked("browser.startup.homepage")) {
       fos.write(homepage1, homepage1.length);
