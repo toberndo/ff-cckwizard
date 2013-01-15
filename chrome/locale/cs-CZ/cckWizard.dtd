@@ -43,6 +43,8 @@
 <!ENTITY hidden.label "Nezobrazovat toto rozšíření ve Správci rozšíření.">
 <!ENTITY locked.label "Zamezit odinstalování tohoto rozšíření (rozšíření může být nadále zakázáno).">
 <!ENTITY aboutconfig.label "Neumožnit přístup do about:config">
+<!ENTITY  privatebrowsing.label         "Remove access to private browsing">
+<!ENTITY  sync.label                    "Turn off Firefox Sync">
 <!ENTITY customizePartOne.label "Zákaznická úprava prohlížeče - Část I">
 <!ENTITY orgName.description "Identifikátor společnosti je zahrnut jsko součást řetězce identifikujícího prohlížeč, který se zobrazí, když otevřete nabídku Nápovědy a zvolíte O aplikaci Mozilla Firefox. Údaj je povinný.">
 <!ENTITY orgName.label "Vložte identifikátor vaší společnosti (až 10 znaků, žádné mezery):">

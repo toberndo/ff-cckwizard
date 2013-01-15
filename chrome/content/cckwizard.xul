@@ -245,6 +245,20 @@
            <checkbox id="noaboutconfig" label="&aboutconfig.label;"/>
          </hbox>
        </row>
+       <row align="center">
+         <vbox align="right">
+         </vbox>
+         <hbox align="center">
+           <checkbox id="noprivatebrowsing" label="&privatebrowsing.label;"/>
+         </hbox>
+       </row>
+       <row align="center">
+         <vbox align="right">
+         </vbox>
+         <hbox align="center">
+           <checkbox id="nosync" label="&sync.label;"/>
+         </hbox>
+       </row>
      </rows>
    </grid>
  </wizardpage>

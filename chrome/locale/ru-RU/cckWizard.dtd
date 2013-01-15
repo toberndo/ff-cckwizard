@@ -43,6 +43,8 @@
 <!ENTITY hidden.label "Не показывать данное расширение в менеджере расширений.">
 <!ENTITY locked.label "Удаление этого расширения запрещено, но его можно отключить.">
 <!ENTITY aboutconfig.label "Доступ к расширенным настройкам (about:config) запрещён">
+<!ENTITY  privatebrowsing.label         "Remove access to private browsing">
+<!ENTITY  sync.label                    "Turn off Firefox Sync">
 <!ENTITY customizePartOne.label "Параметризация браузера - часть Первая">
 <!ENTITY orgName.description "Идентификатор компании будет включён как часть строки, описывающей браузер. Информация впоследствии будет отображена в окне при вызове пункта &apos;Справка &gt; О Mozilla Firefox&apos;. Параметр обязателен.">
 <!ENTITY orgName.label "Ввод идентификатора вашей компании (до 10 символов, без пробелов):">

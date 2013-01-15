@@ -43,6 +43,8 @@
 <!ENTITY hidden.label "この拡張機能を拡張機能マネージャーに表示しない。">
 <!ENTITY locked.label "この拡張機能の削除 (無効化も含む) を禁止する。">
 <!ENTITY aboutconfig.label "about:config へのアクセスを禁止する。">
+<!ENTITY  privatebrowsing.label         "Remove access to private browsing">
+<!ENTITY  sync.label                    "Turn off Firefox Sync">
 <!ENTITY customizePartOne.label "ブラウザのカスタマイズ - パート 1">
 <!ENTITY orgName.description "The Company Identifier is included as part of the browser&apos;s user agent string which appears when you open the Help menu and select About Mozilla Firefox. It is required.">
 <!ENTITY orgName.label "Enter Your Company Identifier (up to 10 characters; no spaces):">

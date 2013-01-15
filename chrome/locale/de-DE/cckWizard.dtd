@@ -43,6 +43,8 @@
 <!ENTITY hidden.label "Diese Erweiterung nicht im Erweiterungen-Manager anzeigen">
 <!ENTITY locked.label "Deinstallation dieser Erweiterung verhindern (sie kann trotzdem noch deaktiviert werden).">
 <!ENTITY aboutconfig.label "Zugriff auf &quot;about:config&quot; verbieten">
+<!ENTITY  privatebrowsing.label         "Remove access to private browsing">
+<!ENTITY  sync.label                    "Turn off Firefox Sync">
 <!ENTITY customizePartOne.label "Browser anpassen - Teil 1">
 <!ENTITY orgName.description "Die Firmenkennung wird als Teil der Browserkennung eingebunden, die erscheint, wenn Sie das Menü &quot;Hilfe&quot; öffnen und &quot;Über Mozilla Firefox&quot; auswählen. Sie ist erforderlich.">
 <!ENTITY orgName.label "Firmenkennung eingeben (bis zu 10 Zeichen; keine Leerzeichen):">

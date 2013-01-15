@@ -24,3 +24,50 @@ function goClickThrobber( urlPref, e )
     openUILink(url, e);
 }
 
+(function () {
+  const gPrefService = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService);
+  const gPrefBranch = gPrefService.getBranch(null).QueryInterface(Ci.nsIPrefBranch2);
+
+  var mySyncUI = {
+    init: function() {
+      return;
+    },
+    initUI: function() {
+      return;
+    },
+    updateUI: function() {
+      document.getElementById("sync-setup-state").hidden = true;
+      document.getElementById("sync-syncnow-state").hidden = true;
+    }
+  }
+  
+
+  function onPageLoad(event) {
+    if (event.target.location.href == "about:home") {
+      var syncButton = event.target.getElementById("sync");
+      if (syncButton)
+        syncButton.parentNode.removeChild(syncButton);
+    }
+  }
+
+  function startup()
+  {
+    try {
+      if (!gPrefBranch.getBoolPref("services.sync.enabled")) {
+        gSyncUI = mySyncUI;
+        var appcontent = document.getElementById("appcontent");
+        if (appcontent) {
+          appcontent.addEventListener("DOMContentLoaded", onPageLoad, false);
+        }
+      }
+    } catch (ex) {}
+  }
+
+  function shutdown()
+  {
+    window.removeEventListener("unload", shutdown, false);
+  }
+
+  window.addEventListener("load", startup, false);
+  window.addEventListener("unload", shutdown, false);
+})();

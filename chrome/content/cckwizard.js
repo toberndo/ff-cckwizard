@@ -1057,6 +1057,7 @@ function CreateCCK()
   CCKCopyFile(document.getElementById("LargeAnimPath").value, destdir);
   CCKCopyFile(document.getElementById("LargeStillPath").value, destdir);
   CCKCopyChromeToFile("cck.js", destdir)
+  CCKCopyChromeToFile("cck-prefs-sync-overlay.xul", destdir)
   if (document.getElementById("noaboutconfig").checked)
     CCKCopyChromeToFile("cck-blank.css", destdir);
 
@@ -1097,6 +1098,9 @@ function CreateCCK()
   CCKWriteCCKServiceJS(destdir, uuid);
   if (document.getElementById("noaboutconfig").checked)
     CCKCopyChromeToFile("disableAboutConfig.js", destdir);
+
+  if (document.getElementById("noprivatebrowsing").checked)
+    CCKCopyChromeToFile("disablePrivateBrowsing.js", destdir);
 
 /* ---------- */
 
@@ -1295,6 +1299,10 @@ function CCKWriteXULOverlay(destdir)
   var tabsonbottomXUL = '  <toolbox id="navigator-toolbox" tabsonbottom="false"/>';
   var menubarXUL = '  <toolbar id="toolbar-menubar" autohide="false"/>';
   var addonbarXUL = '  <toolbar id="addon-bar" collapsed="false"/>';
+  var privatebrowsingXUL = '  <menuitem id="appmenu_privateBrowsing" hidden="true"/>\
+                              <command id="Tools:PrivateBrowsing" oncommand=""/>\
+                              <key id="key_privatebrowsing" command=""/>\
+                              <menuitem id="privateBrowsingItem" hidden="true"/>';
 
   var file = destdir.clone();
   file.append("cck-browser-overlay.xul");
@@ -1357,6 +1365,10 @@ function CCKWriteXULOverlay(destdir)
   else
     str = str.replace(/%addonbar%/g, "");
 
+  if (document.getElementById("noprivatebrowsing").checked)
+    str = str.replace(/%privatebrowsing%/g, privatebrowsingXUL);
+  else
+    str = str.replace(/%privatebrowsing%/g, "");
 
   fos.write(str, str.length);
   fos.close();
@@ -1842,6 +1854,8 @@ function CCKWriteDefaultJS(destdir)
   var searchengine1 = 'pref("browser.search.defaultenginename", "chrome://cck-%OrganizationName%/content/cck.properties");\n';
   var searchengine2 = 'pref("browser.search.order.1",           "chrome://cck-%OrganizationName%/content/cck.properties");\n';
 
+  var nosync = 'pref("services.sync.enabled", false);\n';
+
   chromeurl = chromeurl.replace(/%OrganizationName%/g, document.getElementById("OrganizationName").value);
   searchengine1 = searchengine1.replace(/%OrganizationName%/g, document.getElementById("OrganizationName").value);
   searchengine2 = searchengine2.replace(/%OrganizationName%/g, document.getElementById("OrganizationName").value);
@@ -1852,6 +1866,10 @@ function CCKWriteDefaultJS(destdir)
   var fos = Components.classes["@mozilla.org/network/file-output-stream;1"]
                        .createInstance(Components.interfaces.nsIFileOutputStream);
   fos.init(file, -1, -1, false);
+
+  if (document.getElementById("nosync").checked) {
+    fos.write(nosync, nosync.length);
+  }
 
   var logobuttonurl = document.getElementById("AnimatedLogoURL").value;
   if (logobuttonurl && (logobuttonurl.length > 0)) {
@@ -2256,6 +2274,10 @@ function CCKWriteChromeManifest(destdir, uuid)
   var disableAboutConfig2 = "contract @mozilla.org/network/protocol/about;1?what=config {f4616ed3-54e5-4d5b-9308-bcecc3a179d0}";
   var disableAboutConfig3 = "style chrome://global/content/config.xul chrome://cck-%OrganizationName%/content/cck-blank.css";
 
+  var disablePrivateBrowsing1 = "component {64147fda-ed14-49b4-b49a-03a3ed63f1ae} components/disablePrivateBrowsing.js";
+  var disablePrivateBrowsing2 = "contract @mozilla.org/network/protocol/about;1?what=privatebrowsing {64147fda-ed14-49b4-b49a-03a3ed63f1ae}";
+
+
   var file = destdir.clone();
 
   file.append("chrome.manifest");
@@ -2292,6 +2314,14 @@ function CCKWriteChromeManifest(destdir, uuid)
     str = str.replace(/%disableAboutConfig1%(\r\n|\n|\r)/g, "");
     str = str.replace(/%disableAboutConfig2%(\r\n|\n|\r)/g, "");
     str = str.replace(/%disableAboutConfig3%(\r\n|\n|\r)/g, "");
+  }
+
+  if (document.getElementById("noprivatebrowsing").checked) {
+    str = str.replace(/%disablePrivateBrowsing1%/g, disablePrivateBrowsing1);
+    str = str.replace(/%disablePrivateBrowsing2%/g, disablePrivateBrowsing2);
+  } else {
+    str = str.replace(/%disablePrivateBrowsing1%(\r\n|\n|\r)/g, "");
+    str = str.replace(/%disablePrivateBrowsing2%(\r\n|\n|\r)/g, "");
   }
 
   var organizationName = document.getElementById("OrganizationName").value
@@ -2942,6 +2972,12 @@ function CCKReadConfigFile(srcdir)
 
   var aboutconfig = document.getElementById("noaboutconfig");
   aboutconfig.checked = configarray["noaboutconfig"];
+
+  var privatebrowsing = document.getElementById("noprivatebrowsing");
+  privatebrowsing.checked = configarray["noprivatebrowsing"];
+
+  var sync = document.getElementById("nosync");
+  sync.checked = configarray["nosync"];
 
   var noWelcomePage = document.getElementById("noWelcomePage");
   noWelcomePage.checked = configarray["noWelcomePage"];

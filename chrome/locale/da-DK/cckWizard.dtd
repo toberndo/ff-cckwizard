@@ -43,6 +43,8 @@
 <!ENTITY hidden.label "Vis ikke denne udvidelse i udvidelsesmoduler.">
 <!ENTITY locked.label "Forhindrer afinstallation af denne udvidelse (den kan stadig slås fra).">
 <!ENTITY aboutconfig.label "Tillad ikke adgang til about:config">
+<!ENTITY  privatebrowsing.label         "Remove access to private browsing">
+<!ENTITY  sync.label                    "Turn off Firefox Sync">
 <!ENTITY customizePartOne.label "Tilret browseren - 1. del">
 <!ENTITY orgName.description "Firmaidentifikatoren er inkluderet som en del af browserens brugeragent streng, som vises når du åbner Hjælp-menuen og vælger Om Mozilla Firefox. Den er påkrævet.">
 <!ENTITY orgName.label "Indtast din Firmaidentifikator (op til 10 tegn; ingen mellemrum):">

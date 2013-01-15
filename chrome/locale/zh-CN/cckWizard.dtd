@@ -43,6 +43,8 @@
 <!ENTITY hidden.label "不在扩展对话框中显示此扩展。">
 <!ENTITY locked.label "阻止卸载此扩展 (但仍可以禁用它)。">
 <!ENTITY aboutconfig.label "不允许在 about:config 中使用。">
+<!ENTITY  privatebrowsing.label         "Remove access to private browsing">
+<!ENTITY  sync.label                    "Turn off Firefox Sync">
 <!ENTITY customizePartOne.label "定制 浏览器 - 第一部分">
 <!ENTITY orgName.description "此公司标识符作为浏览器的用户代理字符串(user agent string)的一部分，它显示在当你打开&apos;帮助&apos;菜单 并选择&apos;关于 Mozilla Firefox&apos;。标识符是必须的。">
 <!ENTITY orgName.label "键入你的公司标识符 (最多10个字符；不能含有空格):">

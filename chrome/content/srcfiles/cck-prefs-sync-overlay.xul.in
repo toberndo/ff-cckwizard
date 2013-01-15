@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<overlay id="cckPrefsSyncOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <deck id="weavePrefsDeck">
+    <vbox id="cckSyncDisabled" insertafter="needsUpdate" align="center">
+      <spacer flex="1"/>
+      <description>
+        Sync has been disabled by your administrator.
+      </description>
+      <spacer flex="3"/>
+    </vbox>
+  </deck>
+  <script type="application/x-javascript;version=1.7">
+  <![CDATA[
+  window.addEventListener("load", function() {
+    try {
+      if (!Services.prefs.getBoolPref("services.sync.enabled"))
+        document.getElementById("weavePrefsDeck").selectedPanel = document.getElementById("cckSyncDisabled");
+    } catch (ex) {}
+  }, false);
+  ]]>
+  </script>
+</overlay>

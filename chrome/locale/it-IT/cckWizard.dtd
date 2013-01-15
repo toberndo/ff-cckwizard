@@ -43,6 +43,8 @@
 <!ENTITY hidden.label "Non mostrare l&apos;estensione nella finestra &apos;Estensioni&apos;">
 <!ENTITY locked.label "Impedisci la disinstallazione dell&apos;estensione (opzione annullabile in seguito)">
 <!ENTITY aboutconfig.label "Impedisci l&apos;accesso ad about:config">
+<!ENTITY  privatebrowsing.label         "Remove access to private browsing">
+<!ENTITY  sync.label                    "Turn off Firefox Sync">
 <!ENTITY customizePartOne.label "Prima fase della personalizzazione del browser">
 <!ENTITY orgName.description "L&apos;ID dell&apos;azienda che è incluso nella stringa dello user agent del browser (visualizzabile selezionando nel menu &apos;?&apos; la voce &apos;Informazioni su Mozilla Firefox&apos;) è necessario">
 <!ENTITY orgName.label "ID dell&apos;azienda (non deve contenere più di 10 caratteri né spazi):">

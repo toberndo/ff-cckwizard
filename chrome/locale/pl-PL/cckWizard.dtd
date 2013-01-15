@@ -43,6 +43,8 @@
 <!ENTITY hidden.label "Nie wyświetlaj tego rozszerzenia w menedżerze rozszerzeń">
 <!ENTITY locked.label "Zabezpiecz przed usunięciem (będzie widoczne jako wyłączone)">
 <!ENTITY aboutconfig.label "Nie zezwalaj na dostęp do edytora ustawień (about:config)">
+<!ENTITY  privatebrowsing.label         "Remove access to private browsing">
+<!ENTITY  sync.label                    "Turn off Firefox Sync">
 <!ENTITY customizePartOne.label "Modyfikowanie przeglądarki - część pierwsza">
 <!ENTITY orgName.description "Identyfikator firmy jest częścią identyfikatora przeglądarki widocznego po otwarciu odnośnika &quot;O programie Mozilla Firefox&quot; znajdującego się w menu &quot;Pomoc&quot;. Jest on wymagany.">
 <!ENTITY orgName.label "Wprowadź identyfikator firmy (do 10 znaków - nie używać spacji)">

@@ -43,6 +43,8 @@
 <!ENTITY hidden.label "Não exibir esta extensão no gerenciador de extensões.">
 <!ENTITY locked.label "Impedir a desinstalação desta extensão (ela ainda pode ser desabilitada).">
 <!ENTITY aboutconfig.label "Não permitir acesso ao about:config">
+<!ENTITY  privatebrowsing.label         "Remove access to private browsing">
+<!ENTITY  sync.label                    "Turn off Firefox Sync">
 <!ENTITY customizePartOne.label "Personalizando o Navegador - Parte Um">
 <!ENTITY orgName.description "O identificador da Empresa é incluído como parte da identificação de &apos;user agent&apos; que é enviada para o servidor e que aparece na opção &apos;Sobre o Mozilla Firefox&apos;. Este valor é obrigatório.">
 <!ENTITY orgName.label "Entre com o Identificador da Empresa (até 10 caracteres, sem espaços):">

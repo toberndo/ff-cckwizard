@@ -1,6 +1,8 @@
 overlay chrome://browser/content/browser.xul  chrome://cck-%OrganizationName%/content/cck-browser-overlay.xul
 overlay chrome://browser/content/browser.xul  chrome://cck-%OrganizationName%/content/cck-browser-overlay-nonmac.xul os!=Darwin
 overlay chrome://browser/content/browser.xul  chrome://cck-%OrganizationName%/content/cck-browser-overlay-mac.xul os=Darwin
+overlay chrome://browser/content/preferences/sync.xul  chrome://cck-%OrganizationName%/content/cck-prefs-sync-overlay.xul
+style chrome://mozapps/content/extensions/extensions.xul chrome://cck-%OrganizationName%/content/cck-extensions-overlay.css
 style chrome://mozapps/content/extensions/extensions.xul chrome://cck-%OrganizationName%/content/cck-extensions-overlay.css
 style about:addons chrome://cck-%OrganizationName%/content/cck-extensions-overlay.css
 
@@ -10,6 +12,9 @@ resource cck-%OrganizationName% modules/
 %disableAboutConfig1%
 %disableAboutConfig2%
 %disableAboutConfig3%
+
+%disablePrivateBrowsing1%
+%disablePrivateBrowsing2%
 
 component %uuid% components/cckService.js
 contract @mozilla.org/cck-service-%OrganizationName%;2 %uuid%
