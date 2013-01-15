@@ -2046,7 +2046,7 @@ function CCKWriteCCKServiceJS(destdir, uuid)
   str = str.replace(/%uuid%/g, uuid);
   var organizationName = document.getElementById("OrganizationName").value
   str = str.replace(/%OrganizationName%/g, organizationName);
-  str = str.replace(/%OrganizationNameNoDashes%/g, organizationName.replace('-','_'));
+  str = str.replace(/%OrganizationNameNoDashes%/g, organizationName.replace(/\-/g,'_'));
   str = str.replace(/%id%/g, document.getElementById("id").value);
 
   cos.writeString(str);
@@ -2296,7 +2296,7 @@ function CCKWriteChromeManifest(destdir, uuid)
 
   var organizationName = document.getElementById("OrganizationName").value
   str = str.replace(/%OrganizationName%/g, organizationName);
-  str = str.replace(/%OrganizationNameNoDashes%/g, organizationName.replace('-','_'));
+  str = str.replace(/%OrganizationNameNoDashes%/g, organizationName.replace(/\-/g,'_'));
   str = str.replace(/%uuid%/g, uuid);
 
   cos.writeString(str);
