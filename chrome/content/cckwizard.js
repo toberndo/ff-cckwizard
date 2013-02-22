@@ -1058,6 +1058,7 @@ function CreateCCK()
   CCKCopyFile(document.getElementById("LargeStillPath").value, destdir);
   CCKCopyChromeToFile("cck.js", destdir)
   CCKCopyChromeToFile("cck-prefs-sync-overlay.xul", destdir)
+  CCKCopyChromeToFile("cck-aboutDialog-overlay.xul", destdir)
   if (document.getElementById("noaboutconfig").checked)
     CCKCopyChromeToFile("cck-blank.css", destdir);
 
@@ -1228,6 +1229,8 @@ function CCKCopyChromeToFile(chromefile, location)
   scriptableStream.close();
   input.close();
 
+  str = str.replace(/%OrganizationName%/g, document.getElementById("OrganizationName").value);
+  
   fos.write(str, str.length);
   fos.close();
 }
