@@ -18,10 +18,4 @@
       <spacer flex="3"/>
     </vbox>
   </deck>
-  <script type="application/x-javascript;version=1.7">
-  <![CDATA[
-  window.addEventListener("load", function() {
-  }, false);
-  ]]>
-  </script>
 </overlay>
