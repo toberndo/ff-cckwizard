@@ -261,6 +261,13 @@
            <checkbox id="nosync" label="&sync.label;"/>
          </hbox>
        </row>
+       <row align="center">
+         <vbox align="right">
+         </vbox>
+         <hbox align="center">
+           <checkbox id="noamo" label="&amo.label;"/>
+         </hbox>
+       </row>
      </rows>
    </grid>
  </wizardpage>
@@ -384,6 +391,10 @@
       <vbox>
         <textbox id="CookieAllowedSites" flex="1"/>
       </vbox>
+      <description control="PluginAllowedSites">&pluginAllowedSites.label;</description>
+      <vbox>
+        <textbox id="PluginAllowedSites" flex="1"/>
+      </vbox>
     </groupbox>
     <groupbox>
       <caption label="&deniedSites.caption;"/>
@@ -398,6 +409,10 @@
       <description control="CookieDeniedSites">&cookieDeniedSites.label;</description>
       <vbox>
         <textbox id="CookieDeniedSites" flex="1"/>
+      </vbox>
+      <description control="PluginDeniedSites">&pluginDeniedSites.label;</description>
+      <vbox>
+        <textbox id="PluginDeniedSites" flex="1"/>
       </vbox>
     </groupbox>
   </wizardpage>

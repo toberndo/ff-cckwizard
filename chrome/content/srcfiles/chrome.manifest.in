@@ -3,7 +3,8 @@ overlay chrome://browser/content/browser.xul  chrome://cck-%OrganizationName%/co
 overlay chrome://browser/content/browser.xul  chrome://cck-%OrganizationName%/content/cck-browser-overlay-mac.xul os=Darwin
 overlay chrome://browser/content/preferences/sync.xul  chrome://cck-%OrganizationName%/content/cck-prefs-sync-overlay.xul
 overlay chrome://browser/content/aboutDialog.xul  chrome://cck-%OrganizationName%/content/cck-aboutDialog-overlay.xul
-style chrome://mozapps/content/extensions/extensions.xul chrome://cck-%OrganizationName%/content/cck-extensions-overlay.css
+overlay chrome://mozapps/content/extensions/extensions.xul chrome://cck-%OrganizationName%/content/cck-extensions-overlay.xul
+overlay about:addons chrome://cck-%OrganizationName%/content/cck-extensions-overlay.xul
 style chrome://mozapps/content/extensions/extensions.xul chrome://cck-%OrganizationName%/content/cck-extensions-overlay.css
 style about:addons chrome://cck-%OrganizationName%/content/cck-extensions-overlay.css
 

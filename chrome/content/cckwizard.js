@@ -1059,6 +1059,8 @@ function CreateCCK()
   CCKCopyChromeToFile("cck.js", destdir)
   CCKCopyChromeToFile("cck-prefs-sync-overlay.xul", destdir)
   CCKCopyChromeToFile("cck-aboutDialog-overlay.xul", destdir)
+  if (document.getElementById("noamo").checked)
+    CCKCopyChromeToFile("cck-extensions-overlay.xul", destdir)
   if (document.getElementById("noaboutconfig").checked)
     CCKCopyChromeToFile("cck-blank.css", destdir);
 
@@ -2981,6 +2983,9 @@ function CCKReadConfigFile(srcdir)
 
   var sync = document.getElementById("nosync");
   sync.checked = configarray["nosync"];
+
+  var amo = document.getElementById("noamo");
+  amo.checked = configarray["noamo"];
 
   var noWelcomePage = document.getElementById("noWelcomePage");
   noWelcomePage.checked = configarray["noWelcomePage"];
