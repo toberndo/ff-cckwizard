@@ -88,6 +88,8 @@
 <!ENTITY popupAllowedSites.label "ポップアップを許可するドメインを指定してください。複数のドメインを指定する場合はコンマで区切ります。">
 <!ENTITY installAllowedSites.label "ソフトウェア (XPI ファイル) のインストールを許可するドメインを指定してください。複数のドメインを指定する場合はコンマで区切ります。">
 <!ENTITY cookieAllowedSites.label "You can specify domains for which cookies are always allowed. List the domains, separated by a comma.">
+<!ENTITY pluginAllowedSites.label "You can specify domains for which plug-ins are always allowed (ignoring Click to Play). List the domains, separated by a comma.">
+<!ENTITY pluginDeniedSites.label "You can specify domains for which plug-ins are always denied (ignoring Click to Play). List the domains, separated by a comma.">
 <!ENTITY deniedSites.caption "Denied Sites">
 <!ENTITY popupDeniedSites.label "You can specify domains for which popups are denied. List the domains, separated by a comma.">
 <!ENTITY installDeniedSites.label "You can specify domains for which software installations (XPIs) are denied. List the domains, separated by a comma.">

@@ -88,10 +88,12 @@
 <!ENTITY popupAllowedSites.label "Tutaj możesz określić domeny witryn, które mogą wyświetlać wyskakujące okienka. Wprowadź nazwy domen, oddzielając je przecinkiem.">
 <!ENTITY installAllowedSites.label "Tutaj możesz określić domeny witryn, z których można instalować dodatki. Wprowadź nazwy domen, oddzielając je przecinkiem.">
 <!ENTITY cookieAllowedSites.label "Tutaj możesz określić domeny, których ciasteczka będą zawsze akceptowane. Podaj domeny, oddzielając je przecinkiem.">
+<!ENTITY pluginAllowedSites.label "You can specify domains for which plug-ins are always allowed (ignoring Click to Play). List the domains, separated by a comma.">
 <!ENTITY deniedSites.caption "Wykluczone witryny">
 <!ENTITY popupDeniedSites.label "Tutaj możesz określić domeny, na których wyświetlanie wyskakujących okien będzie niedozwolone. Podaj domeny, oddzielając je przecinkiem.">
 <!ENTITY installDeniedSites.label "Tutaj możesz określić domeny, z których instalowanie dodatków (plików *.xpi) będzie niedozwolone. Podaj domeny, oddzielając je przecinkiem.">
 <!ENTITY cookieDeniedSites.label "Tutaj możesz określić domeny, których ciasteczka nie będą nigdy akceptowane. Podaj domeny, oddzielając je przecinkiem.">
+<!ENTITY pluginDeniedSites.label "You can specify domains for which plug-ins are always denied (ignoring Click to Play). List the domains, separated by a comma.">
 <!ENTITY customizeBrowserPlugins.label "Modyfikowanie wtyczek">
 <!ENTITY browserPlugins.description "Aby dodać wtyczkę, użyj istniejących przycisków.">
 <!ENTITY plugins.label "Wtyczki">

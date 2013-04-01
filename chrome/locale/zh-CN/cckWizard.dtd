@@ -88,10 +88,12 @@
 <!ENTITY popupAllowedSites.label "你可以指定允许弹出窗口的域名。列出域名，并用一个逗号(半角)分开他们。">
 <!ENTITY installAllowedSites.label "你可指定允许软件安装 (XPIs) 的域名。列出域名，并用一个逗号(半角)分开他们。">
 <!ENTITY cookieAllowedSites.label "You can specify domains for which cookies are always allowed. List the domains, separated by a comma.">
+<!ENTITY pluginAllowedSites.label "You can specify domains for which plug-ins are always allowed (ignoring Click to Play). List the domains, separated by a comma.">
 <!ENTITY deniedSites.caption "Denied Sites">
 <!ENTITY popupDeniedSites.label "You can specify domains for which popups are denied. List the domains, separated by a comma.">
 <!ENTITY installDeniedSites.label "You can specify domains for which software installations (XPIs) are denied. List the domains, separated by a comma.">
 <!ENTITY cookieDeniedSites.label "You can specify domains for which cookies are always denied. List the domains, separated by a comma.">
+<!ENTITY pluginDeniedSites.label "You can specify domains for which plug-ins are always denied (ignoring Click to Play). List the domains, separated by a comma.">
 <!ENTITY customizeBrowserPlugins.label "定制 浏览器插件 (Plug-ins)">
 <!ENTITY browserPlugins.description "使用下边的按钮以添加浏览器插件。">
 <!ENTITY plugins.label "浏览器插件">

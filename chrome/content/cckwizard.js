@@ -1674,9 +1674,11 @@ function CCKWriteProperties(destdir)
   str = str.replace(/%PopupAllowedSites%/g, document.getElementById("PopupAllowedSites").value);
   str = str.replace(/%InstallAllowedSites%/g, document.getElementById("InstallAllowedSites").value);
   str = str.replace(/%CookieAllowedSites%/g, document.getElementById("CookieAllowedSites").value);
+  str = str.replace(/%PluginAllowedSites%/g, document.getElementById("PluginAllowedSites").value);
   str = str.replace(/%PopupDeniedSites%/g, document.getElementById("PopupDeniedSites").value);
   str = str.replace(/%InstallDeniedSites%/g, document.getElementById("InstallDeniedSites").value);
   str = str.replace(/%CookieDeniedSites%/g, document.getElementById("CookieDeniedSites").value);
+  str = str.replace(/%PluginDeniedSites%/g, document.getElementById("PluginDeniedSites").value);
   cos.writeString(str);
 
   if (document.getElementById("hidden").checked)

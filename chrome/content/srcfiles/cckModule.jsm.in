@@ -215,6 +215,9 @@ function init() {
     sites = getString("CookieAllowedSites");
     if (sites)
       updatePermissions(sites, "cookie", 1);
+    sites = getString("PluginAllowedSites");
+    if (sites)
+      updatePermissions(sites, "plugins", 1);
     sites = getString("PopupDeniedSites");
     if (sites)
       updatePermissions(sites, "popup", 2);
@@ -224,6 +227,9 @@ function init() {
     sites = getString("CookieDeniedSites");
     if (sites)
       updatePermissions(sites, "cookie", 2);
+    sites = getString("PluginDeniedSites");
+    if (sites)
+      updatePermissions(sites, "plugins", 1);
 
     gPrefBranch.setCharPref("extensions.%id%.version", extVersion);
   }

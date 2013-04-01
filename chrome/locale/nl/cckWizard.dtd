@@ -88,10 +88,12 @@
 <!ENTITY popupAllowedSites.label "Hier kunnen domeinen worden ingegeven waarvoor pop-ups zijn toegestaan. Geef de domeinen in, gescheiden door een komma.">
 <!ENTITY installAllowedSites.label "Hier kunnen domeinen worden ingegeven waarvoor softwareinstallaties (XPI’s) zijn toegestaan. Geef de domeinen in, gescheiden door een komma.">
 <!ENTITY cookieAllowedSites.label "Hier kunnen domeinen worden ingegeven waarvoor cookies zijn toegestaan. Geef de domeinen in, gescheiden door een komma.">
+<!ENTITY pluginAllowedSites.label "You can specify domains for which plug-ins are always allowed (ignoring Click to Play). List the domains, separated by a comma.">
 <!ENTITY deniedSites.caption "Geblokkeerde websites">
 <!ENTITY popupDeniedSites.label "Hier kunnen domeinen worden ingegeven waarvoor pop-ups niet zijn toegestaan. Geef de domeinen in, gescheiden door een komma.">
 <!ENTITY installDeniedSites.label "Hier kunnen domeinen worden ingegeven waarvoor softwareinstallaties (XPI’s) niet zijn toegestaan. Geef de domeinen in, gescheiden door een komma.">
 <!ENTITY cookieDeniedSites.label "Hier kunnen domeinen worden ingegeven waarvoor cookies nooit zijn toegestaan. Geef de domeinen in, gescheiden door een komma.">
+<!ENTITY pluginDeniedSites.label "You can specify domains for which plug-ins are always denied (ignoring Click to Play). List the domains, separated by a comma.">
 <!ENTITY customizeBrowserPlugins.label "Browserplug-ins aanpassen">
 <!ENTITY browserPlugins.description "Gebruik onderstaande knoppen om browserplug-ins toe te voegen">
 <!ENTITY plugins.label "Browserplug-ins">

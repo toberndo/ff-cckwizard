@@ -91,10 +91,12 @@
 <!ENTITY popupAllowedSites.label "Você pode especificar os domínios para os quais são permitidos pop-ups. Liste os domínios separados por vírgula.">
 <!ENTITY installAllowedSites.label "Você pode especificar os domínios para os quais são permitidos instalar novas extensões (XPI). Liste os domínios separados por vírgula.">
 <!ENTITY cookieAllowedSites.label "Você pode especificar os domínios para os quais são permitidos criar cookies diretamente. Liste os domínios separados por vírgula.">
+<!ENTITY pluginAllowedSites.label "You can specify domains for which plug-ins are always allowed (ignoring Click to Play). List the domains, separated by a comma.">
 <!ENTITY deniedSites.caption "Sites Proibidos">
 <!ENTITY popupDeniedSites.label "Você pode especificar os domínios para os quais NÂO são permitidos pop-ups. Liste os domínios separados por vírgula.">
 <!ENTITY installDeniedSites.label "Você pode especificar os domínios para os quais NÂO são permitidos instalar novas extensões (XPI). Liste os domínios separados por vírgula.">
 <!ENTITY cookieDeniedSites.label "Você pode especificar os domínios para os quais NÂO são permitidos criar cookies. Liste os domínios separados por vírgula.">
+<!ENTITY pluginDeniedSites.label "You can specify domains for which plug-ins are always denied (ignoring Click to Play). List the domains, separated by a comma.">
 <!ENTITY customizeBrowserPlugins.label "Personalizando os Plug-ins do Navegador">
 <!ENTITY browserPlugins.description "Utilize os botões abaixo para acrescentar plugins para o navegador.">
 <!ENTITY plugins.label "Plug-ins do Navegador">

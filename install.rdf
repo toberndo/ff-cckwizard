@@ -9,6 +9,8 @@ xmlns:em="http://www.mozilla.org/2004/em-rdf#">
         <em:description></em:description>
         <em:creator>Michael Kaply</em:creator>
         <em:contributor>Rick Alther</em:contributor>
+        <em:contributor>Nils Sprenger</em:contributor>
+        <em:contributor>Tim Stecher</em:contributor>
         <em:homepageURL>http://code.google.com/p/ff-cckwizard/</em:homepageURL>
         <em:iconURL>chrome://cckwizard/content/cckwizard.png</em:iconURL>
         <em:unpack>true</em:unpack>

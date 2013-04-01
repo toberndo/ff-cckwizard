@@ -88,10 +88,12 @@
 <!ENTITY popupAllowedSites.label "Перечисление сайтов, которым разрешено открывать всплывающие окна. Список доменов, разделённых запятой.">
 <!ENTITY installAllowedSites.label "Перечисление сайтов, с которых разрешено устанавливать программное обеспечение (XPI-файлы). Список доменов, разделённых запятой.">
 <!ENTITY cookieAllowedSites.label "You can specify domains for which cookies are always allowed. List the domains, separated by a comma.">
+<!ENTITY pluginAllowedSites.label "You can specify domains for which plug-ins are always allowed (ignoring Click to Play). List the domains, separated by a comma.">
 <!ENTITY deniedSites.caption "Denied Sites">
 <!ENTITY popupDeniedSites.label "You can specify domains for which popups are denied. List the domains, separated by a comma.">
 <!ENTITY installDeniedSites.label "You can specify domains for which software installations (XPIs) are denied. List the domains, separated by a comma.">
 <!ENTITY cookieDeniedSites.label "You can specify domains for which cookies are always denied. List the domains, separated by a comma.">
+<!ENTITY pluginDeniedSites.label "You can specify domains for which plug-ins are always denied (ignoring Click to Play). List the domains, separated by a comma.">
 <!ENTITY customizeBrowserPlugins.label "Параметризация подключаемых модулей (plug-ins)">
 <!ENTITY browserPlugins.description "Для добавления подключаемых модулей необходимо использовать кнопки ниже.">
 <!ENTITY plugins.label "Подключаемые модули">

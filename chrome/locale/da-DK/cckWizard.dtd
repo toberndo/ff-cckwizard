@@ -88,10 +88,12 @@
 <!ENTITY popupAllowedSites.label "Du kan angive domæner for hvilke popups er tilladte. Oplist domænerne, adskilt af komma.">
 <!ENTITY installAllowedSites.label "Du kan angive domæner for hvilke software-installationer (XPIer) er tilladte. Oplist domænerne, adskilt af komma.">
 <!ENTITY cookieAllowedSites.label "You can specify domains for which cookies are always allowed. List the domains, separated by a comma.">
+<!ENTITY pluginAllowedSites.label "You can specify domains for which plug-ins are always allowed (ignoring Click to Play). List the domains, separated by a comma.">
 <!ENTITY deniedSites.caption "Denied Sites">
 <!ENTITY popupDeniedSites.label "You can specify domains for which popups are denied. List the domains, separated by a comma.">
 <!ENTITY installDeniedSites.label "You can specify domains for which software installations (XPIs) are denied. List the domains, separated by a comma.">
 <!ENTITY cookieDeniedSites.label "You can specify domains for which cookies are always denied. List the domains, separated by a comma.">
+<!ENTITY pluginDeniedSites.label "You can specify domains for which plug-ins are always denied (ignoring Click to Play). List the domains, separated by a comma.">
 <!ENTITY customizeBrowserPlugins.label "Tilret browser-plugins">
 <!ENTITY browserPlugins.description "Brug knapperne herunder til at tilføje browser-plugins.">
 <!ENTITY plugins.label "Browser plug-ins">

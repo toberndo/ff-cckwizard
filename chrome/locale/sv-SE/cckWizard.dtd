@@ -91,10 +91,12 @@
 <!ENTITY popupAllowedSites.label "Du kan ange domäner som tillåts öppna popup-fönster. Lista domäner, avgränsade med ett kommatecken.">
 <!ENTITY installAllowedSites.label "Du kan ange domäner som tillåts installera mjukvara (XPI:er). Lista domäner, avgränsade med ett kommatecken.">
 <!ENTITY cookieAllowedSites.label "Du kan ange domäner som alltid tillåts använda kakor. Lista domäner, avgränsade med ett kommatecken.">
+<!ENTITY pluginAllowedSites.label "You can specify domains for which plug-ins are always allowed (ignoring Click to Play). List the domains, separated by a comma.">
 <!ENTITY deniedSites.caption "Blockerade webbplatser">
 <!ENTITY popupDeniedSites.label "Du kan ange domäner som inte tillåts öppna popup-fönster. Lista domäner, avgränsade med ett kommatecken.">
 <!ENTITY installDeniedSites.label "Du kan ange domäner som inte tillåts installera mjukvara (XPI:er). Lista domäner, avgränsade med ett kommatecken.">
 <!ENTITY cookieDeniedSites.label "Du kan ange domäner som aldrig tillåts använda kakor. Lista domäner, avgränsade med ett kommatecken.">
+<!ENTITY pluginDeniedSites.label "You can specify domains for which plug-ins are always denied (ignoring Click to Play). List the domains, separated by a comma.">
 <!ENTITY customizeBrowserPlugins.label "Anpassa insticksmoduler">
 <!ENTITY browserPlugins.description "Använd knapparna nedan för att lägga till webbläsarinsticksmoduler.">
 <!ENTITY plugins.label "Insticksmoduler">
