@@ -1,0 +1,180 @@
+<!ENTITY cckWizard.title "Firefox Client Customization Kit (CCK)">
+<!ENTITY cckWizard.description "이 도구는 Firefox를 사용자 입맛에 맞게하는 확장 기능을 만들게 도와줍니다. 이 확장기능은 사용자에 의해 설치되거나 설치 묶음에 포함될 수 있습니다.">
+<!ENTITY beforeYouBegin.label "시작 전">
+<!ENTITY beforeYouBegin.description "귀하가 만들기 원하는 사용자 맞춤을 결정하고 다음과 같은 사용자 맞춤 파일들을 생성/수집하십시오:">
+<!ENTITY configurePage.label "확장기능 환경설정">
+<!ENTITY selectConfig.label "기존재하는 환경설정 선택 또는 새로 생성하기">
+<!ENTITY selectConfig.description "Select an existing configuration, or click &apos;New&apos; to create a new configuration and workspace in which to store your custom files. To edit an existing configuration without overwriting the original configuration, select it from the list and click &apos;Copy&apos;.">
+<!ENTITY showConfig.label "환경설정 정보 보기">
+<!ENTITY openConfig.label "열기">
+<!ENTITY newConfig.label "새로 만들기">
+<!ENTITY copyConfig.label "복사">
+<!ENTITY deleteConfig.label "삭제">
+<!ENTITY createConfig.title "새로운 환경설정 생성">
+<!ENTITY copyConfig.title "기존재하는 환경설정 복사">
+<!ENTITY configName.label "환경설정 이름">
+<!ENTITY configLocation.label "환경설정의 이름">
+<!ENTITY saveOnExit.label "환경설정을 자동으로 저장후 나가기">
+<!ENTITY zipLocation.label "<html:b>중요:</html:b> XPI를 생성하는 명령시, ZIP 또는 7-Zip가 사용하는데 필요합니다. 이 실행 파일 중 하나를 찾을 수 있게 '파일 선택'버튼을 사용하십시오. 경로 내에 존재하는 경우 ZIP.EXE을 사용하려고 시도한다는 것을 명심하십시오.">
+<!ENTITY customizeExt.label "사용자지정 확장기능">
+<!ENTITY id.label "고유 ID:">
+<!ENTITY id.format "형식: companyname-cck@extensions.domainname.tld">
+<!ENTITY name.label "이름:">
+<!ENTITY version.label "버전:">
+<!ENTITY ffVersion.label "Firefox 버전:">
+<!ENTITY minimum.label "최소">
+<!ENTITY maximum.label "최대">
+<!ENTITY description.label "설명:">
+<!ENTITY creator.label "작성자:">
+<!ENTITY homepageURL.label "홈페이지 URL:">
+<!ENTITY updateURL.label "업데이트 URL:">
+<!ENTITY updateKey.label "업데이트 공개키:">
+<!ENTITY updateKey.description "만약 귀하의 확장기능이 보안 업데이트를 제공하지 않는다면, Firefox 3는 공개키를 필요로 합니다.">
+<!ENTITY icon.label "아이콘:">
+<!ENTITY chooseFile.label "파일 선택…">
+<!ENTITY chooseDir.label "디렉토리 선택…">
+<!ENTITY filename.label "파일명:">
+<!ENTITY hidden.label "확장기능 관리자 내 이 확장기능을 표시 하지 않습니다.">
+<!ENTITY locked.label "이 확장기능의 설치제거를 방지합니다(사용안함은 여전히 가능).">
+<!ENTITY aboutconfig.label "about:config에 접급을 허용하지 않음">
+<!ENTITY privatebrowsing.label "사생활 보호 모드 삭제">
+<!ENTITY sync.label "Firefox Sync 끄기">
+<!ENTITY customizePartOne.label "브라우저 사용자 맞춤하기 - 1단계">
+<!ENTITY orgName.description "업체 식별자는 브라우저의 유저 에이전트 구문의 일부로 삽입되어 귀하가 도움말 메뉴를 열거나 Mozilla Firefox 정보를 선택시 보여집니다. 요구됩니다.">
+<!ENTITY orgName.label "귀하의 업체 식별자를 입력하세요(최대 10자; 빈칸 없음):">
+<!ENTITY orgName.caption "업체 식별자">
+<!ENTITY homePage.caption "홈페이지">
+<!ENTITY homePage.label "기본 홈페이지 URL:">
+<!ENTITY homePage.description "이 페이지는 사용자가 Firefox 브라우저를 처음 시작했을때나, 홈 버튼을 클릭 시 보여집니다.">
+<!ENTITY homePageWelcome.caption "환영 페이지">
+<!ENTITY homePageWelcome.description "On the very first invocation of Firefox after a new profile is created, a welcome page is displayed. You can choose to replace this page or to not display it at all.">
+<!ENTITY homePageWelcome.label "대체 환영 페이지 URL :">
+<!ENTITY noWelcomePage.label "환영 페이지 표시하지 않음">
+<!ENTITY homePageOverride.caption "업그레이드 페이지">
+<!ENTITY homePageOverride.description "Firefox의 새 버전으로 업그레이드 후, 최우선 페이지로 표시됩니다. 귀하는 이 페이지를 대체할 것을 선택하거나 표시하지 않도록 할 수 있습니다.">
+<!ENTITY homePageOverride.label "업그레이드 페이지 URL:">
+<!ENTITY noOverridePage.label "업그레이드 페이지 표시 안함">
+<!ENTITY titleBar.caption "브라우저 제목 막대 글">
+<!ENTITY titleBar.label "사용자 지정 제목 막대 글:">
+<!ENTITY titleBar.description "The text you enter (for example, your company name) appears after the page title in the title bar. It is recommended that you use the format
+
+
+                                         <html:i>Mozilla Firefox: Companyname Edition</html:i>">
+<!ENTITY customizePartTwo.label "브라우저 사용자 맞춤하기 - 2단계">
+<!ENTITY animLogo.caption "움직이는 로고">
+<!ENTITY animLogoURL.label "로고 버튼 URL:">
+<!ENTITY animLogoURL.description "Enter the URL that users will go to when they click the animated logo button.">
+<!ENTITY animLogoTooltip.description "Enter the tooltip that users will see when they mouse over the animated logo button.">
+<!ENTITY animLogoTooltip.label "Logo Button Tooltip:">
+<!ENTITY animLogoAnim.description "귀하의 움직이는 GIF 파일의 경로(16x16 픽셀)">
+<!ENTITY animLogoStill.description "Path to Your At Rest GIF or PNG File (16x16 pixels):">
+<!ENTITY customizePartThree.label "브라우저 사용자 맞춤하기 - 3단계">
+<!ENTITY helpMenu.caption "도움말 메뉴">
+<!ENTITY helpMenu.description "You can add an item to the Help Menu which provides a link to your online customer support page.">
+<!ENTITY helpMenuText.label "메뉴 항목 글:">
+<!ENTITY helpMenuURL.label "도움말 메뉴 항목 URL:">
+<!ENTITY helpMenuAccesskey.label "도움말 메뉴 항목 접속키:">
+<!ENTITY userInterface.caption "사용자 인터페이스 요소">
+<!ENTITY userInterface.description "firefox 사용자 인터페이스를 입맛에 맞게 바꿀수 있습니다. 이들 설정은 사용자에 의해 무시될 수 있습니다.">
+<!ENTITY bookmarksbar.label "묵마크 도구막대 표시">
+<!ENTITY addonbar.label "부가기능 막대 표시">
+<!ENTITY menubar.label "메뉴 막대 표시">
+<!ENTITY tabsonbottom.label "하단에 탭을 기본으로">
+<!ENTITY customizePartFour.label "브라우저 사용자 맞춤하기 - 4단계">
+<!ENTITY allowedSites.caption "허용된 사이트">
+<!ENTITY popupAllowedSites.label "팝업이 허용되기 원하는 도메인을 지정할 수 있습니다. 도메인 목록은 쉼표로 구분합니다.">
+<!ENTITY installAllowedSites.label "You can specify domains for which software installations (XPIs) are allowed. List the domains, separated by a comma.">
+<!ENTITY cookieAllowedSites.label "You can specify domains for which cookies are always allowed. List the domains, separated by a comma.">
+<!ENTITY deniedSites.caption "거부된 사이트">
+<!ENTITY popupDeniedSites.label "You can specify domains for which popups are denied. List the domains, separated by a comma.">
+<!ENTITY installDeniedSites.label "You can specify domains for which software installations (XPIs) are denied. List the domains, separated by a comma.">
+<!ENTITY cookieDeniedSites.label "You can specify domains for which cookies are always denied. List the domains, separated by a comma.">
+<!ENTITY customizeBrowserPlugins.label "브라우저 플러그인 사용자 맞춤">
+<!ENTITY browserPlugins.description "브라우저 플러그인을 추가하려면 아래 버튼을 사용하세요.">
+<!ENTITY plugins.label "브라우저 플러그인">
+<!ENTITY plugins.description "Please select a browser plug-in and the platform it is written for.">
+<!ENTITY customizeSearchEngines.label "검색 엔진 사용자 맞춤">
+<!ENTITY searchEngines.description "검색 엔진을 추가하려면 아래 버튼을 사용하세요.">
+<!ENTITY defaultSearchEngine.label "기본 검색 엔진">
+<!ENTITY engines.label "검색 엔진">
+<!ENTITY engines.description "Please select a search engine and (if applicable) corresponding image.">
+<!ENTITY engine.label "검색 엔진:">
+<!ENTITY engineIcon.label "Image File:">
+<!ENTITY file.label "파일:">
+<!ENTITY folderTitle.label "폴더 제목:">
+<!ENTITY customizeToolbarOne.label "북마크 도구막대 사용자 맟춤하기 - 1단계">
+<!ENTITY addToolbarFolder.caption "북마크 도구막대에 폴더 추가">
+<!ENTITY addToolbarFolder.description "북마크 도구모음 내 폴더에 북마크를 추가하려면 아래 버튼을 이용하세요.">
+<!ENTITY addToolbarBookmark.caption "북마크 도구막대에 북마크 추가">
+<!ENTITY addToolbarBookmark.description "북마크 도구모음에 북마크를 추가하려면 아래 버튼을 이용하세요.">
+<!ENTITY removeToolbarBookmarks.caption "기본 북마크 삭제">
+<!ENTITY removeToolbarBookmarks.description "삭제하기 원하는 기본 북마크를 선택하세요">
+<!ENTITY mostVisited.label "최다 방문">
+<!ENTITY gettingStarted.label "Getting Started">
+<!ENTITY customizeToolbarTwo.label "북마크 도구막대 사용자 맟춤하기 - 2단계">
+<!ENTITY customizeBookmarksOne.label "북마크 사용자 맟춤하기 - 1단계">
+<!ENTITY customizeBookmarksTwo.label "북마크 사용자 맟춤하기 - 2단계">
+<!ENTITY addBookmarkFolder.caption "북마크에 폴더 추가">
+<!ENTITY addBookmarkFolder.description "북마크가 있는 폴더를 생성하려면 아래 버튼을 사용하세요.">
+<!ENTITY addBookmark.caption "북마크 추가">
+<!ENTITY addBookmark.description "북마크를 추가하려면 아래 버튼을 사용하세요.">
+<!ENTITY toolbarLocation.label "도구막대 항목 위치">
+<!ENTITY toolbarLocationBegin.label "시작 부분에 도구모음 항목 배치">
+<!ENTITY toolbarLocationEnd.label "마지막 부분에 도구모음 항목 배치">
+<!ENTITY bookmarkLocation.label "북마크 항목의 위치">
+<!ENTITY bookmarkLocationBegin.label "시작 부분에 북마크 항목 배치">
+<!ENTITY bookmarkLocationEnd.label "마지막 부분에 북마크 항목 배치">
+<!ENTITY removeBookmarks.caption "기본 북마크 삭제">
+<!ENTITY removeBookmarks.description "삭제하기 원하는 기본 북마크 선택">
+<!ENTITY recentlyBookmarked.label "최근 추가된 북마크">
+<!ENTITY recentTags.label "최근 태그">
+<!ENTITY firefoxFolder.label "Mozilla Firefox 폴더">
+<!ENTITY bookmark.label "북마크">
+<!ENTITY bookmark.description "북마크 입력">
+<!ENTITY bookmarkTitle.label "제목:">
+<!ENTITY bookmarkURL.label "URL:">
+<!ENTITY liveBookmark.label "Live Bookmark">
+<!ENTITY separator.label "구분자">
+<!ENTITY customizePrefs.label "Customize Preferences">
+<!ENTITY customizePrefs.description "Use the buttons below to add default preferences.">
+<!ENTITY prefs.label "Preferences">
+<!ENTITY prefName.label "Preference Name:">
+<!ENTITY prefValue.label "값:">
+<!ENTITY prefLock.label "Lock Preference">
+<!ENTITY newButton.label "New">
+<!ENTITY newButton.accesskey "W">
+<!ENTITY deleteButton.label "삭제">
+<!ENTITY deleteButton.accesskey "D">
+<!ENTITY editButton.label "편집">
+<!ENTITY editButton.accesskey "E">
+<!ENTITY moveUpButton.label "위로 이동">
+<!ENTITY moveUpButton.accesskey "U">
+<!ENTITY moveDownButton.label "아래로 이동">
+<!ENTITY moveDownButton.accesskey "O">
+<!ENTITY customizeRegistry.label "레지스트리 사용맞춤 (Windows 전용)">
+<!ENTITY registry.label "레지스트리">
+<!ENTITY registry.description "Windows 레지스트리에 항목을 추가하려면 아래 버튼을 사용하세요. 참고로 이들 항목은 브라우저가 실행될때마다 추가/갱신됩니다.">
+<!ENTITY regDescription.label "설명">
+<!ENTITY regRootKey.label "루트 키">
+<!ENTITY regKey.label "키">
+<!ENTITY regName.label "이름">
+<!ENTITY regNameValue.label "이름 값">
+<!ENTITY regType.label "종류">
+<!ENTITY customizeCerts.label "인증 사용자맞춤">
+<!ENTITY customizeCerts.description "기설치된 인증서를 선택하려면 아래 버튼을 사용하세요(PEM 형식 전용).">
+<!ENTITY customizeCerts.warning "<html:b>중요:Firefox에 인증서를 추가하는 경우, 귀하의 회사 또는 시설 밖에선 이 브라우저에 오르지 못하고 Firefox를 호출합니다. 이 기능은 주로 업체와 시설 사용자들이 그들의 기관 내에 Firefos를 배포하기 위한 것입니다.</html:b>">
+<!ENTITY certs.label "인증서">
+<!ENTITY cert.label "인증서">
+<!ENTITY cert.trustSSL "웹사이트를 식별하기 위해 이 CA를 신뢰합니다.">
+<!ENTITY cert.trustEmail "이메일 사용자를 식별하기 위해 이 CA를 신뢰합니다.">
+<!ENTITY cert.trustObjSign "소프트웨어 개발자를 식별하기 위해 이 CA를 신뢰합니다.">
+<!ENTITY customizeBundles.label "확장기능/테마 사용자 맞춤">
+<!ENTITY customizeBundles.description "CCK와 함께 설치되는 확장기능과 테마를 선택하려면 아래의 버튼을 사용하세요.">
+<!ENTITY customizeBundles.warning "<html:b>중요: CCK에 확장기능 및 테마를 추가하는 경우, 더이상 Firefox 설치본의 일부로 CCK를 설치할 수 없습니다. 브라우저를 통해 설치해야 합니다.</html:b>">
+<!ENTITY bundles.label "확장기능/테마">
+<!ENTITY customizeProxy.label "프록시 환경설정 사용자 맞춤">
+<!ENTITY autoCCKTypeRadio.label "CCK 내 프록시 설정 파일 저장:">
+<!ENTITY autoCCKTypeRadio.accesskey "i">
+<!ENTITY showConfig.title "환경설정 표시">
+<!ENTITY cckWizard.oncancel "모든 변경된 데이터는 저장됩니다">
+<!ENTITY cckWizardFinish.description "귀하의 CCK 패키지를 생성하려면 마침을 클릭하세요.">

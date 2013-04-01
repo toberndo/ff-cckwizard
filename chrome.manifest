@@ -9,6 +9,7 @@ locale  cckwizard es-ES chrome/locale/es-ES/
 locale  cckwizard fr-FR chrome/locale/fr-FR/
 locale  cckwizard it-IT chrome/locale/it-IT/
 locale  cckwizard ja-JP chrome/locale/ja-JP/
+locale  cckwizard ko-KR chrome/locale/ko-KR/
 locale  cckwizard nl    chrome/locale/nl/
 locale  cckwizard pl-PL chrome/locale/pl-PL/
 locale  cckwizard pt-BR chrome/locale/pt-BR/
