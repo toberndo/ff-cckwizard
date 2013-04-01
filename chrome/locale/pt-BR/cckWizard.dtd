@@ -10,7 +10,7 @@
                                          </html:ul>">
 <!ENTITY configurePage.label "Configurações de Extensão">
 <!ENTITY selectConfig.label "Selecionar Configuração Existente ou Criar uma Nova">
-<!ENTITY selectConfig.description "Selecione uma configuração, ou clique &apos;Nova&apos; para criar uma nova configuração e área de trabalho onde os arquivos serão armazenados. Para editar uma configuração sem sobrescrever a configuração original, selecione-a da lista e clique em &apos;Copiar&apos;.">
+<!ENTITY selectConfig.description "Selecione uma configuração, ou clique 'Nova' para criar uma nova configuração e área de trabalho onde os arquivos serão armazenados. Para editar uma configuração sem sobrescrever a configuração original, selecione-a da lista e clique em 'Copiar'.">
 <!ENTITY showConfig.label "Exibir Informações sobre a Configuração">
 <!ENTITY openConfig.label "Abrir">
 <!ENTITY newConfig.label "Nova">
@@ -27,9 +27,9 @@
 <!ENTITY id.format "Formato: empresa-cck@extensoes.dominio.tld">
 <!ENTITY name.label "Nome:">
 <!ENTITY version.label "Versão:">
-<!ENTITY  ffVersion.label               "Firefox version:">
-<!ENTITY  minimum.label                 "Minimum">
-<!ENTITY  maximum.label                 "Maximum">
+<!ENTITY ffVersion.label "Firefox version:">
+<!ENTITY minimum.label "Minimum">
+<!ENTITY maximum.label "Maximum">
 <!ENTITY description.label "Descrição:">
 <!ENTITY creator.label "Criador:">
 <!ENTITY homepageURL.label "URL da Página:">
@@ -43,15 +43,15 @@
 <!ENTITY hidden.label "Não exibir esta extensão no gerenciador de extensões.">
 <!ENTITY locked.label "Impedir a desinstalação desta extensão (ela ainda pode ser desabilitada).">
 <!ENTITY aboutconfig.label "Não permitir acesso ao about:config">
-<!ENTITY  privatebrowsing.label         "Remove access to private browsing">
-<!ENTITY  sync.label                    "Turn off Firefox Sync">
+<!ENTITY privatebrowsing.label "Remover acesso a navegação privativa">
+<!ENTITY sync.label "Desligar o Firefox Sync">
 <!ENTITY customizePartOne.label "Personalizando o Navegador - Parte Um">
-<!ENTITY orgName.description "O identificador da Empresa é incluído como parte da identificação de &apos;user agent&apos; que é enviada para o servidor e que aparece na opção &apos;Sobre o Mozilla Firefox&apos;. Este valor é obrigatório.">
+<!ENTITY orgName.description "O identificador da Empresa é incluído como parte da identificação de 'user agent' que é enviada para o servidor e que aparece na opção 'Sobre o Mozilla Firefox'. Este valor é obrigatório.">
 <!ENTITY orgName.label "Entre com o Identificador da Empresa (até 10 caracteres, sem espaços):">
 <!ENTITY orgName.caption "Identificador da Empresa">
 <!ENTITY homePage.caption "Página Inicial">
 <!ENTITY homePage.label "URL da Página Inicial:">
-<!ENTITY homePage.description "Esta página é exibida quando os usuários abrem o Firefox, ou quando clicam no botão &apos;Página Inicial&apos;.">
+<!ENTITY homePage.description "Esta página é exibida quando os usuários abrem o Firefox, ou quando clicam no botão 'Página Inicial'.">
 <!ENTITY homePageWelcome.caption "Página de Boas-Vindas">
 <!ENTITY homePageWelcome.description "Na primeira vez em que o Firefox é executado, após a criação de um novo perfil, uma página de boas-vindas pode ser exibida. Você pode especificar uma página alternativa ou não exibir nenhuma.">
 <!ENTITY homePageWelcome.label "URL da Página de Boas-Vindas alternativa:">
@@ -63,6 +63,8 @@
 <!ENTITY titleBar.caption "Texto da Barra de Título do Navegador">
 <!ENTITY titleBar.label "Texto Customizado para Barra de Título:">
 <!ENTITY titleBar.description "O texto especificado aqui irá aparecer após o título da página sendo visualizada na barra de título da janela. É recomendado que se utilize o formato 
+
+
 <html:i>Mozilla Firefox: Edição da Empresa X</html:i>">
 <!ENTITY customizePartTwo.label "Personalizando o Navegador - Parte Dois">
 <!ENTITY animLogo.caption "Logotipo Animado">
@@ -112,7 +114,7 @@
 <!ENTITY addToolbarBookmark.caption "Acrescenta bookmarks à barra de favoritos">
 <!ENTITY addToolbarBookmark.description "Utilize os botões abaixo para acrescentar favoritos à barra de favoritos.">
 <!ENTITY removeToolbarBookmarks.caption "Remove default bookmarks">
-<!ENTITY removeToolbarBookmarks.description  "Select the default bookmarks you want removed">
+<!ENTITY removeToolbarBookmarks.description "Select the default bookmarks you want removed">
 <!ENTITY mostVisited.label "Most Visited">
 <!ENTITY gettingStarted.label "Getting Started">
 <!ENTITY customizeToolbarTwo.label "Personalizando a Barra de Favoritos - Parte Dois">
