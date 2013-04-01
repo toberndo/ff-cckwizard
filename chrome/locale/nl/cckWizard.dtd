@@ -27,9 +27,9 @@
 <!ENTITY id.format "Opmaak: bedrijfsnaam-cck@extensies.domeinnaam.tld">
 <!ENTITY name.label "Naam:">
 <!ENTITY version.label "Versie:">
-<!ENTITY  ffVersion.label               "Firefox version:">
-<!ENTITY  minimum.label                 "Minimum">
-<!ENTITY  maximum.label                 "Maximum">
+<!ENTITY ffVersion.label "Firefox-versie:">
+<!ENTITY minimum.label "Minimum">
+<!ENTITY maximum.label "Maximum">
 <!ENTITY description.label "Beschrijving:">
 <!ENTITY creator.label "Schrijver:">
 <!ENTITY homepageURL.label "Startpagina-URL:">
@@ -43,15 +43,15 @@
 <!ENTITY hidden.label "Deze extensie niet in de add-onsbeheerder tonen.">
 <!ENTITY locked.label "Deïnstalleren van deze extensie voorkomen (dit kan altijd worden uitgeschakeld)">
 <!ENTITY aboutconfig.label "Toegang tot about:config niet toestaan">
-<!ENTITY  privatebrowsing.label         "Remove access to private browsing">
-<!ENTITY  sync.label                    "Turn off Firefox Sync">
+<!ENTITY privatebrowsing.label "Toegang tot privénavigatie verwijderen">
+<!ENTITY sync.label "Firefox Sync uitschakelen">
 <!ENTITY customizePartOne.label "De browser aanpassen - deel één">
 <!ENTITY orgName.description "De Company Identifier is bijgesloten als onderdeel van de user agent string van de browser wanneer het menu Help wordt geopend en Over Mozilla Firefox wordt geselecteerd. Hij is noodzakelijk.">
 <!ENTITY orgName.label "Voer de Company Identifier in (tot 10 karakters; geen spaties):">
 <!ENTITY orgName.caption "Company Identifier">
 <!ENTITY homePage.caption "Startpagina">
 <!ENTITY homePage.label "Standaard startpagina-URL:">
-<!ENTITY homePage.description "Deze pagina wordt getoond wanneer gebruikers de Firefox browser starten, of wanneer ze op de knop Home klikken">
+<!ENTITY homePage.description "Deze pagina wordt getoond wanneer gebruikers de Firefox-browser starten, of wanneer ze op de knop Home klikken">
 <!ENTITY homePageWelcome.caption "Welkomstpagina">
 <!ENTITY homePageWelcome.description "Bij het starten van Firefox nadat een nieuw profiel is aangemaakt wordt een welkomstpagina weergegeven. U kunt ervoor kiezen deze pagina te vervangen of deze in het geheel niet weer te geven.">
 <!ENTITY homePageWelcome.label "URL van vervangende welkomstpagina:">
@@ -78,17 +78,17 @@
 <!ENTITY helpMenuURL.label "URL van menu Help-onderdeel:">
 <!ENTITY helpMenuAccesskey.label "Toegangstoets menu Help-onderdeel:">
 <!ENTITY userInterface.caption "User Interface Elements">
-<!ENTITY userInterface.description "You can customize the Firefox user interface. These settings can be overridden by a user.">
-<!ENTITY bookmarksbar.label "Display the Bookmarks Toolbar">
-<!ENTITY addonbar.label "Display the Add-on Bar">
-<!ENTITY menubar.label "Display the Menu Bar">
-<!ENTITY tabsonbottom.label "Default to Tabs on Bottom">
+<!ENTITY userInterface.description "U kunt de Firefox-gebruikersinterface aanpassen. Deze instellingen kunnen door een gebruiker worden gewijzigd.">
+<!ENTITY bookmarksbar.label "De bladwijzerwerkbalk weergeven">
+<!ENTITY addonbar.label "De add-onbalk weergeven">
+<!ENTITY menubar.label "De menubalk weergeven">
+<!ENTITY tabsonbottom.label "Tabbladen standaard onderaan">
 <!ENTITY customizePartFour.label "De browser aanpassen - deel vier">
-<!ENTITY allowedSites.caption "Toegestane sites">
+<!ENTITY allowedSites.caption "Toegestane websites">
 <!ENTITY popupAllowedSites.label "Hier kunnen domeinen worden ingegeven waarvoor pop-ups zijn toegestaan. Geef de domeinen in, gescheiden door een komma.">
 <!ENTITY installAllowedSites.label "Hier kunnen domeinen worden ingegeven waarvoor softwareinstallaties (XPI’s) zijn toegestaan. Geef de domeinen in, gescheiden door een komma.">
 <!ENTITY cookieAllowedSites.label "Hier kunnen domeinen worden ingegeven waarvoor cookies zijn toegestaan. Geef de domeinen in, gescheiden door een komma.">
-<!ENTITY deniedSites.caption "Geblokkeerde sites">
+<!ENTITY deniedSites.caption "Geblokkeerde websites">
 <!ENTITY popupDeniedSites.label "Hier kunnen domeinen worden ingegeven waarvoor pop-ups niet zijn toegestaan. Geef de domeinen in, gescheiden door een komma.">
 <!ENTITY installDeniedSites.label "Hier kunnen domeinen worden ingegeven waarvoor softwareinstallaties (XPI’s) niet zijn toegestaan. Geef de domeinen in, gescheiden door een komma.">
 <!ENTITY cookieDeniedSites.label "Hier kunnen domeinen worden ingegeven waarvoor cookies nooit zijn toegestaan. Geef de domeinen in, gescheiden door een komma.">
@@ -100,7 +100,7 @@
 <!ENTITY searchEngines.description "Gebruik onderstaande knoppen om zoekmachines toe te voegen.">
 <!ENTITY defaultSearchEngine.label "Standaardzoekmachine">
 <!ENTITY engines.label "Zoekmachines">
-<!ENTITY engines.description "Selecteer a.u.b. een zoekmachine en (indien van toepassing) de bijbehorende afbeelding.">
+<!ENTITY engines.description "Selecteer een zoekmachine en (indien van toepassing) de bijbehorende afbeelding.">
 <!ENTITY engine.label "Zoekmachine:">
 <!ENTITY engineIcon.label "Afbeeldingsbestand:">
 <!ENTITY file.label "Bestand:">
@@ -110,10 +110,10 @@
 <!ENTITY addToolbarFolder.description "Gebruik onderstaande knoppen om bladwijzers aan een map op de bladwijzerwerkbalk toe te voegen.">
 <!ENTITY addToolbarBookmark.caption "Bladwijzers toevoegen aan de bladwijzerwerkbalk">
 <!ENTITY addToolbarBookmark.description "Gebruik onderstaande knoppen om bladwijzers aan de bladwijzerwerkbalk toe te voegen.">
-<!ENTITY removeToolbarBookmarks.caption "Remove default bookmarks">
-<!ENTITY removeToolbarBookmarks.description  "Select the default bookmarks you want removed">
-<!ENTITY mostVisited.label "Most Visited">
-<!ENTITY gettingStarted.label "Getting Started">
+<!ENTITY removeToolbarBookmarks.caption "Standaardbladwijzers verwijderen">
+<!ENTITY removeToolbarBookmarks.description "Selecteer de standaardbladwijzers die u wilt verwijderen">
+<!ENTITY mostVisited.label "Meest bezocht">
+<!ENTITY gettingStarted.label "Van start">
 <!ENTITY customizeToolbarTwo.label "De Bladwijzerwerkbalk aanpassen - deel twee">
 <!ENTITY customizeBookmarksOne.label "Bladwijzers aanpassen - deel één">
 <!ENTITY customizeBookmarksTwo.label "Bladwijzers aanpassen - deel twee">
@@ -127,11 +127,11 @@
 <!ENTITY bookmarkLocation.label "Locatie van bladwijzers">
 <!ENTITY bookmarkLocationBegin.label "Bladwijzers vooraan plaatsen">
 <!ENTITY bookmarkLocationEnd.label "Bladwijzers achteraan plaatsen">
-<!ENTITY removeBookmarks.caption "Remove default bookmarks">
-<!ENTITY removeBookmarks.description "Select the default bookmarks you want removed">
-<!ENTITY recentlyBookmarked.label "Recently Bookmarked">
-<!ENTITY recentTags.label "Recent Tags">
-<!ENTITY firefoxFolder.label "Mozilla Firefox folder">
+<!ENTITY removeBookmarks.caption "Standaardbladwijzers verwijderen">
+<!ENTITY removeBookmarks.description "Selecteer de standaardbladwijzers die u wilt verwijderen">
+<!ENTITY recentlyBookmarked.label "Recent aangemaakte bladwijzers">
+<!ENTITY recentTags.label "Recente labels">
+<!ENTITY firefoxFolder.label "Mozilla Firefox-map">
 <!ENTITY bookmark.label "Bladwijzer">
 <!ENTITY bookmark.description "Voer bladwijzer in">
 <!ENTITY bookmarkTitle.label "Titel:">
@@ -146,7 +146,7 @@
 <!ENTITY prefLock.label "Voorkeur vastzetten">
 <!ENTITY newButton.label "Nieuw">
 <!ENTITY newButton.accesskey "W">
-<!ENTITY deleteButton.label "Verwijder">
+<!ENTITY deleteButton.label "Verwijderen">
 <!ENTITY deleteButton.accesskey "D">
 <!ENTITY editButton.label "Bewerken">
 <!ENTITY editButton.accesskey "E">
@@ -173,7 +173,7 @@
 <!ENTITY cert.trustObjSign "Dit certificaat bij identificatie van softwareontwikkelaars vertrouwen.">
 <!ENTITY customizeBundles.label "Extensies/Thema’s aanpassen">
 <!ENTITY customizeBundles.description "Gebruik onderstaande knoppen om extensies en thema’s te selecteren die met uw CCK worden geïnstalleerd.">
-<!ENTITY customizeBundles.warning "<html:b>BELANGRIJK: Als u extensies en/of thema’s aan uw CCK toevoegt, kunt u de CCK niet langer als onderdeel van een Firefoxinstallatie installeren. U dient via de browser te installeren.</html:b>">
+<!ENTITY customizeBundles.warning "<html:b>BELANGRIJK: Als u extensies en/of thema’s aan uw CCK toevoegt, kunt u de CCK niet langer als onderdeel van een Firefox-installatie installeren. U dient via de browser te installeren.</html:b>">
 <!ENTITY bundles.label "Extensies/Thema’s">
 <!ENTITY customizeProxy.label "Proxyconfiguraties aanpassen">
 <!ENTITY autoCCKTypeRadio.label "Proxyconfiguratiebestand opslaan in de CCK:">
