@@ -10,9 +10,9 @@
                                     </html:ul>">
 <!ENTITY configurePage.label "Konfiguracja">
 <!ENTITY selectConfig.label "Wybór/tworzenie konfiguracji">
-<!ENTITY selectConfig.description "Proszę wybrać istniejącą konfigurację lub nacisnąć przycisk &quot;Nowa&quot;, aby utworzyć nową, a następnie określić miejsce przechowywania plików modyfikacyjnych. Aby edytować istniejącą konfigurację bez nadpisywania oryginalnej należy zaznaczyć ją na liście i nacisnąć przycisk &quot;Kopiuj&quot;.">
+<!ENTITY selectConfig.description "Wybierz istniejącą konfigurację lub naciśnij przycisk „Nowa”, aby utworzyć nową i określ miejsce przechowywania plików modyfikacyjnych. Aby edytować istniejącą konfigurację bez nadpisywania oryginalnej, zaznacz ją na liście i naciśnij przycisk „Kopiuj”.">
 <!ENTITY showConfig.label "Informacja o konfiguracji">
-<!ENTITY openConfig.label "Open">
+<!ENTITY openConfig.label "Otwórz">
 <!ENTITY newConfig.label "Nowa">
 <!ENTITY copyConfig.label "Kopiuj">
 <!ENTITY deleteConfig.label "Usuń">
@@ -21,15 +21,15 @@
 <!ENTITY configName.label "Nazwa konfiguracji">
 <!ENTITY configLocation.label "Lokalizacja konfiguracji">
 <!ENTITY saveOnExit.label "Zapisz konfigurację podczas zamykania">
-<!ENTITY zipLocation.label "<html:b>Ważne:</html:b> Aby utworzyć plik instalacyjny konieczny jest program kompresujący ZIP lub 7-Zip. Proszę użyć przycisku &quot;Wybierz plik&quot;, aby zlokalizować plik wykonywalny aplikacji. Informacja: Zostanie podjęta próba użycia pliku zip.exe jeśli znajduje się on w ścieżce.">
+<!ENTITY zipLocation.label "<html:b>Ważne:</html:b> Aby utworzyć plik instalacyjny konieczny jest program kompresujący ZIP lub 7-Zip. Użyj przycisku „Wybierz plik”, aby zlokalizować plik wykonywalny aplikacji. Informacja. Jeśli w ścieżce znajduje się plik zip.exe, zostanie podjęta próba jego użycia.">
 <!ENTITY customizeExt.label "Modyfikacja rozszerzenia">
 <!ENTITY id.label "Identyfikator:">
 <!ENTITY id.format "Format: nazwa_firmy-cck@domena.rozszerzenia.tld">
 <!ENTITY name.label "Nazwa:">
 <!ENTITY version.label "Wersja:">
-<!ENTITY  ffVersion.label               "Firefox version:">
-<!ENTITY  minimum.label                 "Minimum">
-<!ENTITY  maximum.label                 "Maximum">
+<!ENTITY ffVersion.label "Wersja Firefoksa:">
+<!ENTITY minimum.label "Minimalna">
+<!ENTITY maximum.label "Maksymalna">
 <!ENTITY description.label "Opis:">
 <!ENTITY creator.label "Autor:">
 <!ENTITY homepageURL.label "Strona domowa:">
@@ -43,26 +43,26 @@
 <!ENTITY hidden.label "Nie wyświetlaj tego rozszerzenia w menedżerze rozszerzeń">
 <!ENTITY locked.label "Zabezpiecz przed usunięciem (będzie widoczne jako wyłączone)">
 <!ENTITY aboutconfig.label "Nie zezwalaj na dostęp do edytora ustawień (about:config)">
-<!ENTITY  privatebrowsing.label         "Remove access to private browsing">
-<!ENTITY  sync.label                    "Turn off Firefox Sync">
+<!ENTITY privatebrowsing.label "Usuń dostęp do trybu prywatnego">
+<!ENTITY sync.label "Wyłącz funkcję  Firefox Sync">
 <!ENTITY customizePartOne.label "Modyfikowanie przeglądarki - część pierwsza">
-<!ENTITY orgName.description "Identyfikator firmy jest częścią identyfikatora przeglądarki widocznego po otwarciu odnośnika &quot;O programie Mozilla Firefox&quot; znajdującego się w menu &quot;Pomoc&quot;. Jest on wymagany.">
+<!ENTITY orgName.description "Identyfikator firmy jest częścią identyfikatora przeglądarki widocznego po otwarciu odnośnika „O programie Firefox” znajdującego się w menu „Pomoc”. Jest on wymagany.">
 <!ENTITY orgName.label "Wprowadź identyfikator firmy (do 10 znaków - nie używać spacji)">
 <!ENTITY orgName.caption "Identyfikator firmy">
 <!ENTITY homePage.caption "Strona startowa">
 <!ENTITY homePage.label "Adres URL domyślnej strony startowej:">
-<!ENTITY homePage.description "Ta strona jest wyświetlana, gdy użytkownik po raz pierwszy uruchomi przeglądarkę lub naciśnie przycisk &quot;Strona startowa&quot;">
+<!ENTITY homePage.description "Ta strona jest wyświetlana, gdy użytkownik po raz pierwszy uruchomi przeglądarkę lub naciśnie przycisk „Strona startowa”.">
 <!ENTITY homePageWelcome.caption "Strona powitalna">
-<!ENTITY homePageWelcome.description "Po utworzeniu nowego profilu i otwarciu Firefoksa jest wyświetlana strona powitalna. Można wybrać do wyświetlania inną stronę lub nie zezwolić na wyświetlanie strony startowej.">
+<!ENTITY homePageWelcome.description "Po utworzeniu nowego profilu i otwarciu Firefoksa wyświetlana jest strona powitalna. Możesz do wyświetlania wybrać inną stronę lub nie zezwolić na wyświetlanie strony startowej.">
 <!ENTITY homePageWelcome.label "Adres URL zamiennika strony powitalnej:">
 <!ENTITY noWelcomePage.label "Nie wyświetlaj strony powitalnej">
 <!ENTITY homePageOverride.caption "Strona informacyjna aktualizacji">
-<!ENTITY homePageOverride.description "Po aktualizacji Firefoksa do nowej wersji, jest wyświetlana strona informacyjna. Można wybrać do wyświetlania inną stronę lub nie zezwolić na wyświetlanie strony informacyjnej.">
+<!ENTITY homePageOverride.description "Po aktualizacji Firefoksa do nowej wersji, jest wyświetlana strona informacyjna. Możesz do wyświetlania wybrać inną stronę lub nie zezwolić na wyświetlanie strony informacyjnej.">
 <!ENTITY homePageOverride.label "Adres URL strony informacyjnej aktualizacji:">
 <!ENTITY noOverridePage.label "Nie wyświetlaj strony informacyjnej aktualizacji">
 <!ENTITY titleBar.caption "Tekst paska tytułu">
 <!ENTITY titleBar.label "Wprowadź tekst paska tytułu:">
-<!ENTITY titleBar.description "Wprowadzony tekst (np. nazwa firmy) jest wyświetlany na pasku tytułu za nazwą strony. Zaleca się stosować następujący format:                              <html:i>Mozilla Firefox: Edycja Nazwa_firmy</html:i>">
+<!ENTITY titleBar.description "Wprowadzony tekst (np. nazwa firmy) jest wyświetlany na pasku tytułu za nazwą strony. Zaleca się stosować następujący format: <html:i>Mozilla Firefox: Edycja Nazwa_firmy</html:i>">
 <!ENTITY customizePartTwo.label "Modyfikowanie przeglądarki - część druga">
 <!ENTITY animLogo.caption "Animowane logo">
 <!ENTITY animLogoURL.label "Adres URL">
@@ -72,66 +72,66 @@
 <!ENTITY animLogoAnim.description "Ścieżka do pliku animowanego logo (16x16 pikseli):">
 <!ENTITY animLogoStill.description "Ścieżka do plików innych logo - nieanimowanych (16x16 pikseli):">
 <!ENTITY customizePartThree.label "Modyfikowanie przeglądarki - część trzecia">
-<!ENTITY helpMenu.caption "Menu &quot;Pomoc&quot;">
-<!ENTITY helpMenu.description "Można dodać do menu &quot;Pomoc&quot; element będący odnośnikiem (np. do strony pomocy dla klientów)">
+<!ENTITY helpMenu.caption "Menu „Pomoc”">
+<!ENTITY helpMenu.description "Do menu „Pomoc” możesz dodać element będący odnośnikiem, np. do strony pomocy dla klientów">
 <!ENTITY helpMenuText.label "Nazwa elementu:">
 <!ENTITY helpMenuURL.label "Adres URL elementu:">
-<!ENTITY helpMenuAccesskey.label "Skrót klawiaturowy elementu:">
-<!ENTITY userInterface.caption "User Interface Elements">
-<!ENTITY userInterface.description "You can customize the Firefox user interface. These settings can be overridden by a user.">
-<!ENTITY bookmarksbar.label "Display the Bookmarks Toolbar">
-<!ENTITY addonbar.label "Display the Add-on Bar">
-<!ENTITY menubar.label "Display the Menu Bar">
-<!ENTITY tabsonbottom.label "Default to Tabs on Bottom">
+<!ENTITY helpMenuAccesskey.label "Skrót klawiszowy elementu:">
+<!ENTITY userInterface.caption "Elementy interfejsu użytkownika">
+<!ENTITY userInterface.description "Tutaj można określić elementy interfejsu użytkownika. Te ustawienia mogą być zmieniane przez użytkownika.">
+<!ENTITY bookmarksbar.label "Wyświetlaj pasek zakładek">
+<!ENTITY addonbar.label "Wyświetlaj pasek dodatków">
+<!ENTITY menubar.label "Wyświetlaj pasek głównych menu">
+<!ENTITY tabsonbottom.label "Wyświetlaj pasek kart na dole">
 <!ENTITY customizePartFour.label "Modyfikowanie przeglądarki - część czwarta">
 <!ENTITY allowedSites.caption "Uprawnione witryny">
-<!ENTITY popupAllowedSites.label "Tutaj można określić domeny witryn, które mogą wyświetlać wyskakujące okienka. Proszę wprowadzić nazwy domen oddzielając je przecinkiem.">
-<!ENTITY installAllowedSites.label "Tutaj można określić domeny witryn, z których można instalować dodatki. Proszę wprowadzić nazwy domen oddzielając je przecinkiem.">
-<!ENTITY cookieAllowedSites.label "You can specify domains for which cookies are always allowed. List the domains, separated by a comma.">
-<!ENTITY deniedSites.caption "Denied Sites">
-<!ENTITY popupDeniedSites.label "You can specify domains for which popups are denied. List the domains, separated by a comma.">
-<!ENTITY installDeniedSites.label "You can specify domains for which software installations (XPIs) are denied. List the domains, separated by a comma.">
-<!ENTITY cookieDeniedSites.label "You can specify domains for which cookies are always denied. List the domains, separated by a comma.">
+<!ENTITY popupAllowedSites.label "Tutaj możesz określić domeny witryn, które mogą wyświetlać wyskakujące okienka. Wprowadź nazwy domen, oddzielając je przecinkiem.">
+<!ENTITY installAllowedSites.label "Tutaj możesz określić domeny witryn, z których można instalować dodatki. Wprowadź nazwy domen, oddzielając je przecinkiem.">
+<!ENTITY cookieAllowedSites.label "Tutaj możesz określić domeny, których ciasteczka będą zawsze akceptowane. Podaj domeny, oddzielając je przecinkiem.">
+<!ENTITY deniedSites.caption "Wykluczone witryny">
+<!ENTITY popupDeniedSites.label "Tutaj możesz określić domeny, na których wyświetlanie wyskakujących okien będzie niedozwolone. Podaj domeny, oddzielając je przecinkiem.">
+<!ENTITY installDeniedSites.label "Tutaj możesz określić domeny, z których instalowanie dodatków (plików *.xpi) będzie niedozwolone. Podaj domeny, oddzielając je przecinkiem.">
+<!ENTITY cookieDeniedSites.label "Tutaj możesz określić domeny, których ciasteczka nie będą nigdy akceptowane. Podaj domeny, oddzielając je przecinkiem.">
 <!ENTITY customizeBrowserPlugins.label "Modyfikowanie wtyczek">
-<!ENTITY browserPlugins.description "Aby dodać wtyczkę proszę użyć istniejących przycisków.">
+<!ENTITY browserPlugins.description "Aby dodać wtyczkę, użyj istniejących przycisków.">
 <!ENTITY plugins.label "Wtyczki">
-<!ENTITY plugins.description "Proszę wybrać wtyczkę i platformę dla jakiej jest przeznaczona">
+<!ENTITY plugins.description "Wybierz wtyczkę i platformę dla jakiej jest przeznaczona">
 <!ENTITY customizeSearchEngines.label "Modyfikowanie wyszukiwarek">
-<!ENTITY searchEngines.description "Aby dodać wyszukiwarkę proszę użyć istniejących przycisków.">
+<!ENTITY searchEngines.description "Aby dodać wyszukiwarkę, użyj istniejących przycisków.">
 <!ENTITY defaultSearchEngine.label "Domyślna wyszukiwarka">
 <!ENTITY engines.label "Wyszukiwarki">
-<!ENTITY engines.description "Proszę wybrać wyszukiwarkę i towarzyszący jej obrazek">
+<!ENTITY engines.description "Wybierz wyszukiwarkę i towarzyszący jej obrazek">
 <!ENTITY engine.label "Wyszukiwarka:">
 <!ENTITY engineIcon.label "Plik obrazka:">
 <!ENTITY file.label "Plik:">
 <!ENTITY folderTitle.label "Nazwa folderu:">
 <!ENTITY customizeToolbarOne.label "Modyfikowanie paska zakładek - część pierwsza">
 <!ENTITY addToolbarFolder.caption "Dodawanie folderu do paska zakładek">
-<!ENTITY addToolbarFolder.description "Aby dodać zakładki do folderu znajdującego się na pasku zakładek proszę użyć istniejących przycisków.">
+<!ENTITY addToolbarFolder.description "Aby dodać zakładki do folderu znajdującego się na pasku zakładek, użyj istniejących przycisków.">
 <!ENTITY addToolbarBookmark.caption "Dodawanie zakładek do paska zakładek">
-<!ENTITY addToolbarBookmark.description "Aby dodać zakładki do paska zakładek proszę użyć istniejących przycisków.">
-<!ENTITY removeToolbarBookmarks.caption "Remove default bookmarks">
-<!ENTITY removeToolbarBookmarks.description  "Select the default bookmarks you want removed">
-<!ENTITY mostVisited.label "Most Visited">
-<!ENTITY gettingStarted.label "Getting Started">
+<!ENTITY addToolbarBookmark.description "Aby dodać zakładki do paska zakładek, użyj istniejących przycisków.">
+<!ENTITY removeToolbarBookmarks.caption "Usuń domyślne zakładki">
+<!ENTITY removeToolbarBookmarks.description "Wybierz zakładki, które chcesz usunąć">
+<!ENTITY mostVisited.label "Często odwiedzane">
+<!ENTITY gettingStarted.label "Pierwsze kroki">
 <!ENTITY customizeToolbarTwo.label "Modyfikowanie paska zakładek - część druga">
 <!ENTITY customizeBookmarksOne.label "Modyfikowanie zakładek - część pierwsza">
 <!ENTITY customizeBookmarksTwo.label "Modyfikowanie zakładek - część druga">
 <!ENTITY addBookmarkFolder.caption "Dodawanie folderu do zakładek">
-<!ENTITY addBookmarkFolder.description "Aby utworzyć folder dla zakładek proszę użyć istniejących przycisków.">
+<!ENTITY addBookmarkFolder.description "Aby utworzyć folder dla zakładek, użyj istniejących przycisków.">
 <!ENTITY addBookmark.caption "Dodawanie zakładek">
-<!ENTITY addBookmark.description "Aby dodać zakładki proszę użyć istniejących przycisków.">
+<!ENTITY addBookmark.description "Aby dodać zakładki, użyj istniejących przycisków.">
 <!ENTITY toolbarLocation.label "Lokalizacja elementów paska zakładek">
 <!ENTITY toolbarLocationBegin.label "Umieść elementy paska na początku">
 <!ENTITY toolbarLocationEnd.label "Umieść elementy paska na końcu">
 <!ENTITY bookmarkLocation.label "Lokalizacja elementów zakładek">
 <!ENTITY bookmarkLocationBegin.label "Umieść elementy zakładek na początku">
 <!ENTITY bookmarkLocationEnd.label "Umieść elementy zakładek na końcu">
-<!ENTITY removeBookmarks.caption "Remove default bookmarks">
-<!ENTITY removeBookmarks.description "Select the default bookmarks you want removed">
-<!ENTITY recentlyBookmarked.label "Recently Bookmarked">
-<!ENTITY recentTags.label "Recent Tags">
-<!ENTITY firefoxFolder.label "Mozilla Firefox folder">
+<!ENTITY removeBookmarks.caption "Usuń domyślne zakładki">
+<!ENTITY removeBookmarks.description "Wybierz zakładki, które chcesz usunąć">
+<!ENTITY recentlyBookmarked.label "Ostatnio dodane">
+<!ENTITY recentTags.label "Ostatnio używane etykiety">
+<!ENTITY firefoxFolder.label "Folder Mozilla Firefox">
 <!ENTITY bookmark.label "Zakładka">
 <!ENTITY bookmark.description "Wprowadź dane zakładki">
 <!ENTITY bookmarkTitle.label "Tytuł:">
@@ -139,7 +139,7 @@
 <!ENTITY liveBookmark.label "Dynamiczna zakładka">
 <!ENTITY separator.label "Separator">
 <!ENTITY customizePrefs.label "Modyfikowanie ustawień">
-<!ENTITY customizePrefs.description "Aby dodać domyślne ustawienia proszę użyć istniejących przycisków.">
+<!ENTITY customizePrefs.description "Aby dodać domyślne ustawienia, użyj istniejących przycisków.">
 <!ENTITY prefs.label "Ustawienia">
 <!ENTITY prefName.label "Nazwa ustawienia:">
 <!ENTITY prefValue.label "Wartość:">
@@ -156,7 +156,7 @@
 <!ENTITY moveDownButton.accesskey "D">
 <!ENTITY customizeRegistry.label "Modyfikowanie rejestru (tylko Windows)">
 <!ENTITY registry.label "Rejestr">
-<!ENTITY registry.description "Aby dodać wpis do rejestru Windows proszę użyć istniejących przycisków. Informacja: Te elementy będą dodawane/aktualizowane za każdym uruchomieniem przeglądarki.">
+<!ENTITY registry.description "Aby dodać wpis do rejestru Windows, użyj istniejących przycisków. Informacja. Te elementy będą dodawane/aktualizowane za każdym uruchomieniem przeglądarki.">
 <!ENTITY regDescription.label "Opis">
 <!ENTITY regRootKey.label "Klucz główny">
 <!ENTITY regKey.label "Klucz">
@@ -164,20 +164,20 @@
 <!ENTITY regNameValue.label "Nazwa wartości">
 <!ENTITY regType.label "Typ">
 <!ENTITY customizeCerts.label "Modyfikowanie certyfikatów">
-<!ENTITY customizeCerts.description "Aby wybrać certyfikaty do preinstalacji (tylko format .pem) proszę użyć istniejących przycisków.">
-<!ENTITY customizeCerts.warning "<html:b>Ważne: Jeśli do Firefoksa zostaną dodane certyfikaty, takiej wersji nie można używać na zewnątrz firmy, czy instytucji pod nazwą Firefox. Ta opcja jest przeznaczona przede wszystkim dla korporacji i użytkowników instytucjonalnych, którzy używają Firefoksa wewnątrz swojej organizacji.</html:b>">
+<!ENTITY customizeCerts.description "Aby wybrać certyfikaty do preinstalacji (tylko format .pem), użyj istniejących przycisków.">
+<!ENTITY customizeCerts.warning "<html:b>Ważne! Jeśli do Firefoksa zostaną dodane certyfikaty, takiej wersji nie można używać na zewnątrz firmy czy instytucji pod nazwą Firefox. Ta opcja jest przeznaczona przede wszystkim dla korporacji i użytkowników instytucjonalnych, którzy używają Firefoksa wewnątrz swojej organizacji.</html:b>">
 <!ENTITY certs.label "Certyfikaty">
 <!ENTITY cert.label "Certyfikat">
 <!ENTITY cert.trustSSL "Zaufaj temu organowi certyfikacji (CA) do identyfikowania witryn sieciowych">
 <!ENTITY cert.trustEmail "Zaufaj temu organowi certyfikacji (CA) do identyfikowania użytkowników poczty elektronicznej">
 <!ENTITY cert.trustObjSign "Zaufaj temu organowi certyfikacji (CA) do identyfikowania twórców oprogramowania">
 <!ENTITY customizeBundles.label "Modyfikowanie rozszerzeń/motywów">
-<!ENTITY customizeBundles.description "Aby wybrać rozszerzenia i motywy instalowane razem z pakietem CCK proszę użyć istniejących przycisków.">
-<!ENTITY customizeBundles.warning "<html:b>Ważne: Jeśli do pakietu CCK zostaną dodane rozszerzenia i/lub motywy, nie będzie można instalować pakietu jako części instalacji Firefoksa. Należy wówczas instalować go poprzez przeglądarkę.</html:b>">
+<!ENTITY customizeBundles.description "Aby wybrać rozszerzenia i motywy instalowane razem z pakietem CCK, użyj istniejących przycisków.">
+<!ENTITY customizeBundles.warning "<html:b>Ważne! Jeśli do pakietu CCK zostaną dodane rozszerzenia i/lub motywy, nie będzie można instalować pakietu jako części instalacji Firefoksa. Należy wówczas instalować go poprzez przeglądarkę.</html:b>">
 <!ENTITY bundles.label "Rozszerzenia/Motywy">
 <!ENTITY customizeProxy.label "Modyfikowanie ustawień proxy">
 <!ENTITY autoCCKTypeRadio.label "Zapisz plik konfiguracyjny proxy w CCK:">
 <!ENTITY autoCCKTypeRadio.accesskey "Z">
 <!ENTITY showConfig.title "Informacje o konfiguracji">
 <!ENTITY cckWizard.oncancel "Wszystkie zmiany zostaną zapisane">
-<!ENTITY cckWizardFinish.description "Naciśnij przycisk &quot;Zakończ&quot;, aby utworzyć pakiet CCK.">
+<!ENTITY cckWizardFinish.description "Naciśnij przycisk „Zakończ”, aby utworzyć pakiet CCK.">
