@@ -39,6 +39,7 @@
 <!ENTITY aboutconfig.label "about:config에 접급을 허용하지 않음">
 <!ENTITY privatebrowsing.label "사생활 보호 모드 삭제">
 <!ENTITY sync.label "Firefox Sync 끄기">
+<!ENTITY amo.label "Prevent Discovering Add-ons in the Add-ons Manager">
 <!ENTITY customizePartOne.label "브라우저 사용자 맞춤하기 - 1단계">
 <!ENTITY orgName.description "업체 식별자는 브라우저의 유저 에이전트 구문의 일부로 삽입되어 귀하가 도움말 메뉴를 열거나 Mozilla Firefox 정보를 선택시 보여집니다. 요구됩니다.">
 <!ENTITY orgName.label "귀하의 업체 식별자를 입력하세요(최대 10자; 빈칸 없음):">

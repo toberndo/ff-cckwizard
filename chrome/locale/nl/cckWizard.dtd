@@ -45,6 +45,7 @@
 <!ENTITY aboutconfig.label "Toegang tot about:config niet toestaan">
 <!ENTITY privatebrowsing.label "Toegang tot privénavigatie verwijderen">
 <!ENTITY sync.label "Firefox Sync uitschakelen">
+<!ENTITY amo.label "Prevent Discovering Add-ons in the Add-ons Manager">
 <!ENTITY customizePartOne.label "De browser aanpassen - deel één">
 <!ENTITY orgName.description "De Company Identifier is bijgesloten als onderdeel van de user agent string van de browser wanneer het menu Help wordt geopend en Over Mozilla Firefox wordt geselecteerd. Hij is noodzakelijk.">
 <!ENTITY orgName.label "Voer de Company Identifier in (tot 10 karakters; geen spaties):">

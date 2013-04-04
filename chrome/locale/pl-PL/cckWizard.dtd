@@ -45,6 +45,7 @@
 <!ENTITY aboutconfig.label "Nie zezwalaj na dostęp do edytora ustawień (about:config)">
 <!ENTITY privatebrowsing.label "Usuń dostęp do trybu prywatnego">
 <!ENTITY sync.label "Wyłącz funkcję  Firefox Sync">
+<!ENTITY amo.label "Prevent Discovering Add-ons in the Add-ons Manager">
 <!ENTITY customizePartOne.label "Modyfikowanie przeglądarki - część pierwsza">
 <!ENTITY orgName.description "Identyfikator firmy jest częścią identyfikatora przeglądarki widocznego po otwarciu odnośnika „O programie Firefox” znajdującego się w menu „Pomoc”. Jest on wymagany.">
 <!ENTITY orgName.label "Wprowadź identyfikator firmy (do 10 znaków - nie używać spacji)">

@@ -45,6 +45,7 @@
 <!ENTITY aboutconfig.label "Tillåt inte åtkomst till about:config">
 <!ENTITY  privatebrowsing.label         "Remove access to private browsing">
 <!ENTITY  sync.label                    "Turn off Firefox Sync">
+<!ENTITY amo.label "Prevent Discovering Add-ons in the Add-ons Manager">
 <!ENTITY customizePartOne.label "Anpassa webbläsaren: Del ett">
 <!ENTITY orgName.description "Företagsidentifieraren inkluderas som en del av webbläsarens användaragentsträng, som visas när du öppnar Hjälp-menyn och väljer Om Mozilla Firefox. Den är obligatorisk.">
 <!ENTITY orgName.label "Ange din företagsidentifierare (högst 10 tecken; inga blanksteg):">

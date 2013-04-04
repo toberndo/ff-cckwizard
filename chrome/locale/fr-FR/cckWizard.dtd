@@ -45,6 +45,7 @@
 <!ENTITY aboutconfig.label "Ne pas autoriser l'accès à about:config">
 <!ENTITY  privatebrowsing.label         "Remove access to private browsing">
 <!ENTITY  sync.label                    "Turn off Firefox Sync">
+<!ENTITY amo.label "Prevent Discovering Add-ons in the Add-ons Manager">
 <!ENTITY customizePartOne.label "Personnalisation du navigateur - Partie 1">
 <!ENTITY orgName.description "L'identité de l'organisation est intégrée dans la chaine de caractères (CK-identité) de l'agent utilisateur du navigateur, qui apparaît dans le menu d'Aide, quand vous choisissez 'À propos de Mozilla Firefox'. Cette identité est obligatoire.">
 <!ENTITY orgName.label "Identité de votre organisation (10 caractères maximum - pas d'espaces)">

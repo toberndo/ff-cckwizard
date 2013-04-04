@@ -45,6 +45,7 @@
 <!ENTITY aboutconfig.label "No permitir el acceso a about:config">
 <!ENTITY  privatebrowsing.label         "Remove access to private browsing">
 <!ENTITY  sync.label                    "Turn off Firefox Sync">
+<!ENTITY amo.label "Prevent Discovering Add-ons in the Add-ons Manager">
 <!ENTITY customizePartOne.label "Personalizar el Navegador - Parte uno">
 <!ENTITY orgName.description "El identificador de la compañía es incluido como parte de la secuencia del agente del usuario del navegador que aparece al abrir el menú de ayuda y seleccionar Acerca de Mozilla Firefox. Es necesario.">
 <!ENTITY orgName.label "Introduzca el identificador de la compañía (hasta 10 caracteres; ningún espacio vacío):">

@@ -53,7 +53,7 @@
 <!ENTITY  aboutconfig.label             "Do not allow access to about:config">
 <!ENTITY  privatebrowsing.label         "Remove access to private browsing">
 <!ENTITY  sync.label                    "Turn off Firefox Sync">
-<!ENTITY  amo.label                     "Prevent Dicovering Add-ons in the Add-ons Manager">
+<!ENTITY  amo.label                     "Prevent Discovering Add-ons in the Add-ons Manager">
 
 <!ENTITY  customizePartOne.label        "Customize the Browser - Part One">
 
