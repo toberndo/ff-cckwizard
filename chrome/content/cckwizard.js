@@ -1307,6 +1307,9 @@ function CCKWriteXULOverlay(destdir)
   var privatebrowsingXUL = '  <menuitem id="appmenu_privateBrowsing" hidden="true"/>\
                               <command id="Tools:PrivateBrowsing" oncommand=""/>\
                               <key id="key_privatebrowsing" command=""/>\
+                              <menuitem id="appmenu_newPrivateWindow" hidden="true"/>\
+                              <menuitem id="menu_newPrivateWindow" hidden="true"/>\
+                              <menuitem id="context-openlinkprivate" style="display: none"/>\
                               <menuitem id="privateBrowsingItem" hidden="true"/>';
 
   var file = destdir.clone();
