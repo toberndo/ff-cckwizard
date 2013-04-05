@@ -229,7 +229,7 @@ function init() {
       updatePermissions(sites, "cookie", 2);
     sites = getString("PluginDeniedSites");
     if (sites)
-      updatePermissions(sites, "plugins", 1);
+      updatePermissions(sites, "plugins", 2);
 
     gPrefBranch.setCharPref("extensions.%id%.version", extVersion);
   }
