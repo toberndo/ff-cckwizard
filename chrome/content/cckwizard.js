@@ -1944,7 +1944,13 @@ function CCKWriteDefaultJS(destdir)
         line = 'pref("' + listitem.cck['prefname'] + '", ' + listitem.getAttribute("value") + ');\n';
       }
       fos.write(line, line.length);
+    } else if (listitem.cck['lock'] == "true" && listitem.cck['type'] == "string") {
+      // If an item is locked, we have to set a value no matter what
+      // This is the case for "locked with no value"
+      line = 'pref("' + listitem.cck['prefname'] + '", ' + '"' + "" + '"' + ');\n';
+      fos.write(line, line.length);
     }
+
   }
 
   var radiogroup = document.getElementById("networkProxyType");
@@ -2759,6 +2765,7 @@ function CCKReadConfigFile(srcdir)
 
     if (configarray['PreferenceLock' + i] == "true") {
       listitem.cck['lock'] = "true";
+      listitem.setAttribute("locked", "true");
     } else {
       listitem.cck['lock'] = "";
     }
