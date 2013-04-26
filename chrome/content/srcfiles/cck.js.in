@@ -55,6 +55,14 @@ function goClickThrobber( urlPref, e )
     try {
       if (!gPrefBranch.getBoolPref("services.sync.enabled")) {
         gSyncUI = mySyncUI;
+        var syncbutton =  document.getElementById("sync-button");
+        if (!syncbutton) {
+          var toolbox = document.getElementById("navigator-toolbox");
+          if (toolbox)
+            syncbutton = toolbox.palette.querySelector("#sync-button");
+        }
+        if (syncbutton)
+          syncbutton.setAttribute("hidden", "true");
         var appcontent = document.getElementById("appcontent");
         if (appcontent) {
           appcontent.addEventListener("DOMContentLoaded", onPageLoad, false);
