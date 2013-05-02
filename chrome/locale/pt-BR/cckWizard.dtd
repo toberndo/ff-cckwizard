@@ -46,6 +46,7 @@
 <!ENTITY privatebrowsing.label "Remover acesso a navegação privativa">
 <!ENTITY sync.label "Desligar o Firefox Sync">
 <!ENTITY amo.label "Prevent Discovering Add-ons in the Add-ons Manager">
+<!ENTITY alwaysdefaultbrowser.label "Make sure Firefox is the default browser at startup">
 <!ENTITY customizePartOne.label "Personalizando o Navegador - Parte Um">
 <!ENTITY orgName.description "O identificador da Empresa é incluído como parte da identificação de 'user agent' que é enviada para o servidor e que aparece na opção 'Sobre o Mozilla Firefox'. Este valor é obrigatório.">
 <!ENTITY orgName.label "Entre com o Identificador da Empresa (até 10 caracteres, sem espaços):">

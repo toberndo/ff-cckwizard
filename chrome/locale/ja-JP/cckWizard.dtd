@@ -46,6 +46,7 @@
 <!ENTITY  privatebrowsing.label         "Remove access to private browsing">
 <!ENTITY  sync.label                    "Turn off Firefox Sync">
 <!ENTITY amo.label "Prevent Discovering Add-ons in the Add-ons Manager">
+<!ENTITY alwaysdefaultbrowser.label "Make sure Firefox is the default browser at startup">
 <!ENTITY customizePartOne.label "ブラウザのカスタマイズ - パート 1">
 <!ENTITY orgName.description "The Company Identifier is included as part of the browser&apos;s user agent string which appears when you open the Help menu and select About Mozilla Firefox. It is required.">
 <!ENTITY orgName.label "Enter Your Company Identifier (up to 10 characters; no spaces):">

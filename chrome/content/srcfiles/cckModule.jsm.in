@@ -168,7 +168,16 @@ function init() {
   var noOverridePage = getString("noOverridePage");
   if (noOverridePage)
     gDefPrefBranch.setCharPref("startup.homepage_override_url", "");
-  
+
+  var alwaysDefaultBrowser = getString("alwaysDefaultBrowser");
+  if (alwaysDefaultBrowser) {
+    try {
+      var shellSvc = Cc["@mozilla.org/browser/shell-service;1"].getService(Ci.nsIShellService);
+      if (shellSvc)
+        shellSvc.setDefaultBrowser(true, false);
+    } catch (ex) {}
+  }
+
 
   if (firstrun || extVersion != installedVersion)
   {

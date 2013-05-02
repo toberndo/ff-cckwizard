@@ -46,6 +46,7 @@
 <!ENTITY privatebrowsing.label "Odstranit přístup k anonymnímu prohlížení">
 <!ENTITY sync.label "Vypnout Firefox Sync">
 <!ENTITY amo.label "Prevent Discovering Add-ons in the Add-ons Manager">
+<!ENTITY alwaysdefaultbrowser.label "Make sure Firefox is the default browser at startup">
 <!ENTITY customizePartOne.label "Zákaznická úprava prohlížeče - Část I">
 <!ENTITY orgName.description "Identifikátor společnosti je zahrnut jsko součást řetězce identifikujícího prohlížeč, který se zobrazí, když otevřete nabídku Nápovědy a zvolíte O aplikaci Mozilla Firefox. Údaj je povinný.">
 <!ENTITY orgName.label "Vložte identifikátor vaší společnosti (až 10 znaků, žádné mezery):">

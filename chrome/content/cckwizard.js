@@ -1705,6 +1705,11 @@ function CCKWriteProperties(destdir)
     cos.writeString(str);
   }
 
+  if (document.getElementById("alwaysdefaultbrowser").checked) {
+    str = "alwaysDefaultBrowser=true\n";
+    cos.writeString(str);
+  }
+
 
   var radio = document.getElementById('ToolbarLocation');
   str = "ToolbarLocation=" + radio.value + "\n";
@@ -2989,6 +2994,9 @@ function CCKReadConfigFile(srcdir)
 
   var aboutconfig = document.getElementById("noaboutconfig");
   aboutconfig.checked = configarray["noaboutconfig"];
+
+  var alwaysdefaultbrowser = document.getElementById("alwaysdefaultbrowser");
+  alwaysdefaultbrowser.checked = configarray["alwaysdefaultbrowser"];
 
   var privatebrowsing = document.getElementById("noprivatebrowsing");
   privatebrowsing.checked = configarray["noprivatebrowsing"];
