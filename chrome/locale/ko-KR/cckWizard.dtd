@@ -165,10 +165,12 @@
 <!ENTITY regNameValue.label "이름 값">
 <!ENTITY regType.label "종류">
 <!ENTITY customizeCerts.label "인증 사용자맞춤">
-<!ENTITY customizeCerts.description "기설치된 인증서를 선택하려면 아래 버튼을 사용하세요(PEM 형식 전용).">
+<!ENTITY customizeCerts.description "기설치된 인증서를 선택하려면 아래 버튼을 사용하세요.">
 <!ENTITY customizeCerts.warning "<html:b>중요:Firefox에 인증서를 추가하는 경우, 귀하의 회사 또는 시설 밖에선 이 브라우저에 오르지 못하고 Firefox를 호출합니다. 이 기능은 주로 업체와 시설 사용자들이 그들의 기관 내에 Firefos를 배포하기 위한 것입니다.</html:b>">
 <!ENTITY certs.label "인증서">
 <!ENTITY cert.label "인증서">
+<!ENTITY cert.caCert "Certificate Authority (PEM)">
+<!ENTITY cert.serverCert "Server Certificate (Any Type)">
 <!ENTITY cert.trustSSL "웹사이트를 식별하기 위해 이 CA를 신뢰합니다.">
 <!ENTITY cert.trustEmail "이메일 사용자를 식별하기 위해 이 CA를 신뢰합니다.">
 <!ENTITY cert.trustObjSign "소프트웨어 개발자를 식별하기 위해 이 CA를 신뢰합니다.">

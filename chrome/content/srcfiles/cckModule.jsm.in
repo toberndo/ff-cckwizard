@@ -207,9 +207,14 @@ function init() {
       CertName = getString("Cert" + i);
       if (!CertName)
         break;
-      CertTrust = getString("CertTrust" + i);
-      if (!CertTrust)
-        CertTrust = "C,C,C";
+      CertType = getString("CertType" + i);
+      if (CertType) {
+        CertTrust = null;
+      } else {
+        CertTrust = getString("CertTrust" + i);
+        if (!CertTrust)
+          CertTrust = "C,C,C";
+      }
       addCertificate(CertName, CertTrust);
       i++;
     } while (CertName)
@@ -426,16 +431,34 @@ function addCertificate(CertName, CertTrust) {
   var certfile=scriptableStream.read(input.available());
   scriptableStream.close();
   input.close();
-
-  var beginCert = "-----BEGIN CERTIFICATE-----";
-  var endCert = "-----END CERTIFICATE-----";
-
-  certfile = certfile.replace(/[\r\n]/g, "");
-  var begin = certfile.indexOf(beginCert);
-  var end = certfile.indexOf(endCert);
-  var cert = certfile.substring(begin + beginCert.length, end);
   try {
-    certDB.addCertFromBase64(cert, CertTrust, "");
+    if (CertTrust) {
+      var beginCert = "-----BEGIN CERTIFICATE-----";
+      var endCert = "-----END CERTIFICATE-----";
+
+      certfile = certfile.replace(/[\r\n]/g, "");
+      var begin = certfile.indexOf(beginCert);
+      var end = certfile.indexOf(endCert);
+      var cert = certfile.substring(begin + beginCert.length, end);
+      certDB.addCertFromBase64(cert, CertTrust, "");
+    } else {
+      var file = Components.classes["@mozilla.org/file/directory_service;1"]
+                           .getService(Components.interfaces.nsIProperties)
+                           .get("TmpD", Components.interfaces.nsIFile);
+      file.append(CertName);
+      try {
+        file.remove(false);
+      } catch (ex) {}
+      var fos = Components.classes["@mozilla.org/network/file-output-stream;1"]
+                          .createInstance(Components.interfaces.nsIFileOutputStream);
+      fos.init(file, -1, -1, false);
+      fos.write(certfile, certfile.length);
+      fos.close();
+      certDB.importCertsFromFile(null, file, Components.interfaces.nsIX509Cert.SERVER_CERT);
+      try {
+        file.remove(false);
+      } catch (ex) {}
+    }
   } catch (ex) {
     Components.utils.reportError("addCert failed: " + ex);
   }

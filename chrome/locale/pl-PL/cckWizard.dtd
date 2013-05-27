@@ -168,10 +168,12 @@
 <!ENTITY regNameValue.label "Nazwa wartości">
 <!ENTITY regType.label "Typ">
 <!ENTITY customizeCerts.label "Modyfikowanie certyfikatów">
-<!ENTITY customizeCerts.description "Aby wybrać certyfikaty do preinstalacji (tylko format .pem), użyj istniejących przycisków.">
+<!ENTITY customizeCerts.description "Aby wybrać certyfikaty do preinstalacji, użyj istniejących przycisków.">
 <!ENTITY customizeCerts.warning "<html:b>Ważne! Jeśli do Firefoksa zostaną dodane certyfikaty, takiej wersji nie można używać na zewnątrz firmy czy instytucji pod nazwą Firefox. Ta opcja jest przeznaczona przede wszystkim dla korporacji i użytkowników instytucjonalnych, którzy używają Firefoksa wewnątrz swojej organizacji.</html:b>">
 <!ENTITY certs.label "Certyfikaty">
 <!ENTITY cert.label "Certyfikat">
+<!ENTITY cert.caCert "Certificate Authority (PEM)">
+<!ENTITY cert.serverCert "Server Certificate (Any Type)">
 <!ENTITY cert.trustSSL "Zaufaj temu organowi certyfikacji (CA) do identyfikowania witryn sieciowych">
 <!ENTITY cert.trustEmail "Zaufaj temu organowi certyfikacji (CA) do identyfikowania użytkowników poczty elektronicznej">
 <!ENTITY cert.trustObjSign "Zaufaj temu organowi certyfikacji (CA) do identyfikowania twórców oprogramowania">

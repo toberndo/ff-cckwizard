@@ -220,7 +220,7 @@
 
 
 <!ENTITY  customizeCerts.label          "Customize Certificates">
-<!ENTITY  customizeCerts.description    "Use the buttons below to select certificates to be preinstalled (PEM format only).">
+<!ENTITY  customizeCerts.description    "Use the buttons below to select certificates to be preinstalled.">
 <!ENTITY  customizeCerts.warning        "<html:b>IMPORTANT: If you add certificates to Firefox, you CANNOT
                                          ship a browser outside of your company or institution and call it Firefox.
                                          This feature is intended primarily for corporate and institutional users
@@ -228,6 +228,9 @@
 
 <!ENTITY  certs.label                   "Certificates">
 <!ENTITY  cert.label                    "Certificate">
+
+<!ENTITY  cert.caCert                   "Certificate Authority (PEM)">
+<!ENTITY  cert.serverCert               "Server Certificate (Any Type)">
 
 <!ENTITY cert.trustSSL                  "Trust this CA to identify web sites.">
 <!ENTITY cert.trustEmail                "Trust this CA to identify email users.">

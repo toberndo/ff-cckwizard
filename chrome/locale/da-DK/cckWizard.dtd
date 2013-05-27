@@ -168,10 +168,12 @@
 <!ENTITY regNameValue.label "Navn værdi">
 <!ENTITY regType.label "Type">
 <!ENTITY customizeCerts.label "Tilret certifikater">
-<!ENTITY customizeCerts.description "Brug knapperne herunder til at vælge de certifikater der skal være præinstallerede (kun i PEM-format).">
+<!ENTITY customizeCerts.description "Brug knapperne herunder til at vælge de certifikater der skal være præinstallerede.">
 <!ENTITY customizeCerts.warning "Du kan vælge op til fem certifikater der skal præinstalleres.<html:br/><html:br/>">
 <!ENTITY certs.label "Certifikater">
 <!ENTITY cert.label "Certifikat">
+<!ENTITY cert.caCert "Certificate Authority (PEM)">
+<!ENTITY cert.serverCert "Server Certificate (Any Type)">
 <!ENTITY cert.trustSSL "Stol på at denne CA identificerer websider.">
 <!ENTITY cert.trustEmail "Stol på at denne CA identificerer email-brugere.">
 <!ENTITY cert.trustObjSign "Stol på at denne CA identificerer software-udviklere.">

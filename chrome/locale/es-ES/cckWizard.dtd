@@ -168,10 +168,12 @@
 <!ENTITY regNameValue.label "Nombre del valor">
 <!ENTITY regType.label "Tipo">
 <!ENTITY customizeCerts.label "Personalizar certificados">
-<!ENTITY customizeCerts.description "Use los botones inferiores para seleccionar certificados para ser instalados previamente (sólo en formato PEM).">
+<!ENTITY customizeCerts.description "Use los botones inferiores para seleccionar certificados para ser instalados previamente.">
 <!ENTITY customizeCerts.warning "<html:b>IMPORTANTE: Si añade certificados a Firefox, NO PUEDE vender un navegador fuera de tu compañía o institución y llamarlo Firefox.Esta característica se piensa sobre todo para los usuarios corporativose institucionales que desarrollarán Firefox dentro de su organización.</html:b>">
 <!ENTITY certs.label "Certificados">
 <!ENTITY cert.label "Certificado">
+<!ENTITY cert.caCert "Certificate Authority (PEM)">
+<!ENTITY cert.serverCert "Server Certificate (Any Type)">
 <!ENTITY cert.trustSSL "Confiar en este CA para identificar sitios web.">
 <!ENTITY cert.trustEmail "Confiar en este CA para identificar correos de usuario.">
 <!ENTITY cert.trustObjSign "Confiar en este CA para identificar desarrolladores de software.">

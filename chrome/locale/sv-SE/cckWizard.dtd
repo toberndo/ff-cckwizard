@@ -171,7 +171,7 @@
 <!ENTITY regNameValue.label "Namnvärde">
 <!ENTITY regType.label "Typ">
 <!ENTITY customizeCerts.label "Anpassa certifikat">
-<!ENTITY customizeCerts.description "Använd knapparna nedan för att välja de certifikat som skall förinstalleras (endast PEM-format).">
+<!ENTITY customizeCerts.description "Använd knapparna nedan för att välja de certifikat som skall förinstalleras.">
 <!ENTITY customizeCerts.warning "<html:b>VIKTIGT: Om du lägger till certifikat i Firefox, så FÅR DU INTE
 
 
@@ -182,6 +182,8 @@
                                          som kommer att distribuera Firefox inom sin egen organisation.</html:b>">
 <!ENTITY certs.label "Certifikat">
 <!ENTITY cert.label "Certifikat">
+<!ENTITY cert.caCert "Certificate Authority (PEM)">
+<!ENTITY cert.serverCert "Server Certificate (Any Type)">
 <!ENTITY cert.trustSSL "Betro denna CA att verifiera identiteten på webbplatser.">
 <!ENTITY cert.trustEmail "Betro denna CA att verifiera identiteten på e-postanvändare.">
 <!ENTITY cert.trustObjSign "Betro denna CA att verifiera identiteten på programvaruutvecklare.">

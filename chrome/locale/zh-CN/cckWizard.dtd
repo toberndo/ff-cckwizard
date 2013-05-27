@@ -168,10 +168,12 @@
 <!ENTITY regNameValue.label "名称值 (Name Value)">
 <!ENTITY regType.label "类别 (Type)">
 <!ENTITY customizeCerts.label "定制 证书">
-<!ENTITY customizeCerts.description "使用下边的按钮以选择预安装的证书 (仅 PEM 格式).">
+<!ENTITY customizeCerts.description "使用下边的按钮以选择预安装的证书.">
 <!ENTITY customizeCerts.warning "<html:b>IMPORTANT: If you add certificates to Firefox, you CANNOT                                         ship a browser outside of your company or institution and call it Firefox.                                         This feature is intended primarily for corporate and institutional users                                         that will be deploying Firefox inside their organization.</html:b>">
 <!ENTITY certs.label "证书(s)">
 <!ENTITY cert.label "证书">
+<!ENTITY cert.caCert "Certificate Authority (PEM)">
+<!ENTITY cert.serverCert "Server Certificate (Any Type)">
 <!ENTITY cert.trustSSL "信任此证书以认同站点">
 <!ENTITY cert.trustEmail "信任此证书以认同电子邮件用户">
 <!ENTITY cert.trustObjSign "信任此证书以认同软件开发者">

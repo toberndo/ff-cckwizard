@@ -57,9 +57,13 @@
       <textbox flex="1" id="certpath" onchange="certCheckOKButton();" onkeyup="certCheckOKButton();"/>
       <button label="&chooseFile.label;" oncommand="choosefile('certpath');certCheckOKButton();"/>
     </hbox>
-    <checkbox id="trustSSL" label="&cert.trustSSL;"/>
-    <checkbox id="trustEmail" label="&cert.trustEmail;"/>
-    <checkbox id="trustObjSign" label="&cert.trustObjSign;"/>
+    <radiogroup id="serverType">
+    <radio id="caCert" label="&cert.caCert;" selected="true" oncommand="onCertCASelect();"/>
+    <checkbox class="indent" id="trustSSL" label="&cert.trustSSL;"/>
+    <checkbox class="indent" id="trustEmail" label="&cert.trustEmail;"/>
+    <checkbox class="indent" id="trustObjSign" label="&cert.trustObjSign;"/>
+    <radio id="serverCert" label="&cert.serverCert;" oncommand="onCertServerSelect();"/>
+    </radiogroup>
   </vbox>
 
   <stringbundleset id="stringbundleset">

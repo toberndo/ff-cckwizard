@@ -904,15 +904,26 @@ function OnCertLoad()
   var listbox = this.opener.document.getElementById('certList');
   if (window.name == 'editcert') {
     document.getElementById('certpath').value = listbox.selectedItem.label;
-    var trustString = listbox.selectedItem.value;
-    if (trustString.charAt(0) == 'C') {
-      document.getElementById("trustSSL").checked = true;
-    }
-    if (trustString.charAt(2) == 'C') {
-      document.getElementById("trustEmail").checked = true;
-    }
-    if (trustString.charAt(4) == 'C') {
-      document.getElementById("trustObjSign").checked = true;
+    if (listbox.selectedItem.server == true) {
+      document.getElementById("serverType").selectedItem = document.getElementById("serverCert");
+    } else {
+      document.getElementById("serverType").selectedItem = document.getElementById("caCert");
+      var trustString = listbox.selectedItem.value;
+      if (trustString.charAt(0) == 'C') {
+        document.getElementById("trustSSL").checked = true;
+      } else {
+        document.getElementById("trustSSL").checked = false;
+      }
+      if (trustString.charAt(2) == 'C') {
+        document.getElementById("trustEmail").checked = true;
+      } else {
+        document.getElementById("trustEmail").checked = false;
+      }
+      if (trustString.charAt(4) == 'C') {
+        document.getElementById("trustObjSign").checked = true;
+      } else {
+        document.getElementById("trustObjSign").checked = false;
+      }
     }
   }
   certCheckOKButton();
@@ -927,27 +938,43 @@ function certCheckOKButton()
   }
 }
 
+function onCertCASelect() {
+  document.getElementById("trustSSL").disabled = false;
+  document.getElementById("trustEmail").disabled = false;
+  document.getElementById("trustObjSign").disabled = false;
+}
+
+function onCertServerSelect() {
+  document.getElementById("trustSSL").disabled = true;
+  document.getElementById("trustEmail").disabled = true;
+  document.getElementById("trustObjSign").disabled = true;
+}
+
+
 function OnCertOK()
 {
   if (!(ValidateFile('certpath'))) {
     return false;
   }
 
+
   var trustString = "";
-  if (document.getElementById("trustSSL").checked) {
-    trustString += "C,"
-  } else {
-    trustString += "c,"
-  }
-  if (document.getElementById("trustEmail").checked) {
-    trustString += "C,"
-  } else {
-    trustString += "c,"
-  }
-  if (document.getElementById("trustObjSign").checked) {
-    trustString += "C"
-  } else {
-    trustString += "c"
+  if (!document.getElementById("serverCert").selected == true) {
+    if (document.getElementById("trustSSL").checked) {
+      trustString += "C,"
+    } else {
+      trustString += "c,"
+    }
+    if (document.getElementById("trustEmail").checked) {
+      trustString += "C,"
+    } else {
+      trustString += "c,"
+    }
+    if (document.getElementById("trustObjSign").checked) {
+      trustString += "C"
+    } else {
+      trustString += "c"
+    }
   }
 
   var listbox = this.opener.document.getElementById('certList');
@@ -956,8 +983,13 @@ function OnCertOK()
     listitem = listbox.appendItem(document.getElementById('certpath').value, trustString);
   } else {
     listitem = listbox.selectedItem;
-    listbox.selectedItem.label = document.getElementById('certpath').value;
-    listbox.selectedItem.value = trustString;
+    listitem.label = document.getElementById('certpath').value;
+    listitem.value = trustString;
+  }
+  if (document.getElementById("serverCert").selected == true) {
+    listitem.server = true;
+  } else {
+    listitem.server = false;
   }
 }
 
@@ -1832,12 +1864,17 @@ function CCKWriteProperties(destdir)
       file.initWithPath(listitem.getAttribute("label"));
       str = "Cert"+ (i+1) + "=" + file.leafName + "\n";
       cos.writeString(str);
-      str = "CertTrust" + (i+1) + "=" + listitem.getAttribute("value") + "\n";
-      cos.writeString(str);
-	} catch(ex) {
+      if (listitem.server) {
+        str = "CertType" + (i+1) + "=" + "server" + "\n";
+        cos.writeString(str);
+      } else {
+        str = "CertTrust" + (i+1) + "=" + listitem.getAttribute("value") + "\n";
+        cos.writeString(str);
+      }
+    } catch(ex) {
       gPromptService.alert(window, bundle.getString("windowTitle"),
                                  "Unable to locate certificate: " + listitem.getAttribute("label"));
-	}
+    }
   }
 
   cos.close();
@@ -2628,8 +2665,13 @@ function CCKWriteConfigFile(destdir)
         listitem = listbox.getItemAtIndex(j);
         var line = "CertPath" + (j+1) + "=" + listitem.getAttribute("label") + "\n";
         cos.writeString(line);
-        var line = "CertTrust" + (j+1) + "=" + listitem.getAttribute("value") + "\n";
-        cos.writeString(line);
+        if (listitem.server) {
+          var line = "CertType" + (j+1) + "=" + "server" + "\n";
+          cos.writeString(line);
+        } else {
+          var line = "CertTrust" + (j+1) + "=" + listitem.getAttribute("value") + "\n";
+          cos.writeString(line);
+	}
       }
     }
     else if (elements[i].id == "defaultSearchEngine") {
@@ -2922,7 +2964,8 @@ function CCKReadConfigFile(srcdir)
     if (configarray['CertTrust' + i]) {
       listitem = listbox.appendItem(certpath, configarray['CertTrust' + i]);
     } else {
-      listitem = listbox.appendItem(certpath, "C,C,C");
+      listitem = listbox.appendItem(certpath);
+      listitem.server = true;
     }
     i++;
   }

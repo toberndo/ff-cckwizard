@@ -166,10 +166,12 @@
 <!ENTITY regNameValue.label "Hodnota">
 <!ENTITY regType.label "Typ">
 <!ENTITY customizeCerts.label "Specifikace certifikátů">
-<!ENTITY customizeCerts.description "Použijte následující tlačítka pro výběr certifikátů, jež mají být předinstalovány (pouze formátu PEM).">
+<!ENTITY customizeCerts.description "Použijte následující tlačítka pro výběr certifikátů, jež mají být předinstalovány.">
 <!ENTITY customizeCerts.warning "<html:b>DŮLEŽITÉ: Pokud přidáte do Firfoxu certifikát, NEMŮŽETE                                         vydat prohlížeč mimo vaší společnost či instituci a nazývat ho Firefox.                                         Tato vlastnost je záměřena především na korporátní uživatele a instituce,                                         jež budou rozšiřovat Firefox uvnitř své organizace/společnosti.</html:b>">
 <!ENTITY certs.label "Certifikáty">
 <!ENTITY cert.label "Certifikát">
+<!ENTITY cert.caCert "Certificate Authority (PEM)">
+<!ENTITY cert.serverCert "Server Certificate (Any Type)">
 <!ENTITY cert.trustSSL "Důvěřovat této CA při identifikaci webových serverů.">
 <!ENTITY cert.trustEmail "Důvěřovat této CA při identifikaci emailových uživatelů.">
 <!ENTITY cert.trustObjSign "Důvěřovat této CA při identifikaci softwarových vývojářů.">

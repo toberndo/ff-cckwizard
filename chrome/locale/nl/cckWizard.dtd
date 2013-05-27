@@ -168,10 +168,12 @@
 <!ENTITY regNameValue.label "Naamwaarde">
 <!ENTITY regType.label "Type">
 <!ENTITY customizeCerts.label "Certificaten aanpassen">
-<!ENTITY customizeCerts.description "Gebruik onderstaande knoppen om certificaten te selecteren die voorgeïnstalleerd moeten worden (alleen PEM-formaat)">
+<!ENTITY customizeCerts.description "Gebruik onderstaande knoppen om certificaten te selecteren die voorgeïnstalleerd moeten worden">
 <!ENTITY customizeCerts.warning "<html:b>BELANGRIJK: Als er certificaten aan Firefox worden toegevoegd, dan mag de browser NIET buiten uw bedrijf of instelling worden gebruikt en Firefox worden genoemd. Deze toepassing is primair bedoeld voor bedrijfs- en institutionele gebruikers die Firefox binnen hun eigen organisatie zullen gebruiken.</html:b>">
 <!ENTITY certs.label "Certificaten">
 <!ENTITY cert.label "Certificaat">
+<!ENTITY cert.caCert "Certificate Authority (PEM)">
+<!ENTITY cert.serverCert "Server Certificate (Any Type)">
 <!ENTITY cert.trustSSL "Dit certificaat bij identificatie van websites vertrouwen.">
 <!ENTITY cert.trustEmail "Dit certificaat bij identificatie van e-mailgebruikers vertrouwen.">
 <!ENTITY cert.trustObjSign "Dit certificaat bij identificatie van softwareontwikkelaars vertrouwen.">

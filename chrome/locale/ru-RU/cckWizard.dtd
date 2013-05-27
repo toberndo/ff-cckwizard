@@ -168,10 +168,12 @@
 <!ENTITY regNameValue.label "Значение имени">
 <!ENTITY regType.label "Тип">
 <!ENTITY customizeCerts.label "Параметризация сертификатов">
-<!ENTITY customizeCerts.description "Для выбора предварительной установки сертификатов необходимо использовать кнопки ниже (только PEM-формат).">
+<!ENTITY customizeCerts.description "Для выбора предварительной установки сертификатов необходимо использовать кнопки ниже.">
 <!ENTITY customizeCerts.warning "<html:b>ЗАМЕЧАНИЕ: После добавления сертификатов в Firefox, его НЕЛЬЗЯ будет устанавливать вне вашей компании или учрежления и называть по прежнему Firefox. Эта возможность прежде всего предназначена для корпоративных пользователей, которые собираются развёртывать Firefox исключительно внутри своей организации. </html:b>">
 <!ENTITY certs.label "Сертификаты">
 <!ENTITY cert.label "Сертификат">
+<!ENTITY cert.caCert "Certificate Authority (PEM)">
+<!ENTITY cert.serverCert "Server Certificate (Any Type)">
 <!ENTITY cert.trustSSL "Доверять этому Центру Сертификации для идентификации вебсайтов.">
 <!ENTITY cert.trustEmail "Доверять этому Центру Сертификации для идентификации пользователей электронной почты.">
 <!ENTITY cert.trustObjSign "Доверять этому Центру Сертификации для идентификации разработчиков программного обеспечения.">
