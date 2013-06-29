@@ -1,3 +1,6 @@
+Components.utils.import("resource://gre/modules/Services.jsm");
+Components.utils.import("resource://gre/modules/PrivateBrowsingUtils.jsm");
+
 function getCCKLink(item)
 {
   var bundle = document.getElementById("bundle_cck");
@@ -40,7 +43,6 @@ function goClickThrobber( urlPref, e )
       document.getElementById("sync-syncnow-state").hidden = true;
     }
   }
-  
 
   function onPageLoad(event) {
     if (event.target.location.href == "about:home") {
@@ -52,6 +54,17 @@ function goClickThrobber( urlPref, e )
 
   function startup()
   {
+    window.removeEventListener("load", startup, false);
+    try {
+      if (!gPrefBranch.getBoolPref("browser.privatebrowsing.enabled")) {
+        if (PrivateBrowsingUtils.isWindowPrivate(window)) {
+	  window.setTimeout(function() {
+            Services.prompt.alert(window, "Private Browsing", "Private Browsing has been disabled by your administrator.");
+	    window.close();
+	  }, 0);
+        }
+      }
+    } catch (ex) {}
     try {
       if (!gPrefBranch.getBoolPref("services.sync.enabled")) {
         gSyncUI = mySyncUI;

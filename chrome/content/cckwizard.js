@@ -2085,6 +2085,10 @@ function CCKWriteDefaultJS(destdir)
     fos.write(line, line.length);
   }
 
+  if (document.getElementById("noprivatebrowsing").checked) {
+    var line = 'pref("browser.privatebrowsing.enabled", false);\n';
+    fos.write(line, line.length);
+  }
 
   fos.close();
 }
