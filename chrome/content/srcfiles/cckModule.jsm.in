@@ -86,7 +86,7 @@ var CCK = {
         if (smartBookmarksVersion == 0)
           gPrefBranch.addObserver("browser.places.smartBookmarksVersion", CCK, false);
         bookmarks = Cc["@mozilla.org/browser/nav-bookmarks-service;1"].getService(Ci.nsINavBookmarksService);
-        livemarks = Cc["@mozilla.org/browser/livemark-service;2"].getService(Ci.nsILivemarkService);
+//        livemarks = Cc["@mozilla.org/browser/livemark-service;2"].getService(Ci.nsILivemarkService);
         annoService = Cc["@mozilla.org/browser/annotation-service;1"].getService(Ci.nsIAnnotationService);
         initBookmarks();
         break;
@@ -513,7 +513,7 @@ function addBookmarks(prefix, container, location, inId) {
         curitem = bookmarks.insertSeparator(container, location);
       } else if (BookmarkURL) {
         if (bmtype == "live") {
-          curitem = livemarks.createLivemark(container, BookmarkTitle, null, makeURI(BookmarkURL), location);
+//          curitem = livemarks.createLivemark(container, BookmarkTitle, null, makeURI(BookmarkURL), location);
         }else {
           curitem = bookmarks.insertBookmark(container, makeURI(BookmarkURL), location, BookmarkTitle);
         }
