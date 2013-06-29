@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<overlay id="cckPrefsOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script type="application/x-javascript">
+  <![CDATA[
+    Components.utils.import("resource://gre/modules/Services.jsm");
+    
+    (function () {
+      function paneload(event) {
+        if (event.target.id != "panePrivacy") {
+          return;
+        }
+        try {
+          if (!Services.prefs.getBoolPref("browser.privatebrowsing.enabled")) {
+            var privateBrowsingAutoStart = document.getElementById("privateBrowsingAutoStart");
+            if (privateBrowsingAutoStart) {
+              privateBrowsingAutoStart.hidden = true;
+            }
+            var privateBrowsingMenu = document.querySelector("menuitem[value='dontremember']");
+            privateBrowsingMenu.hidden = true;
+          }
+        } catch (ex) {}
+      }
+      function startup()
+      {
+        window.removeEventListener("load", startup, false);
+        try {
+          if (!Services.prefs.getBoolPref("services.sync.enabled")) {
+            var prefWindow = document.getElementById("BrowserPreferences");
+            var paneSyncRadio = document.getAnonymousElementByAttribute(prefWindow, "pane", "paneSync");
+            paneSyncRadio.hidden = true;
+            var paneDeck = document.getAnonymousElementByAttribute(prefWindow, "anonid", "paneDeck");
+            var paneSync = document.getElementById("paneSync");
+            paneSync.removeAttribute("helpTopic");
+            var weavePrefsDeck = document.getElementById("weavePrefsDeck");
+            weavePrefsDeck.parentNode.removeChild(weavePrefsDeck);
+            if (prefWindow.currentPane == document.getElementById("paneSync")) {
+              prefWindow.showPane(document.getElementById("paneMain"));
+            }
+          }
+        } catch (ex) {}
+      }
+    
+      function shutdown()
+      {
+        window.removeEventListener("unload", shutdown, false);
+        window.removeEventListener("paneload", paneload, false);
+      }
+    
+      window.addEventListener("load", startup, false);
+      window.addEventListener("unload", shutdown, false);
+      window.addEventListener("paneload", paneload, false);
+    })();
+  ]]>
+  </script>
+</overlay>

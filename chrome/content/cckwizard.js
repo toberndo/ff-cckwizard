@@ -1089,7 +1089,7 @@ function CreateCCK()
   CCKCopyFile(document.getElementById("LargeAnimPath").value, destdir);
   CCKCopyFile(document.getElementById("LargeStillPath").value, destdir);
   CCKCopyChromeToFile("cck.js", destdir)
-  CCKCopyChromeToFile("cck-prefs-sync-overlay.xul", destdir)
+  CCKCopyChromeToFile("cck-prefs-overlay.xul", destdir)
   CCKCopyChromeToFile("cck-aboutDialog-overlay.xul", destdir)
   if (document.getElementById("noamo").checked)
     CCKCopyChromeToFile("cck-extensions-overlay.xul", destdir)
