@@ -8,7 +8,10 @@
       function startup()
       {
         window.removeEventListener("load", startup, false);
-        var showDiscoverPane = false;
+        var showDiscoverPane = true;
+        try {
+          showDiscoverPane = Services.prefs.getBoolPref("extensions.getAddons.showPane");
+        } catch (ex) {}
         var xpinstallEnabled = true;
         try {
           xpinstallEnabled = Services.prefs.getBoolPref("xpinstall.enabled");

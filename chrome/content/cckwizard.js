@@ -1091,8 +1091,7 @@ function CreateCCK()
   CCKCopyChromeToFile("cck.js", destdir)
   CCKCopyChromeToFile("cck-prefs-overlay.xul", destdir)
   CCKCopyChromeToFile("cck-aboutDialog-overlay.xul", destdir)
-  if (document.getElementById("noamo").checked)
-    CCKCopyChromeToFile("cck-extensions-overlay.xul", destdir)
+  CCKCopyChromeToFile("cck-extensions-overlay.xul", destdir)
   if (document.getElementById("noaboutconfig").checked)
     CCKCopyChromeToFile("cck-blank.css", destdir);
 
@@ -2087,6 +2086,11 @@ function CCKWriteDefaultJS(destdir)
 
   if (document.getElementById("noprivatebrowsing").checked) {
     var line = 'pref("browser.privatebrowsing.enabled", false);\n';
+    fos.write(line, line.length);
+  }
+  
+  if (document.getElementById("noamo").checked) {
+    var line = 'pref("extensions.getAddons.showPane", false);\n';
     fos.write(line, line.length);
   }
 
