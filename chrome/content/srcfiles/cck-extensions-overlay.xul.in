@@ -1,9 +1,42 @@
 <?xml version="1.0"?>
 <overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-  <textbox id="header-search" hidden="true"/>
-  <vbox id="discover-browser" hidden="true"/>
-  <richlistitem id="category-discover" style="display: none;"/>
-  <richlistitem id="category-search" hidden="true"/>
-  <menuseparator id="utils-installFromFile-separator" hidden="true"/>
-  <menuitem id="utils-installFromFile" hidden="true"/>
+  <script type="application/x-javascript">
+  <![CDATA[
+    Components.utils.import("resource://gre/modules/Services.jsm");
+    
+    (function () {
+      function startup()
+      {
+        window.removeEventListener("load", startup, false);
+        var showDiscoverPane = false;
+        var xpinstallEnabled = true;
+        try {
+          xpinstallEnabled = Services.prefs.getBoolPref("xpinstall.enabled");
+        } catch (ex) {}
+        if (!showDiscoverPane || !xpinstallEnabled) {
+          gCategories.get("addons://discover/").hidden = true;
+          document.querySelector("#search-list-empty button").hidden = true;
+          document.querySelector("#addon-list-empty button").hidden = true;
+          if (document.getElementById("view-port").selectedIndex == 0) {
+            gViewController.loadView("addons://list/extension");
+          }
+        }
+        if (!xpinstallEnabled) {
+          document.getElementById("search-filter-remote").hidden = true;
+          document.getElementById("search-filter-radiogroup").selectedIndex = 0; // Search in local addons
+          document.getElementById("utils-installFromFile-separator").hidden = true;
+          document.getElementById("utils-installFromFile").hidden = true;
+        }
+      }
+    
+      function shutdown()
+      {
+        window.removeEventListener("unload", shutdown, false);
+      }
+    
+      window.addEventListener("load", startup, false);
+      window.addEventListener("unload", shutdown, false);
+    })();
+  ]]>
+  </script>
 </overlay>
