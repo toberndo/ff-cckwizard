@@ -90,10 +90,12 @@
 <!ENTITY popupAllowedSites.label "Můžete určit domény, pro něž jsou povolena vyskakovací okna. Uveďte seznam domén, oddělených čárkou.">
 <!ENTITY installAllowedSites.label "Můžete určit domény, pro něž jsou povoleny instalace rozčšíření (XPI). Uveďte seznam domén, oddělených čárkou.">
 <!ENTITY cookieAllowedSites.label "You can specify domains for which cookies are always allowed. List the domains, separated by a comma.">
+<!ENTITY pluginAllowedSites.label "You can specify domains for which plug-ins are always allowed (ignoring Click to Play). List the domains, separated by a comma.">
 <!ENTITY deniedSites.caption "Denied Sites">
 <!ENTITY popupDeniedSites.label "You can specify domains for which popups are denied. List the domains, separated by a comma.">
 <!ENTITY installDeniedSites.label "You can specify domains for which software installations (XPIs) are denied. List the domains, separated by a comma.">
 <!ENTITY cookieDeniedSites.label "You can specify domains for which cookies are always denied. List the domains, separated by a comma.">
+<!ENTITY pluginDeniedSites.label "You can specify domains for which plug-ins are always denied (ignoring Click to Play). List the domains, separated by a comma.">
 <!ENTITY customizeBrowserPlugins.label "Specifikace zásuvných modulů">
 <!ENTITY browserPlugins.description "Použijte následující tlačítka pro přidání zásuvných modulů prohlížeče.">
 <!ENTITY plugins.label "Zásuvné moduly prohlížeče">
