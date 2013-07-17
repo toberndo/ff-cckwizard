@@ -474,7 +474,8 @@ function updatePermissions(sites, type, permission) {
   var sitesArray = sites.split(",");
   for (var i=0; i < sitesArray.length; i++) {
     try {
-      var uri = gIOService.newURI("http://" + sitesArray[i], null, null);
+      var domain = sitesArray[i].replace(/\s+/g, '');
+      var uri = gIOService.newURI("http://" + domain, null, null);
       gPermMgr.add(uri, type, permission);
     } catch (ex) {}
   }
