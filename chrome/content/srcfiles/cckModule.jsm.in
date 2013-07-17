@@ -103,6 +103,11 @@ var CCK = {
           }
         }
         break;
+      case "perm-changed":
+        var sites = getString("PopupAllowedSites");
+        if (sites)
+          updatePermissions(sites, "popup", 1);
+        break;
     }
   }
 }
@@ -732,6 +737,7 @@ gObserver.addObserver(CCK, "profile-before-change", false);
 gObserver.addObserver(CCK, "profile-after-change", false);
 gObserver.addObserver(CCK, "final-ui-startup", false);
 gObserver.addObserver(CCK, "distribution-customization-complete", false);
+gObserver.addObserver(CCK, "perm-changed", false);
 
 let listener = {
   onUninstalling: function(addon) {
