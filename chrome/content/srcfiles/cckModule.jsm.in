@@ -104,9 +104,7 @@ var CCK = {
         }
         break;
       case "perm-changed":
-        var sites = getString("PopupAllowedSites");
-        if (sites)
-          updatePermissions(sites, "popup", 1);
+        updatePopupAllowedSites();
         break;
     }
   }
@@ -183,6 +181,14 @@ function init() {
     } catch (ex) {}
   }
 
+  //var console = Cc["@mozilla.org/consoleservice;1"].getService(Ci.nsIConsoleService);
+  //console.logStringMessage("init()");
+  
+  // Although we listen for perm-changed above and reset the permissions
+  // this does not help when the user clears the site preferences:
+  // the permissions are gone after Firefox restart.
+  // Therefore we reset PopupAllowedSites on each startup 
+  updatePopupAllowedSites();
 
   if (firstrun || extVersion != installedVersion)
   {
@@ -225,9 +231,7 @@ function init() {
     } while (CertName)
 
     var sites;
-    sites = getString("PopupAllowedSites");
-    if (sites)
-      updatePermissions(sites, "popup", 1);
+    updatePopupAllowedSites();
     sites = getString("InstallAllowedSites");
     if (sites)
       updatePermissions(sites, "install", 1);
@@ -252,6 +256,12 @@ function init() {
 
     gPrefBranch.setCharPref("extensions.%id%.version", extVersion);
   }
+}
+
+function updatePopupAllowedSites() {
+  var sites = getString("PopupAllowedSites");
+    if (sites)
+      updatePermissions(sites, "popup", 1);
 }
 
 // bookmarks init has to be done later than the rest
