@@ -498,7 +498,7 @@ function OnPrefOK()
   var value = document.getElementById('prefvalue').value;
 
   if ((document.getElementById('prefvalue').preftype == nsIPrefBranch.PREF_INT) && (!(prefsLockOnly.indexOf(document.getElementById('prefname').value) > -1))) {
-    if (parseInt(value) != value) {
+    if (!(parseInt(value) === value)) {
       gPromptService.alert(window, bundle.getString("windowTitle"),
                            bundle.getString("intError"));
       return false;
@@ -511,7 +511,7 @@ function OnPrefOK()
     var preftype;
     if ((value.toLowerCase() == "true") || (value.toLowerCase() == "false")) {
       preftype = "boolean";
-    } else if (parseInt(value) == value) {
+    } else if (parseInt(value) === value) {
       preftype = "integer";
     } else {
       preftype  = "string";
@@ -2798,7 +2798,7 @@ function CCKReadConfigFile(srcdir)
       if ((value.toLowerCase() == "true") || (value.toLowerCase() == "false")) {
         configarray['PreferenceType' + i] = "boolean";
         value = value.toLowerCase();
-      } else if (parseInt(value) == value) {
+      } else if (parseInt(value) === value) {
         configarray['PreferenceType' + i] = "integer";
       } else {
         /* Remove opening and closing quotes if they exist */
@@ -2823,6 +2823,12 @@ function CCKReadConfigFile(srcdir)
       listitem.setAttribute("locked", "true");
     } else {
       listitem.cck['lock'] = "";
+    }
+    // Migrate bad integers
+    if (configarray['PreferenceType' + i] == "integer") {
+      if (!(parseInt(configarray['PreferenceValue' + i]) === configarray['PreferenceValue' + i])) {
+	configarray['PreferenceType' + i] = "string";
+      }
     }
     listitem.cck['type'] = configarray['PreferenceType' + i];
     i++;
