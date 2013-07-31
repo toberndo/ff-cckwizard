@@ -3259,7 +3259,7 @@ function DoEnabling()
   // radio buttons
   var radiogroup = document.getElementById("networkProxyType");
   if (radiogroup.value == "")
-    radiogroup.value = "0";
+    radiogroup.value = "100";
 
   switch ( radiogroup.value ) {
     case "0":

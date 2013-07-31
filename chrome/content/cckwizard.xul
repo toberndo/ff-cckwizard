@@ -563,6 +563,7 @@
       <caption label="&proxyTitle.label;"/>
 
       <radiogroup id="networkProxyType" preference="network.proxy.type">
+        <radio value="100" label="Don't change proxy settings" oncommand="DoEnabling();"/>
         <radio value="0" label="&noProxyTypeRadio.label;" accesskey="&noProxyTypeRadio.accesskey;" oncommand="DoEnabling();"/>
         <radio value="4" label="&WPADTypeRadio.label;" accesskey="&WPADTypeRadio.accesskey;" oncommand="DoEnabling();"/>
         <radio value="5" label="&systemTypeRadio.label;" accesskey="&systemTypeRadio.accesskey;" oncommand="DoEnabling();"/>
