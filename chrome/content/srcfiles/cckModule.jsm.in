@@ -610,7 +610,7 @@ function removeDefaultBookmarks(bookmarksToRemove) {
       var aboutMozilla = bookmarks.getIdForItemAt(firefoxFolder, 3);
       if (aboutMozilla != -1 &&
           bookmarks.getItemType(aboutMozilla) == bookmarks.TYPE_BOOKMARK &&
-          /http:\/\/www.mozilla.com\/.*\/about/.test(bookmarks.getBookmarkURI(aboutMozilla).spec))
+          /https?:\/\/www.mozilla.(com|org)\/.*\/about/.test(bookmarks.getBookmarkURI(aboutMozilla).spec))
         bookmarks.removeItem(firefoxFolder);
     }
   }
