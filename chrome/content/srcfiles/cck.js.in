@@ -58,6 +58,8 @@ function goClickThrobber( urlPref, e )
     try {
       if (!gPrefBranch.getBoolPref("browser.privatebrowsing.enabled")) {
         if (PrivateBrowsingUtils.isWindowPrivate(window)) {
+	  // Unset autostart private browsing
+	  gPrefBranch.setBoolPref("browser.privatebrowsing.autostart", false);
 	  window.setTimeout(function() {
             Services.prompt.alert(window, "Private Browsing", "Private Browsing has been disabled by your administrator.");
 	    window.close();
